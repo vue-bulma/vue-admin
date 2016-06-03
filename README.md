@@ -41,9 +41,12 @@ npm test
 
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
 
-[Vue]: http://vuejs.org
+[Vue.js]: http://vuejs.org
+[vuex]: https://github.com/vuejs/vuex
 [vue-router]: https://github.com/vuejs/vue-router
 [vue-resource]: https://github.com/vuejs/vue-resource
 [vue-devtools]: https://github.com/vuejs/vue-devtools
 [Bulma]: http://bulma.io
+[chart.js]: http://www.chartjs.org
+[font-awesome]: http://fontawesome.io
 [Webpack]: https://webpack.github.io
