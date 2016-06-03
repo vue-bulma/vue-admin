@@ -1,7 +1,7 @@
 {
   "name": "vue-admin",
   "version": "0.0.0",
-  "description": "Vue Bulma Admin Panel Framework",
+  "description": "Vue Admin Panel Framework",
   "author": "fundon <cfddream@gmail.com>",
   "scripts": {
     "dev": "node build/dev-server.js",

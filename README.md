@@ -1,6 +1,6 @@
 # vue-admin
 
-> Vue Bulma Admin Panel Framework
+> Vue Admin Panel Framework
 
 ## Tech Stack
 
