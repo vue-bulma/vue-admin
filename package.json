@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "description": "Vue Admin Panel Framework",
   "author": "fundon <cfddream@gmail.com>",
+  "license": "MIT",
   "scripts": {
     "dev": "node build/dev-server.js",
     "build": "node build/build.js",
@@ -12,8 +13,14 @@
     "lint": "eslint --ext .js,.vue src test/unit/specs test/e2e/specs"
   },
   "dependencies": {
-    "vue": "^1.0.21",
-    "babel-runtime": "^6.0.0"
+    "babel-runtime": "6.9.2",
+    "bulma": "0.0.28",
+    "chart.js": "2.1.4",
+    "font-awesome": "4.6.3",
+    "vue": "1.0.24",
+    "vue-resource": "0.7.2",
+    "vue-router": "0.7.13",
+    "vuex": "0.6.3"
   },
   "devDependencies": {
     "babel-core": "^6.0.0",
