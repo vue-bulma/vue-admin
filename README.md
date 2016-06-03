@@ -6,7 +6,7 @@
 
 | Name          | Version  | NPM  |
 | ------------- | -------- | --------- |
-| [Vue.js][]    | v1       |           |
+| [Vue][]     	| v1       |           |
 | [Bulma][]     | v0.x     |           |
 | [Webpack][]   |          |           |
 
@@ -33,3 +33,7 @@ npm test
 ```
 
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+
+[Vue]: http://vuejs.org
+[Bulma]: http://bulma.io
+[Webpack]: https://webpack.github.io
