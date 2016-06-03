@@ -4,11 +4,18 @@
 
 ## Tech Stack
 
-| Name          | Version  | NPM  |
-| ------------- | -------- | --------- |
-| [Vue][]     	| v1       |           |
-| [Bulma][]     | v0.x     |           |
+| Name | Version | Description |  
+| --- | --- | --- |  
+| [Vue.js][] | 1.0.24 | Simple yet powerful library for building modern web interfaces |  
+| [vuex][] | 0.6.3 | 状态管理架构 |  
+| [vue-router][] | 0.7.13 | 路由组件 |  
+| [vue-resource][] | 0.7.2 | HTTP 资源组件 |  
+| [bulma][] | 0.0.28 | A modern CSS framework based on Flexbox |  
+| [chart.js][] | 2.1.4 | Simple HTML5 Charts using the canvas element |  
+| [font-awesome][] | 4.6.3 | Font Awesome, the iconic font and CSS framework |  
+| [vue-devtools][]| v1.x     |           |
 | [Webpack][]   |          |           |
+| ... |  |  |  
 
 ## Build Setup
 
@@ -35,5 +42,8 @@ npm test
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
 
 [Vue]: http://vuejs.org
+[vue-router]: https://github.com/vuejs/vue-router
+[vue-resource]: https://github.com/vuejs/vue-resource
+[vue-devtools]: https://github.com/vuejs/vue-devtools
 [Bulma]: http://bulma.io
 [Webpack]: https://webpack.github.io
