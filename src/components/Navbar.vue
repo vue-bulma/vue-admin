@@ -1,51 +1,35 @@
 <template>
-  <nav class="nav va-navbar">
-    <div class="nav-left">
-      <a class="nav-item" href="#">Vue Admin</a>
+  <section class="hero is-bold va-navbar">
+    <div class="hero-head">
+      <div class="container is-fluid is-marginless">
+        <nav class="nav">
+          <div class="nav-left">
+            <a class="nav-item" href="#">VueAdmin</a>
+          </div>
+          <div class="nav-right">
+            <span class="nav-item">
+            </span>
+          </div>
+        </nav>
+      </div>
     </div>
-
-    <!-- <div class="nav-center">
-      <a class="nav-item" href="https://github.com/fundon/vue-admin">
-        <span class="icon">
-          <i class="fa fa-github"></i>
-        </span>
-      </a>
-      <a class="nav-item" href="https://twitter.com/_fundon">
-        <span class="icon">
-          <i class="fa fa-twitter"></i>
-        </span>
-      </a>
-    </div> -->
-
-    <div class="nav-right">
-      <span class="nav-item">
-        <a class="button" >
-          <span class="icon">
-            <i class="fa fa-twitter"></i>
-          </span>
-          <span>Tweet</span>
-        </a>
-        <a class="button is-primary" href="#">
-          <span class="icon">
-            <i class="fa fa-download"></i>
-          </span>
-          <span>Download</span>
-        </a>
-      </span>
-    </div>
-  </nav>
+  </section>
 </template>
 
 <script>
 export default {
-  data () {
-    return {}
-  }
 }
 </script>
 
 <style lang="scss" scoped>
 .va-navbar {
-  padding: 0 10px;
+  position: fixed;
+  min-width: 100%;
+  z-index: 1024;
+  box-shadow: 0 2px 3px rgba(17, 17, 17, 0.1), 0 0 0 1px rgba(17, 17, 17, 0.1);
+
+  .nav {
+    padding: 0 10px;
+  }
 }
 </style>

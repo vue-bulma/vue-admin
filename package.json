@@ -13,6 +13,7 @@
     "lint": "eslint --ext .js,.vue src test/unit/specs test/e2e/specs"
   },
   "dependencies": {
+    "animate.css": "3.5.1",
     "babel-runtime": "6.9.2",
     "bulma": "0.0.28",
     "chart.js": "2.1.4",

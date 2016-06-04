@@ -12,6 +12,10 @@ import Dashboard from './components/pages/Dashboard/'
 import ChartJs from './components/pages/Charts/ChartJs'
 
 router.map({
+  // '/login': {
+  //   name: 'Login',
+  //   component: Login
+  // },
   '/dashboard': {
     name: 'Dashboard',
     component: Dashboard
@@ -21,6 +25,10 @@ router.map({
     component: ChartJs
   }
 })
+
+// router.redirect({
+//   '/': '/login'
+// })
 
 router.start(App, 'app')
 

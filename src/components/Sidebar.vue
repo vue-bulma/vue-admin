@@ -2,17 +2,17 @@
   <aside class="menu va-sidebar">
     <ul class="menu-list">
       <li v-for="item in menu">
-        <a v-link="{ name: item.link, activeClass: 'is-active' }" @click="toggle(!!item.menu, item, $event)" v-bind="{ 'aria-expanded': !!item.expanded }">
+        <a v-link="{ name: item.link, activeClass: 'is-active' }" @click="toggle(item, $event)" v-bind="{ 'aria-expanded': !!item.expanded }">
           <span class="icon is-small" v-if="item.icon">
             <i class="fa {{ item.icon }}"></i>
           </span>
           <span>{{ item.label }}</span>
-          <span class="icon is-small is-angle" v-if="item.menu">
+          <span class="icon is-small is-angle" v-if="item.subMenu">
             <i class="fa fa-angle-down"></i>
           </span>
         </a>
-        <ul v-if="item.menu" :class="{ 'va-collapse': item.menu }">
-          <li v-for="subItem in item.menu">
+        <ul v-if="item.subMenu" :class="{ 'va-collapse': item.subMenu }">
+          <li v-for="subItem in item.subMenu">
             <a v-link="{ name: subItem.link, activeClass: 'is-active' }">{{ subItem.label }}</a>
           </li>
         </ul>
@@ -23,32 +23,15 @@
 
 <script>
 export default {
-
-  data () {
-    return {
-      menu: [
-        {
-          link: 'Dashboard',
-          label: 'Dashboard',
-          icon: 'fa-home'
-        },
-        {
-          label: 'Charts',
-          icon: 'fa-bar-chart',
-          expanded: false,
-          menu: [
-            {
-              link: 'ChartJs',
-              label: 'Chart.js'
-            }
-          ]
-        }
-      ]
+  vuex: {
+    getters: {
+      menu: state => state.menu
     }
   },
 
   methods: {
-    toggle (hasCollapse, item, $e) {
+    toggle (item, $e) {
+      let hasCollapse = !!item.subMenu
       if (hasCollapse) {
         $e.preventDefault()
         item.expanded = !item.expanded
@@ -62,11 +45,9 @@ export default {
 @import '~bulma';
 
 .va-sidebar {
-  width: 180px !important;
 
   @include mobile() {
     & {
-      width: 52px !important;
       overflow: hidden;
     }
   }
@@ -86,7 +67,7 @@ export default {
     &[aria-expanded] {
 
       .is-angle {
-        transform: rotate(180deg);  
+        transform: rotate(180deg);
       }
 
       & + .va-collapse {
