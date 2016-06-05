@@ -55,14 +55,12 @@ export default {
     const $el = this.$el
     const id = `va-chartist-${this.uuid}`
     $el.setAttribute('id', id)
-    this.$nextTick(() => {
-      this.chart = new Chartist[this.instanceType](
-        $el,
-        this.data,
-        this.options,
-        this.responsiveOptions
-      )
-    })
+    this.chart = new Chartist[this.chartType](
+      $el,
+      this.data,
+      this.options,
+      this.responsiveOptions
+    )
   },
 
   data () {
@@ -72,7 +70,7 @@ export default {
   },
 
   computed: {
-    instanceType () {
+    chartType () {
       let t = this.type.toLowerCase()
       return this.types[t]
     }
