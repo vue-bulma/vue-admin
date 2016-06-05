@@ -11,6 +11,7 @@ import App from './App'
 import Dashboard from './components/pages/Dashboard/'
 import ChartJs from './components/pages/Charts/ChartJs'
 import Chartist from './components/pages/Charts/Chartist'
+import Typography from './components/pages/UI/Typography'
 
 router.map({
   // '/login': {
@@ -28,12 +29,16 @@ router.map({
   '/charts/chartist': {
     name: 'Chartist',
     component: Chartist
+  },
+  '/ui/typography': {
+    name: 'Typography',
+    component: Typography
   }
 })
 
-// router.redirect({
-//   '/': '/login'
-// })
+router.redirect({
+  '/': '/dashboard'
+})
 
 router.start(App, 'app')
 

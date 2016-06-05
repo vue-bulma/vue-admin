@@ -2,7 +2,7 @@
   <aside class="menu va-sidebar">
     <ul class="menu-list">
       <li v-for="item in menu">
-        <a v-link="{ name: item.link, activeClass: 'is-active' }" @click="toggle(item, $event)" v-bind="{ 'aria-expanded': !!item.expanded }">
+        <a v-link="{ name: item.link, activeClass: 'is-active' }" @click="toggle(item, $event)" aria-expanded="{{ !!item.expanded }}">
           <span class="icon is-small" v-if="item.icon">
             <i class="fa {{ item.icon }}"></i>
           </span>
@@ -32,6 +32,7 @@ export default {
   methods: {
     toggle (item, $e) {
       let hasCollapse = !!item.subMenu
+      console.log(hasCollapse)
       if (hasCollapse) {
         $e.preventDefault()
         item.expanded = !item.expanded

@@ -2,11 +2,11 @@ export default [
   {
     link: 'Dashboard',
     label: 'Dashboard',
-    icon: 'fa-home'
+    icon: 'fa-tachometer'
   },
   {
     label: 'Charts',
-    icon: 'fa-bar-chart',
+    icon: 'fa-bar-chart-o',
     expanded: true,
     subMenu: [
       {
@@ -16,6 +16,17 @@ export default [
       {
         link: 'Chartist',
         label: 'Chartist'
+      }
+    ]
+  },
+  {
+    label: 'UI Features',
+    icon: 'fa-laptop',
+    expanded: false,
+    subMenu: [
+      {
+        link: 'Typography',
+        label: 'Typography'
       }
     ]
   }
