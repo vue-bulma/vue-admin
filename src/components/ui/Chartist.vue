@@ -55,12 +55,14 @@ export default {
     const $el = this.$el
     const id = `va-chartist-${this.uuid}`
     $el.setAttribute('id', id)
-    this.chart = new Chartist[this.instanceType](
-      $el,
-      this.data,
-      this.options,
-      this.responsiveOptions
-    )
+    this.$nextTick(() => {
+      this.chart = new Chartist[this.instanceType](
+        $el,
+        this.data,
+        this.options,
+        this.responsiveOptions
+      )
+    })
   },
 
   data () {
@@ -86,6 +88,8 @@ export default {
 }
 </script>
 
-<style lang="scss">
-@import '~chartist/dist/scss/chartist';
+<style lang="scss" scoped>
+.ct-chart {
+  max-width: 100%;
+}
 </style>

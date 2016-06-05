@@ -9,7 +9,7 @@
           </div>
           <div class="column is-offset-1 app-content">
             <levelbar></levelbar>
-            <router-view keep-alive></router-view>
+            <router-view></router-view>
           </div>
         </div>
       </div>
