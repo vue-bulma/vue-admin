@@ -45,7 +45,6 @@ export default {
     },
 
     list () {
-      console.log(this.defaultList.concat(this.find(this.name, this.menu)))
       return this.defaultList.concat(this.find(this.name, this.menu))
     }
   },

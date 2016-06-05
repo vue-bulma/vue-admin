@@ -29,14 +29,18 @@
   <div class="tile is-ancestor">
     <div class="tile is-parent">
       <article class="tile is-child box">
-        <p class="title">Five</p>
-        <p class="subtitle">Subtitle</p>
+        <h4 class="title">Five</h4>
+        <div class="content">
+          <chart :type="'doughnut'" :data="chartData"></chart>
+        </div>
       </article>
     </div>
     <div class="tile is-parent">
       <article class="tile is-child box">
-        <p class="title">Six</p>
-        <p class="subtitle">Subtitle</p>
+        <h4 class="title">Six</h4>
+        <div class="content">
+          <chart :type="'pie'" :data="chartData"></chart>
+        </div>
       </article>
     </div>
   </div>
@@ -100,18 +104,50 @@
 </template>
 
 <script>
+import Chart from '../../ui/Chart'
+
 export default {
+  components: {
+    Chart
+  },
+
   data () {
     return {
-      msg: 'Hello Dashboard!'
+      data: [300, 50, 100]
     }
+  },
+
+  computed: {
+    chartData () {
+      return {
+        labels: [
+          'Red',
+          'Blue',
+          'Yellow'
+        ],
+        datasets: [{
+          data: this.data,
+          backgroundColor: [
+            '#FF6384',
+            '#36A2EB',
+            '#FFCE56'
+          ]
+        }]
+      }
+    }
+  },
+
+  created () {
+    setInterval(() => {
+      // https://vuejs.org/guide/list.html#Mutation-Methods
+      // this.data.unshift(this.data.pop())
+      this.data.forEach((item, i) => {
+        this.data.$set(i, Math.ceil(Math.random() * 1000))
+      })
+    }, 1000)
   }
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-h1 {
-  color: #42b983;
-}
+<style lang="scss" scoped>
 </style>
