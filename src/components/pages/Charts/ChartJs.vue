@@ -87,10 +87,7 @@ export default {
       data: [20, 40, 5, 35],
 
       options: {
-        segmentShowStroke: false,
-        animation: {
-          duration: 300
-        }
+        segmentShowStroke: false
       },
       backgroundColor: [
         '#1fc8db',
@@ -164,14 +161,10 @@ export default {
     setInterval(() => {
       // https://vuejs.org/guide/list.html#Mutation-Methods
       this.data_2.unshift(this.data_2.pop())
-    }, 1000)
+    }, 377)
   }
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1 {
-  color: #42b983;
-}
 </style>

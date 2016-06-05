@@ -10,6 +10,7 @@ const router = new Router()
 import App from './App'
 import Dashboard from './components/pages/Dashboard/'
 import ChartJs from './components/pages/Charts/ChartJs'
+import Chartist from './components/pages/Charts/Chartist'
 
 router.map({
   // '/login': {
@@ -23,6 +24,10 @@ router.map({
   '/charts/chartJs': {
     name: 'ChartJs',
     component: ChartJs
+  },
+  '/charts/chartist': {
+    name: 'Chartist',
+    component: Chartist
   }
 })
 

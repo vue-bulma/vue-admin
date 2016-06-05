@@ -144,7 +144,7 @@ export default {
       this.data.forEach((item, i) => {
         this.data.$set(i, Math.ceil(Math.random() * 1000))
       })
-    }, 1000)
+    }, 1024)
   }
 }
 </script>

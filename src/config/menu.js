@@ -12,6 +12,10 @@ export default [
       {
         link: 'ChartJs',
         label: 'ChartJs'
+      },
+      {
+        link: 'Chartist',
+        label: 'Chartist'
       }
     ]
   }
