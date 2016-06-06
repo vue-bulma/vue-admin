@@ -4,7 +4,8 @@
       <article class="tile is-child box">
         <h4 class="title">LINES</h4>
         <div class="content">
-          <chartist class="lines-bars" :type="'line'" :data="linesData" :options="linesOptions"></chartist>
+          <chartist class="lines-bars" :type="'Line'" :data="linesData" :options="linesOptions"></chartist>
+          <chartist class="lines-bars" :type="'Line'" :data="lineAreaData" :options="lineAreaOptions"></chartist>
         </div>
       </article>
     </div>
@@ -12,7 +13,8 @@
       <article class="tile is-child box">
         <h4 class="title">BARS</h4>
         <div class="content">
-          <chartist class="lines-bars" :type="'bar'" :data="linesData" :options="linesOptions"></chartist>
+          <chartist class="lines-bars" :type="'Bar'" :data="linesData" :options="linesOptions"></chartist>
+          <chartist class="lines-bars" :type="'Bar'" :data="barsData" :options="barsOptions" :responsiveOptions="barsResponsiveOptions"></chartist>
         </div>
       </article>
     </div>
@@ -25,13 +27,13 @@
         <div class="content">
           <div class="columns">
             <div class="column">
-              <chartist class="lines-bars" :type="'pie'" :data="pieData" :options="pieOptions"></chartist>
+              <chartist class="lines-bars" :type="'Pie'" :data="pieData" :options="pieOptions"></chartist>
             </div>
             <div class="column">
-              <chartist class="lines-bars" :type="'pie'" :data="gaugeData" :options="gaugeOptions"></chartist>
+              <chartist class="lines-bars" :type="'Pie'" :data="gaugeData" :options="gaugeOptions"></chartist>
             </div>
             <div class="column">
-              <chartist class="lines-bars" :type="'pie'" :data="donutData" :options="donutOptions"></chartist>
+              <chartist class="lines-bars" :type="'Pie'" :data="donutData" :options="donutOptions"></chartist>
             </div>
           </div>
         </div>
@@ -62,6 +64,64 @@ export default {
           right: 40
         }
       },
+
+      lineAreaData: {
+        labels: [1, 2, 3, 4, 5, 6, 7, 8],
+        series: [
+          [5, 9, 7, 8, 5, 3, 5, 4]
+        ]
+      },
+      lineAreaOptions: {
+        low: 0,
+        showArea: true
+      },
+
+      barsData: {
+        labels: ['Quarter 1', 'Quarter 2', 'Quarter 3', 'Quarter 4'],
+        series: [
+          [5, 4, 3, 7],
+          [3, 2, 9, 5],
+          [1, 5, 8, 4],
+          [2, 3, 4, 6],
+          [4, 1, 2, 1]
+        ]
+      },
+      barsOptions: {
+        // Default mobile configuration
+        stackBars: true,
+        axisX: {
+          labelInterpolationFnc (value) {
+            return value.split(/\s+/).map((word) => word[0]).join('')
+          }
+        },
+        axisY: {
+          offset: 20
+        }
+      },
+      barsResponsiveOptions: [
+        // Options override for media > 400px
+        ['screen and (min-width: 400px)', {
+          reverseData: true,
+          horizontalBars: true,
+          axisX: {
+            labelInterpolationFnc: Chartist.noop
+          },
+          axisY: {
+            offset: 60
+          }
+        }],
+        // Options override for media > 800px
+        ['screen and (min-width: 800px)', {
+          stackBars: false,
+          seriesBarDistance: 10
+        }],
+        // Options override for media > 1000px
+        ['screen and (min-width: 1000px)', {
+          reverseData: false,
+          horizontalBars: false,
+          seriesBarDistance: 15
+        }]
+      ],
 
       pieData: {
         series: [5, 3, 4]

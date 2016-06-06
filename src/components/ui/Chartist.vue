@@ -6,7 +6,7 @@
 import uuid from '../../libs/uuid'
 import Chartist from 'chartist'
 
-const types = ['line', 'bar', 'pie']
+const types = ['Line', 'Bar', 'Pie']
 
 export default {
   mixins: [uuid],
@@ -14,7 +14,7 @@ export default {
   props: {
     type: {
       type: String,
-      default: 'line',
+      default: 'Line',
       required: true,
       validator (value) {
         return types.indexOf(value) > -1
@@ -38,16 +38,6 @@ export default {
       default () {
         return {}
       }
-    },
-    types: {
-      type: Object,
-      default () {
-        return {
-          line: 'Line',
-          bar: 'Bar',
-          pie: 'Pie'
-        }
-      }
     }
   },
 
@@ -55,7 +45,7 @@ export default {
     const $el = this.$el
     const id = `va-chartist-${this.uuid}`
     $el.setAttribute('id', id)
-    this.chart = new Chartist[this.chartType](
+    this.chart = new Chartist[this.type](
       $el,
       this.data,
       this.options,
@@ -66,13 +56,6 @@ export default {
   data () {
     return {
       chart: null
-    }
-  },
-
-  computed: {
-    chartType () {
-      let t = this.type.toLowerCase()
-      return this.types[t]
     }
   },
 
