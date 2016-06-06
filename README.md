@@ -12,7 +12,7 @@
 | [vue-resource][] | 0.7.2 | HTTP 资源组件 |  
 | [bulma][] | 0.0.28 | A modern CSS framework based on Flexbox |  
 | [chart.js][] | 2.1.4 | Simple HTML5 Charts using the canvas element |  
-| [chartist.js][] | 2.1.4 | Simple responsive charts |  
+| [chartist.js][] | 0.9.7 | Simple responsive charts |  
 | [font-awesome][] | 4.6.3 | Font Awesome, the iconic font and CSS framework |  
 | [vue-devtools][]| v1.x     |           |
 | [Webpack][]   |          |           |
