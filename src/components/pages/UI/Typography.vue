@@ -1,13 +1,13 @@
 <template>
   <div class="tile is-ancestor">
     <div class="tile is-parent">
-      <article class="tile is-child">
+      <article class="tile is-child box">
         <h1 class="title">Title</h1>
         <h2 class="subtitle">Subtitle</h2>
       </article>
     </div>
     <div class="tile is-parent">
-      <article class="tile is-child">
+      <article class="tile is-child box">
         <p class="title is-1">Title 1</p>
         <p class="title is-2">Title 2</p>
         <p class="title is-3">Title 3 (default size)</p>
@@ -17,7 +17,7 @@
       </article>
     </div>
     <div class="tile is-parent">
-      <article class="tile is-child">
+      <article class="tile is-child box">
         <p class="subtitle is-1">Subtitle 1</p>
         <p class="subtitle is-2">Subtitle 2</p>
         <p class="subtitle is-3">Subtitle 2</p>
@@ -27,7 +27,7 @@
       </article>
     </div>
     <div class="tile is-parent">
-      <article class="tile is-child">
+      <article class="tile is-child box">
         <div class="block">
           <p class="title is-1">Title 1</p>
           <p class="subtitle is-3">Subtitle 3</p>
