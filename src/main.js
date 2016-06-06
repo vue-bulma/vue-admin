@@ -12,6 +12,7 @@ import Dashboard from './components/pages/Dashboard/'
 import ChartJs from './components/pages/Charts/ChartJs'
 import Chartist from './components/pages/Charts/Chartist'
 import Typography from './components/pages/UI/Typography'
+import Buttons from './components/pages/UI/Buttons'
 
 router.map({
   // '/login': {
@@ -33,6 +34,10 @@ router.map({
   '/ui/typography': {
     name: 'Typography',
     component: Typography
+  },
+  '/ui/buttons': {
+    name: 'Buttons',
+    component: Buttons
   }
 })
 

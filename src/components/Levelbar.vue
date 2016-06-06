@@ -2,9 +2,9 @@
   <nav class="level va-levelbar">
     <div class="level-left">
       <div class="level-item">
-        <p class="subtitle is-5">
+        <h3 class="subtitle is-5">
           <strong>{{ name }}</strong>
-        </p>
+        </h3>
       </div>
     </div>
 

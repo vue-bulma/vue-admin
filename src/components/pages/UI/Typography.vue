@@ -1,26 +1,52 @@
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
+  <div class="tile is-ancestor">
+    <div class="tile is-parent">
+      <article class="tile is-child">
+        <h1 class="title">Title</h1>
+        <h2 class="subtitle">Subtitle</h2>
+      </article>
+    </div>
+    <div class="tile is-parent">
+      <article class="tile is-child">
+        <p class="title is-1">Title 1</p>
+        <p class="title is-2">Title 2</p>
+        <p class="title is-3">Title 3 (default size)</p>
+        <p class="title is-4">Title 4</p>
+        <p class="title is-5">Title 5</p>
+        <p class="title is-6">Title 6</p>
+      </article>
+    </div>
+    <div class="tile is-parent">
+      <article class="tile is-child">
+        <p class="subtitle is-1">Subtitle 1</p>
+        <p class="subtitle is-2">Subtitle 2</p>
+        <p class="subtitle is-3">Subtitle 2</p>
+        <p class="subtitle is-4">Subtitle 4</p>
+        <p class="subtitle is-5">Subtitle 5 (default size)</p>
+        <p class="subtitle is-6">Subtitle 6</p>
+      </article>
+    </div>
+    <div class="tile is-parent">
+      <article class="tile is-child">
+        <div class="block">
+          <p class="title is-1">Title 1</p>
+          <p class="subtitle is-3">Subtitle 3</p>
+        </div>
+        <div class="block">
+          <p class="title is-2">Title 2</p>
+          <p class="subtitle is-4">Subtitle 4</p>
+        </div>
+        <div class="block">
+          <p class="title is-3">Title 3</p>
+          <p class="subtitle is-5">Subtitle 5</p>
+        </div>
+      </article>
+    </div>
   </div>
 </template>
 
 <script>
-export default {
-  data () {
-    return {
-      // note: changing this line won't causes changes
-      // with hot-reload because the reloaded component
-      // preserves its current state and we are modifying
-      // its initial state.
-      msg: 'Hello World!'
-    }
-  }
-}
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1 {
-  color: #42b983;
-}
 </style>

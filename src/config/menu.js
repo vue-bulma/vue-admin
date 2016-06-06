@@ -25,6 +25,10 @@ export default [
     expanded: false,
     subMenu: [
       {
+        link: 'Buttons',
+        label: 'Buttons'
+      },
+      {
         link: 'Typography',
         label: 'Typography'
       }
