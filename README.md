@@ -42,6 +42,8 @@ npm test
 
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
 
+<i class="octicon octicon-code"></i> with <i class="octicon octicon-heart"></i> by Fangdun Cai.
+
 [Vue.js]: http://vuejs.org
 [vuex]: https://github.com/vuejs/vuex
 [vue-router]: https://github.com/vuejs/vue-router
