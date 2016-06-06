@@ -31,6 +31,10 @@ export default [
       {
         link: 'Typography',
         label: 'Typography'
+      },
+      {
+        link: 'Icons',
+        label: 'Icons'
       }
     ]
   }
