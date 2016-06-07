@@ -11,6 +11,7 @@ import App from './App'
 import Dashboard from './components/pages/Dashboard/'
 import ChartJs from './components/pages/Charts/ChartJs'
 import Chartist from './components/pages/Charts/Chartist'
+import Plotly from './components/pages/Charts/Plotly'
 import Typography from './components/pages/UI/Typography'
 import Buttons from './components/pages/UI/Buttons'
 import Icons from './components/pages/UI/Icons'
@@ -31,6 +32,10 @@ router.map({
   '/charts/chartist': {
     name: 'Chartist',
     component: Chartist
+  },
+  '/charts/plotly': {
+    name: 'Plotly',
+    component: Plotly
   },
   '/ui/typography': {
     name: 'Typography',

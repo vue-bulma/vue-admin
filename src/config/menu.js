@@ -16,6 +16,10 @@ export default [
       {
         link: 'Chartist',
         label: 'Chartist'
+      },
+      {
+        link: 'Plotly',
+        label: 'Plotly'
       }
     ]
   },
