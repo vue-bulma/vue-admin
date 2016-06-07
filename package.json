@@ -3,6 +3,13 @@
   "version": "0.0.0",
   "description": "Vue Admin Panel Framework",
   "author": "fundon <cfddream@gmail.com>",
+  "keywords": [
+    "admin",
+    "data",
+    "dashboard",
+    "vue",
+    "visualization"
+  ],
   "license": "MIT",
   "scripts": {
     "dev": "node build/dev-server.js",
