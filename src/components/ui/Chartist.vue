@@ -34,9 +34,9 @@ export default {
       }
     },
     responsiveOptions: {
-      type: Object,
+      type: Array,
       default () {
-        return {}
+        return []
       }
     }
   },

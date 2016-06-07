@@ -14,7 +14,7 @@
         <h4 class="title">BARS</h4>
         <div class="content">
           <chartist class="lines-bars" :type="'Bar'" :data="linesData" :options="linesOptions"></chartist>
-          <chartist class="lines-bars" :type="'Bar'" :data="barsData" :options="barsOptions" :responsiveOptions="barsResponsiveOptions"></chartist>
+          <chartist class="lines-bars" :type="'Bar'" :data="barsData" :options="barsOptions" :responsive-options="barsResponsiveOptions"></chartist>
         </div>
       </article>
     </div>
@@ -104,7 +104,7 @@ export default {
           reverseData: true,
           horizontalBars: true,
           axisX: {
-            labelInterpolationFnc: Chartist.noop
+            labelInterpolationFnc: function (n) { return n }
           },
           axisY: {
             offset: 60
