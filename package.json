@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "description": "Vue Admin Panel Framework",
   "author": "fundon <cfddream@gmail.com>",
+  "repository": "fundon/vue-admin",
   "keywords": [
     "admin",
     "data",
