@@ -2,6 +2,8 @@
 
 > Vue Admin Panel Framework
 
+![](screenshots/app.png)
+
 ## Tech Stack
 
 | Name | Version | Description |  
@@ -42,7 +44,7 @@ npm test
 
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
 
-<span class="octicon octicon-code"></span> with <span class="octicon octicon-heart"></span> by Fangdun Cai.
+Made with love by Fangdun Cai.
 
 [Vue.js]: http://vuejs.org
 [vuex]: https://github.com/vuejs/vuex

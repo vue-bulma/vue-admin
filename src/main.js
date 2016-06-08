@@ -11,6 +11,7 @@ import App from './App'
 import Dashboard from './components/pages/Dashboard/'
 import ChartJs from './components/pages/Charts/ChartJs'
 import Chartist from './components/pages/Charts/Chartist'
+import Peity from './components/pages/Charts/Peity'
 import Plotly from './components/pages/Charts/Plotly'
 import Typography from './components/pages/UI/Typography'
 import Buttons from './components/pages/UI/Buttons'
@@ -32,6 +33,10 @@ router.map({
   '/charts/chartist': {
     name: 'Chartist',
     component: Chartist
+  },
+  '/charts/peity': {
+    name: 'Peity',
+    component: Peity
   },
   '/charts/plotly': {
     name: 'Plotly',

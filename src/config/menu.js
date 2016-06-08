@@ -18,6 +18,10 @@ export default [
         label: 'Chartist'
       },
       {
+        link: 'Peity',
+        label: 'Peity'
+      },
+      {
         link: 'Plotly',
         label: 'Plotly'
       }
