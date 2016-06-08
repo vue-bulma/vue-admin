@@ -55,5 +55,6 @@ Made with love by Fangdun Cai.
 [Bulma]: http://bulma.io
 [chart.js]: http://www.chartjs.org
 [chartist.js]: https://gionkunz.github.io/chartist-js/index.html
+[plotly.js]: https://github.com/plotly/plotly.js
 [font-awesome]: http://fontawesome.io
 [Webpack]: https://webpack.github.io
