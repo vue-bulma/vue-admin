@@ -29,7 +29,7 @@
     "font-awesome": "4.6.3",
     "plotly.js": "1.12.0",
     "vue": "1.0.24",
-    "vue-peity": "0.2.0",
+    "vue-peity": "0.2.1",
     "vue-resource": "0.7.2",
     "vue-router": "0.7.13",
     "vuex": "0.6.3"
