@@ -9,9 +9,9 @@
 | Name | Version | Description |  
 | --- | --- | --- |  
 | [Vue.js][] | 1.0.24 | Simple yet powerful library for building modern web interfaces |  
-| [vuex][] | 0.6.3 | 状态管理架构 |  
-| [vue-router][] | 0.7.13 | 路由组件 |  
-| [vue-resource][] | 0.7.2 | HTTP 资源组件 |  
+| [vuex][] | 0.6.3 | Flux-inspired Application Architecture for Vue.js |  
+| [vue-router][] | 0.7.13 | The official router |  
+| [vue-resource][] | 0.7.2 | Resource component |  
 | [bulma][] | 0.0.28 | A modern CSS framework based on Flexbox |  
 | [chart.js][] | 2.1.4 | Simple HTML5 Charts using the canvas element |  
 | [chartist.js][] | 0.9.7 | Simple responsive charts |  
