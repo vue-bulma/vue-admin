@@ -6,20 +6,20 @@
   "repository": "fundon/vue-admin",
   "keywords": [
     "admin",
-    "data",
     "dashboard",
-    "vue",
-    "visualization"
+    "data",
+    "visualization",
+    "vue"
   ],
   "license": "MIT",
   "scripts": {
-    "dev": "node build/dev-server.js",
     "build": "node build/build.js",
-    "unit": "karma start test/unit/karma.conf.js --single-run",
+    "dev": "node build/dev-server.js",
     "e2e": "node test/e2e/runner.js",
-    "test": "npm run unit && npm run e2e",
+    "gh-pages": "npm run build && gh-pages -d dist",
     "lint": "eslint --ext .js,.vue src test/unit/specs test/e2e/specs",
-    "gh-pages": "npm run build && gh-pages -d dist"
+    "test": "npm run unit && npm run e2e",
+    "unit": "karma start test/unit/karma.conf.js --single-run"
   },
   "dependencies": {
     "animate.css": "3.5.1",
