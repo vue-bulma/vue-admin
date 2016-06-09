@@ -1,6 +1,6 @@
 # vue-admin
 
-Vue Admin Panel Framework. [Demo][].
+Vue Admin Panel Framework. [Live Demo][].
 
 ![](screenshots/app.png)
 
@@ -47,7 +47,7 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 
 Made with love by Fangdun Cai.
 
-[Demo]: https://vue-admin.fundon.me/
+[Live Demo]: https://vue-admin.fundon.me/
 [Vue.js]: http://vuejs.org
 [vuex]: https://github.com/vuejs/vuex
 [vue-router]: https://github.com/vuejs/vue-router
