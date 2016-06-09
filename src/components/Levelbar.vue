@@ -33,7 +33,7 @@ export default {
       defaultList: [
         {
           label: 'Home',
-          link: ''
+          link: 'Dashboard'
         }
       ]
     }
