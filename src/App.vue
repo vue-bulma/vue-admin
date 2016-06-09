@@ -14,6 +14,7 @@
         </div>
       </div>
     </section>
+    <footer-bar></footer-bar>
   </div>
 </template>
 
@@ -22,6 +23,7 @@ import store from './vuex/store'
 import Navbar from './components/Navbar'
 import Sidebar from './components/Sidebar'
 import Levelbar from './components/Levelbar'
+import FooterBar from './components/FooterBar'
 
 export default {
   store,
@@ -29,7 +31,8 @@ export default {
   components: {
     Navbar,
     Sidebar,
-    Levelbar
+    Levelbar,
+    FooterBar
   }
 }
 </script>
