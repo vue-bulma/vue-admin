@@ -16,6 +16,7 @@ Vue Admin Panel Framework. [Live Demo][].
 | [chart.js][] | 2.1.4 | Simple HTML5 Charts using the canvas element |  
 | [chartist.js][] | 0.9.7 | Simple responsive charts |  
 | [plotly.js][] | 1.12.0 | Built on top of d3.js and stack.gl, plotly.js is a high-level, declarative charting library. plotly.js ships with 20 chart types, including 3D charts, statistical graphs, and SVG maps |  
+| [peity][] | 3.2.0 | Progressive `<svg>` pie, donut, bar and line charts |  
 | [font-awesome][] | 4.6.3 | Font Awesome, the iconic font and CSS framework |  
 | [vue-devtools][]| v1.x     |           |
 | [Webpack][]   |          |           |
@@ -61,5 +62,6 @@ Made with love by Fangdun Cai.
 [chart.js]: http://www.chartjs.org
 [chartist.js]: https://gionkunz.github.io/chartist-js/index.html
 [plotly.js]: https://github.com/plotly/plotly.js
+[peity]: https://github.com/benpickles/peity
 [font-awesome]: http://fontawesome.io
 [Webpack]: https://webpack.github.io
