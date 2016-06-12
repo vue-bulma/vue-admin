@@ -1,52 +1,54 @@
 <template>
-  <div class="tile is-ancestor">
-    <div class="tile is-parent">
-      <article class="tile is-child box">
-        <h4 class="title">Pie</h4>
-        <div v-el:pie></div>
-      </article>
+  <div>
+    <div class="tile is-ancestor">
+      <div class="tile is-parent">
+        <article class="tile is-child box">
+          <h4 class="title">Pie</h4>
+          <div v-el:pie></div>
+        </article>
+      </div>
+      <div class="tile is-parent">
+        <article class="tile is-child box">
+          <h4 class="title">Doughnut</h4>
+          <div v-el:doughnut></div>
+        </article>
+      </div>
+      <div class="tile is-parent">
+        <article class="tile is-child box">
+          <h4 class="title">Polar</h4>
+          <div v-el:polar></div>
+        </article>
+      </div>
     </div>
-    <div class="tile is-parent">
-      <article class="tile is-child box">
-        <h4 class="title">Doughnut</h4>
-        <div v-el:doughnut></div>
-      </article>
-    </div>
-    <div class="tile is-parent">
-      <article class="tile is-child box">
-        <h4 class="title">Polar</h4>
-        <div v-el:polar></div>
-      </article>
-    </div>
-  </div>
 
-  <div class="tile is-ancestor">
-    <div class="tile is-parent">
-      <article class="tile is-child box">
-        <h4 class="title">Map</h4>
-        <div v-el:map></div>
-      </article>
+    <div class="tile is-ancestor">
+      <div class="tile is-parent">
+        <article class="tile is-child box">
+          <h4 class="title">Map</h4>
+          <div v-el:map></div>
+        </article>
+      </div>
     </div>
-  </div>
 
-  <div class="tile is-ancestor">
-    <div class="tile is-parent">
-      <article class="tile is-child box">
-        <h4 class="title">Histogram</h4>
-        <div v-el:histogram></div>
-      </article>
-    </div>
-    <div class="tile is-parent">
-      <article class="tile is-child box">
-        <h4 class="title">Line</h4>
-        <div v-el:line></div>
-      </article>
-    </div>
-    <div class="tile is-parent">
-      <article class="tile is-child box">
-        <h4 class="title">Bar</h4>
-        <div v-el:bar></div>
-      </article>
+    <div class="tile is-ancestor">
+      <div class="tile is-parent">
+        <article class="tile is-child box">
+          <h4 class="title">Histogram</h4>
+          <div v-el:histogram></div>
+        </article>
+      </div>
+      <div class="tile is-parent">
+        <article class="tile is-child box">
+          <h4 class="title">Line</h4>
+          <div v-el:line></div>
+        </article>
+      </div>
+      <div class="tile is-parent">
+        <article class="tile is-child box">
+          <h4 class="title">Bar</h4>
+          <div v-el:bar></div>
+        </article>
+      </div>
     </div>
   </div>
 </template>

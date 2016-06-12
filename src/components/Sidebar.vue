@@ -52,19 +52,13 @@ export default {
 @import '~bulma';
 
 .va-sidebar {
-
-  @include mobile() {
-    & {
-      overflow: hidden;
-    }
-  }
-
   .va-collapse {
     display: none;
   }
 
   .menu-list li a {
     position: relative;
+    white-space: nowrap;
 
     .is-angle {
       position: absolute;

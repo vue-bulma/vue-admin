@@ -2,14 +2,19 @@
   <section class="hero is-bold va-navbar">
     <div class="hero-head">
       <div class="container is-fluid is-marginless">
-        <nav class="nav">
+        <nav class="nav is-1">
           <div class="nav-left">
-            <a class="nav-item" href="#">VueAdmin</a>
+            <a class="nav-item hero-brand" href="#">
+              <img src="/static/img/logo.png" alt="Vue Admin Panel Framework">
+              <span>VueAdmin</span>
+            </a>
+            <a class="nav-item is-hidden-tablet">
+              <span class="icon">
+                <i class="fa fa-bars" aria-hidden="true"></i>
+              </span>
+            </a>
           </div>
-          <div class="nav-right">
-            <span class="nav-item">
-            </span>
-          </div>
+          <div class="nav-right"></div>
         </nav>
       </div>
     </div>
@@ -29,5 +34,9 @@
   .nav {
     padding: 0 10px;
   }
+}
+
+.hero-brand {
+  text-indent: -3000px;
 }
 </style>

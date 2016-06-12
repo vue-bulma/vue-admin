@@ -1,43 +1,49 @@
 <template>
-  <div class="tile is-ancestor">
-    <div class="tile is-parent">
-      <article class="tile is-child box">
-        <h4 class="title">LINES</h4>
-        <div class="content">
-          <chartist class="lines-bars" :type="'Line'" :data="linesData" :options="linesOptions"></chartist>
-          <chartist class="lines-bars" :type="'Line'" :data="lineAreaData" :options="lineAreaOptions"></chartist>
-        </div>
-      </article>
+  <div>
+    <div class="tile is-ancestor">
+      <div class="tile is-parent">
+        <article class="tile is-child box">
+          <h4 class="title">LINES</h4>
+          <div class="block">
+            <chartist class="lines-bars" :type="'Line'" :data="linesData" :options="linesOptions"></chartist>
+          </div>
+          <div class="block">
+            <chartist class="lines-bars" :type="'Line'" :data="lineAreaData" :options="lineAreaOptions"></chartist>
+          </div>
+        </article>
+      </div>
+      <div class="tile is-parent">
+        <article class="tile is-child box">
+          <h4 class="title">BARS</h4>
+          <div class="block">
+            <chartist class="lines-bars" :type="'Bar'" :data="linesData" :options="linesOptions"></chartist>
+          </div>
+          <div class="block">
+            <chartist class="lines-bars" :type="'Bar'" :data="barsData" :options="barsOptions" :responsive-options="barsResponsiveOptions"></chartist>
+          </div>
+        </article>
+      </div>
     </div>
-    <div class="tile is-parent">
-      <article class="tile is-child box">
-        <h4 class="title">BARS</h4>
-        <div class="content">
-          <chartist class="lines-bars" :type="'Bar'" :data="linesData" :options="linesOptions"></chartist>
-          <chartist class="lines-bars" :type="'Bar'" :data="barsData" :options="barsOptions" :responsive-options="barsResponsiveOptions"></chartist>
-        </div>
-      </article>
-    </div>
-  </div>
 
-  <div class="tile is-ancestor">
-    <div class="tile is-parent">
-      <article class="tile is-child box">
-        <h4 class="title">PIES & DONUTS</h4>
-        <div class="content">
-          <div class="columns">
-            <div class="column">
-              <chartist class="lines-bars" :type="'Pie'" :data="pieData" :options="pieOptions"></chartist>
-            </div>
-            <div class="column">
-              <chartist class="lines-bars" :type="'Pie'" :data="gaugeData" :options="gaugeOptions"></chartist>
-            </div>
-            <div class="column">
-              <chartist class="lines-bars" :type="'Pie'" :data="donutData" :options="donutOptions"></chartist>
+    <div class="tile is-ancestor">
+      <div class="tile is-parent">
+        <article class="tile is-child box">
+          <h4 class="title">PIES & DONUTS</h4>
+          <div class="content">
+            <div class="columns">
+              <div class="column">
+                <chartist class="lines-bars" :type="'Pie'" :data="pieData" :options="pieOptions"></chartist>
+              </div>
+              <div class="column">
+                <chartist class="lines-bars" :type="'Pie'" :data="gaugeData" :options="gaugeOptions"></chartist>
+              </div>
+              <div class="column">
+                <chartist class="lines-bars" :type="'Pie'" :data="donutData" :options="donutOptions"></chartist>
+              </div>
             </div>
           </div>
-        </div>
-      </article>
+        </article>
+      </div>
     </div>
   </div>
 </template>

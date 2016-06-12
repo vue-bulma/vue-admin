@@ -1,21 +1,34 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Resource from 'vue-resource'
+import NProgress from 'nprogress'
 
 Vue.use(Router)
 Vue.use(Resource)
 
-const router = new Router()
+import './transitions'
+
+const makeComponent = (path) => {
+  return (resolve) => {
+    require([path], resolve)
+  }
+}
 
 import App from './App'
 import Dashboard from './components/pages/Dashboard/'
-import ChartJs from './components/pages/Charts/ChartJs'
-import Chartist from './components/pages/Charts/Chartist'
-import Peity from './components/pages/Charts/Peity'
-import Plotly from './components/pages/Charts/Plotly'
-import Typography from './components/pages/UI/Typography'
-import Buttons from './components/pages/UI/Buttons'
-import Icons from './components/pages/UI/Icons'
+
+const router = new Router({
+  transitionOnLoad: true
+})
+
+router.beforeEach(({ next }) => {
+  NProgress.start()
+  next()
+})
+
+router.afterEach(() => {
+  NProgress.done()
+})
 
 router.map({
   // '/login': {
@@ -26,33 +39,34 @@ router.map({
     name: 'Dashboard',
     component: Dashboard
   },
+  // http://router.vuejs.org/en/lazy.html
   '/charts/chartJs': {
     name: 'ChartJs',
-    component: ChartJs
+    component: makeComponent('./components/pages/Charts/ChartJs')
   },
   '/charts/chartist': {
     name: 'Chartist',
-    component: Chartist
+    component: makeComponent('./components/pages/Charts/Chartist')
   },
   '/charts/peity': {
     name: 'Peity',
-    component: Peity
+    component: makeComponent('./components/pages/Charts/Peity')
   },
   '/charts/plotly': {
     name: 'Plotly',
-    component: Plotly
+    component: makeComponent('./components/pages/Charts/Plotly')
   },
   '/ui/typography': {
     name: 'Typography',
-    component: Typography
+    component: makeComponent('./components/pages/UI/Typography')
   },
   '/ui/buttons': {
     name: 'Buttons',
-    component: Buttons
+    component: makeComponent('./components/pages/UI/Buttons')
   },
   '/ui/icons': {
     name: 'Icons',
-    component: Icons
+    component: makeComponent('./components/pages/UI/Icons')
   }
 })
 
