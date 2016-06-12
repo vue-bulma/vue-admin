@@ -1,3 +1,5 @@
+<p align="center"><img width="100" src="logo.png"></p>
+
 # vue-admin
 
 Vue Admin Panel Framework. [Live Demo][].
