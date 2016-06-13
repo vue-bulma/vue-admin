@@ -23,6 +23,21 @@ const router = new Router({
   linkActiveClass: 'is-active'
 })
 
+Vue.http.interceptors.push(() => {
+  return {
+    request (request) {
+      NProgress.start()
+      return request
+    },
+
+    response (response) {
+      NProgress.done()
+      return response
+    }
+
+  }
+})
+
 router.beforeEach(({ next }) => {
   NProgress.start()
   next()
