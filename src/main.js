@@ -18,7 +18,9 @@ import App from './App'
 import Dashboard from './components/pages/Dashboard/'
 
 const router = new Router({
-  transitionOnLoad: true
+  saveScrollPosition: true,
+  transitionOnLoad: true,
+  linkActiveClass: 'is-active'
 })
 
 router.beforeEach(({ next }) => {

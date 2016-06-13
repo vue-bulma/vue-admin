@@ -2,7 +2,7 @@
   <aside class="menu va-sidebar">
     <ul class="menu-list">
       <li v-for="item in menu">
-        <a v-link="{ name: item.link, activeClass: 'is-active' }" @click="toggle(item, $event)" aria-expanded="{{ isExpanded(item) }}">
+        <a v-link="{ name: item.link }" @click="toggle(item, $event)" aria-expanded="{{ isExpanded(item) }}">
           <span class="icon is-small" v-if="item.icon">
             <i class="fa {{ item.icon }}"></i>
           </span>
@@ -13,7 +13,7 @@
         </a>
         <ul v-if="item.subMenu" :class="{ 'va-collapse': item.subMenu }">
           <li v-for="subItem in item.subMenu">
-            <a v-link="{ name: subItem.link, activeClass: 'is-active' }">{{ subItem.label }}</a>
+            <a v-link="{ name: subItem.link }">{{ subItem.label }}</a>
           </li>
         </ul>
       </li>
