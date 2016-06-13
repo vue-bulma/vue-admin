@@ -4,7 +4,8 @@
 
 <script>
 import uuid from '../../libs/uuid'
-import Chart from 'chart.js'
+// import Chart from 'chart.js' // With moment.js
+import Chart from 'chart.js/dist/Chart' // Without moment.js
 
 const types = ['line', 'bar', 'radar', 'polarArea', 'pie', 'doughnut']
 
