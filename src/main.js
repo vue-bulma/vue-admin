@@ -26,7 +26,7 @@ const router = new Router({
 Vue.http.interceptors.push(() => {
   return {
     request (request) {
-      NProgress.start()
+      NProgress.inc(0.2)
       return request
     },
 
