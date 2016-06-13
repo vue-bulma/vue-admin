@@ -5,7 +5,7 @@
         <nav class="nav is-1">
           <div class="nav-left">
             <a class="nav-item hero-brand" href="#">
-              <img src="/static/img/logo.png" alt="Vue Admin Panel Framework">
+              <img src="../assets/logo.png" alt="Vue Admin Panel Framework">
               <span>VueAdmin</span>
             </a>
             <a class="nav-item is-hidden-tablet">
