@@ -15,6 +15,7 @@ Vue Admin Panel Framework. [Live Demo][].
 | [vue-router][] | 0.7.13 | The official router |  
 | [vue-resource][] | 0.7.2 | Resource component |  
 | [bulma][] | 0.0.28 | A modern CSS framework based on Flexbox |  
+| [animate.css][] | 3.5.1 | Just-add-water CSS animation |  
 | [chart.js][] | 2.1.4 | Simple HTML5 Charts using the canvas element |  
 | [chartist.js][] | 0.9.7 | Simple responsive charts |  
 | [plotly.js][] | 1.12.0 | Built on top of d3.js and stack.gl, plotly.js is a high-level, declarative charting library. plotly.js ships with 20 chart types, including 3D charts, statistical graphs, and SVG maps |  
