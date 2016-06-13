@@ -8,7 +8,10 @@ Vue.use(Vuex)
 const store = new Vuex.Store({
 
   state: {
-    menu
+    menu,
+    sidebar: {
+      opened: true
+    }
   },
 
   mutations: {
