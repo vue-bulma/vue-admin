@@ -62,6 +62,7 @@ Made with love by Fangdun Cai.
 [vue-resource]: https://github.com/vuejs/vue-resource
 [vue-devtools]: https://github.com/vuejs/vue-devtools
 [Bulma]: http://bulma.io
+[animate.css]: http://daneden.github.io/animate.css/
 [chart.js]: http://www.chartjs.org
 [chartist.js]: https://gionkunz.github.io/chartist-js/index.html
 [plotly.js]: https://github.com/plotly/plotly.js
