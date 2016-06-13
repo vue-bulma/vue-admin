@@ -31,6 +31,7 @@ export default {
   },
 
   ready () {
+    window.addEventListener('DOMContentLoaded', this.handleResize)
     window.addEventListener('resize', this.handleResize)
   },
 
@@ -80,10 +81,6 @@ export default {
 
   @include mobile() {
     transform: translate3d(-180px, 0, 0);
-  }
-
-  &.opened {
-    transform: translate3d(0, 0, 0);
   }
 
   .va-collapse {
