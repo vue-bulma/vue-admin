@@ -1,4 +1,4 @@
-<p align="center"><img width="150" src="src/assets/logo.png"></p>
+<p align="center"><img width="200" src="src/assets/logo@2x.png"></p>
 
 # vue-admin
 
