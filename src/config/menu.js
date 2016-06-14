@@ -37,6 +37,10 @@ export default [
         label: 'Buttons'
       },
       {
+        link: 'Form',
+        label: 'Form'
+      },
+      {
         link: 'Typography',
         label: 'Typography'
       },

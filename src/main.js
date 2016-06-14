@@ -84,6 +84,10 @@ router.map({
   '/ui/icons': {
     name: 'Icons',
     component: makeComponent('./components/pages/UI/Icons')
+  },
+  '/ui/form': {
+    name: 'Form',
+    component: makeComponent('./components/pages/UI/Form')
   }
 })
 
