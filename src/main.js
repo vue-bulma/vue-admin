@@ -88,6 +88,10 @@ router.map({
   '/ui/form': {
     name: 'Form',
     component: makeComponent('./components/pages/UI/Form')
+  },
+  '/ui/notifications': {
+    name: 'Notifications',
+    component: makeComponent('./components/pages/UI/Notifications')
   }
 })
 

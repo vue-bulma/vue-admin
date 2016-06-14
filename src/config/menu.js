@@ -47,6 +47,10 @@ export default [
       {
         link: 'Icons',
         label: 'Icons'
+      },
+      {
+        link: 'Notifications',
+        label: 'Notifications'
       }
     ]
   }
