@@ -4,20 +4,34 @@
       <div class="tile is-parent">
         <article class="tile is-child box">
           <h1 class="title">Styles</h1>
+          <div class="block styles-box">
+
+            <notification :title="'Normal'" :container="'.styles-box'" :direction="'down'" :message="'Lorem ipsum dolor sit amet, consectetur adipiscing elit lorem ipsum dolor sit amet, consectetur adipiscing elit'" :duration="0"></notification>
+
+            <notification :title="'Primary'" :container="'.styles-box'" :type="'primary'" :direction="'right'" :message="'Primar lorem ipsum dolor sit amet, consectetur adipiscing elit lorem ipsum dolor sit amet, consectetur adipiscing elit'" :duration="0"></notification>
+
+            <notification :title="'Info'" :container="'.styles-box'" :type="'info'" :direction="'right'" :message="'Info lorem ipsum dolor sit amet, consectetur adipiscing elit lorem ipsum dolor sit amet, consectetur adipiscing elit'" :duration="0"></notification>
+
+            <notification :title="'Success'" :container="'.styles-box'" :type="'success'" :direction="'left'" :message="'Success lorem ipsum dolor sit amet, consectetur adipiscing elit lorem ipsum dolor sit amet, consectetur adipiscing elit'" :duration="0"></notification>
+
+            <notification :title="'Warning'" :container="'.styles-box'" :type="'warning'" :direction="'left'" :message="'Warning lorem ipsum dolor sit amet, consectetur adipiscing elit lorem ipsum dolor sit amet, consectetur adipiscing elit'" :duration="0"></notification>
+
+            <notification :title="'Danger'" :container="'.styles-box'" :type="'danger'" :direction="'down'" :message="'Danger lorem ipsum dolor sit amet, consectetur adipiscing elit lorem ipsum dolor sit amet, consectetur adipiscing elit'" :duration="0"></notification>
+
+          </div>
+        </article>
+      </div>
+
+      <div class="tile is-parent">
+        <article class="tile is-child box">
+          <h1 class="title">Buttons</h1>
           <div class="block">
-
-            <notification :title="'Normal'" :direction="'down'" :message="'Lorem ipsum dolor sit amet, consectetur adipiscing elit lorem ipsum dolor sit amet, consectetur adipiscing elit'" :duration="0"></notification>
-
-            <notification :title="'Primary'" :type="'primary'" :direction="'right'" :message="'Primar lorem ipsum dolor sit amet, consectetur adipiscing elit lorem ipsum dolor sit amet, consectetur adipiscing elit'" :duration="0"></notification>
-
-            <notification :title="'Info'" :type="'info'" :direction="'right'" :message="'Info lorem ipsum dolor sit amet, consectetur adipiscing elit lorem ipsum dolor sit amet, consectetur adipiscing elit'" :duration="0"></notification>
-
-            <notification :title="'Success'" :type="'success'" :direction="'left'" :message="'Success lorem ipsum dolor sit amet, consectetur adipiscing elit lorem ipsum dolor sit amet, consectetur adipiscing elit'" :duration="0"></notification>
-
-            <notification :title="'Warning'" :type="'warning'" :direction="'left'" :message="'Warning lorem ipsum dolor sit amet, consectetur adipiscing elit lorem ipsum dolor sit amet, consectetur adipiscing elit'" :duration="0"></notification>
-
-            <notification :title="'Danger'" :type="'danger'" :direction="'down'" :message="'Danger lorem ipsum dolor sit amet, consectetur adipiscing elit lorem ipsum dolor sit amet, consectetur adipiscing elit'" :duration="0"></notification>
-
+            <button class="button" @click="openNotificationWithType('')">Normal</button>
+            <button class="button is-primary" @click="openNotificationWithType('primary')">Primary</button>
+            <button class="button is-info" @click="openNotificationWithType('info')">Info</button>
+            <button class="button is-success" @click="openNotificationWithType('success')">Success</button>
+            <button class="button is-warning" @click="openNotificationWithType('warning')">Warning</button>
+            <button class="button is-danger" @click="openNotificationWithType('danger')">Danger</button>
           </div>
         </article>
       </div>
@@ -31,12 +45,18 @@ import Notification from '../../ui/Notification'
 
 const NotificationConstructor = Vue.extend(Notification)
 
-const openNotification = (propsData = { title: '', message: '', type: '', direction: '', duration: 4500 }, parent) => {
-  let n = new NotificationConstructor({
+const openNotification = (propsData = {
+  title: '',
+  message: '',
+  type: '',
+  direction: '',
+  duration: 4500,
+  container: '.notifications'
+}) => {
+  return new NotificationConstructor({
     el: document.createElement('div'),
     propsData
   })
-  n.$appendTo(parent || document.body)
 }
 
 export default {
@@ -49,19 +69,24 @@ export default {
       message: 'Success lorem ipsum dolor sit amet, consectetur adipiscing elit lorem ipsum dolor sit amet, consectetur adipiscing elit',
       type: 'success',
       duration: 0
-    }, this.$el)
+    })
+  },
+
+  methods: {
+    openNotificationWithType (type) {
+      openNotification({
+        title: 'This is a title',
+        message: 'This is the message.',
+        type: type
+      })
+    }
   }
 
 }
 </script>
 
-<style lang="scss">
-.notifications-box > .notification {
-  position: fixed;
-  top: 40px;
-  right: 0;
-  margin: 20px;
-  z-index: 133333;
-  max-width: 280px;
+<style lang="scss" scoped>
+.button {
+  margin: 5px 0 0;
 }
 </style>

@@ -1,22 +1,24 @@
 <template>
   <section class="hero is-bold app-navbar">
     <div class="hero-head">
-      <div class="container is-fluid is-marginless">
-        <nav class="nav is-1">
-          <div class="nav-left">
-            <a class="nav-item hero-brand" href="#">
-              <img src="../assets/logo.png" alt="Vue Admin Panel Framework">
+      <nav class="nav">
+        <div class="nav-left">
+          <a class="nav-item is-hidden-tablet touchable sidebar-toggle" @click="toggleSidebar">
+            <span class="icon">
+              <i class="fa fa-bars" aria-hidden="true"></i>
+            </span>
+          </a>
+        </div>
+        <div class="nav-center">
+          <a class="nav-item hero-brand touchable" href="#">
+            <img src="../assets/logo.png" alt="Vue Admin Panel Framework">
+            <div class="is-hidden-mobile">
               <span class="vue">Vue</span><strong class="admin">Admin</strong>
-            </a>
-            <a class="nav-item is-hidden-tablet" @click="toggleSidebar">
-              <span class="icon">
-                <i class="fa fa-bars" aria-hidden="true"></i>
-              </span>
-            </a>
-          </div>
-          <div class="nav-right"></div>
-        </nav>
-      </div>
+            </div>
+          </a>
+        </div>
+        <div class="nav-right is-flex"></div>
+      </nav>
     </div>
   </section>
 </template>
@@ -38,14 +40,32 @@ export default {
 </script>
 
 <style lang="scss">
+@import '~bulma';
+
 .app-navbar {
   position: fixed;
   min-width: 100%;
   z-index: 1024;
   box-shadow: 0 2px 3px rgba(17, 17, 17, 0.1), 0 0 0 1px rgba(17, 17, 17, 0.1);
 
-  .nav {
-    padding: 0 10px;
+  .container {
+    margin: auto 10px;
+  }
+
+  .nav-right {
+    align-items: stretch;
+    align-items: stretch;
+    flex: 1;
+    justify-content: flex-end;
+    overflow: hidden;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .sidebar-toggle {
+    &:hover {
+      background: $grey-lighter;
+    }
   }
 }
 

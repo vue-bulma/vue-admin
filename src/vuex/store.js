@@ -10,7 +10,7 @@ const store = new Vuex.Store({
   state: {
     menu,
     sidebar: {
-      opened: true
+      opened: false
     }
   },
 

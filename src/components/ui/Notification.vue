@@ -1,12 +1,14 @@
 <template>
   <div :class="['notification', 'animated', type ? `is-${type}` : '']" :transition="transition" transition-mode="in-out">
-    <button class="delete" @click="close()"></button>
+    <button class="delete touchable" @click="close()"></button>
     <div class="title is-5" v-if="title">{{ title }}</div>
     {{ message }}
   </div>
 </template>
 
 <script>
+import Vue from 'vue'
+
 export default {
 
   props: {
@@ -20,20 +22,54 @@ export default {
     duration: {
       type: Number,
       default: 4500
+    },
+    container: {
+      type: String,
+      default: '.notifications'
+    }
+  },
+
+  data () {
+    return {
+      $_parent_: null
+    }
+  },
+
+  created () {
+    let $parent = this.$parent
+    if (!$parent) {
+      let parent = document.querySelector(this.container)
+      if (!parent) {
+        parent = document.createElement('div')
+        parent.classList.add(this.container.replace('.', ''))
+        const Notifications = Vue.extend()
+        $parent = new Notifications({
+          el: parent
+        }).$appendTo(document.body)
+      }
+      // This is a hacked.
+      this.$_parent_ = parent.__vue__
+    }
+  },
+
+  compiled () {
+    if (this.$_parent_) {
+      this.$appendTo(this.$_parent_.$el)
+      delete this.$_parent_
+    }
+  },
+
+  ready () {
+    if (this.duration > 0) {
+      this.timer = setTimeout(() => {
+        this.close()
+      }, this.duration)
     }
   },
 
   computed: {
     transition () {
       return `bounce-${this.direction}`
-    }
-  },
-
-  created () {
-    if (this.duration > 0) {
-      this.timer = setTimeout(() => {
-        this.close()
-      }, this.duration)
     }
   },
 
@@ -49,21 +85,24 @@ export default {
 <style lang="scss">
 @import '~bulma';
 
-.notification {
-  -webkit-user-select: none;
-  transform: translate3d(0, 0, 0);
-  backface-visibility: hidden;
-}
-
-body > .notification {
+.notifications {
   position: fixed;
-  top: 0;
+  top: 50px;
   right: 0;
-  margin: 20px;
   z-index: 1024 + 233;
+  pointer-events: none;
 
   @include tablet() {
     max-width: 320px;
   }
+}
+
+.notification {
+  position: relative;
+  margin: 20px;
+  min-width: 280px;
+  backface-visibility: hidden;
+  transform: translate3d(0, 0, 0);
+  pointer-events: all;
 }
 </style>

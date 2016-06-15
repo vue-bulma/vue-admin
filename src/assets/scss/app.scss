@@ -9,3 +9,7 @@ $fa-font-path: '~font-awesome/fonts/';
 
 @import '~nprogress/nprogress';
 @import './nprogress';
+
+.touchable {
+  -webkit-tap-highlight-color: transparent;
+}
