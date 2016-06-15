@@ -32,7 +32,6 @@ import Notification from '../../ui/Notification'
 const NotificationConstructor = Vue.extend(Notification)
 
 const openNotification = (propsData = { title: '', message: '', type: '', direction: '', duration: 4500 }, parent) => {
-  console.log(arguments)
   let n = new NotificationConstructor({
     el: document.createElement('div'),
     propsData
@@ -63,5 +62,6 @@ export default {
   right: 0;
   margin: 20px;
   z-index: 133333;
+  max-width: 280px;
 }
 </style>
