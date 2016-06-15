@@ -1,4 +1,4 @@
-<p align="center"><img width="200" src="https://github.com/fundon/vue-admin/blob/master/src/assets/logo.svg"></p>
+<p align="center"><img width="200" src="src/assets/logo@2x.png"></p>
 
 # vue-admin
 
