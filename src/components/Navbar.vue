@@ -11,7 +11,7 @@
         </div>
         <div class="nav-center">
           <a class="nav-item hero-brand touchable" href="#">
-            <img src="../assets/logo.png" alt="Vue Admin Panel Framework">
+            <img src="../assets/logo.svg" alt="Vue Admin Panel Framework">
             <div class="is-hidden-mobile">
               <span class="vue">Vue</span><strong class="admin">Admin</strong>
             </div>
