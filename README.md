@@ -6,6 +6,26 @@ Vue Admin Panel Framework. [Live Demo][].
 
 ![](screenshots/app.png)
 
+## Features
+
+* Charts
+
+  * Chart
+
+  * Chartist
+
+  * Peity
+
+  * Plotly
+
+* Components
+
+  * Breadcrumb
+
+  * Notification
+
+  * Message
+
 ## Tech Stack
 
 | Name | Version | Description |  
