@@ -40,6 +40,7 @@ export default {
     if (!$parent) {
       let parent = document.querySelector(this.container)
       if (!parent) {
+        // Lazy to create `div.notifications` container.
         parent = document.createElement('div')
         parent.classList.add(this.container.replace('.', ''))
         const Notifications = Vue.extend()
@@ -47,7 +48,7 @@ export default {
           el: parent
         }).$appendTo(document.body)
       }
-      // This is a hacked.
+      // Hacked.
       this.$_parent_ = parent.__vue__
     }
   },
@@ -61,9 +62,7 @@ export default {
 
   ready () {
     if (this.duration > 0) {
-      this.timer = setTimeout(() => {
-        this.close()
-      }, this.duration)
+      this.timer = setTimeout(() => this.close(), this.duration)
     }
   },
 
