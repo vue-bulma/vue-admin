@@ -95,11 +95,14 @@ export default {
   @include tablet() {
     max-width: 320px;
   }
+
+  .notification {
+    margin: 20px;
+  }
 }
 
 .notification {
   position: relative;
-  margin: 20px;
   min-width: 280px;
   backface-visibility: hidden;
   transform: translate3d(0, 0, 0);
