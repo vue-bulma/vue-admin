@@ -1,5 +1,5 @@
 <template>
-  <nav class="level va-levelbar">
+  <nav class="level app-levelbar">
     <div class="level-left">
       <div class="level-item">
         <h3 class="subtitle is-5">
@@ -8,7 +8,7 @@
       </div>
     </div>
 
-    <div class="level-right">
+    <div class="level-right is-hidden-mobile">
       <breadcrumb :list="list"></breadcrumb>
     </div>
   </nav>
