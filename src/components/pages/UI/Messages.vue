@@ -87,6 +87,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.styles-box .message-box {
+  margin-bottom: 20px;
+}
+
 .button {
   margin: 5px 0 0;
 }

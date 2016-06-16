@@ -86,6 +86,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.styles-box .notification {
+  margin-bottom: 20px;
+}
+
 .button {
   margin: 5px 0 0;
 }
