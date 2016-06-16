@@ -27,11 +27,21 @@ import FooterBar from './components/FooterBar'
 export default {
   store,
 
+  vuex: {
+    getters: {
+      sidebar: state => state.sidebar
+    }
+  },
+
   components: {
     Navbar,
     Sidebar,
     Levelbar,
     FooterBar
+  },
+
+  created () {
+    // window.addEventListener('DOMContentLoaded', () => {
   }
 }
 </script>

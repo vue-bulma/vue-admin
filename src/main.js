@@ -1,3 +1,5 @@
+import './init'
+
 import Vue from 'vue'
 import Router from 'vue-router'
 import Resource from 'vue-resource'
@@ -100,7 +102,7 @@ router.map({
 })
 
 router.redirect({
-  '/': '/dashboard'
+  '*': '/dashboard'
 })
 
 router.start(App, 'app')

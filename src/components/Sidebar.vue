@@ -30,11 +30,6 @@ export default {
     }
   },
 
-  ready () {
-    window.addEventListener('DOMContentLoaded', this.handleResize)
-    window.addEventListener('resize', this.handleResize)
-  },
-
   methods: {
     toggle (item, $e) {
       if (this.hasCollapse(item)) {
@@ -49,11 +44,6 @@ export default {
 
     isExpanded (item) {
       return item.expanded
-    },
-
-    handleResize (e) {
-      let rect = document.body.getBoundingClientRect()
-      this.sidebar.opened = rect.width - 3 >= 768
     }
   }
 
