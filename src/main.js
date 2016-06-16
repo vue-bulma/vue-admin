@@ -92,6 +92,10 @@ router.map({
   '/ui/notifications': {
     name: 'Notifications',
     component: makeComponent('./components/pages/UI/Notifications')
+  },
+  '/ui/messages': {
+    name: 'Messages',
+    component: makeComponent('./components/pages/UI/Messages')
   }
 })
 
