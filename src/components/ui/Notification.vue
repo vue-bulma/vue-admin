@@ -102,7 +102,7 @@ export default {
 
 .notification {
   position: relative;
-  min-width: 280px;
+  min-width: 240px;
   backface-visibility: hidden;
   transform: translate3d(0, 0, 0);
   pointer-events: all;
