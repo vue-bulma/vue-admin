@@ -68,7 +68,8 @@ export default {
     openMessage({
       message: 'Success lorem ipsum dolor sit amet, consectetur adipiscing elit lorem ipsum dolor sit amet, consectetur adipiscing elit',
       type: 'success',
-      duration: 0
+      duration: 0,
+      showCloseButton: true
     })
   },
 

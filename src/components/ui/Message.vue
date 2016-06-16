@@ -2,6 +2,7 @@
   <div class="message-box animated" :transition="transition" transition-mode="in-out">
     <article :class="['message', type ? `is-${type}` : '']">
       <div class="message-header">
+        <button class="delete touchable" @click="close()" v-if="showCloseButton"></button>
         <span class="icon" v-if="icon">
           <i class="fa fa-{{icon}}"></i>
         </span>
@@ -32,6 +33,10 @@ export default {
     container: {
       type: String,
       default: '.messages'
+    },
+    showCloseButton: {
+      type: Boolean,
+      default: false
     }
   },
 
@@ -116,19 +121,20 @@ export default {
     left: 50%;
     transform: translate3d(0, 0, 0);
     backface-visibility: hidden;
-
-    @include tablet() {
-      max-width: 280px;
-    }
+    pointer-events: all;
   }
 
   .message {
     position: relative;
     right: 50%;
-  }
 
-  .icon {
-    vertical-align: middle;
+    .delete {
+      float: right;
+    }
+
+    .icon {
+      vertical-align: middle;
+    }
   }
 }
 </style>
