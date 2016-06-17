@@ -99,9 +99,9 @@ router.map({
     name: 'Messages',
     component: makeComponent('./components/pages/UI/Messages')
   },
-  '/ui/progressbars': {
-    name: 'ProgressBars',
-    component: makeComponent('./components/pages/UI/ProgressBars')
+  '/ui/progress': {
+    name: 'Progress',
+    component: makeComponent('./components/pages/UI/Progress')
   }
 })
 

@@ -1,7 +1,7 @@
 <template>
-  <div class="progress-bar is-flex">
-    <progress :class="['progress', type ? `is-${type}` : '']" :value="value" :max="max"></progress>
-    <label v-if="showLabel">{{percentage + '%'}}</label>
+  <div class="progress-container is-flex">
+    <progress :class="['progress', type ? `is-${type}` : '', size ? `is-${size}` : '']" :value="value" :max="max"></progress>
+    <span v-if="showLabel">{{percentage + '%'}}</span>
   </div>
 </template>
 
@@ -10,6 +10,7 @@ export default {
 
   props: {
     type: String,
+    size: String,
     value: {
       type: Number,
       required: true,
@@ -36,15 +37,15 @@ export default {
 </script>
 
 <style lang="scss">
-.progress-bar {
+.progress-container {
   align-items: center;
   margin-bottom: 20px;
 
   .progress {
-    margin-bottom: 0;
+    margin-bottom: 0 !important;
   }
 
-  .progress + label {
+  .progress + span {
     margin-left: 10px;
   }
 }
