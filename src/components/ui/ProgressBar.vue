@@ -42,6 +42,7 @@ export default {
   margin-bottom: 20px;
 
   .progress {
+    position: relative;
     margin-bottom: 0 !important;
   }
 

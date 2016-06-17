@@ -26,6 +26,27 @@
           </div>
         </article>
       </div>
+
+      <div class="tile is-parent">
+        <article class="tile is-child box">
+          <h1 class="title">Dynamics</h1>
+          <div class="block">
+            <progress-bar :type="'success'" :size="'large'" :value="dynamicValue" :max="100" :show-label="true"></progress-bar>
+            <p class="control has-addons">
+              <a class="button" @click="plus">
+                <span class="icon is-small">
+                  <i class="fa fa-plus"></i>
+                </span>
+              </a>
+              <a class="button" @click="minus">
+                <span class="icon is-small">
+                  <i class="fa fa-minus"></i>
+                </span>
+              </a>
+            </p>
+          </div>
+        </article>
+      </div>
     </div>
   </div>
 </template>
@@ -38,7 +59,22 @@ export default {
     ProgressBar
   },
 
+  data () {
+    return {
+      dynamicValue: 60
+    }
+  },
+
   methods: {
+    plus () {
+      if (this.dynamicValue === 100) return
+      this.dynamicValue += 10
+    },
+
+    minus () {
+      if (this.dynamicValue === 0) return
+      this.dynamicValue -= 10
+    }
   }
 
 }

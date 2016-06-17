@@ -11,7 +11,7 @@
             <i class="fa fa-angle-down"></i>
           </span>
         </a>
-        <ul v-if="item.subMenu" :class="{ 'va-collapse': item.subMenu }">
+        <ul v-if="item.subMenu" :class="{ 'collapse': item.subMenu }">
           <li v-for="subItem in item.subMenu">
             <a v-link="{ name: subItem.link }">{{ subItem.label }}</a>
           </li>
@@ -73,7 +73,7 @@ export default {
     transform: translate3d(-180px, 0, 0);
   }
 
-  .va-collapse {
+  .collapse {
     display: none;
   }
 
@@ -84,6 +84,7 @@ export default {
     .is-angle {
       position: absolute;
       right: 10px;
+      transition: all .377s ease;
     }
 
     &[aria-expanded] {
@@ -92,7 +93,7 @@ export default {
         transform: rotate(180deg);
       }
 
-      & + .va-collapse {
+      & + .collapse {
         display: block;
       }
     }
