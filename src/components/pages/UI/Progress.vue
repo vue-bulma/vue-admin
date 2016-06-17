@@ -31,7 +31,6 @@
 </template>
 
 <script>
-// import Vue from 'vue'
 import ProgressBar from '../../ui/ProgressBar'
 
 export default {
