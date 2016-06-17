@@ -43,7 +43,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import 'assets/scss/app';
+@import 'scss/app';
 
 .app-main {
   padding-top: 50px;
