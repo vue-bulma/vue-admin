@@ -55,6 +55,10 @@ export default [
       {
         link: 'Messages',
         label: 'Messages'
+      },
+      {
+        link: 'ProgressBars',
+        label: 'ProgressBars'
       }
     ]
   }

@@ -38,10 +38,6 @@ export default {
     Sidebar,
     Levelbar,
     FooterBar
-  },
-
-  created () {
-    // window.addEventListener('DOMContentLoaded', () => {
   }
 }
 </script>

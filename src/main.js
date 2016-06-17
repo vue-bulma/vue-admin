@@ -98,6 +98,10 @@ router.map({
   '/ui/messages': {
     name: 'Messages',
     component: makeComponent('./components/pages/UI/Messages')
+  },
+  '/ui/progressbars': {
+    name: 'ProgressBars',
+    component: makeComponent('./components/pages/UI/ProgressBars')
   }
 })
 
