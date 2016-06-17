@@ -26,6 +26,8 @@ Vue Admin Panel Framework. [Live Demo][].
 
   * Message
 
+  * Progress
+
 ## Tech Stack
 
 | Name | Version | Description |  
