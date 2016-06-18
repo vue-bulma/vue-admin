@@ -1,3 +1,4 @@
 export default {
-  opened: false
+  opened: false,
+  isMobile: false
 }

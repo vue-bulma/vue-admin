@@ -4,6 +4,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Resource from 'vue-resource'
 import NProgress from 'nprogress'
+import sidebarConfig from './config/sidebar'
 
 Vue.use(Router)
 Vue.use(Resource)
@@ -42,6 +43,9 @@ Vue.http.interceptors.push(() => {
 
 router.beforeEach(({ next }) => {
   NProgress.start()
+  if (sidebarConfig.isMobile && sidebarConfig.opened) {
+    sidebarConfig.opened = false
+  }
   next()
 })
 
