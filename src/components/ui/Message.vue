@@ -105,8 +105,6 @@ export default {
 </script>
 
 <style lang="scss">
-@import '~bulma';
-
 .messages {
   position: fixed;
   top: 15px;

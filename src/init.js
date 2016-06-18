@@ -1,8 +1,8 @@
 import sidebar from './config/sidebar'
 
 const handler = () => {
-  let rect = document.body.getBoundingClientRect()
   if (!document.hidden) {
+    let rect = document.body.getBoundingClientRect()
     sidebar.opened = rect.width - 3 >= 768
   }
 }

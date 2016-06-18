@@ -61,5 +61,16 @@ export default [
         label: 'Progress'
       }
     ]
+  },
+  {
+    label: 'Tables',
+    icon: 'fa-table',
+    expanded: false,
+    subMenu: [
+      {
+        link: 'BasicTables',
+        label: 'Basic Tables'
+      }
+    ]
   }
 ]

@@ -102,6 +102,10 @@ router.map({
   '/ui/progress': {
     name: 'Progress',
     component: makeComponent('./components/pages/UI/Progress')
+  },
+  '/tables/basic': {
+    name: 'BasicTables',
+    component: makeComponent('./components/pages/Tables/Basic')
   }
 })
 
