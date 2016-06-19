@@ -80,9 +80,7 @@ export default {
     },
 
     openModalImage () {
-      openImageModal({
-      })
-      .open()
+      openImageModal()
     },
 
     openModalCard () {
