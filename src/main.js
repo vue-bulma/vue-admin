@@ -37,7 +37,6 @@ Vue.http.interceptors.push(() => {
       NProgress.done()
       return response
     }
-
   }
 })
 
@@ -106,6 +105,10 @@ router.map({
   '/ui/progress': {
     name: 'Progress',
     component: makeComponent('./components/pages/UI/Progress')
+  },
+  '/ui/modals': {
+    name: 'Modals',
+    component: makeComponent('./components/pages/UI/Modals')
   },
   '/tables/basic': {
     name: 'BasicTables',

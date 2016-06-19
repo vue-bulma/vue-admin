@@ -59,6 +59,10 @@ export default [
       {
         link: 'Progress',
         label: 'Progress'
+      },
+      {
+        link: 'Modals',
+        label: 'Modals'
       }
     ]
   },
