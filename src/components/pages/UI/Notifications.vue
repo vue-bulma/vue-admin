@@ -6,15 +6,15 @@
           <h1 class="title">Styles</h1>
           <div class="block styles-box">
 
-            <notification :title="'Normal'" :container="'.styles-box'" :direction="'down'" :message="'Lorem ipsum dolor sit amet, consectetur adipiscing elit lorem ipsum dolor sit amet, consectetur adipiscing elit'" :duration="0"></notification>
+            <notification :title="'Normal'" :direction="'down'" :message="'Lorem ipsum dolor sit amet, consectetur adipiscing elit lorem ipsum dolor sit amet, consectetur adipiscing elit'" :duration="0"></notification>
 
-            <notification :title="'Primary'" :container="'.styles-box'" :type="'primary'" :direction="'right'" :message="'Primar lorem ipsum dolor sit amet, consectetur adipiscing elit lorem ipsum dolor sit amet, consectetur adipiscing elit'" :duration="0"></notification>
+            <notification :title="'Primary'" :type="'primary'" :direction="'right'" :message="'Primar lorem ipsum dolor sit amet, consectetur adipiscing elit lorem ipsum dolor sit amet, consectetur adipiscing elit'" :duration="0"></notification>
 
-            <notification :title="'Info'" :container="'.styles-box'" :type="'info'" :direction="'right'" :message="'Info lorem ipsum dolor sit amet, consectetur adipiscing elit lorem ipsum dolor sit amet, consectetur adipiscing elit'" :duration="0"></notification>
+            <notification :title="'Info'" :type="'info'" :direction="'right'" :message="'Info lorem ipsum dolor sit amet, consectetur adipiscing elit lorem ipsum dolor sit amet, consectetur adipiscing elit'" :duration="0"></notification>
 
-            <notification :title="'Success'" :container="'.styles-box'" :type="'success'" :direction="'left'" :message="'Success lorem ipsum dolor sit amet, consectetur adipiscing elit lorem ipsum dolor sit amet, consectetur adipiscing elit'" :duration="0"></notification>
+            <notification :title="'Success'" :type="'success'" :direction="'left'" :message="'Success lorem ipsum dolor sit amet, consectetur adipiscing elit lorem ipsum dolor sit amet, consectetur adipiscing elit'" :duration="0"></notification>
 
-            <notification :title="'Warning'" :container="'.styles-box'" :type="'warning'" :direction="'left'" :message="'Warning lorem ipsum dolor sit amet, consectetur adipiscing elit lorem ipsum dolor sit amet, consectetur adipiscing elit'" :duration="0"></notification>
+            <notification :title="'Warning'" :type="'warning'" :direction="'left'" :message="'Warning lorem ipsum dolor sit amet, consectetur adipiscing elit lorem ipsum dolor sit amet, consectetur adipiscing elit'" :duration="0"></notification>
 
             <notification :title="'Danger'" :container="'.styles-box'" :type="'danger'" :direction="'down'" :message="'Danger lorem ipsum dolor sit amet, consectetur adipiscing elit lorem ipsum dolor sit amet, consectetur adipiscing elit'" :duration="0"></notification>
 
@@ -43,7 +43,7 @@
 import Vue from 'vue'
 import Notification from '../../ui/Notification'
 
-const NotificationConstructor = Vue.extend(Notification)
+const NotificationComponent = Vue.extend(Notification)
 
 const openNotification = (propsData = {
   title: '',
@@ -53,7 +53,7 @@ const openNotification = (propsData = {
   duration: 4500,
   container: '.notifications'
 }) => {
-  return new NotificationConstructor({
+  return new NotificationComponent({
     el: document.createElement('div'),
     propsData
   })

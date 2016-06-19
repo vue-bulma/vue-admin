@@ -6,15 +6,15 @@
           <h1 class="title">Styles</h1>
           <div class="block styles-box">
 
-            <message :title="'Normal'" :container="'.styles-box'" :direction="'down'" :message="'Lorem ipsum dolor sit amet, consectetur adipiscing elit lorem ipsum dolor sit amet, consectetur adipiscing elit'" :duration="0"></message>
+            <message :title="'Normal'" :direction="'down'" :message="'Lorem ipsum dolor sit amet, consectetur adipiscing elit lorem ipsum dolor sit amet, consectetur adipiscing elit'" :duration="0"></message>
 
-            <message :title="'Primary'" :container="'.styles-box'" :type="'primary'" :direction="'right'" :message="'Primar lorem ipsum dolor sit amet, consectetur adipiscing elit lorem ipsum dolor sit amet, consectetur adipiscing elit'" :duration="0"></message>
+            <message :title="'Primary'" :type="'primary'" :direction="'right'" :message="'Primar lorem ipsum dolor sit amet, consectetur adipiscing elit lorem ipsum dolor sit amet, consectetur adipiscing elit'" :duration="0"></message>
 
-            <message :title="'Info'" :container="'.styles-box'" :type="'info'" :direction="'right'" :message="'Info lorem ipsum dolor sit amet, consectetur adipiscing elit lorem ipsum dolor sit amet, consectetur adipiscing elit'" :duration="0"></message>
+            <message :title="'Info'" :type="'info'" :direction="'right'" :message="'Info lorem ipsum dolor sit amet, consectetur adipiscing elit lorem ipsum dolor sit amet, consectetur adipiscing elit'" :duration="0"></message>
 
-            <message :title="'Success'" :container="'.styles-box'" :type="'success'" :direction="'left'" :message="'Success lorem ipsum dolor sit amet, consectetur adipiscing elit lorem ipsum dolor sit amet, consectetur adipiscing elit'" :duration="0"></message>
+            <message :title="'Success'" :type="'success'" :direction="'left'" :message="'Success lorem ipsum dolor sit amet, consectetur adipiscing elit lorem ipsum dolor sit amet, consectetur adipiscing elit'" :duration="0"></message>
 
-            <message :title="'Warning'" :container="'.styles-box'" :type="'warning'" :direction="'left'" :message="'Warning lorem ipsum dolor sit amet, consectetur adipiscing elit lorem ipsum dolor sit amet, consectetur adipiscing elit'" :duration="0"></message>
+            <message :title="'Warning'" :type="'warning'" :direction="'left'" :message="'Warning lorem ipsum dolor sit amet, consectetur adipiscing elit lorem ipsum dolor sit amet, consectetur adipiscing elit'" :duration="0"></message>
 
             <message :title="'Danger'" :container="'.styles-box'" :type="'danger'" :direction="'down'" :message="'Danger lorem ipsum dolor sit amet, consectetur adipiscing elit lorem ipsum dolor sit amet, consectetur adipiscing elit'" :duration="0"></message>
 
@@ -43,7 +43,7 @@
 import Vue from 'vue'
 import Message from '../../ui/Message'
 
-const MessageConstructor = Vue.extend(Message)
+const MessageComponent = Vue.extend(Message)
 
 const openMessage = (propsData = {
   title: '',
@@ -53,7 +53,7 @@ const openMessage = (propsData = {
   duration: 1500,
   container: '.messages'
 }) => {
-  return new MessageConstructor({
+  return new MessageComponent({
     el: document.createElement('div'),
     propsData
   })

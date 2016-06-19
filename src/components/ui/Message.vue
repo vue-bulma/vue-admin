@@ -98,7 +98,7 @@ export default {
   methods: {
     close () {
       clearTimeout(this.timer)
-      this.$remove()
+      this.$destroy(true)
     }
   }
 }
