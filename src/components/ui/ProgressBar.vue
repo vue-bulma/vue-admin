@@ -48,6 +48,8 @@ export default {
 
   .progress + span {
     margin-left: 10px;
+    min-width: 36px;
+    text-align: right;
   }
 }
 </style>
