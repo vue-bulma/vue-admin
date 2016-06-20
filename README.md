@@ -73,9 +73,11 @@ npm test
 
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
 
-## License
+## Badaggs
 
-  MIT
+![](https://img.shields.io/badge/license-MIT-blue.svg)
+[![Gitter](https://badges.gitter.im/fundon/vue-admin.svg)](https://gitter.im/fundon/vue-admin?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+
 
 Made with love by Fangdun Cai.
 
