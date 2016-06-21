@@ -30,6 +30,8 @@ Vue Admin Panel Framework. [Live Demo][].
 
   * Modal
 
+  * Tooltip
+
 ## Tech Stack
 
 | Name | Version | Description |  
