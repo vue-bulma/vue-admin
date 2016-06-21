@@ -2,16 +2,16 @@
   <aside class="menu app-sidebar animated" :class="{ 'slideInLeft': sidebar.opened, 'slideOutLeft': !sidebar.opened }">
     <ul class="menu-list">
       <li v-for="item in menu">
-        <a v-link="{ name: item.link }" @click="toggle(item, $event)" aria-expanded="{{ isExpanded(item) }}">
+        <a v-link="{ name: item.link }" @click="toggle(item, $event)" :aria-expanded="isExpanded(item)">
           <span class="icon is-small" v-if="item.icon">
-            <i class="fa {{ item.icon }}"></i>
+            <i :class="['fa', item.icon]"></i>
           </span>
           <span>{{ item.label }}</span>
           <span class="icon is-small is-angle" v-if="item.subMenu">
             <i class="fa fa-angle-down"></i>
           </span>
         </a>
-        <ul v-if="item.subMenu" :class="{ 'collapse': item.subMenu }">
+        <ul v-if="item.subMenu" :class="{ 'collapse': item.subMenu }" @click="autoClose">
           <li v-for="subItem in item.subMenu">
             <a v-link="{ name: subItem.link }">{{ subItem.label }}</a>
           </li>
@@ -35,6 +35,8 @@ export default {
       if (this.hasCollapse(item)) {
         $e.preventDefault()
         item.expanded = !item.expanded
+      } else {
+        this.autoClose()
       }
     },
 
@@ -44,6 +46,10 @@ export default {
 
     isExpanded (item) {
       return item.expanded
+    },
+
+    autoClose () {
+      this.sidebar.isMobile && (this.sidebar.opened = false)
     }
   }
 

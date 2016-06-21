@@ -4,7 +4,7 @@
       <div class="message-header">
         <button class="delete touchable" @click="close()" v-if="showCloseButton"></button>
         <span class="icon" v-if="icon">
-          <i class="fa fa-{{icon}}"></i>
+          <i :class="['fa', `fa-${icon}`]"></i>
         </span>
         {{ title }}
       </div>
