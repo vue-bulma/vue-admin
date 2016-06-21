@@ -63,6 +63,10 @@ export default [
       {
         link: 'Modals',
         label: 'Modals'
+      },
+      {
+        link: 'Tooltips',
+        label: 'Tooltips'
       }
     ]
   },
