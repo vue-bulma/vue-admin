@@ -67,6 +67,10 @@ export default [
       {
         link: 'Tooltips',
         label: 'Tooltips'
+      },
+      {
+        link: 'Tabs',
+        label: 'Tabs'
       }
     ]
   },

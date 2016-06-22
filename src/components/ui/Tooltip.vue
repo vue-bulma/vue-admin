@@ -55,7 +55,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import '~bulma';
+@import '~bulma/sass/utilities/variables';
 
 $hintPrefix: 'tooltip--';
 $hintFontFamily: $family-sans-serif;

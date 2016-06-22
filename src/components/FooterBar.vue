@@ -24,7 +24,7 @@
 <script>
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .footer {
   .social a {
     border-bottom: none !important;

@@ -114,6 +114,10 @@ router.map({
     name: 'Tooltips',
     component: makeComponent('./components/pages/UI/Tooltips')
   },
+  '/ui/tabs': {
+    name: 'Tabs',
+    component: makeComponent('./components/pages/UI/Tabs')
+  },
   '/tables/basic': {
     name: 'BasicTables',
     component: makeComponent('./components/pages/Tables/Basic')

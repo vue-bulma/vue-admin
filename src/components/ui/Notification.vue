@@ -82,7 +82,8 @@ export default {
 </script>
 
 <style lang="scss">
-@import '~bulma';
+@import '~bulma/sass/utilities/variables';
+@import '~bulma/sass/utilities/mixins';
 
 .notifications {
   position: fixed;
