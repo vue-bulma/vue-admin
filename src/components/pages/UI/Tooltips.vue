@@ -7,65 +7,65 @@
           <div class="columns is-multiline is-mobile">
             <div class="column is-one-third">
               <tooltip label="top-right" placement="top-right">
-                <p class="notification is-primary has-text-centered">
+                <button class="button is-primary has-text-centered">
                   <span>top-right</span>
-                </p>
+                </button>
               </tooltip>
             </div>
             <div class="column is-one-third">
               <tooltip label="top" placement="top">
-                <p class="notification is-warning has-text-centered">
+                <button class="button is-warning has-text-centered">
                   <span>top</span>
-                </p>
+                </button>
               </tooltip>
             </div>
             <div class="column is-one-third">
               <tooltip label="top-left" placement="top-left">
-                <p class="notification is-danger has-text-centered">
+                <button class="button is-danger has-text-centered">
                   <span>top-left</span>
-                </p>
+                </button>
               </tooltip>
             </div>
             <div class="column is-one-third">
               <tooltip label="right" placement="right">
-                <p class="notification is-info has-text-centered">
+                <button class="button is-info has-text-centered">
                   <span>right</span>
-                </p>
+                </button>
               </tooltip>
             </div>
             <div class="column is-one-third">
               <tooltip label="no animate, always, rounded, large, bounce, success" placement="top" type="success" size="large" :no-animate="true" :always="true" :rounded="true">
-                <p class="notification is-success has-text-centered">
+                <button class="button is-success has-text-centered">
                   <span>no animate, always, rounded, large, bounce, success</span>
-                </p>
+                </button>
               </tooltip>
             </div>
             <div class="column is-one-third">
               <tooltip label="left" placement="left">
-                <p class="notification is-info has-text-centered">
+                <button class="button is-info has-text-centered">
                   <span>left</span>
-                </p>
+                </button>
               </tooltip>
             </div>
             <div class="column is-one-third">
               <tooltip label="bottom-right" placement="bottom-right">
-                <p class="notification is-primary has-text-centered">
+                <button class="button is-primary has-text-centered">
                   <span>bottom-right</span>
-                </p>
+                </button>
               </tooltip>
             </div>
             <div class="column is-one-third">
               <tooltip label="bottom" placement="bottom">
-                <p class="notification is-warning has-text-centered">
+                <button class="button is-warning has-text-centered">
                   <span>bottom</span>
-                </p>
+                </button>
               </tooltip>
             </div>
             <div class="column is-one-third">
               <tooltip label="bottom-left" placement="bottom-left">
-                <p class="notification is-danger has-text-centered">
+                <button class="button is-danger has-text-centered">
                   <span>bottom-left</span>
-                </p>
+                </button>
               </tooltip>
             </div>
           </div>
@@ -78,37 +78,37 @@
           <div class="columns is-multiline is-mobile">
             <div class="column">
               <tooltip label="info" type="info">
-                <p class="notification is-info has-text-centered">
+                <button class="button is-info has-text-centered">
                   <span>info</span>
-                </p>
+                </button>
               </tooltip>
             </div>
             <div class="column">
               <tooltip label="primary" type="primary">
-                <p class="notification is-primary has-text-centered">
+                <button class="button is-primary has-text-centered">
                   <span>primary</span>
-                </p>
+                </button>
               </tooltip>
             </div>
             <div class="column">
               <tooltip label="success" type="success">
-                <p class="notification is-success has-text-centered">
+                <button class="button is-success has-text-centered">
                   <span>success</span>
-                </p>
+                </button>
               </tooltip>
             </div>
             <div class="column">
               <tooltip label="warning" type="warning">
-                <p class="notification is-warning has-text-centered">
+                <button class="button is-warning has-text-centered">
                   <span>warning</span>
-                </p>
+                </button>
               </tooltip>
             </div>
             <div class="column">
               <tooltip label="danger" type="danger">
-                <p class="notification is-danger has-text-centered">
+                <button class="button is-danger has-text-centered">
                   <span>danger</span>
-                </p>
+                </button>
               </tooltip>
             </div>
           </div>
@@ -121,23 +121,23 @@
           <div class="columns is-multiline is-mobile">
             <div class="column">
               <tooltip label="small" type="small" placement="bottom-right">
-                <p class="notification has-text-centered">
+                <button class="button has-text-centered">
                   <span>small</span>
-                </p>
+                </button>
               </tooltip>
             </div>
             <div class="column">
               <tooltip label="medium" type="medium">
-                <p class="notification has-text-centered">
+                <button class="button has-text-centered">
                   <span>medium</span>
-                </p>
+                </button>
               </tooltip>
             </div>
             <div class="column">
               <tooltip label="large" size="large" placement="bottom-left">
-                <p class="notification has-text-centered">
+                <button class="button has-text-centered">
                   <span>large</span>
-                </p>
+                </button>
               </tooltip>
             </div>
           </div>
@@ -158,6 +158,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.column {
+  margin: 25px auto;
+}
+
+.button {
+  width: 100%;
+}
+
 .tooltip {
   display: inherit;
 }
