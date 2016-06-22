@@ -3,6 +3,8 @@
 </template>
 
 <script>
+import classNames from 'classnames'
+
 export default {
 
   props: {
@@ -35,27 +37,18 @@ export default {
   },
 
   ready () {
-    let arrs = []
-    const classList = this.$el.classList
     this.$el.setAttribute('aria-label', this.label)
-    arrs.push('tooltip')
-    arrs.push(`tooltip--${this.placement}`)
-    if (this.type) {
-      arrs.push(`tooltip--${this.type}`)
-    }
-    if (this.size) {
-      arrs.push(`tooltip--${this.size}`)
-    }
-    if (this.always) {
-      arrs.push('tooltip--always')
-    }
-    if (this.always) {
-      arrs.push('tooltip--rounded')
-    }
-    if (this.noAnimate) {
-      arrs.push('tooltip--no-animate')
-    }
-    classList.add(...arrs)
+    this.$el.classList.add(...(classNames(
+      'tooltip',
+      `tooltip--${this.placement}`,
+      {
+        [`tooltip--${this.type}`]: this.type,
+        [`tooltip--${this.size}`]: this.size,
+        'tooltip--rounded': this.rounded,
+        'tooltip--always': this.always,
+        'tooltip--no-animate': this.noAnimate
+      }
+    ).split(' ')))
   }
 
 }
@@ -83,5 +76,13 @@ $hintSuccessColor: $success;
 
 .#{$hintPrefix}danger {
 	@include hint-type($danger);
+}
+
+.#{$hintPrefix}rounded:after {
+  border-radius: $radius;
+}
+
+[class*="#{$hintPrefix}"]:after {
+  box-shadow: 0 2px 3px rgba(17, 17, 17, 0.1), 0 0 0 1px rgba(17, 17, 17, 0.1);
 }
 </style>

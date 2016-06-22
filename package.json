@@ -27,6 +27,7 @@
     "bulma": "0.0.28",
     "chart.js": "2.1.6",
     "chartist": "0.9.7",
+    "classnames": "2.2.5",
     "font-awesome": "4.6.3",
     "hint.css": "2.3.1",
     "moment": "2.13.0",
