@@ -1,15 +1,16 @@
-import './init'
+import config from './config'
+import init from './init'
+
+init(config)
 
 import Vue from 'vue'
 import Router from 'vue-router'
 import Resource from 'vue-resource'
 import NProgress from 'nprogress'
-import sidebarConfig from './config/sidebar'
+import './transitions'
 
 Vue.use(Router)
 Vue.use(Resource)
-
-import './transitions'
 
 const makeComponent = (path) => {
   return (resolve) => {
@@ -20,6 +21,7 @@ const makeComponent = (path) => {
 import App from './App'
 import Dashboard from './components/pages/Dashboard/'
 
+const { sidebar } = config
 const router = new Router({
   saveScrollPosition: true,
   transitionOnLoad: true,
@@ -42,8 +44,8 @@ Vue.http.interceptors.push(() => {
 
 router.beforeEach(({ next }) => {
   NProgress.start()
-  if (sidebarConfig.isMobile && sidebarConfig.opened) {
-    sidebarConfig.opened = false
+  if (sidebar.isMobile && sidebar.opened) {
+    sidebar.opened = false
   }
   next()
 })
@@ -78,45 +80,51 @@ router.map({
     name: 'Plotly',
     component: makeComponent('./components/pages/Charts/Plotly')
   },
-  '/ui/typography': {
-    name: 'Typography',
-    component: makeComponent('./components/pages/UI/Typography')
-  },
-  '/ui/buttons': {
-    name: 'Buttons',
-    component: makeComponent('./components/pages/UI/Buttons')
-  },
-  '/ui/icons': {
-    name: 'Icons',
-    component: makeComponent('./components/pages/UI/Icons')
-  },
-  '/ui/form': {
-    name: 'Form',
-    component: makeComponent('./components/pages/UI/Form')
-  },
-  '/ui/notifications': {
-    name: 'Notifications',
-    component: makeComponent('./components/pages/UI/Notifications')
-  },
-  '/ui/messages': {
-    name: 'Messages',
-    component: makeComponent('./components/pages/UI/Messages')
-  },
-  '/ui/progress': {
-    name: 'Progress',
-    component: makeComponent('./components/pages/UI/Progress')
-  },
-  '/ui/modals': {
-    name: 'Modals',
-    component: makeComponent('./components/pages/UI/Modals')
-  },
-  '/ui/tooltips': {
-    name: 'Tooltips',
-    component: makeComponent('./components/pages/UI/Tooltips')
-  },
-  '/ui/tabs': {
-    name: 'Tabs',
-    component: makeComponent('./components/pages/UI/Tabs')
+  '/ui': {
+    name: 'UI',
+    component: makeComponent('./components/pages/UI/index'),
+    subRoutes: {
+      '/typography': {
+        name: 'Typography',
+        component: makeComponent('./components/pages/UI/Typography')
+      },
+      '/buttons': {
+        name: 'Buttons',
+        component: makeComponent('./components/pages/UI/Buttons')
+      },
+      '/icons': {
+        name: 'Icons',
+        component: makeComponent('./components/pages/UI/Icons')
+      },
+      '/form': {
+        name: 'Form',
+        component: makeComponent('./components/pages/UI/Form')
+      },
+      '/notifications': {
+        name: 'Notifications',
+        component: makeComponent('./components/pages/UI/Notifications')
+      },
+      '/messages': {
+        name: 'Messages',
+        component: makeComponent('./components/pages/UI/Messages')
+      },
+      '/progress': {
+        name: 'Progress',
+        component: makeComponent('./components/pages/UI/Progress')
+      },
+      '/modals': {
+        name: 'Modals',
+        component: makeComponent('./components/pages/UI/Modals')
+      },
+      '/tooltips': {
+        name: 'Tooltips',
+        component: makeComponent('./components/pages/UI/Tooltips')
+      },
+      '/tabs': {
+        name: 'Tabs',
+        component: makeComponent('./components/pages/UI/Tabs')
+      }
+    }
   },
   '/tables/basic': {
     name: 'BasicTables',
@@ -125,15 +133,8 @@ router.map({
 })
 
 router.redirect({
+  '/ui': '/ui/typography',
   '*': '/dashboard'
 })
 
 router.start(App, 'app')
-
-/* eslint-disable no-new */
-/*
-new Vue({
-  el: 'body',
-  components: { App }
-})
-*/

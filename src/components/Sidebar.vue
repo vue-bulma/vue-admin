@@ -22,11 +22,19 @@
 </template>
 
 <script>
+let count = 0
+
 export default {
   vuex: {
     getters: {
       menu: state => state.menu,
       sidebar: state => state.sidebar
+    }
+  },
+
+  data () {
+    return {
+      steps: this.menu.filter(i => !!i.subMenu).length
     }
   },
 
@@ -45,6 +53,12 @@ export default {
     },
 
     isExpanded (item) {
+      let hasCollapse = this.hasCollapse(item)
+      if (!hasCollapse) return
+      if (count < this.steps) {
+        count++
+        item.expanded = !!(item.subMenu.filter(i => i.link === this.$route.name).length)
+      }
       return item.expanded
     },
 

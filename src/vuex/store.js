@@ -1,8 +1,9 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 
-import menu from '../config/menu'
-import sidebar from '../config/sidebar'
+import config from '../config'
+
+const { menu, sidebar } = config
 
 Vue.use(Vuex)
 
