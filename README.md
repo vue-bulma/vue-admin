@@ -9,29 +9,18 @@ Vue Admin Panel Framework. [Live Demo][].
 ## Features
 
 * Charts
-
   * Chart
-
   * Chartist
-
   * Peity
-
   * Plotly
 
 * Components
-
   * Breadcrumb
-
   * Notification
-
   * Message
-
   * Progress
-
   * Modal
-
   * Tooltip
-
   * Tabs
 
 ## Tech Stack
