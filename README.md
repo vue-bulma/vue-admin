@@ -32,6 +32,8 @@ Vue Admin Panel Framework. [Live Demo][].
 
   * Tooltip
 
+  * Tabs
+
 ## Tech Stack
 
 | Name | Version | Description |  
