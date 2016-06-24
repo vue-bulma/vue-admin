@@ -5,6 +5,16 @@ Vue.transition('fade', {
   leaveClass: 'fadeOut'
 })
 
+Vue.transition('fade-right-left', {
+  enterClass: 'fadeInRight',
+  leaveClass: 'fadeOutLeft'
+})
+
+Vue.transition('fade-left-right', {
+  enterClass: 'fadeInLeft',
+  leaveClass: 'fadeOutRight'
+})
+
 Vue.transition('zoom', {
   enterClass: 'zoomIn',
   leaveClass: 'zoomOut'
