@@ -140,6 +140,8 @@ export default {
   }
   &.is-layout-left {
     flex-direction: row;
+    overflow-x: hidden;
+    overflow-y: auto;
 
     .tab-list {
       flex-direction: column;
@@ -169,6 +171,8 @@ export default {
   }
   &.is-layout-right {
     flex-direction: row-reverse;
+    overflow-x: hidden;
+    overflow-y: auto;
 
     .tab-list {
       flex-direction: column;
