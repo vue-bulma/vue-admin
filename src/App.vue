@@ -62,6 +62,5 @@ export default {
 
 .animated {
   animation-duration: .377s;
-  animation-fill-mode: both;
 }
 </style>

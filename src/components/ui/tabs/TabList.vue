@@ -1,5 +1,5 @@
 <template>
-  <ul :class="{ 'tab-list': true, [`is-${alignment}`]: alignment }" role="tablist">
+  <ul :class="{ 'tab-list': true, 'is-flex': true, [`is-${alignment}`]: alignment }" role="tablist">
     <slot></slot>
   </ul>
 </template>

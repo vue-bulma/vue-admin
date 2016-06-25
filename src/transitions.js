@@ -5,14 +5,44 @@ Vue.transition('fade', {
   leaveClass: 'fadeOut'
 })
 
-Vue.transition('fade-right-left', {
+Vue.transition('fade-horizontal-rtl', {
   enterClass: 'fadeInRight',
   leaveClass: 'fadeOutLeft'
 })
 
-Vue.transition('fade-left-right', {
+Vue.transition('fade-horizontal-ltr', {
   enterClass: 'fadeInLeft',
   leaveClass: 'fadeOutRight'
+})
+
+Vue.transition('slide-horizontal-rtl', {
+  enterClass: 'slideInRight',
+  leaveClass: 'slideOutLeft'
+})
+
+Vue.transition('slide-horizontal-ltr', {
+  enterClass: 'slideInLeft',
+  leaveClass: 'slideOutRight'
+})
+
+Vue.transition('fade-vertical-dtu', {
+  enterClass: 'fadeInUp',
+  leaveClass: 'fadeOutUp'
+})
+
+Vue.transition('fade-vertical-utd', {
+  enterClass: 'fadeInDown',
+  leaveClass: 'fadeOutDown'
+})
+
+Vue.transition('slide-vertical-dtu', {
+  enterClass: 'slideInUp',
+  leaveClass: 'slideOutUp'
+})
+
+Vue.transition('slide-vertical-utd', {
+  enterClass: 'slideInDown',
+  leaveClass: 'slideOutDown'
 })
 
 Vue.transition('zoom', {

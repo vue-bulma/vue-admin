@@ -1,17 +1,17 @@
 <template>
-  <div :class="{ tabs: true, [`is-${size}`]: size, [`is-${alignment}`]: alignment, [`is-${type}`]: type, [`is-fullwidth`]: isFullwidth }">
+  <div :class="{ tabs: true, [`is-${size}`]: size, [`is-${alignment}`]: alignment, [`is-${type}`]: type, 'is-fullwidth': isFullwidth, [`is-layout-${layout}`]: true }">
     <slot name="left-tab-list"></slot>
     <tab-list>
       <li v-for="tab in $tabPanes"
         role="tab"
-        :class="{ 'is-active': isActived($index), 'is-disabled': tab.disabled }"
+        :class="{ 'is-active': isActived($index), 'is-disabled': tab.disabled, 'is-flex': true }"
         :aria-selected="isActived($index) ? 'true' : 'false'"
         :aria-expanded="isActived($index) ? 'true' : 'false'"
         :aria-disabled="tab.disabled ? 'true' : 'false'"
         :selected="isActived($index)"
         :disabled="tab.disabled"
         @click.prevent="select($index)">
-        <a>
+        <a class="is-unselectable">
           <span :class="['icon', { 'is-small': size !== 'large' }]" v-if="tab.icon"><i :class="tab.icon"></i></span>
           <span>{{ tab.label }}</span>
         </a>
@@ -34,6 +34,13 @@ export default {
 
   props: {
     isFullwidth: Boolean,
+    layout: {
+      type: String,
+      default: 'top',
+      validator (val) {
+        return ['top', 'bottom', 'left', 'right'].indexOf(val) > -1
+      }
+    },
     type: {
       type: String,
       default: ''
@@ -49,6 +56,14 @@ export default {
     selectedIndex: {
       type: Number,
       default: -1
+    },
+    animation: {
+      type: String,
+      default: 'fade'
+    },
+    onlyFade: {
+      type: Boolean,
+      default: true
     }
   },
 
@@ -86,22 +101,100 @@ export default {
 </script>
 
 <style lang="scss">
-.tabs {
-  flex-direction: column;
+@import '~bulma/sass/utilities/variables';
 
+.tabs {
   .tab-content {
-    min-height: 40px;
+    flex-direction: column;
     overflow: hidden;
     position: relative;
+    margin: 10px;
+    flex: 1 1;
   }
 
   .tab-pane {
-    display: none;
-    transform: translate3d(0, 0, 0);
     width: 100%;
+    flex: 1 1;
 
     &.is-active {
-      display: block;
+      transform: translateZ(0);
+    }
+
+    &[class*="Out"] {
+      overflow: hidden;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      transform: translateX(0);
+      transform: translateY(0);
+    }
+  }
+
+  &.is-layout-top {
+    flex-direction: column;
+  }
+  &.is-layout-bottom {
+    flex-direction: column-reverse;
+  }
+  &.is-layout-left {
+    flex-direction: row;
+
+    .tab-list {
+      flex-direction: column;
+      align-items: flex-start;
+      max-width: calc(100% / 6);
+      border-bottom: none;
+      border-right: 1px solid $grey-light;
+    }
+
+    li {
+      width: 100%;
+
+      a {
+        border-bottom: none;
+        border-right: 1px solid $grey-light;
+        margin-bottom: 0;
+        margin-right: -1px;
+        justify-content: flex-end;
+      }
+
+      &.is-active {
+        a {
+          border-right-color: $turquoise;
+        }
+      }
+    }
+  }
+  &.is-layout-right {
+    flex-direction: row-reverse;
+
+    .tab-list {
+      flex-direction: column;
+      align-items: flex-end;
+      justify-content: flex-start;
+      max-width: calc(100% / 6);
+      border-bottom: none;
+      border-left: 1px solid $grey-light;
+
+      li {
+        width: 100%;
+
+        a {
+          border-bottom: none;
+          border-left: 1px solid $grey-light;
+          margin-bottom: 0;
+          margin-left: -1px;
+          justify-content: flex-start;
+        }
+
+        &.is-active {
+          a {
+            border-left-color: $turquoise;
+          }
+        }
+      }
     }
   }
 }
