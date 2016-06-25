@@ -133,8 +133,7 @@
 </template>
 
 <script>
-import Tabs from '../../ui/tabs/Tabs'
-import TabPane from '../../ui/tabs/TabPane'
+import { Tabs, TabPane } from '../../ui/tabs/'
 
 export default {
   components: {
