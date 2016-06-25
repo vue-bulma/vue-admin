@@ -104,6 +104,13 @@ export default {
 @import '~bulma/sass/utilities/variables';
 
 .tabs {
+  position: relative;
+  flex: 1;
+
+  .tab-list {
+    flex: 0 1 auto;
+  }
+
   .tab-content {
     flex-direction: column;
     overflow: hidden;
@@ -160,6 +167,10 @@ export default {
         margin-bottom: 0;
         margin-right: -1px;
         justify-content: flex-end;
+
+        &:hover {
+          border-right-color: $grey-darker;
+        }
       }
 
       &.is-active {
@@ -191,6 +202,10 @@ export default {
           margin-bottom: 0;
           margin-left: -1px;
           justify-content: flex-start;
+
+          &:hover {
+            border-left-color: $grey-darker;
+          }
         }
 
         &.is-active {
