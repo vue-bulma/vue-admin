@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import uuid from '../../libs/uuid'
+import uuid from '../../lib/uuid'
 import Chartist from 'chartist'
 
 const types = ['Line', 'Bar', 'Pie']

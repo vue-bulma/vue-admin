@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import uuid from '../../libs/uuid'
+import uuid from '../../lib/uuid'
 // import Chart from 'chart.js' // With moment.js
 import Chart from 'chart.js/dist/Chart' // Without moment.js
 
