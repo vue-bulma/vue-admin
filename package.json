@@ -35,7 +35,7 @@
     "plotly.js": "1.14.0",
     "vue": "1.0.25",
     "vue-peity": "0.3.0",
-    "vue-resource": "0.9.0",
+    "vue-resource": "0.9.1",
     "vue-router": "0.7.13",
     "vuex": "0.8.0"
   },
