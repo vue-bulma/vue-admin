@@ -123,6 +123,10 @@ router.map({
       '/tabs': {
         name: 'Tabs',
         component: makeComponent('./components/pages/UI/Tabs')
+      },
+      '/collapses': {
+        name: 'Collapses',
+        component: makeComponent('./components/pages/UI/Collapses')
       }
     }
   },

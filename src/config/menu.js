@@ -71,6 +71,10 @@ export default [
       {
         link: 'Tabs',
         label: 'Tabs'
+      },
+      {
+        link: 'Collapses',
+        label: 'Collapses'
       }
     ]
   },

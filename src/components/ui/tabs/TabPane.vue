@@ -40,8 +40,8 @@ export default {
     this._isTabPane = true
   },
 
-  compiled () {
-    this.$on('on-tab-click', (index, prevIndex) => {
+  events: {
+    ['on' + '-tab-click'] (index, prevIndex) {
       if (!this.onlyFade) {
         if (prevIndex === -1 || prevIndex >= index) {
           this.transition = `${this.animation}${this.layout ? `-${this.direction}` : ''}${this.gte ? `-${this.gte}` : ''}`
@@ -50,7 +50,7 @@ export default {
         }
       }
       this.selected = this.index === index
-    })
+    }
   },
 
   computed: {
