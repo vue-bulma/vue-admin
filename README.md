@@ -22,6 +22,7 @@ Vue Admin Panel Framework. [Live Demo][].
   * Modal
   * Tooltip
   * Tabs
+  * Collapse
 
 ## Tech Stack
 
