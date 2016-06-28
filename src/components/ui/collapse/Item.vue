@@ -1,12 +1,12 @@
 <template>
-  <div class="card collapse-item" :class="{ 'is-fullwidth': $parent.isFullwidth }">
-    <header class="card-header" role="tab" :aria-expanded="selected ? 'true' : 'fase'">
-      <p class="card-header-title">{{ title }}</p>
-      <a class="card-header-icon" @click.prevent="toggle">
+  <div class="card collapse-item" :class="{ 'is-fullwidth': $parent.isFullwidth, 'is-active': selected }">
+    <header class="card-header" role="tab" :aria-expanded="selected ? 'true' : 'fase'" @click.prevent="toggle">
+      <span class="card-header-icon">
         <i class="fa fa-angle-down"></i>
-      </a>
+      </span>
+      <h3 class="card-header-title">{{ title }}</h3>
     </header>
-    <div class="card-content animated" v-el:content v-if="selected">
+    <div class="card-content animated" v-if="selected">
       <div class="card-content-box">
         <slot></slot>
       </div>
@@ -56,6 +56,12 @@ export default {
 
 <style lang="scss">
 .collapse-item {
+  .card-header {
+    cursor: pointer;
+  }
+  .card-header-icon {
+    transition: transform .377s ease;
+  }
   .card-content {
     padding-top: 0;
     padding-bottom: 0;
@@ -63,6 +69,14 @@ export default {
   .card-content-box {
     padding-top: 20px;
     padding-bottom: 20px;
+  }
+
+  &.is-active {
+    > .card-header {
+      > .card-header-icon {
+        transform: rotate(-90deg);
+      }
+    }
   }
 }
 </style>
