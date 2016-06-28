@@ -8,14 +8,7 @@
 export default {
   props: {
     isFullwidth: Boolean,
-    accordion: {
-      type: Boolean,
-      default: false
-    },
-    multiple: {
-      type: Boolean,
-      default: true
-    }
+    accordion: Boolean
   },
 
   computed: {

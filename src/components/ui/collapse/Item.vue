@@ -1,10 +1,10 @@
 <template>
   <div class="card collapse-item" :class="{ 'is-fullwidth': $parent.isFullwidth, 'is-active': selected }">
     <header class="card-header" role="tab" :aria-expanded="selected ? 'true' : 'fase'" @click.prevent="toggle">
-      <span class="card-header-icon">
-        <i class="fa fa-angle-down"></i>
-      </span>
       <h3 class="card-header-title">{{ title }}</h3>
+      <span class="card-header-icon">
+        <i class="fa fa-angle-right"></i>
+      </span>
     </header>
     <div class="card-content animated" v-if="selected">
       <div class="card-content-box">
@@ -74,7 +74,7 @@ export default {
   &.is-active {
     > .card-header {
       > .card-header-icon {
-        transform: rotate(-90deg);
+        transform: rotate(90deg);
       }
     }
   }
