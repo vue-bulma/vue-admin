@@ -17,15 +17,12 @@ export default {
 
   props: {
     icon: String,
-    selected: {
-      type: Boolean,
-      default: false
-    },
+    selected: Boolean,
+    disabled: Boolean,
     label: {
       type: String,
       required: true
     },
-    disabled: Boolean,
     transition: {
       type: String,
       default: 'fade'
