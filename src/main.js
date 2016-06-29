@@ -12,12 +12,6 @@ import './transitions'
 Vue.use(Router)
 Vue.use(Resource)
 
-const makeComponent = (path) => {
-  return (resolve) => {
-    require([path], resolve)
-  }
-}
-
 import App from './App'
 import Dashboard from './components/pages/Dashboard/'
 
@@ -54,6 +48,12 @@ router.afterEach(() => {
   NProgress.done()
 })
 
+const lazyLoading = (path, ext = '.vue') => {
+  return (resolve) => {
+    require([`${path}${ext}`], resolve)
+  }
+}
+
 router.map({
   // '/login': {
   //   name: 'Login',
@@ -66,73 +66,73 @@ router.map({
   // http://router.vuejs.org/en/lazy.html
   '/charts/chartJs': {
     name: 'ChartJs',
-    component: makeComponent('./components/pages/Charts/ChartJs')
+    component: lazyLoading('./components/pages/Charts/ChartJs')
   },
   '/charts/chartist': {
     name: 'Chartist',
-    component: makeComponent('./components/pages/Charts/Chartist')
+    component: lazyLoading('./components/pages/Charts/Chartist')
   },
   '/charts/peity': {
     name: 'Peity',
-    component: makeComponent('./components/pages/Charts/Peity')
+    component: lazyLoading('./components/pages/Charts/Peity')
   },
   '/charts/plotly': {
     name: 'Plotly',
-    component: makeComponent('./components/pages/Charts/Plotly')
+    component: lazyLoading('./components/pages/Charts/Plotly')
   },
   '/ui': {
     name: 'UI',
-    component: makeComponent('./components/pages/UI/index'),
+    component: lazyLoading('./components/pages/UI/index'),
     subRoutes: {
       '/typography': {
         name: 'Typography',
-        component: makeComponent('./components/pages/UI/Typography')
+        component: lazyLoading('./components/pages/UI/Typography')
       },
       '/buttons': {
         name: 'Buttons',
-        component: makeComponent('./components/pages/UI/Buttons')
+        component: lazyLoading('./components/pages/UI/Buttons')
       },
       '/icons': {
         name: 'Icons',
-        component: makeComponent('./components/pages/UI/Icons')
+        component: lazyLoading('./components/pages/UI/Icons')
       },
       '/form': {
         name: 'Form',
-        component: makeComponent('./components/pages/UI/Form')
+        component: lazyLoading('./components/pages/UI/Form')
       },
       '/notifications': {
         name: 'Notifications',
-        component: makeComponent('./components/pages/UI/Notifications')
+        component: lazyLoading('./components/pages/UI/Notifications')
       },
       '/messages': {
         name: 'Messages',
-        component: makeComponent('./components/pages/UI/Messages')
+        component: lazyLoading('./components/pages/UI/Messages')
       },
       '/progress': {
         name: 'Progress',
-        component: makeComponent('./components/pages/UI/Progress')
+        component: lazyLoading('./components/pages/UI/Progress')
       },
       '/modals': {
         name: 'Modals',
-        component: makeComponent('./components/pages/UI/Modals')
+        component: lazyLoading('./components/pages/UI/Modals')
       },
       '/tooltips': {
         name: 'Tooltips',
-        component: makeComponent('./components/pages/UI/Tooltips')
+        component: lazyLoading('./components/pages/UI/Tooltips')
       },
       '/tabs': {
         name: 'Tabs',
-        component: makeComponent('./components/pages/UI/Tabs')
+        component: lazyLoading('./components/pages/UI/Tabs')
       },
       '/collapses': {
         name: 'Collapses',
-        component: makeComponent('./components/pages/UI/Collapses')
+        component: lazyLoading('./components/pages/UI/Collapses')
       }
     }
   },
   '/tables/basic': {
     name: 'BasicTables',
-    component: makeComponent('./components/pages/Tables/Basic')
+    component: lazyLoading('./components/pages/Tables/Basic')
   }
 })
 

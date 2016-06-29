@@ -74,7 +74,11 @@ module.exports = {
           name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
         }
       }
-    ]
+    ],
+    noParse: [
+      /plotly\.js/,
+      /chart\.js/
+    ],
   },
   eslint: {
     formatter: require('eslint-friendly-formatter')
