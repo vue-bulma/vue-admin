@@ -1,6 +1,6 @@
 <template>
   <div class="card collapse-item" :class="{ 'is-fullwidth': $parent.isFullwidth, 'is-active': selected }">
-    <header class="card-header" role="tab" :aria-expanded="selected ? 'true' : 'fase'" @click.prevent="toggle">
+    <header class="card-header is-unselectable" role="tab" :aria-expanded="selected ? 'true' : 'fase'" @click.prevent="toggle">
       <h3 class="card-header-title">{{ title }}</h3>
       <span class="card-header-icon">
         <i class="fa fa-angle-right"></i>
