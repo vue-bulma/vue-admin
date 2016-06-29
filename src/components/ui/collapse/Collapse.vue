@@ -1,5 +1,5 @@
 <template>
-  <div class="collapse" :class="{ 'is-fullwidth': isFullwidth }">
+  <div class="collapse is-fullwidth">
     <slot></slot>
   </div>
 </template>
