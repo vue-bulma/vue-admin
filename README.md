@@ -8,7 +8,10 @@
 </p>
 
 <p align="center">
-  <sub>Made with ❤︎ by <a href="https://twitter.com/_fundon">Fangdun Cai</a></sub>
+  <sub>Made with ❤︎ by
+    <a href="https://twitter.com/_fundon">Fangdun Cai</a> and
+    <a href="https://github.com/fundon/vue-admin/graphs/contributors">contributors</a>
+  </sub>
 </p>
 
 ![](screenshots/app.png)
