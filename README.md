@@ -1,28 +1,19 @@
 <p align="center"><img width="200" src="src/assets/logo@2x.png"></p>
 
-# vue-admin
+<h1 align="center">Vue Admin</h1>
+<p align="center">Vue Admin Panel Framework, [Live Demo][]</p>
 
-Vue Admin Panel Framework. [Live Demo][].
+<p align="center">
+  <sub>Made with ❤︎ by [Fangdun Cai][]</sub>
+</p>
 
-![](screenshots/app.png)
+<p align="center">![](screenshots/app.png)</p>
 
 ## Features
 
-* Charts
-  * Chart
-  * Chartist
-  * Peity
-  * Plotly
-
-* Components
-  * Breadcrumb
-  * Notification
-  * Message
-  * Progress
-  * Modal
-  * Tooltip
-  * Tabs
-  * Collapse
+* Flexible Box Layout
+* [Variety of charts](doc/charts.md)
+* [Rich Components](doc/components.md)
 
 ## Tech Stack
 
@@ -73,9 +64,8 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 [![Gitter](https://badges.gitter.im/fundon/vue-admin.svg)](https://gitter.im/fundon/vue-admin?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
 
-Made with love by Fangdun Cai.
-
 [Live Demo]: https://vue-admin.fundon.me/
+[Fangdun Cai]: https://twitter.com/_fundon
 [Vue.js]: http://vuejs.org
 [vuex]: https://github.com/vuejs/vuex
 [vue-router]: https://github.com/vuejs/vue-router
