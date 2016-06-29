@@ -72,7 +72,6 @@ types2.forEach((e) => {
 Vue.transition('fade-expand', {
   css: false,
   enter: function (targets, done) {
-    let autoplay = false
     let height = targets.offsetHeight
     let opacity = 1
     let duration = 233
@@ -91,16 +90,12 @@ Vue.transition('fade-expand', {
       height,
       complete
     }
-    if (!this.anime) {
-      this.anime = anime({ autoplay })
-    }
-    this.anime.play(options)
+    this.anime = anime(options)
   },
   enterCancelled: function (el) {
     this.anime.pause()
   },
   leave: function (targets, complete) {
-    let autoplay = false
     let height = 0
     let opacity = 0
     let duration = 233
@@ -113,10 +108,7 @@ Vue.transition('fade-expand', {
       height,
       complete
     }
-    if (!this.anime) {
-      this.anime = anime({ autoplay })
-    }
-    this.anime.play(options)
+    this.anime = anime(options)
   },
   leaveCancelled: function (el) {
     this.anime.pause()
