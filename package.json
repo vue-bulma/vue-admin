@@ -23,6 +23,7 @@
   },
   "dependencies": {
     "animate.css": "3.5.1",
+    "animejs": "github:juliangarnier/anime",
     "babel-runtime": "6.9.2",
     "bulma": "0.0.28",
     "chart.js": "2.1.6",
