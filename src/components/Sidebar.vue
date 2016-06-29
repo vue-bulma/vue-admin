@@ -2,7 +2,7 @@
   <aside class="menu app-sidebar animated" :class="{ 'slideInLeft': sidebar.opened, 'slideOutLeft': !sidebar.opened }">
     <ul class="menu-list">
       <li v-for="item in menu">
-        <a v-link="{ name: item.link }" @click="toggle(item, $event)" :aria-expanded="isExpanded(item)">
+        <a class="is-unselectable" v-link="{ name: item.link }" @click="toggle(item, $event)" :aria-expanded="isExpanded(item)">
           <span class="icon is-small" v-if="item.icon">
             <i :class="['fa', item.icon]"></i>
           </span>
@@ -13,7 +13,7 @@
         </a>
         <ul v-if="item.expanded" :class="{ 'collapse': item.subMenu }" @click="autoClose" transition="fade-expand">
           <li v-for="subItem in item.subMenu">
-            <a v-link="{ name: subItem.link }">{{ subItem.label }}</a>
+            <a class="is-unselectable" v-link="{ name: subItem.link }">{{ subItem.label }}</a>
           </li>
         </ul>
       </li>
