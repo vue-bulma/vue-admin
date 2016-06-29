@@ -11,7 +11,7 @@
             <i class="fa fa-angle-down"></i>
           </span>
         </a>
-        <ul v-if="item.subMenu" :class="{ 'collapse': item.subMenu }" @click="autoClose">
+        <ul v-if="item.expanded" :class="{ 'collapse': item.subMenu }" @click="autoClose" transition="fade-expand">
           <li v-for="subItem in item.subMenu">
             <a v-link="{ name: subItem.link }">{{ subItem.label }}</a>
           </li>
@@ -95,7 +95,11 @@ export default {
   }
 
   .collapse {
-    display: none;
+    // display: none;
+  }
+
+  .menu-list li {
+    overflow: hidden;
   }
 
   .menu-list li a {
@@ -115,11 +119,24 @@ export default {
       }
 
       & + .collapse {
-        display: block;
+        // display: block;
       }
     }
-
   }
+
+  .menu-list li ul {
+    margin: 0 10px;
+    transform: translate3d(0, 0, 0);
+
+    > li:first-child {
+      padding-top: 10px;
+    }
+
+    > li:last-child {
+      padding-bottom: 10px;
+    }
+  }
+
 }
 
 </style>
