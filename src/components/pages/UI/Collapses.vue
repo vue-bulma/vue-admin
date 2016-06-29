@@ -29,7 +29,7 @@
           <h1 class="title">Accordion</h1>
           <div class="block is-flex">
             <collapse accordion>
-              <collapse-item title="Components" selected>
+              <collapse-item title="Components">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris. @bulmaio. #css #responsive
               </collapse-item>
               <collapse-item title="Elements" selected>

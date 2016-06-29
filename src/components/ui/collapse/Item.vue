@@ -6,7 +6,7 @@
         <i class="fa fa-angle-right"></i>
       </span>
     </header>
-    <div class="card-content animated" v-if="selected">
+    <div class="card-content" v-if="selected" transition="fade-expand">
       <div class="card-content-box">
         <slot></slot>
       </div>
@@ -21,10 +21,7 @@ export default {
       type: String,
       required: true
     },
-    selected: {
-      type: Boolean,
-      default: false
-    }
+    selected: Boolean
   },
 
   created () {
@@ -65,6 +62,7 @@ export default {
   .card-content {
     padding-top: 0;
     padding-bottom: 0;
+    overflow: hidden;
   }
   .card-content-box {
     padding-top: 20px;
