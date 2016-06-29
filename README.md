@@ -1,18 +1,22 @@
 <p align="center"><img width="200" src="src/assets/logo@2x.png"></p>
 
 <h1 align="center">Vue Admin</h1>
-<p align="center">Vue Admin Panel Framework, [Live Demo][]</p>
 
 <p align="center">
-  <sub>Made with ❤︎ by [Fangdun Cai][]</sub>
+  <strong>Vue Admin Panel Framework</strong>,
+  <a href="https://vue-admin.fundon.me">Live Demo</a>
 </p>
 
-<p align="center">![](screenshots/app.png)</p>
+<p align="center">
+  <sub>Made with ❤︎ by <a href="https://twitter.com/_fundon">Fangdun Cai</a></sub>
+</p>
+
+![](screenshots/app.png)
 
 ## Features
 
 * Flexible Box Layout
-* [Variety of charts](doc/charts.md)
+* [Variety of Charts](doc/charts.md)
 * [Rich Components](doc/components.md)
 
 ## Tech Stack
