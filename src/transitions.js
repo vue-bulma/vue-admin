@@ -1,4 +1,5 @@
 import Vue from 'vue'
+import anime from 'animejs'
 
 Vue.transition('fade', {
   enterClass: 'fadeIn',
@@ -66,4 +67,58 @@ types2.forEach((e) => {
     enterClass: `bounceIn${e}`,
     leaveClass: `bounceOut${e === 'Up' ? 'Down' : 'Up'}`
   })
+})
+
+Vue.transition('fade-expand', {
+  css: false,
+  enter: function (targets, done) {
+    let autoplay = false
+    let height = targets.offsetHeight
+    let opacity = 1
+    let duration = 233
+    let easing = 'easeOutExpo'
+    let complete = () => {
+      targets.removeAttribute('style')
+      done()
+    }
+    targets.style.height = 0
+    targets.style.opacity = 0
+    let options = {
+      targets,
+      duration,
+      easing,
+      opacity,
+      height,
+      complete
+    }
+    if (!this.anime) {
+      this.anime = anime({ autoplay })
+    }
+    this.anime.play(options)
+  },
+  enterCancelled: function (el) {
+    this.anime.pause()
+  },
+  leave: function (targets, complete) {
+    let autoplay = false
+    let height = 0
+    let opacity = 0
+    let duration = 233
+    let easing = 'easeOutExpo'
+    let options = {
+      targets,
+      duration,
+      easing,
+      opacity,
+      height,
+      complete
+    }
+    if (!this.anime) {
+      this.anime = anime({ autoplay })
+    }
+    this.anime.play(options)
+  },
+  leaveCancelled: function (el) {
+    this.anime.pause()
+  }
 })
