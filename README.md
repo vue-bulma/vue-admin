@@ -18,7 +18,7 @@
 
 ## Features
 
-* Flexible Box Layout
+* Responsive and Flexible Box Layout
 * [Variety of Charts](doc/charts.md)
 * [Rich Components](doc/components.md)
 
