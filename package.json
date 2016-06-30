@@ -33,12 +33,12 @@
     "hint.css": "2.3.1",
     "moment": "2.13.0",
     "nprogress": "0.2.0",
-    "plotly.js": "1.14.0",
+    "plotly.js": "1.14.x",
     "vue": "1.0.26",
     "vue-peity": "0.3.0",
     "vue-resource": "0.9.1",
     "vue-router": "0.7.13",
-    "vuex": "0.8.0"
+    "vuex": "0.8.2"
   },
   "devDependencies": {
     "babel-core": "^6.10.x",
@@ -94,7 +94,7 @@
     "vue-style-loader": "^1.0.0",
     "webpack": "^1.12.2",
     "webpack-dev-middleware": "^1.4.0",
-    "webpack-hot-middleware": "^2.6.0",
+    "webpack-hot-middleware": "^2.x.x",
     "webpack-merge": "^0.14.0"
   }
 }
