@@ -30,7 +30,7 @@
 | [vuex][] | 0.8.x | Flux-inspired Application Architecture for Vue.js |  
 | [vue-router][] | 0.7.13 | The official router |  
 | [vue-resource][] | 0.9.x | Resource component |  
-| [bulma][] | 0.0.28 | A modern CSS framework based on Flexbox |  
+| [bulma][] | 0.1.x | A modern CSS framework based on Flexbox |  
 | [animate.css][] | 3.5.1 | Just-add-water CSS animation |  
 | [chart.js][] | 2.1.6 | Simple HTML5 Charts using the canvas element |  
 | [chartist.js][] | 0.9.x | Simple responsive charts |  

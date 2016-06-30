@@ -25,7 +25,7 @@
     "animate.css": "3.5.1",
     "animejs": "github:juliangarnier/anime",
     "babel-runtime": "6.9.2",
-    "bulma": "0.0.28",
+    "bulma": "0.1.0",
     "chart.js": "2.1.6",
     "chartist": "0.9.8",
     "classnames": "2.2.5",
