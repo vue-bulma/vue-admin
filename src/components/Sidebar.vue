@@ -2,7 +2,7 @@
   <aside class="menu app-sidebar animated" :class="{ 'slideInLeft': sidebar.opened, 'slideOutLeft': !sidebar.opened }">
     <ul class="menu-list">
       <li v-for="item in menu">
-        <a class="is-unselectable" v-link="{ name: item.link }" @click="toggle(item, $event)" :aria-expanded="isExpanded(item)">
+        <a class="is-unselectable" v-link="{ name: item.link }" @click="toggle(item, $event)" :aria-expanded="isExpanded(item) ? 'true' : 'false'">
           <span class="icon is-small" v-if="item.icon">
             <i :class="['fa', item.icon]"></i>
           </span>
@@ -11,7 +11,7 @@
             <i class="fa fa-angle-down"></i>
           </span>
         </a>
-        <ul v-if="item.expanded" :class="{ 'collapse': item.subMenu }" @click="autoClose" transition="fade-expand">
+        <ul v-show="isReady && item.expanded" :class="{ 'collapse': item.subMenu }" @click="autoClose" transition="menu-expand">
           <li v-for="subItem in item.subMenu">
             <a class="is-unselectable" v-link="{ name: subItem.link }">{{ subItem.label }}</a>
           </li>
@@ -34,8 +34,13 @@ export default {
 
   data () {
     return {
-      steps: this.menu.filter(i => !!i.subMenu).length
+      steps: this.menu.filter(i => !!i.subMenu).length,
+      isReady: false
     }
+  },
+
+  ready () {
+    this.isReady = true
   },
 
   methods: {
@@ -59,7 +64,7 @@ export default {
         count++
         item.expanded = !!(item.subMenu.filter(i => i.link === this.$route.name).length)
       }
-      return item.expanded
+      return this.isReady & item.expanded
     },
 
     autoClose () {
@@ -95,7 +100,20 @@ export default {
   }
 
   .collapse {
-    // display: none;
+    display: none;
+
+    &.in {
+      display: block;
+    }
+    // tr&.in    { display: table-row; }
+    // tbody&.in { display: table-row-group; }
+  }
+
+  .collapsing {
+    position: relative;
+    height: 0;
+    overflow: hidden;
+    transition: height .377s ease;
   }
 
   .menu-list li {
@@ -109,17 +127,18 @@ export default {
     .is-angle {
       position: absolute;
       right: 10px;
-      transition: all .377s ease;
+      transition: transform .377s ease;
     }
 
-    &[aria-expanded] {
+    &[aria-expanded="true"] {
 
       .is-angle {
         transform: rotate(180deg);
       }
 
       & + .collapse {
-        // display: block;
+        display: block;
+        visibility: visible;
       }
     }
   }

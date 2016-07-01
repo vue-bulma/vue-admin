@@ -69,12 +69,36 @@ types2.forEach((e) => {
   })
 })
 
+Vue.transition('menu-expand', {
+  enter (el) {
+    el.classList.remove('collapse')
+    el.classList.add('collapsing')
+    el.style.height = `${el.scrollHeight}px`
+  },
+  afterEnter (el) {
+    el.classList.remove('collapsing')
+    el.classList.add('collapse', 'in')
+  },
+  leave (el) {
+    el.classList.add('collapsing')
+    el.classList.remove('collapse', 'in')
+    el.style.height = 0
+  },
+  afterLeave (el) {
+    el.classList.remove('collapsing')
+    el.classList.add('collapse')
+    el.style.display = 'none'
+  }
+})
+
 Vue.transition('fade-expand', {
   css: false,
   enter: function (targets, done) {
-    let height = targets.offsetHeight
-    let opacity = 1
-    let duration = 233
+    let height = targets.scrollHeight
+    let opacity = {
+      value: [0, 1]
+    }
+    let duration = 377
     let easing = 'easeOutExpo'
     let complete = () => {
       targets.removeAttribute('style')
@@ -82,33 +106,33 @@ Vue.transition('fade-expand', {
     }
     targets.style.height = 0
     targets.style.opacity = 0
-    let options = {
+    this.anime = anime({
       targets,
       duration,
       easing,
       opacity,
       height,
       complete
-    }
-    this.anime = anime(options)
+    })
   },
   enterCancelled: function (el) {
     this.anime.pause()
   },
   leave: function (targets, complete) {
     let height = 0
-    let opacity = 0
-    let duration = 233
+    let opacity = {
+      value: [1, 0]
+    }
+    let duration = 377
     let easing = 'easeOutExpo'
-    let options = {
+    this.anime = anime({
       targets,
       duration,
       easing,
       opacity,
       height,
       complete
-    }
-    this.anime = anime(options)
+    })
   },
   leaveCancelled: function (el) {
     this.anime.pause()
