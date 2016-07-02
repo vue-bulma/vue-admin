@@ -75,6 +75,10 @@ export default [
       {
         link: 'Collapses',
         label: 'Collapses'
+      },
+      {
+        link: 'Datepicker',
+        label: 'Datepicker'
       }
     ]
   },

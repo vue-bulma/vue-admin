@@ -127,6 +127,10 @@ router.map({
       '/collapses': {
         name: 'Collapses',
         component: lazyLoading('./components/pages/UI/Collapses')
+      },
+      '/datepicker': {
+        name: 'Datepicker',
+        component: lazyLoading('./components/pages/UI/Datepicker')
       }
     }
   },
