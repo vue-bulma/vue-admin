@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import flatpickr from 'flatpickr/src/flatpickr'
+import flatpickr from 'flatpickr'
 
 export default {
   partials: {
