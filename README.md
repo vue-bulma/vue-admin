@@ -21,7 +21,7 @@
 * Responsive and Flexible Box Layout
 * [Variety of Charts](doc/charts.md)
 * [Rich Components](doc/components.md)
-* Powered by [Vue.js][] & [Bulma][]
+* Powered by [Vue][] & [Bulma][]
 * Based on the awesome third-party [libraries](doc/dependencies.md)
 
 ## Build Setup
@@ -56,5 +56,5 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 
 [Live Demo]: https://vue-admin.fundon.me/
 [Fangdun Cai]: https://twitter.com/_fundon
-[Vue.js]: http://vuejs.org
+[Vue]: http://vuejs.org
 [Bulma]: http://bulma.io

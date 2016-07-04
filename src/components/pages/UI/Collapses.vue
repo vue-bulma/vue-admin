@@ -85,8 +85,4 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.column {
-  margin: 10px;
-  border: 1px solid #fce473;
-}
 </style>

@@ -3,33 +3,34 @@
 
 ## System Components
 
-* [vuex][]
-* [vue-router][]
 * [vue-resource][]
+* [vue-router][]
+* [vuex][]
 
 
 ## UI Components
 
 | Component | Library |  
 | --- | --- | --- |  
-| Tooltip | [hint.css][] |  
+| Charts | [chart.js][], [chartist.js][], [peity][], [plotly.js][] |  
 | Datepicker | [flatpickr][] |  
-| Transitions & Animations | [animate.css][] & [animejs][] |  
-| Charts | [chart.js][], [chartist.js][], [plotly.js][], [peity][] |  
 | Fonts | [font-awesome][] |  
+| Tooltip | [hint.css][] |  
+| Transitions & Animations | [animate.css][] & [animejs][] |  
 | ... | ... |  
 
 
 ## Development Tools
 
-* [vue-devtools][]
-* [Bable][]
+* [ESLint][]
+* [Babel][]
 * [Webpack][]
+* [vue-devtools][]
 
 
-[vuex]: https://github.com/vuejs/vuex
-[vue-router]: https://github.com/vuejs/vue-router
 [vue-resource]: https://github.com/vuejs/vue-resource
+[vue-router]: https://github.com/vuejs/vue-router
+[vuex]: https://github.com/vuejs/vuex
 
 [animate.css]: http://daneden.github.io/animate.css/
 [animejs]: http://anime-js.com/
@@ -40,11 +41,12 @@
 
 [chart.js]: http://www.chartjs.org
 [chartist.js]: https://gionkunz.github.io/chartist-js/index.html
-[plotly.js]: https://github.com/plotly/plotly.js
 [peity]: https://github.com/benpickles/peity
+[plotly.js]: https://github.com/plotly/plotly.js
 
 [font-awesome]: http://fontawesome.io
 
-[vue-devtools]: https://github.com/vuejs/vue-devtools
-[Bable]: http://babeljs.io/
+[Babel]: http://babeljs.io/
+[ESLint]: http://eslint.org
 [Webpack]: https://webpack.github.io
+[vue-devtools]: https://github.com/vuejs/vue-devtools
