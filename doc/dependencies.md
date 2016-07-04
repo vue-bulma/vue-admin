@@ -16,7 +16,7 @@
 | Datepicker | [flatpickr][] |  
 | Fonts | [font-awesome][] |  
 | Tooltip | [hint.css][] |  
-| Transitions & Animations | [animate.css][] & [animejs][] |  
+| Animations & Transitions | [animate.css][] & [animejs][] |  
 | ... | ... |  
 
 
