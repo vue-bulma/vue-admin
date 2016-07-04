@@ -114,6 +114,25 @@
         </article>
       </div>
     </div>
+
+    <div class="tile is-ancestor">
+      <div class="tile is-parent">
+        <article class="tile is-child box">
+          <h1 class="title">Setting custom defaults</h1>
+          <p class="control">
+            <datepicker :config="{ prevArrow: '<i class=\'fa fa-angle-left\'></i>', nextArrow: '<i class=\'fa fa-angle-right\'></i>' }"></datepicker>
+          </p>
+        </article>
+      </div>
+      <div class="tile is-parent">
+        <article class="tile is-child box">
+          <h1 class="title">Localization</h1>
+          <p class="control">
+            <datepicker :l10n="l10n"></datepicker>
+          </p>
+        </article>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -127,12 +146,12 @@ export default {
 
   ready () {
     let { checkIn, checkOut } = this.$refs
-    checkIn.flatpickr.set('onChange', (d) => {
-      checkOut.flatpickr.set('minDate', d.fp_incr(1))
+    checkIn.datepicker.set('onChange', (d) => {
+      checkOut.datepicker.set('minDate', d.fp_incr(1))
     })
 
-    checkOut.flatpickr.set('onChange', (d) => {
-      checkIn.flatpickr.set('maxDate', d)
+    checkOut.datepicker.set('onChange', (d) => {
+      checkIn.datepicker.set('maxDate', d)
     })
   },
 
@@ -147,6 +166,20 @@ export default {
     },
     placeholder () {
       return `minDate: today, maxDate: ${this.maxDate.getFullYear()}-${this.maxDate.getMonth() + 1}-${this.maxDate.getDate()}`
+    },
+    // https://github.com/chmln/flatpickr/blob/gh-pages/src/flatpickr.l10n.zh.js
+    l10n () {
+      return {
+        firstDayOfWeek: 1,
+        weekdays: {
+          shorthand: ['周日', '周一', '周二', '周三', '周四', '周五', '周六'],
+          longhand: ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六']
+        },
+        months: {
+          shorthand: ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月'],
+          longhand: ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月']
+        }
+      }
     }
   }
 }

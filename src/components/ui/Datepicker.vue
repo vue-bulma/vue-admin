@@ -5,7 +5,16 @@
 </template>
 
 <script>
-import flatpickr from 'flatpickr'
+import { init as Flatpickr } from 'flatpickr'
+
+const factory = (selector, config, l10n) => {
+  function Datepicker (selector, config, l10n) {
+    this.l10n = Object.assign({}, Flatpickr.prototype.l10n, l10n)
+    return Flatpickr.call(this, selector, config)
+  }
+  Datepicker.prototype = Flatpickr.prototype
+  return new Datepicker(selector, config, l10n)
+}
 
 export default {
   partials: {
@@ -23,12 +32,18 @@ export default {
       type: String,
       default: 'Pick date'
     },
-    readonly: Boolean,
     value: {
       type: String,
       default: ''
     },
-    alignment: String
+    readonly: Boolean,
+    alignment: String,
+    l10n: {
+      type: Object,
+      default () {
+        return {}
+      }
+    }
   },
 
   ready () {
@@ -37,11 +52,11 @@ export default {
     } else {
       this.$el.nextSibling.value = this.value
     }
-    this.flatpickr = flatpickr(this.$el.nextSibling, this.config)
+    this.datepicker = factory(this.$el.nextSibling, this.config, this.l10n)
   },
 
   beforeDestroy () {
-    this.flatpickr.destory()
+    this.datepicker.destory()
   },
 
   computed: {
