@@ -87,4 +87,11 @@ $today_color = #ed6c63
 $selected_day_background = #1fc8db
 
 @import '~flatpickr/src/style/flatpickr_base'
+
+// https://github.com/chmln/flatpickr/issues/149
+.flatpickr-time
+  border-top 0
+
+.flatpickr-days + .flatpickr-time
+  border-top 1px solid $calendar_border_color
 </style>
