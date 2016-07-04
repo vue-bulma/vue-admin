@@ -29,7 +29,7 @@
     "chart.js": "2.1.6",
     "chartist": "0.9.8",
     "classnames": "2.2.5",
-    "flatpickr": "1.8.x",
+    "flatpickr": "github:chmln/flatpickr#gh-pages",
     "font-awesome": "4.6.3",
     "hint.css": "2.3.1",
     "moment": "2.13.0",
