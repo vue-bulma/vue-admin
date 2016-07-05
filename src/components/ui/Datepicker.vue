@@ -5,16 +5,7 @@
 </template>
 
 <script>
-import { init as Flatpickr } from 'flatpickr'
-
-const factory = (selector, config, l10n) => {
-  function Datepicker (selector, config, l10n) {
-    this.l10n = Object.assign({}, Flatpickr.prototype.l10n, l10n)
-    return Flatpickr.call(this, selector, config)
-  }
-  Datepicker.prototype = Flatpickr.prototype
-  return new Datepicker(selector, config, l10n)
-}
+import Datepicker from './datepicker/Datepicker'
 
 export default {
   partials: {
@@ -52,7 +43,7 @@ export default {
     } else {
       this.$el.nextSibling.value = this.value
     }
-    this.datepicker = factory(this.$el.nextSibling, this.config, this.l10n)
+    this.datepicker = new Datepicker(this.$el.nextSibling, this.config, this.l10n)
   },
 
   beforeDestroy () {
