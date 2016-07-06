@@ -47,7 +47,7 @@ export default {
   },
 
   beforeDestroy () {
-    this.datepicker.destory()
+    this.datepicker.destroy()
   },
 
   computed: {
