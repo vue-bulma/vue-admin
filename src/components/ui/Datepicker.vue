@@ -13,7 +13,14 @@ export default {
     wrapperInput: require('./datepicker/wrapperInput.html')
   },
   props: {
+    alignment: String,
     config: {
+      type: Object,
+      default () {
+        return {}
+      }
+    },
+    l10n: {
       type: Object,
       default () {
         return {}
@@ -23,26 +30,11 @@ export default {
       type: String,
       default: 'Pick date'
     },
-    value: {
-      type: String,
-      default: ''
-    },
     readonly: Boolean,
-    alignment: String,
-    l10n: {
-      type: Object,
-      default () {
-        return {}
-      }
-    }
+    value: String
   },
 
   ready () {
-    if (this.wrap) {
-      this.$el.nextSibling.querySelector('input').value = this.value
-    } else {
-      this.$el.nextSibling.value = this.value
-    }
     this.datepicker = new Datepicker(this.$el.nextSibling, this.config, this.l10n)
     this.datepicker.set('onChange', (d, s) => {
       this.$set('value', s)

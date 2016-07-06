@@ -5,7 +5,7 @@
         <article class="tile is-child box">
           <h1 class="title">Basics</h1>
           <p class="control">
-            <datepicker></datepicker>
+            <datepicker :value.sync="value"></datepicker>
           </p>
           <p class="control">
             <datepicker placeholder="European Format ('d-m-Y')" :config="{ dateFormat: 'd-m-Y' }"></datepicker>
@@ -144,6 +144,12 @@ export default {
     Datepicker
   },
 
+  data () {
+    return {
+      value: '2016-12-12'
+    }
+  },
+
   ready () {
     let { checkIn, checkOut } = this.$refs
     checkIn.datepicker.set('onChange', (d) => {
@@ -180,6 +186,12 @@ export default {
           longhand: ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月']
         }
       }
+    }
+  },
+
+  watch: {
+    value (newVal, oldVal) {
+      console.log(newVal, oldVal)
     }
   }
 }
