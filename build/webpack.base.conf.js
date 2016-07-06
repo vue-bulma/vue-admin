@@ -76,8 +76,9 @@ module.exports = {
       }
     ],
     noParse: [
-      /plotly\.js/,
-      /chart\.js/
+      /chart\.js/,
+      /handsontable\.(full\.)?js/,
+      /plotly\.js/
     ],
   },
   eslint: {

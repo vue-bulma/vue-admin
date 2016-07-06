@@ -12,11 +12,12 @@
 
 | Component | Library |  
 | --- | --- | --- |  
+| Animations & Transitions | [animate.css][] & [animejs][] |  
 | Charts | [chart.js][], [chartist.js][], [peity][], [plotly.js][] |  
 | Datepicker | [flatpickr][] |  
 | Fonts | [font-awesome][] |  
+| Tables | [Handsontable][] |  
 | Tooltip | [hint.css][] |  
-| Animations & Transitions | [animate.css][] & [animejs][] |  
 | ... | ... |  
 
 
@@ -28,12 +29,12 @@
 * [vue-devtools][]
 
 
+[animate.css]: http://daneden.github.io/animate.css/
+[animejs]: http://anime-js.com/
+
 [vue-resource]: https://github.com/vuejs/vue-resource
 [vue-router]: https://github.com/vuejs/vue-router
 [vuex]: https://github.com/vuejs/vuex
-
-[animate.css]: http://daneden.github.io/animate.css/
-[animejs]: http://anime-js.com/
 
 [hint.css]: http://kushagragour.in/lab/hint/
 
@@ -43,6 +44,8 @@
 [chartist.js]: https://gionkunz.github.io/chartist-js/index.html
 [peity]: https://github.com/benpickles/peity
 [plotly.js]: https://github.com/plotly/plotly.js
+
+[Handsontable]: https://handsontable.com
 
 [font-awesome]: http://fontawesome.io
 

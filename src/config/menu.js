@@ -90,6 +90,10 @@ export default [
       {
         link: 'BasicTables',
         label: 'Basic Tables'
+      },
+      {
+        link: 'Handsontable',
+        label: 'Handsontable Free'
       }
     ]
   }

@@ -137,6 +137,10 @@ router.map({
   '/tables/basic': {
     name: 'BasicTables',
     component: lazyLoading('./components/pages/Tables/Basic')
+  },
+  '/tables/handsontable': {
+    name: 'Handsontable',
+    component: lazyLoading('./components/pages/Tables/Handsontable')
   }
 })
 
