@@ -44,6 +44,9 @@ export default {
       this.$el.nextSibling.value = this.value
     }
     this.datepicker = new Datepicker(this.$el.nextSibling, this.config, this.l10n)
+    this.datepicker.set('onChange', (d, s) => {
+      this.$set('value', s)
+    })
   },
 
   beforeDestroy () {
