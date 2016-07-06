@@ -8,6 +8,11 @@ $fa-font-path: '~font-awesome/fonts/';
 @import '~nprogress/nprogress';
 @import './nprogress';
 
+// https://developers.google.com/web/updates/2013/12/300ms-tap-delay-gone-away
+html {
+  touch-action: manipulation;
+}
+
 .touchable {
   -webkit-tap-highlight-color: transparent;
 }
