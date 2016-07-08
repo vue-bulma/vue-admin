@@ -15,7 +15,7 @@
 | Animations & Transitions | [animate.css][] & [animejs][] |  
 | Charts | [chart.js][], [chartist.js][], [peity][], [plotly.js][] |  
 | Datepicker | [flatpickr][] |  
-| Fonts | [font-awesome][] |  
+| Fonts | [font-awesome][], [Material Design icons][] |  
 | Tables | [Handsontable][] |  
 | Tooltip | [hint.css][] |  
 | ... | ... |  
@@ -48,6 +48,7 @@
 [Handsontable]: https://handsontable.com
 
 [font-awesome]: http://fontawesome.io
+[Material Design icons]: http://google.github.io/material-design-icons/
 
 [Babel]: http://babeljs.io/
 [ESLint]: http://eslint.org
