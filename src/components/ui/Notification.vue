@@ -40,7 +40,7 @@ export default {
     if (!$parent) {
       let parent = document.querySelector(this.container)
       if (!parent) {
-        // Lazy to create `div.notifications` container.
+        // Lazy creating `div.notifications` container.
         parent = document.createElement('div')
         parent.classList.add(this.container.replace('.', ''))
         const Notifications = Vue.extend()
