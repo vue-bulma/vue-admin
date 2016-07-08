@@ -34,10 +34,7 @@ export default {
       type: String,
       default: '.messages'
     },
-    showCloseButton: {
-      type: Boolean,
-      default: false
-    }
+    showCloseButton: Boolean
   },
 
   data () {
@@ -59,7 +56,7 @@ export default {
     if (!$parent) {
       let parent = document.querySelector(this.container)
       if (!parent) {
-        // Lazy to create `div.notifications` container.
+        // Lazy creating `div.notifications` container.
         parent = document.createElement('div')
         parent.classList.add(this.container.replace('.', ''))
         const Messages = Vue.extend()
