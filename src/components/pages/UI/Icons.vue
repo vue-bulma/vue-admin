@@ -31,7 +31,7 @@
 
     <div class="tile is-parent">
       <article class="tile is-child box">
-        <h1 class="title">Material Icons</h1>
+        <h1 class="title">Material Design Icons</h1>
         <h3 class="subtitle">
           <a href="http://google.github.io/material-design-icons/">More Examples</a>
         </h3>
