@@ -52,7 +52,7 @@
           <h1 class="title">Dynamics</h1>
           <div class="block">
             <p>
-              <tooltip :label.sync="value + '%'" placement="top" always>
+              <tooltip :label="per" placement="top" always>
                 <slider type="success" size="large" :value.sync="value" :max="100" :step="1" is-fullwidth></slider>
               </tooltip>
             </p>
@@ -82,7 +82,10 @@ export default {
     }
   },
 
-  methods: {
+  computed: {
+    per () {
+      return this.value + '%'
+    }
   }
 
 }

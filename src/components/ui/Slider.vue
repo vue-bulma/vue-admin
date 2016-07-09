@@ -103,6 +103,11 @@ export default {
     border: 2px solid $text;
     box-shadow: 0 2px 3px rgba(17, 17, 17, 0.1);
     transform: translateZ(0);
+    transition: all 0.233 ease-in-out;
+
+    &:hover {
+      transform: scale(1.2);
+    }
   }
 
   @mixin thumb-base-active {
