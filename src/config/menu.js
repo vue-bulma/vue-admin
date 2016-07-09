@@ -79,6 +79,10 @@ export default [
       {
         link: 'Datepicker',
         label: 'Datepicker'
+      },
+      {
+        link: 'Sliders',
+        label: 'Sliders'
       }
     ]
   },

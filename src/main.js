@@ -131,6 +131,10 @@ router.map({
       '/datepicker': {
         name: 'Datepicker',
         component: lazyLoading('./components/pages/UI/Datepicker')
+      },
+      '/sliders': {
+        name: 'Sliders',
+        component: lazyLoading('./components/pages/UI/Sliders')
       }
     }
   },
