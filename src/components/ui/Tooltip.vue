@@ -49,6 +49,12 @@ export default {
         'tooltip--no-animate': this.noAnimate
       }
     ).split(' ')))
+  },
+
+  watch: {
+    label (val) {
+      this.$el.setAttribute('aria-label', val)
+    }
   }
 
 }
