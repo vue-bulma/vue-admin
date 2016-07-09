@@ -81,7 +81,6 @@ export default {
   outline: none;
   background: $border;
 
-
   &:focus {
     outline: none;
   }

@@ -52,7 +52,9 @@
           <h1 class="title">Dynamics</h1>
           <div class="block">
             <p>
-              <slider type="success" size="large" :value.sync="value" :max="100" :step="1" is-fullwidth></slider>
+              <tooltip :label.sync="value + '%'" placement="top" always>
+                <slider type="success" size="large" :value.sync="value" :max="100" :step="1" is-fullwidth></slider>
+              </tooltip>
             </p>
             <p>
               <input class="input" type="number" v-model="value" min="0" max="100" number>
@@ -65,11 +67,13 @@
 </template>
 
 <script>
+import Tooltip from '../../ui/Tooltip'
 import Slider from '../../ui/Slider'
 
 export default {
   components: {
-    Slider
+    Slider,
+    Tooltip
   },
 
   data () {
