@@ -119,7 +119,7 @@ export default {
     align-items: center;
     height: var(--height);
     border-radius: $radius;
-    --track-background: linear-gradient(to right, transparent var(--low), $text 0, $text var(--high), transparent 0) no-repeat 0 100%;
+    --track-background: linear-gradient(to right, transparent var(--low), $text 0%, $text var(--high), transparent 0%) no-repeat 0 100%;
     background: var(--track-background);
   }
 
@@ -173,7 +173,7 @@ export default {
         border-color: $color;
       }
       &::-webkit-slider-runnable-track {
-        --track-background: linear-gradient(to right, transparent var(--low), $color 0,  $color var(--high), transparent 0) no-repeat 0 100%;
+        --track-background: linear-gradient(to right, transparent var(--low), $color 0%,  $color var(--high), transparent 0%) no-repeat 0 100%;
         background: var(--track-background);
       }
       // http://www.quirksmode.org/blog/archives/2015/11/styling_and_scr.html
