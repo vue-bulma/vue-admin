@@ -1,5 +1,5 @@
 <template>
-  <input class="slider" :class="{ [`is-${type}`]: type, [`is-${size}`]: size, 'is-fullwidth': isFullwidth }" type="range" :min="min" v-model="value" :max="max" :step="step" :name="name" :orient="vertical && 'vertical'" number>
+  <input class="slider" :class="{ [`is-${type}`]: type, [`is-${size}`]: size, 'is-fullwidth': isFullwidth }" type="range" :min="min" v-model="value" :max="max" :step="step" :name="name" :orient="vertical && 'vertical'" :disabled="disabled" number>
 </template>
 
 <script>
@@ -23,6 +23,7 @@ export default {
     size: String,
     // orientation:
     isFullwidth: Boolean,
+    disabled: Boolean,
     vertical: Boolean
   },
 
@@ -80,6 +81,7 @@ export default {
   cursor: pointer;
   outline: none;
   background: $border;
+  -webkit-tap-highlight-color: transparent;
 
   &:focus {
     outline: none;
