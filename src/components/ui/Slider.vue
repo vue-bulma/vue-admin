@@ -21,9 +21,9 @@ export default {
     type: String,
     name: String,
     size: String,
-    // orientation:
     isFullwidth: Boolean,
     disabled: Boolean,
+    // orientation:
     vertical: Boolean
   },
 
@@ -51,9 +51,8 @@ export default {
 
 <style lang="scss">
 @import '~bulma/sass/utilities/variables';
-@import '~bulma/sass/utilities/mixins';
 
-.slider {
+input[type=range].slider {
   $radius: 290486px;
   --height: 8px;
 
@@ -106,6 +105,7 @@ export default {
     box-shadow: 0 2px 3px rgba(17, 17, 17, 0.1);
     transform: translateZ(0);
     transition: (0.233s / 2) ease-in-out;
+    box-sizing: border-box;
 
     &:hover {
       transform: scale(1.25);

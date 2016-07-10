@@ -124,9 +124,9 @@ router.map({
         name: 'Tabs',
         component: lazyLoading('./components/pages/UI/Tabs')
       },
-      '/collapses': {
-        name: 'Collapses',
-        component: lazyLoading('./components/pages/UI/Collapses')
+      '/collapse': {
+        name: 'Collapse',
+        component: lazyLoading('./components/pages/UI/Collapse')
       },
       '/datepicker': {
         name: 'Datepicker',
@@ -135,6 +135,10 @@ router.map({
       '/sliders': {
         name: 'Sliders',
         component: lazyLoading('./components/pages/UI/Sliders')
+      },
+      '/switch': {
+        name: 'Switch',
+        component: lazyLoading('./components/pages/UI/Switch')
       }
     }
   },

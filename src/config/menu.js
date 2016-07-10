@@ -73,8 +73,8 @@ export default [
         label: 'Tabs'
       },
       {
-        link: 'Collapses',
-        label: 'Collapses'
+        link: 'Collapse',
+        label: 'Collapse'
       },
       {
         link: 'Datepicker',
@@ -83,6 +83,10 @@ export default [
       {
         link: 'Sliders',
         label: 'Sliders'
+      },
+      {
+        link: 'Switch',
+        label: 'Switch'
       }
     ]
   },
@@ -97,7 +101,7 @@ export default [
       },
       {
         link: 'Handsontable',
-        label: 'Handsontable Free'
+        label: 'Handsontable'
       }
     ]
   }
