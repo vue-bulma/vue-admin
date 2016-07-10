@@ -102,13 +102,13 @@ export default {
     height: calc(var(--height) * 2.33);
     width: calc(var(--height) * 2.33);
     background-color: #FFF;
-    border: 2px solid $text;
+    border: calc(var(--height) / 2) solid $text;
     box-shadow: 0 2px 3px rgba(17, 17, 17, 0.1);
     transform: translateZ(0);
-    transition: all 0.233 ease-in-out;
+    transition: (0.233s / 2) ease-in-out;
 
     &:hover {
-      transform: scale(1.2);
+      transform: scale(1.25);
     }
   }
 
@@ -123,6 +123,8 @@ export default {
     border-radius: $radius;
     --track-background: linear-gradient(to right, transparent var(--low), $text calc(0%), $text var(--high), transparent calc(0%)) no-repeat 0 100%;
     background: var(--track-background);
+    transform: translateZ(0);
+    transition: (0.233s / 2);
   }
 
   &::-webkit-slider-thumb {
