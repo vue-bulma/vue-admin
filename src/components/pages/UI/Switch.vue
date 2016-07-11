@@ -52,7 +52,10 @@
           <h1 class="title">Dynamics</h1>
           <div class="block">
             <p>
-              <switch type="success" size="large" checked></switch>
+              <switch type="success" size="large" :value.sync="value" checked></switch>
+            </p>
+            <p>
+              {{ value }}
             </p>
           </div>
         </article>
@@ -67,7 +70,14 @@ import Switch from '../../ui/Switch'
 export default {
   components: {
     Switch
+  },
+
+  data () {
+    return {
+      value: false
+    }
   }
+
 }
 </script>
 
