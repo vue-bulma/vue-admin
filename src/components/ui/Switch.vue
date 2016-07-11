@@ -38,7 +38,6 @@ export default {
     position: absolute;
     z-index: 1;
     cursor: pointer;
-    -webkit-tap-highlight-color: transparent;
   }
 
   appearance: none;
@@ -52,6 +51,7 @@ export default {
   cursor: pointer;
   box-sizing: border-box;
   display: inline-block;
+  -webkit-tap-highlight-color: transparent;
 
   &:before,
   &:after {
