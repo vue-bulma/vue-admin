@@ -137,7 +137,7 @@
 </template>
 
 <script>
-import Datepicker from '../../ui/Datepicker'
+import Datepicker from 'vue-bulma-datepicker'
 
 export default {
   components: {
