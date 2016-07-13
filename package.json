@@ -38,6 +38,7 @@
     "nprogress": "0.2.0",
     "plotly.js": "1.14.x",
     "vue": "1.0.26",
+    "vue-bulma-slider": "github:vue-bulma/slider",
     "vue-bulma-switch": "github:vue-bulma/switch",
     "vue-peity": "0.3.0",
     "vue-resource": "0.9.3",

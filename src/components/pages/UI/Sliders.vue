@@ -69,7 +69,7 @@
 
 <script>
 import Tooltip from '../../ui/Tooltip'
-import Slider from '../../ui/Slider'
+import Slider from 'vue-bulma-slider'
 
 export default {
   components: {
