@@ -65,7 +65,7 @@
 </template>
 
 <script>
-import Switch from '../../ui/Switch'
+import Switch from 'vue-bulma-switch'
 
 export default {
   components: {
