@@ -148,7 +148,7 @@
 </template>
 
 <script>
-import Tooltip from '../../ui/Tooltip'
+import Tooltip from 'vue-bulma-tooltip'
 
 export default {
   components: {

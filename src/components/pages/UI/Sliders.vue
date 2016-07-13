@@ -68,7 +68,7 @@
 </template>
 
 <script>
-import Tooltip from '../../ui/Tooltip'
+import Tooltip from 'vue-bulma-tooltip'
 import Slider from 'vue-bulma-slider'
 
 export default {
