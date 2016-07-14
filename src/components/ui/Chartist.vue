@@ -3,13 +3,11 @@
 </template>
 
 <script>
-import uuid from '../../lib/uuid'
 import Chartist from 'chartist'
 
 const types = ['Line', 'Bar', 'Pie']
 
 export default {
-  mixins: [uuid],
 
   props: {
     type: {
@@ -43,8 +41,6 @@ export default {
 
   ready () {
     const $el = this.$el
-    const id = `va-chartist-${this.uuid}`
-    $el.setAttribute('id', id)
     this.chart = new Chartist[this.type](
       $el,
       this.data,

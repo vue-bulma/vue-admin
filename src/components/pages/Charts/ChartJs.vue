@@ -60,7 +60,7 @@
 </template>
 
 <script>
-import Chart from '../../ui/Chart'
+import Chart from 'vue-bulma-chartjs'
 
 export default {
   components: {
