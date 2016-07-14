@@ -142,7 +142,7 @@
 </template>
 
 <script>
-import { Tabs, TabPane } from '../../ui/tabs/'
+import { Tabs, TabPane } from 'vue-bulma-tabs'
 
 export default {
   components: {
