@@ -35,7 +35,7 @@
 </template>
 
 <script>
-import Modal from '../../../ui/modal/Modal'
+import { Modal } from 'vue-bulma-modal'
 
 export default {
   components: {

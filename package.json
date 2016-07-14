@@ -38,6 +38,7 @@
     "vue": "1.0.26",
     "vue-bulma-datepicker": "github:vue-bulma/datepicker",
     "vue-bulma-message": "github:vue-bulma/message",
+    "vue-bulma-modal": "github:vue-bulma/modal",
     "vue-bulma-notification": "github:vue-bulma/notification",
     "vue-bulma-progress-bar": "github:vue-bulma/progress-bar",
     "vue-bulma-slider": "github:vue-bulma/slider",

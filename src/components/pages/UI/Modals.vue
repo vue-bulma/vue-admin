@@ -30,7 +30,7 @@
 import Vue from 'vue'
 import Modal from './modals/Modal'
 import ImageModal from './modals/ImageModal'
-import CardModal from '../../ui/modal/CardModal'
+import { CardModal } from 'vue-bulma-modal'
 
 const ModalComponent = Vue.extend(Modal)
 const ImageModalComponent = Vue.extend(ImageModal)
