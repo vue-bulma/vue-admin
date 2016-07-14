@@ -36,6 +36,7 @@
     "nprogress": "0.2.0",
     "plotly.js": "1.14.x",
     "vue": "1.0.26",
+    "vue-bulma-collapse": "github:vue-bulma/collapse",
     "vue-bulma-datepicker": "github:vue-bulma/datepicker",
     "vue-bulma-message": "github:vue-bulma/message",
     "vue-bulma-modal": "github:vue-bulma/modal",

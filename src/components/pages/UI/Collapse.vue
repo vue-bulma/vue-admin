@@ -74,7 +74,7 @@
 </template>
 
 <script>
-import { Collapse, Item as CollapseItem } from '../../ui/collapse/'
+import { Collapse, Item as CollapseItem } from 'vue-bulma-collapse'
 
 export default {
   components: {
