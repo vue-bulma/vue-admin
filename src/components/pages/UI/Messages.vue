@@ -41,7 +41,7 @@
 
 <script>
 import Vue from 'vue'
-import Message from '../../ui/Message'
+import Message from 'vue-bulma-message'
 
 const MessageComponent = Vue.extend(Message)
 
