@@ -52,7 +52,7 @@
 </template>
 
 <script>
-import ProgressBar from '../../ui/ProgressBar'
+import ProgressBar from 'vue-bulma-progress-bar'
 
 export default {
   components: {
