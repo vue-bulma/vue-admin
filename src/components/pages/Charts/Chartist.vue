@@ -49,7 +49,7 @@
 </template>
 
 <script>
-import Chartist from '../../ui/Chartist'
+import Chartist from 'vue-bulma-chartist'
 
 export default {
   components: {
