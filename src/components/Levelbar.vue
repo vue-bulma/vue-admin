@@ -54,7 +54,7 @@ export default {
       let temp = []
       for (let i = 0, l = list.length; i < l; ++i) {
         let item = list[i]
-        if (item.label === name) {
+        if (item.label === name || item.link === name) {
           temp.push({
             label: item.label,
             link: item.link
