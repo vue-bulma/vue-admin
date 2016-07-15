@@ -16,6 +16,7 @@
 | Charts | [chart.js][], [chartist.js][], [peity][], [plotly.js][] |  
 | Datepicker | [flatpickr][] |  
 | Fonts | [font-awesome][], [Material Design icons][] |  
+| Rating | [Starability.css][] |  
 | Tables | [Handsontable][] |  
 | Tooltip | [hint.css][] |  
 | ... | ... |  
@@ -35,6 +36,8 @@
 [vue-resource]: https://github.com/vuejs/vue-resource
 [vue-router]: https://github.com/vuejs/vue-router
 [vuex]: https://github.com/vuejs/vuex
+
+[Starability.css]: http://lunarlogic.github.io/starability/
 
 [hint.css]: http://kushagragour.in/lab/hint/
 

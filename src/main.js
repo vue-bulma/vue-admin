@@ -125,6 +125,10 @@ router.map({
         name: 'Progress',
         component: lazyLoading('./components/pages/Components/Progress')
       },
+      '/rating': {
+        name: 'Rating',
+        component: lazyLoading('./components/pages/Components/Rating')
+      },
       '/slider': {
         name: 'Slider',
         component: lazyLoading('./components/pages/Components/Slider')

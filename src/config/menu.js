@@ -80,6 +80,10 @@ export default [
         label: 'Progress'
       },
       {
+        link: 'Rating',
+        label: 'Rating'
+      },
+      {
         link: 'Slider',
         label: 'Slider'
       },

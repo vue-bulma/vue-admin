@@ -11,6 +11,7 @@
 | Modal | http://vue-admin.fundon.me/#!/components/modal | https://github.com/vue-bulma/modal |  
 | Notification | http://vue-admin.fundon.me/#!/components/notification | https://github.com/vue-bulma/notification |  
 | Progress | http://vue-admin.fundon.me/#!/components/progress | https://github.com/vue-bulma/progress-bar |  
+| Rating | http://vue-admin.fundon.me/#!/components/rating | https://github.com/vue-bulma/rating |  
 | Slider | http://vue-admin.fundon.me/#!/components/slider | https://github.com/vue-bulma/slider |  
 | Switch | http://vue-admin.fundon.me/#!/components/switch | https://github.com/vue-bulma/switch |  
 | Tabs | http://vue-admin.fundon.me/#!/components/tabs | https://github.com/vue-bulma/tabs |  

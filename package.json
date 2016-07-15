@@ -43,6 +43,7 @@
     "vue-bulma-modal": "github:vue-bulma/modal",
     "vue-bulma-notification": "github:vue-bulma/notification",
     "vue-bulma-progress-bar": "github:vue-bulma/progress-bar",
+    "vue-bulma-rating": "github:vue-bulma/rating",
     "vue-bulma-slider": "github:vue-bulma/slider",
     "vue-bulma-switch": "github:vue-bulma/switch",
     "vue-bulma-tabs": "github:vue-bulma/tabs",
