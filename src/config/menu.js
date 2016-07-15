@@ -52,7 +52,7 @@ export default [
   },
   {
     label: 'Components',
-    icon: 'fa-building',
+    icon: 'fa-building-o',
     expanded: false,
     subMenu: [
       {
