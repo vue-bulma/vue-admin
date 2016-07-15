@@ -94,46 +94,52 @@ router.map({
       '/form': {
         name: 'Form',
         component: lazyLoading('./components/pages/UI/Form')
-      },
-      '/notifications': {
-        name: 'Notifications',
-        component: lazyLoading('./components/pages/UI/Notifications')
-      },
-      '/messages': {
-        name: 'Messages',
-        component: lazyLoading('./components/pages/UI/Messages')
-      },
-      '/progress': {
-        name: 'Progress',
-        component: lazyLoading('./components/pages/UI/Progress')
-      },
-      '/modals': {
-        name: 'Modals',
-        component: lazyLoading('./components/pages/UI/Modals')
-      },
-      '/tooltips': {
-        name: 'Tooltips',
-        component: lazyLoading('./components/pages/UI/Tooltips')
-      },
-      '/tabs': {
-        name: 'Tabs',
-        component: lazyLoading('./components/pages/UI/Tabs')
-      },
+      }
+    }
+  },
+  '/components': {
+    name: 'Components',
+    component: lazyLoading('./components/pages/Components/index'),
+    subRoutes: {
       '/collapse': {
         name: 'Collapse',
-        component: lazyLoading('./components/pages/UI/Collapse')
+        component: lazyLoading('./components/pages/Components/Collapse')
       },
       '/datepicker': {
         name: 'Datepicker',
-        component: lazyLoading('./components/pages/UI/Datepicker')
+        component: lazyLoading('./components/pages/Components/Datepicker')
       },
-      '/sliders': {
-        name: 'Sliders',
-        component: lazyLoading('./components/pages/UI/Sliders')
+      '/message': {
+        name: 'Message',
+        component: lazyLoading('./components/pages/Components/Message')
+      },
+      '/modal': {
+        name: 'Modal',
+        component: lazyLoading('./components/pages/Components/Modal')
+      },
+      '/notification': {
+        name: 'Notification',
+        component: lazyLoading('./components/pages/Components/Notification')
+      },
+      '/progress': {
+        name: 'Progress',
+        component: lazyLoading('./components/pages/Components/Progress')
+      },
+      '/slider': {
+        name: 'Slider',
+        component: lazyLoading('./components/pages/Components/Slider')
       },
       '/switch': {
         name: 'Switch',
-        component: lazyLoading('./components/pages/UI/Switch')
+        component: lazyLoading('./components/pages/Components/Switch')
+      },
+      '/tabs': {
+        name: 'Tabs',
+        component: lazyLoading('./components/pages/Components/Tabs')
+      },
+      '/tooltip': {
+        name: 'Tooltip',
+        component: lazyLoading('./components/pages/Components/Tooltip')
       }
     }
   },

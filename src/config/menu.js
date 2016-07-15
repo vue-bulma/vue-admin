@@ -47,31 +47,14 @@ export default [
       {
         link: 'Icons',
         label: 'Icons'
-      },
-      {
-        link: 'Notifications',
-        label: 'Notifications'
-      },
-      {
-        link: 'Messages',
-        label: 'Messages'
-      },
-      {
-        link: 'Progress',
-        label: 'Progress'
-      },
-      {
-        link: 'Modals',
-        label: 'Modals'
-      },
-      {
-        link: 'Tooltips',
-        label: 'Tooltips'
-      },
-      {
-        link: 'Tabs',
-        label: 'Tabs'
-      },
+      }
+    ]
+  },
+  {
+    label: 'Components',
+    icon: 'fa-building',
+    expanded: false,
+    subMenu: [
       {
         link: 'Collapse',
         label: 'Collapse'
@@ -81,12 +64,36 @@ export default [
         label: 'Datepicker'
       },
       {
-        link: 'Sliders',
-        label: 'Sliders'
+        link: 'Message',
+        label: 'Message'
+      },
+      {
+        link: 'Modal',
+        label: 'Modal'
+      },
+      {
+        link: 'Notification',
+        label: 'Notification'
+      },
+      {
+        link: 'Progress',
+        label: 'Progress'
+      },
+      {
+        link: 'Slider',
+        label: 'Slider'
       },
       {
         link: 'Switch',
         label: 'Switch'
+      },
+      {
+        link: 'Tabs',
+        label: 'Tabs'
+      },
+      {
+        link: 'Tooltip',
+        label: 'Tooltip'
       }
     ]
   },
