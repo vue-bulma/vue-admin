@@ -8,7 +8,7 @@
             <datepicker :value.sync="value"></datepicker>
           </p>
           <p class="control">
-            <datepicker placeholder="European Format ('d-m-Y')" :config="{ dateFormat: 'd-m-Y' }"></datepicker>
+            <datepicker placeholder="European Format ('d-m-Y')" :config="{ dateFormat: 'd-m-Y', static: true }"></datepicker>
           </p>
           <p class="control">
             <datepicker placeholder="American Format ('m/d/Y')" :config="{ dateFormat: 'm/d/Y' }"></datepicker>
