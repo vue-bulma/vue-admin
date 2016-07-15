@@ -9,13 +9,13 @@
     </div>
 
     <div class="level-right is-hidden-mobile">
-      <breadcrumb :list="list"></breadcrumb>
+      <breadcrumb :list="list"><breadcrumb>
     </div>
   </nav>
 </template>
 
 <script>
-import Breadcrumb from './ui/Breadcrumb'
+import Breadcrumb from 'vue-bulma-breadcrumb'
 
 export default {
   vuex: {

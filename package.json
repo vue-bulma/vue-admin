@@ -34,6 +34,7 @@
     "nprogress": "0.2.0",
     "plotly.js": "1.14.x",
     "vue": "1.0.26",
+    "vue-bulma-breadcrumb": "github:vue-bulma/breadcrumb",
     "vue-bulma-chartist": "github:vue-bulma/chartist",
     "vue-bulma-chartjs": "github:vue-bulma/chartjs",
     "vue-bulma-collapse": "github:vue-bulma/collapse",
