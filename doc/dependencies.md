@@ -16,6 +16,7 @@
 | Charts | [chart.js][], [chartist.js][], [peity][], [plotly.js][] |  
 | Datepicker | [flatpickr][] |  
 | Fonts | [font-awesome][], [Material Design icons][] |  
+| Progress | [progress-tracker][] |  
 | Rating | [Starability.css][] |  
 | Tables | [Handsontable][] |  
 | Tooltip | [hint.css][] |  
@@ -36,6 +37,8 @@
 [vue-resource]: https://github.com/vuejs/vue-resource
 [vue-router]: https://github.com/vuejs/vue-router
 [vuex]: https://github.com/vuejs/vuex
+
+[progress-tracker]: http://nigelotoole.github.io/progress-tracker/
 
 [Starability.css]: http://lunarlogic.github.io/starability/
 
