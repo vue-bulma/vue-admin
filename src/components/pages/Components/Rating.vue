@@ -16,13 +16,13 @@
               <rating kind="grow" :items="items" legend="Growing star rating:" :value="2"></rating>
             </form>
             <form>
-              <rating kind="growRotate" :items="items" legend="Growing & rotating star rating::" :value="3"></rating>
+              <rating kind="growRotate" :items="items" legend="Growing & rotating star rating:" :value="3"></rating>
             </form>
             <form>
-              <rating kind="fade" :items="items" legend="Fading star rating::" :value="4"></rating>
+              <rating kind="fade" :items="items" legend="Fading star rating:" :value="4"></rating>
             </form>
             <form>
-              <rating kind="checkmark" :items="items" legend="Checkmark rating:::" :value="5"></rating>
+              <rating kind="checkmark" :items="items" legend="Checkmark rating:" :value="5"></rating>
             </form>
           </div>
         </article>
