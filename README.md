@@ -35,6 +35,12 @@ Its ongoing development is made possible thanks to the support by these awesome 
 ![](https://img.shields.io/badge/license-MIT-blue.svg)
 [![Gitter](https://badges.gitter.im/fundon/vue-admin.svg)](https://gitter.im/fundon/vue-admin?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
+---
+
+> [fundon.me](https://fundun.me) &nbsp;&middot;&nbsp;
+> GitHub [@fundon](https://github.com/fundon) &nbsp;&middot;&nbsp;
+> Twitter [@_fundon](https://twitter.com/_fundon)
+
 
 [Live Demo]: https://vue-admin.fundon.me/
 [Fangdun Cai]: https://twitter.com/_fundon
