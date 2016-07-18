@@ -26,7 +26,7 @@
 
 ## [Backers](backers.md) 赞助者
 
-Its ongoing development is made possible thanks to the support by these awesome backers. If you'd like to join them, check out [Vue Admin & Vue Bulma](https://www.patreon.com/_fundon)' Patreon campaign.
+Its ongoing development is made possible thanks to the support by these awesome backers. If you'd like to join them, check out [Vue Admin & Vue Bulma](https://www.patreon.com/_fundon)'s Patreon campaign.
 
 ## [Development](doc/development.md)
 
