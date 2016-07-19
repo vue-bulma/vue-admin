@@ -57,10 +57,10 @@
             <datepicker placeholder="Pick date and time" :config="{ enableTime: true }"></datepicker>
           </p>
           <p class="control">
-            <datepicker placeholder="24 hour time" :config="{ enableTime: true, time_24hr: true, timeFormat: 'H:i' }"></datepicker>
+            <datepicker placeholder="24 hour time" :config="{ enableTime: true, time_24hr: true, dateFormat: 'Y-m-d H:i' }"></datepicker>
           </p>
           <p class="control">
-            <datepicker placeholder="Pick date and time" :config="{ enableTime: true, enableSeconds: true, timeFormat: 'h:i:s' }"></datepicker>
+            <datepicker placeholder="Pick date and time" :config="{ enableTime: true, enableSeconds: true, dateFormat: 'Y-m-d h:i:S K' }"></datepicker>
           </p>
           <p class="control">
             <datepicker placeholder="Pick date and time" :config="{ enableTime: true, noCalendar: true }" value="09:00"></datepicker>
