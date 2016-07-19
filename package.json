@@ -39,6 +39,7 @@
     "vue-bulma-chartjs": "github:vue-bulma/chartjs",
     "vue-bulma-collapse": "github:vue-bulma/collapse",
     "vue-bulma-datepicker": "github:vue-bulma/datepicker",
+    "vue-bulma-jump": "github:vue-bulma/jump",
     "vue-bulma-message": "github:vue-bulma/message",
     "vue-bulma-modal": "github:vue-bulma/modal",
     "vue-bulma-notification": "github:vue-bulma/notification",

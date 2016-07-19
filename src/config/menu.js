@@ -56,6 +56,10 @@ export default [
     expanded: false,
     subMenu: [
       {
+        link: 'BackToTop',
+        label: 'BackToTop'
+      },
+      {
         link: 'Collapse',
         label: 'Collapse'
       },

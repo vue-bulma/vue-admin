@@ -101,6 +101,10 @@ router.map({
     name: 'Components',
     component: lazyLoading('./components/pages/Components/index'),
     subRoutes: {
+      '/backtotop': {
+        name: 'BackToTop',
+        component: lazyLoading('./components/pages/Components/BackToTop')
+      },
       '/collapse': {
         name: 'Collapse',
         component: lazyLoading('./components/pages/Components/Collapse')
