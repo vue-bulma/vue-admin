@@ -30,7 +30,7 @@ Its ongoing development is made possible thanks to the support by these awesome 
 
 ## [Development](doc/development.md)
 
-## Badaggs
+## Badges
 
 ![](https://img.shields.io/badge/license-MIT-blue.svg)
 [![Gitter](https://badges.gitter.im/fundon/vue-admin.svg)](https://gitter.im/fundon/vue-admin?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
