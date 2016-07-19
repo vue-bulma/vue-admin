@@ -13,6 +13,7 @@
 | Component | Library |  
 | --- | --- | --- |  
 | Animations & Transitions | [animate.css][] & [animejs][] |  
+| BackToTop | [jump.js][] |  
 | Charts | [chart.js][], [chartist.js][], [peity][], [plotly.js][] |  
 | Datepicker | [flatpickr][] |  
 | Fonts | [font-awesome][], [Material Design icons][] |  
@@ -37,6 +38,8 @@
 [vue-resource]: https://github.com/vuejs/vue-resource
 [vue-router]: https://github.com/vuejs/vue-router
 [vuex]: https://github.com/vuejs/vuex
+
+[jump.js]: http://callmecavs.com/jump.js/
 
 [progress-tracker]: http://nigelotoole.github.io/progress-tracker/
 

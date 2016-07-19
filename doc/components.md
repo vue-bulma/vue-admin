@@ -4,6 +4,7 @@
 
 | Component | Demo | Source |  
 | --- | --- | --- |  
+| BackToTop | http://vue-admin.fundon.me/#!/components/backtotop | https://github.com/vue-bulma/jump |  
 | Breadcrumb | http://vue-admin.fundon.me/#!/components/breadcrumb | https://github.com/vue-bulma/breadcrumb |  
 | Collapse | http://vue-admin.fundon.me/#!/components/collapse | https://github.com/vue-bulma/collapse |  
 | Datepicker | http://vue-admin.fundon.me/#!/components/datepicker | https://github.com/vue-bulma/datepicker |  
