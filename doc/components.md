@@ -6,6 +6,7 @@
 | --- | --- | --- |  
 | BackToTop | http://vue-admin.fundon.me/#!/components/backtotop | https://github.com/vue-bulma/jump |  
 | Breadcrumb | http://vue-admin.fundon.me/#!/components/breadcrumb | https://github.com/vue-bulma/breadcrumb |  
+| Cleave | http://vue-admin.fundon.me/#!/ui/form | https://github.com/vue-bulma/cleave |  
 | Collapse | http://vue-admin.fundon.me/#!/components/collapse | https://github.com/vue-bulma/collapse |  
 | Datepicker | http://vue-admin.fundon.me/#!/components/datepicker | https://github.com/vue-bulma/datepicker |  
 | Message | http://vue-admin.fundon.me/#!/components/message | https://github.com/vue-bulma/message |  

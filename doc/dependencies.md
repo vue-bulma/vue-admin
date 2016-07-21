@@ -14,6 +14,7 @@
 | --- | --- | --- |  
 | Animations & Transitions | [animate.css][] & [animejs][] |  
 | BackToTop | [jump.js][] |  
+| Cleave | [cleave.js][] |  
 | Charts | [chart.js][], [chartist.js][], [peity][], [plotly.js][] |  
 | Datepicker | [flatpickr][] |  
 | Fonts | [font-awesome][], [Material Design icons][] |  
@@ -48,6 +49,8 @@
 [hint.css]: http://kushagragour.in/lab/hint/
 
 [flatpickr]: https://chmln.github.io/flatpickr/
+
+[cleave.js]: http://nosir.github.io/cleave.js
 
 [chart.js]: http://www.chartjs.org
 [chartist.js]: https://gionkunz.github.io/chartist-js/index.html

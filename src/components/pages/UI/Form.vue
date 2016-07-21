@@ -317,7 +317,7 @@
               <cleave class="input" placeholder="Blocks: [4, 3, 3, 4]" :options="{ blocks: [4, 3, 3, 4], uppercase: true }"></cleave>
             </div>
             <div class="control">
-              <cleave class="input" placeholder="Delimiter: "·"" :options="{ delimiter: '·', blocks: [3, 3, 3, 3], uppercase: true }"></cleave>
+              <cleave class="input" placeholder="Delimiter: '·'" :options="{ delimiter: '·', blocks: [3, 3, 3, 3], uppercase: true }"></cleave>
             </div>
             <div class="control">
               <cleave class="input" :options="{ prefix: 'PREFIX', delimiter: '-', blocks: [6, 4, 4, 4], uppercase: true }"></cleave>
