@@ -287,10 +287,57 @@
         </article>
       </div>
     </div>
+
+    <div class="tile is-ancestor">
+      <div class="tile is-parent">
+        <article class="tile is-child box">
+          <h1 class="title">Cleave.js - Format your &lt;input/&gt; content when you are typing</h1>
+          <div class="block">
+            <div class="control">
+              <label class="label">Credit card number formatting</label>
+              <cleave class="input" placeholder="Enter credit card number" :options="{ creditCard: true }"></cleave>
+            </div>
+            <div class="control">
+              <label class="label">Phone number formatting</label>
+              <cleave class="input" type="tel" placeholder="Enter phone number" :options="{ phone: true, phoneRegionCode: 'cn' }"></cleave>
+            </div>
+            <div class="control">
+              <label class="label">Date formatting</label>
+              <cleave class="input" placeholder="YYYY/MM/DD" :options="{ date: true, datePattern: ['Y', 'm', 'd'] }"></cleave>
+            </div>
+            <div class="control">
+              <cleave class="input" placeholder="MM/YY" :options="{ date: true, datePattern: ['m', 'y'] }"></cleave>
+            </div>
+            <div class="control">
+              <label class="label">Numeral formatting</label>
+              <cleave class="input" placeholder="Enter numeral" :options="{ numeral: true, numeralThousandsGroupStyle: 'thousand' }"></cleave>
+            </div>
+            <div class="control">
+              <label class="label">Custom options</label>
+              <cleave class="input" placeholder="Blocks: [4, 3, 3, 4]" :options="{ blocks: [4, 3, 3, 4], uppercase: true }"></cleave>
+            </div>
+            <div class="control">
+              <cleave class="input" placeholder="Delimiter: "·"" :options="{ delimiter: '·', blocks: [3, 3, 3, 3], uppercase: true }"></cleave>
+            </div>
+            <div class="control">
+              <cleave class="input" :options="{ prefix: 'PREFIX', delimiter: '-', blocks: [6, 4, 4, 4], uppercase: true }"></cleave>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
+import Cleave from 'vue-cleave'
+import 'cleave.js/dist/addons/cleave-phone.cn'
+
+export default {
+  components: {
+    Cleave
+  }
+}
 </script>
 
 <style scoped>
