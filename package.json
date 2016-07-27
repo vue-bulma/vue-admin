@@ -24,7 +24,7 @@
   "dependencies": {
     "animate.css": "3.5.1",
     "animejs": "1.1.0",
-    "babel-runtime": "6.9.2",
+    "babel-runtime": "6.11.6",
     "bulma": "0.1.0",
     "classnames": "2.2.5",
     "font-awesome": "4.6.3",
@@ -32,7 +32,7 @@
     "material-design-icons": "2.2.3",
     "moment": "2.13.0",
     "nprogress": "0.2.0",
-    "plotly.js": "1.14.x",
+    "plotly.js": "1.15.x",
     "vue": "1.0.26",
     "vue-bulma-breadcrumb": "github:vue-bulma/breadcrumb",
     "vue-bulma-chartist": "github:vue-bulma/chartist",
@@ -54,7 +54,7 @@
     "vue-peity": "0.3.0",
     "vue-resource": "0.9.3",
     "vue-router": "0.7.13",
-    "vuex": "1.0.0-rc"
+    "vuex": "1.0.0-rc.2"
   },
   "devDependencies": {
     "babel-core": "^6.10.x",
