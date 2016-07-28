@@ -113,6 +113,10 @@ router.map({
         name: 'Datepicker',
         component: lazyLoading('./components/pages/Components/Datepicker')
       },
+      '/emoji': {
+        name: 'Emoji',
+        component: lazyLoading('./components/pages/Components/Emoji')
+      },
       '/message': {
         name: 'Message',
         component: lazyLoading('./components/pages/Components/Message')

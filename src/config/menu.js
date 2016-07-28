@@ -68,6 +68,10 @@ export default [
         label: 'Datepicker'
       },
       {
+        link: 'Emoji',
+        label: 'Emoji'
+      },
+      {
         link: 'Message',
         label: 'Message'
       },
