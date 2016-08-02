@@ -30,6 +30,10 @@ Its ongoing development is made possible thanks to the support by these awesome 
 
 ## [Development](doc/development.md)
 
+### Requirements
+
+  * NPM v3
+
 ## Badges
 
 ![](https://img.shields.io/badge/license-MIT-blue.svg)
