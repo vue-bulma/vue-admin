@@ -21,6 +21,10 @@
     "test": "npm run unit && npm run e2e",
     "unit": "karma start test/unit/karma.conf.js --single-run"
   },
+  "engines": {
+    "node": ">= 4",
+    "npm": ">= 3"
+  },
   "dependencies": {
     "animate.css": "3.5.1",
     "animejs": "1.1.0",
