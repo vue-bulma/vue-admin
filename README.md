@@ -14,6 +14,8 @@
   </sub>
 </p>
 
+<h1 align="center"><strong>Updating to Vue 2.0</strong></h1>
+
 ![](screenshots/app.png)
 
 ## Features
