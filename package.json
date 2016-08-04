@@ -37,7 +37,7 @@
     "moment": "2.13.0",
     "nprogress": "0.2.0",
     "plotly.js": "1.15.x",
-    "vue": "1.0.26",
+    "vue": "2.0.0-beta.6",
     "vue-bulma-breadcrumb": "github:vue-bulma/breadcrumb",
     "vue-bulma-chartist": "github:vue-bulma/chartist",
     "vue-bulma-chartjs": "github:vue-bulma/chartjs",
