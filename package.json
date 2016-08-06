@@ -58,16 +58,18 @@
     "vue-cleave": "github:vue-bulma/cleave",
     "vue-peity": "0.3.0",
     "vue-resource": "0.9.3",
-    "vue-router": "0.7.13",
-    "vuex": "1.0.0-rc.2"
+    "vue-router": "2.0.0-rc.2",
+    "vuex": "2.0.0-rc.4"
   },
   "devDependencies": {
-    "babel-core": "^6.10.x",
+    "babel-core": "^6.0.0",
+    "babel-eslint": "^6.1.2",
     "babel-loader": "^6.0.0",
     "babel-plugin-transform-export-extensions": "6.8.0",
     "babel-plugin-transform-runtime": "^6.0.0",
     "babel-preset-es2015": "^6.0.0",
     "babel-preset-stage-2": "^6.0.0",
+    "babel-register": "^6.0.0",
     "chai": "^3.5.0",
     "chromedriver": "^2.21.2",
     "connect-history-api-fallback": "^1.1.0",
@@ -114,11 +116,11 @@
     "url-loader": "^0.5.7",
     "vue-hot-reload-api": "^1.3.x",
     "vue-html-loader": "^1.2.x",
-    "vue-loader": "^8.5.x",
+    "vue-loader": "^9.2.2",
     "vue-style-loader": "^1.0.0",
     "webpack": "^1.12.2",
-    "webpack-dev-middleware": "^1.4.0",
-    "webpack-hot-middleware": "^2.x.x",
+    "webpack-dev-middleware": "^1.6.1",
+    "webpack-hot-middleware": "^2.12.2",
     "webpack-merge": "^0.14.0"
   }
 }

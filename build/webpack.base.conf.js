@@ -9,7 +9,7 @@ module.exports = {
   },
   output: {
     path: config.build.assetsRoot,
-    publicPath: config.build.assetsPublicPath,
+    publicPath: process.env.NODE_ENV === 'production' ? config.build.assetsPublicPath : config.dev.assetsPublicPath,
     filename: '[name].js'
   },
   resolve: {
@@ -79,7 +79,7 @@ module.exports = {
     noParse: [
       /handsontable\.(full\.)?js/,
       /plotly\.js/
-    ],
+    ]
   },
   eslint: {
     formatter: require('eslint-friendly-formatter')
