@@ -18,7 +18,7 @@
 
 ## Notes
 
-  If you want to use Vue 1.0 version, please checkout the [master](https://github.com/fundon/vue-admin/tree/master) branch.
+  If you want to use Vue Admin with Vue 1.0 version, please checkout the [master](https://github.com/fundon/vue-admin/tree/master) branch.
 
 ![](screenshots/app.png)
 
