@@ -16,6 +16,10 @@
 
 <h1 align="center"><strong>Upgrating to Vue 2.0</strong></h1>
 
+## Notes
+
+  If you want to use Vue 1.0 version, please checkout the [master](https://github.com/fundon/vue-admin/tree/master) branch.
+
 ![](screenshots/app.png)
 
 ## Features
