@@ -1,6 +1,5 @@
 <template>
   <div class="page">
-    <counter></counter>
     <p>
       Upgrating to Vue 2.0!
     </p>
@@ -9,7 +8,5 @@
 
 <script>
 export default {
-  components: {
-  }
 }
 </script>

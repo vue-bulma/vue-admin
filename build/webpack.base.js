@@ -19,7 +19,11 @@ module.exports = {
     publicPath: './assets'
   },
   resolve: {
-    extensions: ['', '.js', '.vue', '.css', '.json']
+    extensions: ['', '.js', '.vue', '.css', '.json'],
+    fallback: [path.join(__dirname, '../node_modules')],
+    alias: {
+      'assets': path.resolve(__dirname, '../client/assets')
+    }
   },
   module: {
     loaders: [
