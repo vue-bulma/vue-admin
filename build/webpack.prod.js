@@ -44,5 +44,9 @@ config.vue.loaders.css = ExtractTextPlugin.extract({
   loader: 'css-loader',
   fallbackLoader: 'vue-style-loader'
 })
+config.vue.loaders.scss = ExtractTextPlugin.extract({
+  loader: 'css-loader!sass-loader!postcss-loader',
+  fallbackLoader: 'vue-style-loader'
+})
 
 module.exports = config
