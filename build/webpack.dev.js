@@ -3,7 +3,7 @@ const webpack = require('webpack')
 const config = require('./webpack.base')
 
 config.output.publicPath = '/assets/'
-config.entry.client = ['webpack-hot-middleware/client', config.entry.client]
+config.entry.app = ['webpack-hot-middleware/client', config.entry.app]
 config.plugins.push(
   new webpack.DefinePlugin({
     'process.env.NODE_ENV': JSON.stringify('development')

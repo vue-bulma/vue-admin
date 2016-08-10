@@ -11,7 +11,7 @@ const postcss = [
 
 module.exports = {
   entry: {
-    client: './client/index.js'
+    app: './client/index.js'
   },
   output: {
     path: path.join(__dirname, '../dist/assets'),
@@ -31,17 +31,14 @@ module.exports = {
         test: /\.js$/,
         loaders: ['babel'],
         exclude: [/node_modules/]
+      },
+      {
+        test: /\.(png|jpg|gif|svg)$/,
+        loader: 'file',
+        query: {
+          name: '[name].[ext]?[hash]'
+        }
       }
-    ]
-  },
-  babel: {
-    babelrc: false,
-    presets: [
-      ['es2015', { modules: false }],
-      'stage-1'
-    ],
-    plugins: [
-      'transform-vue-jsx'
     ]
   },
   postcss,
