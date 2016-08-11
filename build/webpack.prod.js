@@ -40,13 +40,20 @@ config.module.loaders.push({
     fallbackLoader: 'style-loader'
   })
 })
-config.vue.loaders.css = ExtractTextPlugin.extract({
-  loader: 'css-loader',
-  fallbackLoader: 'vue-style-loader'
-})
-config.vue.loaders.scss = ExtractTextPlugin.extract({
-  loader: 'css-loader!sass-loader!postcss-loader',
-  fallbackLoader: 'vue-style-loader'
-})
+
+config.vue.loaders = {
+  css: ExtractTextPlugin.extract({
+    loader: 'css-loader',
+    fallbackLoader: 'vue-style-loader'
+  }),
+  sass: ExtractTextPlugin.extract({
+    loader: 'style-loader!css-loader!sass-loader',
+    fallbackLoader: 'vue-style-loader'
+  }),
+  scss: ExtractTextPlugin.extract({
+    loader: 'style-loader!css-loader!sass-loader',
+    fallbackLoader: 'vue-style-loader'
+  })
+}
 
 module.exports = config

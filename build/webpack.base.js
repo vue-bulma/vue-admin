@@ -5,7 +5,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 const postcss = [
   require('autoprefixer')({
-    browsers: ['last 2 versions', 'ie > 8']
+    browsers: ['last 3 versions']
   })
 ]
 
