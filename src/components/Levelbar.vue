@@ -65,7 +65,7 @@ export default {
         if (item.subMenu) {
           if (item.link) {
             temp.push({
-              lable: item.label,
+              label: item.label,
               link: item.link
             })
           }
