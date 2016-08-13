@@ -25,13 +25,4 @@ export default {
 
 $fa-font-path: '~font-awesome/fonts/';
 @import '~font-awesome/scss/font-awesome';
-
-.fade-enter-active,
-.fade-leave-active {
-  transition: all 2.233s ease;
-}
-.fade-enter,
-.fade-leave-active {
-  opacity: 0;
-}
 </style>
