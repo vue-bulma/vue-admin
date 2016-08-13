@@ -14,7 +14,7 @@
   </sub>
 </p>
 
-<h1 align="center"><strong>Upgrating to Vue 2.0</strong></h1>
+<h1 align="center"><strong>Upgrading to Vue 2.0</strong></h1>
 
 ## Notes
 
