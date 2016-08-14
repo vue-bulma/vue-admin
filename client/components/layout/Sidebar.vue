@@ -16,6 +16,28 @@
           Charts
           <span class="icon is-small is-angle"><i class="fa fa-angle-down"></i></span>
         </router-link>
+        <ul>
+          <li>
+            <router-link to="/charts/chartjs">
+              ChartJs
+            </router-link>
+          </li>
+          <li>
+            <router-link to="/charts/chartist">
+              Chartist
+            </router-link>
+          </li>
+          <li>
+            <router-link to="/charts/peity">
+              Peity
+            </router-link>
+          </li>
+          <li>
+            <router-link to="/charts/plotly">
+              Plotly
+            </router-link>
+          </li>
+        </ul>
       </li>
       <li>
         <router-link to="/components">
