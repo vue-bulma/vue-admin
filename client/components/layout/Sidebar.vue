@@ -5,49 +5,79 @@
     </p>
     <ul class="menu-list">
       <li>
-        <a href="#">
+        <router-link to="/dashboard">
           <span class="icon is-small"><i class="fa fa-tachometer"></i></span>
           Dashboard
-        </a>
+        </router-link>
       </li>
       <li>
-        <a href="#">
+        <router-link to="/charts">
           <span class="icon is-small"><i class="fa fa-bar-chart-o"></i></span>
           Charts
           <span class="icon is-small is-angle"><i class="fa fa-angle-down"></i></span>
-        </a>
+        </router-link>
       </li>
       <li>
-        <a href="#">
+        <router-link to="/components">
           <span class="icon is-small"><i class="fa fa-building-o"></i></span>
           Components
           <span class="icon is-small is-angle"><i class="fa fa-angle-down"></i></span>
-        </a>
+        </router-link>
         <ul>
-          <li><a href="#">BackToTop</a></li>
-          <li><a href="#">Collapse</a></li>
-          <li><a href="#">Datepicker</a></li>
-          <li><a href="#">Emoji</a></li>
-          <li><a href="#">Message</a></li>
-          <li><a href="#">Modal</a></li>
-          <li><a href="#">Notification</a></li>
-          <li><a href="#">Progress</a></li>
-          <li><a href="#">Rating</a></li>
-          <li><a href="#">Slider</a></li>
-          <li><a href="#">Switch</a></li>
-          <li><a href="#">Tabs</a></li>
-          <li><a href="#">Tooltip</a></li>
+          <li>
+            <router-link to="/components/backtotop">BackToTop</router-link>
+          </li>
+          <li>
+            <router-link to="/components/collapse">Collapse</router-link>
+          </li>
+          <li>
+            <router-link to="/components/datepicker">Datepicker</router-link>
+          </li>
+          <li>
+            <router-link to="/components/emoji">Emoji</router-link>
+          </li>
+          <li>
+            <router-link to="/components/message">Message</router-link>
+          </li>
+          <li>
+            <router-link to="/components/modal">Modal</router-link>
+          </li>
+          <li>
+            <router-link to="/components/notification">Notification</router-link>
+          </li>
+          <li>
+            <router-link to="/components/progress">Progress</router-link>
+          </li>
+          <li>
+            <router-link to="/components/rating">Rating</router-link>
+          </li>
+          <li>
+            <router-link to="/components/slider">Slider</router-link>
+          </li>
+          <li>
+            <router-link to="/components/switch">Switch</router-link>
+          </li>
+          <li>
+            <router-link to="/components/tabs">Tabs</router-link>
+          </li>
+          <li>
+            <router-link to="/components/tooltip">Tooltip</router-link>
+          </li>
         </ul>
       </li>
       <li>
-        <a href="#">
+        <router-link to="/tables">
           <span class="icon is-small"><i class="fa fa-table"></i></span>
           Tables
           <span class="icon is-small is-angle"><i class="fa fa-angle-down"></i></span>
-        </a>
+        </router-link>
         <ul>
-          <li><a href="#">Basic</a></li>
-          <li><a href="#">Handsontable</a></li>
+          <li>
+            <router-link to="/tables/basic">Basic</router-link>
+          </li>
+          <li>
+            <router-link to="/tables/handsontable">Handsontable</router-link>
+          </li>
         </ul>
       </li>
     </ul>
