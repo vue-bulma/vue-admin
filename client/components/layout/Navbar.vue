@@ -1,5 +1,5 @@
 <template>
-  <section class="hero is-bold app-navbar">
+  <section class="hero is-bold app-navbar animated" :class="{ slideInDown: show, slideOutDown: !show }">
     <div class="hero-head">
       <nav class="nav">
         <div class="nav-left">
@@ -22,6 +22,13 @@
 </template>
 
 <script>
+export default {
+
+  props: {
+    show: Boolean
+  }
+
+}
 </script>
 
 <style lang="scss">
