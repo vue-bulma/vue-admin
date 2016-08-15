@@ -23,6 +23,7 @@
     "npm": ">= 3"
   },
   "dependencies": {
+    "animate.css": "3.5.1",
     "bulma": "0.1.2",
     "font-awesome": "4.6.3",
     "vue": "2.0.0-rc.1",
