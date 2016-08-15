@@ -1,5 +1,5 @@
 <template>
-  <aside class="menu app-sidebar">
+  <aside class="menu app-sidebar animated" :class="{ slideInLeft: show, slideOutLeft: !show }">
     <p class="menu-label">
       General
     </p>
@@ -109,10 +109,8 @@
 <script>
 export default {
 
-  data () {
-    return {
-      menu: []
-    }
+  props: {
+    show: Boolean
   }
 
 }
