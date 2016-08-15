@@ -11,7 +11,7 @@
         </router-link>
       </li>
       <li>
-        <router-link to="/charts">
+        <router-link to="/charts" aria-expanded="false">
           <span class="icon is-small"><i class="fa fa-bar-chart-o"></i></span>
           Charts
           <span class="icon is-small is-angle"><i class="fa fa-angle-down"></i></span>
@@ -40,7 +40,7 @@
         </ul>
       </li>
       <li>
-        <router-link to="/components">
+        <router-link to="/components" aria-expanded="false">
           <span class="icon is-small"><i class="fa fa-building-o"></i></span>
           Components
           <span class="icon is-small is-angle"><i class="fa fa-angle-down"></i></span>
@@ -88,7 +88,7 @@
         </ul>
       </li>
       <li>
-        <router-link to="/tables">
+        <router-link to="/tables" aria-expanded="false">
           <span class="icon is-small"><i class="fa fa-table"></i></span>
           Tables
           <span class="icon is-small is-angle"><i class="fa fa-angle-down"></i></span>
@@ -140,11 +140,27 @@ export default {
     transform: translate3d(-180px, 0, 0);
   }
 
+  .collapse {
+    display: none;
+
+    &.in {
+      display: block;
+    }
+  }
+
+  .collapsing {
+    position: relative;
+    height: 0;
+    overflow: hidden;
+    transition: height .377s ease;
+  }
+
   .icon {
     vertical-align: baseline;
     &.is-angle {
       position: absolute;
       right: 10px;
+      transition: transform .377s ease;
     }
   }
 
@@ -152,8 +168,19 @@ export default {
     padding-left: 5px;
   }
 
-  .menu-list li ul {
-    margin-left: 15px;
+  .menu-list {
+    li a {
+      &[aria-expanded="true"] {
+        .is-angle {
+          transform: rotate(180deg);
+        }
+      }
+    }
+
+    li ul {
+      margin-left: 15px;
+    }
   }
+
 }
 </style>

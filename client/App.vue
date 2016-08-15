@@ -2,20 +2,20 @@
   <div id="app">
     <navbar :show="true"></navbar>
     <sidebar :show="true"></sidebar>
-    <transition>
-      <router-view></router-view>
-    </transition>
+    <app-main></app-main>
   </div>
 </template>
 
 <script>
 import Navbar from './components/layout/Navbar'
 import Sidebar from './components/layout/Sidebar'
+import AppMain from './components/layout/Main'
 
 export default {
   components: {
     Navbar,
-    Sidebar
+    Sidebar,
+    AppMain
   },
 
   data () {
