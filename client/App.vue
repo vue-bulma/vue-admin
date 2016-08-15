@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <navbar></navbar>
-    <sidebar></sidebar>
-    <transition name="fade" mode="out-in">
+    <navbar :show="true"></navbar>
+    <sidebar :show="true"></sidebar>
+    <transition>
       <router-view></router-view>
     </transition>
   </div>
@@ -16,11 +16,21 @@ export default {
   components: {
     Navbar,
     Sidebar
+  },
+
+  data () {
+    return {
+    }
   }
 }
 </script>
 
 <style lang="scss">
+@import '~animate.css';
+.animated {
+  animation-duration: .377s;
+}
+
 @import '~bulma';
 
 $fa-font-path: '~font-awesome/fonts/';
