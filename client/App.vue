@@ -7,9 +7,7 @@
 </template>
 
 <script>
-import Navbar from './components/layout/Navbar'
-import Sidebar from './components/layout/Sidebar'
-import AppMain from './components/layout/Main'
+import { Navbar, Sidebar, AppMain } from './components/layout/'
 
 export default {
   components: {
