@@ -11,106 +11,125 @@
         </router-link>
       </li>
       <li>
-        <router-link to="/charts" aria-expanded="false">
+        <router-link to="/charts" :aria-expanded="show0? 'true' : 'false'" @click.native="show0 = !show0">
           <span class="icon is-small"><i class="fa fa-bar-chart-o"></i></span>
           Charts
           <span class="icon is-small is-angle"><i class="fa fa-angle-down"></i></span>
         </router-link>
-        <ul>
-          <li>
-            <router-link to="/charts/chartjs">
-              ChartJs
-            </router-link>
-          </li>
-          <li>
-            <router-link to="/charts/chartist">
-              Chartist
-            </router-link>
-          </li>
-          <li>
-            <router-link to="/charts/peity">
-              Peity
-            </router-link>
-          </li>
-          <li>
-            <router-link to="/charts/plotly">
-              Plotly
-            </router-link>
-          </li>
-        </ul>
+        <expanding>
+          <ul v-show="show0">
+            <li>
+              <router-link to="/charts/chartjs">
+                ChartJs
+              </router-link>
+            </li>
+            <li>
+              <router-link to="/charts/chartist">
+                Chartist
+              </router-link>
+            </li>
+            <li>
+              <router-link to="/charts/peity">
+                Peity
+              </router-link>
+            </li>
+            <li>
+              <router-link to="/charts/plotly">
+                Plotly
+              </router-link>
+            </li>
+          </ul>
+        </expanding>
       </li>
       <li>
-        <router-link to="/components" aria-expanded="false">
+        <router-link to="/components" :aria-expanded="show1 ? 'true' : 'false'" @click.native="show1 = !show1">
           <span class="icon is-small"><i class="fa fa-building-o"></i></span>
           Components
           <span class="icon is-small is-angle"><i class="fa fa-angle-down"></i></span>
         </router-link>
-        <ul>
-          <li>
-            <router-link to="/components/backtotop">BackToTop</router-link>
-          </li>
-          <li>
-            <router-link to="/components/collapse">Collapse</router-link>
-          </li>
-          <li>
-            <router-link to="/components/datepicker">Datepicker</router-link>
-          </li>
-          <li>
-            <router-link to="/components/emoji">Emoji</router-link>
-          </li>
-          <li>
-            <router-link to="/components/message">Message</router-link>
-          </li>
-          <li>
-            <router-link to="/components/modal">Modal</router-link>
-          </li>
-          <li>
-            <router-link to="/components/notification">Notification</router-link>
-          </li>
-          <li>
-            <router-link to="/components/progress">Progress</router-link>
-          </li>
-          <li>
-            <router-link to="/components/rating">Rating</router-link>
-          </li>
-          <li>
-            <router-link to="/components/slider">Slider</router-link>
-          </li>
-          <li>
-            <router-link to="/components/switch">Switch</router-link>
-          </li>
-          <li>
-            <router-link to="/components/tabs">Tabs</router-link>
-          </li>
-          <li>
-            <router-link to="/components/tooltip">Tooltip</router-link>
-          </li>
-        </ul>
+        <expanding>
+          <ul v-show="show1">
+            <li>
+              <router-link to="/components/backtotop">BackToTop</router-link>
+            </li>
+            <li>
+              <router-link to="/components/collapse">Collapse</router-link>
+            </li>
+            <li>
+              <router-link to="/components/datepicker">Datepicker</router-link>
+            </li>
+            <li>
+              <router-link to="/components/emoji">Emoji</router-link>
+            </li>
+            <li>
+              <router-link to="/components/message">Message</router-link>
+            </li>
+            <li>
+              <router-link to="/components/modal">Modal</router-link>
+            </li>
+            <li>
+              <router-link to="/components/notification">Notification</router-link>
+            </li>
+            <li>
+              <router-link to="/components/progress">Progress</router-link>
+            </li>
+            <li>
+              <router-link to="/components/rating">Rating</router-link>
+            </li>
+            <li>
+              <router-link to="/components/slider">Slider</router-link>
+            </li>
+            <li>
+              <router-link to="/components/switch">Switch</router-link>
+            </li>
+            <li>
+              <router-link to="/components/tabs">Tabs</router-link>
+            </li>
+            <li>
+              <router-link to="/components/tooltip">Tooltip</router-link>
+            </li>
+          </ul>
+        </expanding>
       </li>
       <li>
-        <router-link to="/tables" aria-expanded="false">
+        <router-link to="/tables" :aria-expanded="show2 ? 'true' : 'false'" @click.native="show2 = !show2">
           <span class="icon is-small"><i class="fa fa-table"></i></span>
           Tables
           <span class="icon is-small is-angle"><i class="fa fa-angle-down"></i></span>
         </router-link>
-        <ul>
-          <li>
-            <router-link to="/tables/basic">Basic</router-link>
-          </li>
-          <li>
-            <router-link to="/tables/handsontable">Handsontable</router-link>
-          </li>
-        </ul>
+        <expanding>
+          <ul v-show="show2">
+            <li>
+              <router-link to="/tables/basic">Basic</router-link>
+            </li>
+            <li>
+              <router-link to="/tables/handsontable">Handsontable</router-link>
+            </li>
+          </ul>
+        </expanding>
       </li>
     </ul>
   </aside>
 </template>
 
 <script>
+import Expanding from 'vue-bulma-expanding'
+
 export default {
+  components: {
+    Expanding
+  },
 
   props: {
     show: Boolean
+  },
+
+  data () {
+    return {
+      show0: false,
+      show1: false,
+      show2: false
+    }
   }
 
 }
@@ -140,21 +159,6 @@ export default {
     transform: translate3d(-180px, 0, 0);
   }
 
-  .collapse {
-    display: none;
-
-    &.in {
-      display: block;
-    }
-  }
-
-  .collapsing {
-    position: relative;
-    height: 0;
-    overflow: hidden;
-    transition: height .377s ease;
-  }
-
   .icon {
     vertical-align: baseline;
     &.is-angle {
@@ -178,7 +182,7 @@ export default {
     }
 
     li ul {
-      margin-left: 15px;
+      margin: 0 10px 0 15px;
     }
   }
 
