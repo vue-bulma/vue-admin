@@ -9,20 +9,32 @@
     </div>
 
     <div class="level-right is-hidden-mobile">
-      <!-- <breadcrumb :list="list"><breadcrumb> -->
+      <breadcrumb :list="list"><breadcrumb>
     </div>
   </nav>
 </template>
 
 <script>
+import Breadcrumb from 'vue-bulma-breadcrumb'
+
 export default {
+  components: {
+    Breadcrumb
+  },
 
   data () {
     return {
-      name: '',
-      list: []
+    }
+  },
+
+  computed: {
+    name () {
+      return this.$route.name
+    },
+
+    list () {
+      return this.$route.matched
     }
   }
-
 }
 </script>
