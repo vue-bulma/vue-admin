@@ -3,17 +3,19 @@
     <navbar :show="true"></navbar>
     <sidebar :show="true"></sidebar>
     <app-main></app-main>
+    <footer-bar></footer-bar>
   </div>
 </template>
 
 <script>
-import { Navbar, Sidebar, AppMain } from './components/layout/'
+import { Navbar, Sidebar, AppMain, FooterBar } from './components/layout/'
 
 export default {
   components: {
     Navbar,
     Sidebar,
-    AppMain
+    AppMain,
+    FooterBar
   },
 
   data () {
