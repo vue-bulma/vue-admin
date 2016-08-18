@@ -27,6 +27,7 @@
     "bulma": "0.1.2",
     "font-awesome": "4.6.3",
     "vue": "2.0.0-rc.2",
+    "vue-bulma-breadcrumb": "github:vue-bulma/breadcrumb",
     "vue-bulma-expanding": "github:vue-bulma/expanding",
     "vue-router": "2.0.0-rc.3",
     "vuex": "2.0.0-rc.5",
