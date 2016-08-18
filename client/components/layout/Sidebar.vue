@@ -181,7 +181,7 @@ export default {
       }
     }
 
-    li ul {
+    li a + ul {
       margin: 0 10px 0 15px;
     }
   }
