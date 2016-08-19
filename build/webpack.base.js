@@ -62,7 +62,9 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'Vue Admin',
       template: __dirname + '/index.html',
-      filename: '../index.html'
+      filename: '../index.html',
+      inject: true,
+      favicon: 'client/assets/logo.png'
     })
   ]
 }
