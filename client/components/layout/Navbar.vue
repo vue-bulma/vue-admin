@@ -3,12 +3,12 @@
     <div class="hero-head">
       <nav class="nav">
         <div class="nav-left">
-          <a class="nav-item is-hidden-tablet">
+          <a class="nav-item is-hidden-tablet" @click="toggleSidebar">
             <i class="fa fa-bars" aria-hidden="true"></i>
           </a>
         </div>
         <div class="nav-center">
-          <a class="nav-item hero-brand" href="#">
+          <a class="nav-item hero-brand" href="/">
             <img src="~assets/logo.svg" alt="Vue Admin Panel Framework">
             <div class="is-hidden-mobile">
               <span class="vue">Vue</span><strong class="admin">Admin</strong>
@@ -26,6 +26,12 @@ export default {
 
   props: {
     show: Boolean
+  },
+
+  methods: {
+    toggleSidebar () {
+      this.$store.state.config.sidebar = !this.$store.state.config.sidebar
+    }
   }
 
 }

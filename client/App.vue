@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <navbar :show="true"></navbar>
-    <sidebar :show="true"></sidebar>
+    <sidebar :show="config.sidebar"></sidebar>
     <app-main></app-main>
     <footer-bar></footer-bar>
   </div>
@@ -18,8 +18,28 @@ export default {
     FooterBar
   },
 
-  data () {
-    return {
+  beforeMount () {
+    const config = this.config
+    const { body } = document
+    const WIDTH = 768
+    const RATIO = 3
+
+    const handler = () => {
+      if (!document.hidden) {
+        let rect = body.getBoundingClientRect()
+        config.mobile = rect.width - RATIO < WIDTH
+        config.sidebar = !config.mobile
+      }
+    }
+
+    document.addEventListener('visibilitychange', handler)
+    window.addEventListener('DOMContentLoaded', handler)
+    window.addEventListener('resize', handler)
+  },
+
+  computed: {
+    config () {
+      return this.$store.state.config
     }
   }
 }
