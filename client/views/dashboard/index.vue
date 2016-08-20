@@ -32,7 +32,7 @@
         <article class="tile is-child box">
           <h4 class="title">Five</h4>
           <div class="content">
-            <!-- <chart :type="'doughnut'" :data="chartData"></chart> -->
+            <chart :type="'doughnut'" :data="chartData"></chart>
           </div>
         </article>
       </div>
@@ -40,7 +40,7 @@
         <article class="tile is-child box">
           <h4 class="title">Six</h4>
           <div class="content">
-            <!-- <chart :type="'pie'" :data="chartData"></chart> -->
+            <chart :type="'pie'" :data="chartData"></chart>
           </div>
         </article>
       </div>
@@ -106,11 +106,11 @@
 </template>
 
 <script>
-// import Chart from 'vue-bulma-chartjs'
+import Chart from 'vue-bulma-chartjs'
 
 export default {
   components: {
-    // Chart
+    Chart
   },
 
   data () {
@@ -139,14 +139,14 @@ export default {
     }
   },
 
-  created () {
-    // setInterval(() => {
-    //   // https://vuejs.org/guide/list.html#Mutation-Methods
-    //   // this.data.unshift(this.data.pop())
-    //   this.data.forEach((item, i) => {
-    //     this.data.$set(i, Math.ceil(Math.random() * 1000))
-    //   })
-    // }, 1024)
+  mounted () {
+    setInterval(() => {
+      // https://github.com/vuejs/vue/issues/2873
+      // Array.prototype.$set/$remove deprecated (use Vue.set or Array.prototype.splice instead)
+      this.data.forEach((item, i) => {
+        this.data.splice(i, 1, Math.ceil(Math.random() * 1000))
+      })
+    }, 1024)
   }
 }
 </script>
