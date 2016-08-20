@@ -3,7 +3,7 @@
     <div class="hero-head">
       <nav class="nav">
         <div class="nav-left">
-          <a class="nav-item is-hidden-tablet" @click="toggleSidebar">
+          <a class="nav-item is-hidden-tablet" @click="$store.dispatch('TOGGLE_SIDEBAR')">
             <i class="fa fa-bars" aria-hidden="true"></i>
           </a>
         </div>
@@ -26,12 +26,6 @@ export default {
 
   props: {
     show: Boolean
-  },
-
-  methods: {
-    toggleSidebar () {
-      this.$store.state.config.sidebar = !this.$store.state.config.sidebar
-    }
   }
 
 }
