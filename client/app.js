@@ -17,4 +17,12 @@ const app = new Vue({
   ...App
 })
 
+router.beforeEach((route, redirect, next) => {
+  const config = app.config
+  if (config.mobile && config.sidebar) {
+    config.sidebar = false
+  }
+  next()
+})
+
 export {app, router, store}
