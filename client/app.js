@@ -17,8 +17,9 @@ const app = new Vue({
   ...App
 })
 
+const config = app.config
+
 router.beforeEach((route, redirect, next) => {
-  const config = app.config
   if (config.mobile && config.sidebar) {
     config.sidebar = false
   }
