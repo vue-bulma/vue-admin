@@ -2,6 +2,6 @@ export Navbar from './Navbar'
 
 export Sidebar from './Sidebar'
 
-export AppMain from './Main'
+export AppMain from './AppMain'
 
 export FooterBar from './FooterBar'
