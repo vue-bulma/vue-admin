@@ -2,13 +2,17 @@
 // name: component name
 // meta.label: display label
 
+// lazy loading Components
+const Chartjs = resolve => require(['../views/charts/Chartjs.vue'], resolve)
+
 export default [
   {
     name: 'Dashboard',
     path: '/dashboard',
     meta: {
       icon: 'fa-tachometer'
-    }
+    },
+    component: require('../views/dashboard')
   },
   {
     name: 'Charts',
@@ -17,10 +21,13 @@ export default [
       icon: 'fa-bar-chart-o',
       expanded: false
     },
+    component: require('../views/charts'),
+
     children: [
       {
         name: 'Chartjs',
-        path: 'chartjs'
+        path: 'chartjs',
+        component: Chartjs
       },
       {
         name: 'Chartist',
@@ -42,6 +49,7 @@ export default [
       icon: 'fa-laptop',
       expanded: false,
     },
+
     children: [
       {
         name: 'Buttons',
@@ -68,6 +76,7 @@ export default [
       icon: 'fa-building-o',
       expanded: false
     },
+
     children: [
       {
         name: 'BackToTop',
@@ -129,6 +138,7 @@ export default [
       icon: 'fa-table',
       expanded: false
     },
+
     children: [
       {
         name: 'BasicTables',

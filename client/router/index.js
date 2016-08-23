@@ -1,10 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-Vue.use(Router)
+import menu from './menu'
 
-// lazy loading Components
-const Chartjs = resolve => require(['../views/charts/Chartjs.vue'], resolve)
+Vue.use(Router)
 
 export default new Router({
   mode: 'history',
@@ -16,37 +15,21 @@ export default new Router({
       path: '/',
       component: require('../views/Home')
     },
-    {
-      name: 'Dashboard',
-      path: '/dashboard',
-      component: require('../views/dashboard')
-    },
-    {
-      name: 'Charts',
-      path: '/charts',
-      meta: {
-        expanded: false
-      },
-      component: require('../views/charts'),
-      beforeEnter: (route, redirect, next) => {
-        // console.log(233, route)
-        next()
-      },
-      children: [
-        {
-          name: 'Chartjs',
-          path: 'chartjs',
-          component: Chartjs,
-          beforeEnter: (route, redirect, next) => {
-            // console.log(377, route)
-            next()
-          }
-        }
-      ]
-    },
+    ...generateRoutesFromMenu(menu),
     {
       path: '*',
       redirect: '/'
     }
   ]
 })
+
+function generateRoutesFromMenu (menu = [], routes = []) {
+  for (let i = 0, l = menu.length; i < l; i++) {
+    let item = menu[i]
+    if (item.path) {
+      routes.push(item)
+    }
+    generateRoutesFromMenu(item.children, routes)
+  }
+  return routes
+}

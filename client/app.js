@@ -7,6 +7,16 @@ import * as filters from './filters'
 
 sync(store, router)
 
+const { state } = store
+const { config } = state
+
+router.beforeEach((route, redirect, next) => {
+  if (config.mobile && config.sidebar) {
+    config.sidebar = false
+  }
+  next()
+})
+
 Object.keys(filters).forEach(key => {
   Vue.filter(key, filters[key])
 })
@@ -17,13 +27,4 @@ const app = new Vue({
   ...App
 })
 
-const config = app.config
-
-router.beforeEach((route, redirect, next) => {
-  if (config.mobile && config.sidebar) {
-    config.sidebar = false
-  }
-  next()
-})
-
-export {app, router, store}
+export { app, router, store }

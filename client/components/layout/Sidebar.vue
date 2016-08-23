@@ -5,14 +5,14 @@
     </p>
     <ul class="menu-list">
       <li v-for="item in menu">
-        <router-link :to="item.path" :aria-expanded="item.meta.expanded ? 'true' : 'false'" v-if="item.path" @click.native="item.meta.expanded = !item.meta.expanded">
+        <router-link :to="item.path" :exact="true" :aria-expanded="isExpanded(item) ? 'true' : 'false'" v-if="item.path" @click.native="toggle(item)">
           <span class="icon is-small"><i :class="['fa', item.meta.icon]"></i></span>
           {{ item.meta.label || item.name }}
           <span class="icon is-small is-angle" v-if="item.children && item.children.length">
             <i class="fa fa-angle-down"></i>
           </span>
         </router-link>
-        <a :aria-expanded="item.meta.expanded" v-else @click="item.meta.expanded = !item.meta.expanded">
+        <a :aria-expanded="isExpanded(item)" v-else @click="toggle(item)">
           <span class="icon is-small"><i :class="['fa', item.meta.icon]"></i></span>
           {{ item.meta.label || item.name }}
           <span class="icon is-small is-angle" v-if="item.children && item.children.length">
@@ -21,7 +21,7 @@
         </a>
 
         <expanding v-if="item.children && item.children.length">
-          <ul v-show="item.meta.expanded">
+          <ul v-show="isExpanded(item)">
             <li v-for="subItem in item.children">
               <router-link :to="(item.path || '') + '/' + subItem.path">
                 {{ subItem.meta && subItem.meta.label || subItem.name }}
@@ -152,15 +152,47 @@ export default {
 
   data () {
     return {
+      isReady: false
     }
   },
 
-  mounted () {
+  created () {
+    let route = this.$route
+    if (route.name) {
+      this.isReady = true
+      this.shouldExpandMatchItem(route)
+    }
   },
 
   computed: {
     menu () {
       return this.$store.state.menu
+    }
+  },
+
+  methods: {
+    isExpanded (item) {
+      return item.meta.expanded
+    },
+
+    toggle (item) {
+      item.meta.expanded = !item.meta.expanded
+    },
+
+    shouldExpandMatchItem (route) {
+      let matched = route.matched
+      let lastMatched = matched[matched.length - 1]
+      let parent = lastMatched.parent || lastMatched
+      if ('expanded' in parent.meta && parent !== lastMatched) {
+        parent.meta.expanded = true
+      }
+    }
+  },
+
+  watch: {
+    $route (route) {
+      this.isReady = true
+      this.shouldExpandMatchItem(route)
     }
   }
 

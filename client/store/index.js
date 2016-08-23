@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 
 import config from './config'
-import menu from './menu'
+import menu from '../router/menu'
 
 Vue.use(Vuex)
 
