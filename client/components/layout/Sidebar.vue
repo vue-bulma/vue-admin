@@ -4,23 +4,49 @@
       General
     </p>
     <ul class="menu-list">
-      <li>
+      <li v-for="item in menu">
+        <router-link :to="item.path" :aria-expanded="item.meta.expanded ? 'true' : 'false'" v-if="item.path" @click.native="item.meta.expanded = !item.meta.expanded">
+          <span class="icon is-small"><i :class="['fa', item.meta.icon]"></i></span>
+          {{ item.meta.label || item.name }}
+          <span class="icon is-small is-angle" v-if="item.children && item.children.length">
+            <i class="fa fa-angle-down"></i>
+          </span>
+        </router-link>
+        <a :aria-expanded="item.meta.expanded" v-else @click="item.meta.expanded = !item.meta.expanded">
+          <span class="icon is-small"><i :class="['fa', item.meta.icon]"></i></span>
+          {{ item.meta.label || item.name }}
+          <span class="icon is-small is-angle" v-if="item.children && item.children.length">
+            <i class="fa fa-angle-down"></i>
+          </span>
+        </a>
+
+        <expanding v-if="item.children && item.children.length">
+          <ul v-show="item.meta.expanded">
+            <li v-for="subItem in item.children">
+              <router-link :to="(item.path || '') + '/' + subItem.path">
+                {{ subItem.meta && subItem.meta.label || subItem.name }}
+              </router-link>
+            </li>
+          </ul>
+        </expanding>
+      </li>
+      <!-- <li>
         <router-link to="/dashboard">
           <span class="icon is-small"><i class="fa fa-tachometer"></i></span>
           Dashboard
         </router-link>
       </li>
       <li>
-        <router-link to="/charts" :aria-expanded="show0? 'true' : 'false'" @click.native="show0 = !show0">
+        <router-link to="/charts" :aria-expanded="isExpanded('Charts') ? 'true' : 'false'" @click.native="toggle('Charts')">
           <span class="icon is-small"><i class="fa fa-bar-chart-o"></i></span>
           Charts
           <span class="icon is-small is-angle"><i class="fa fa-angle-down"></i></span>
         </router-link>
         <expanding>
-          <ul v-show="show0">
+          <ul v-show="isExpanded('Charts')">
             <li>
               <router-link to="/charts/chartjs">
-                ChartJs
+                Chartjs
               </router-link>
             </li>
             <li>
@@ -42,13 +68,13 @@
         </expanding>
       </li>
       <li>
-        <router-link to="/components" :aria-expanded="show1 ? 'true' : 'false'" @click.native="show1 = !show1">
+        <a :aria-expanded="isExpanded('Components')  ? 'true' : 'false'" @click="toggle('Components')">
           <span class="icon is-small"><i class="fa fa-building-o"></i></span>
           Components
           <span class="icon is-small is-angle"><i class="fa fa-angle-down"></i></span>
-        </router-link>
+        </a>
         <expanding>
-          <ul v-show="show1">
+          <ul v-show="isExpanded('Components')">
             <li>
               <router-link to="/components/backtotop">BackToTop</router-link>
             </li>
@@ -92,13 +118,13 @@
         </expanding>
       </li>
       <li>
-        <router-link to="/tables" :aria-expanded="show2 ? 'true' : 'false'" @click.native="show2 = !show2">
+        <a :aria-expanded="isExpanded('Tables') ? 'true' : 'false'" @click="toggle('Tables')">
           <span class="icon is-small"><i class="fa fa-table"></i></span>
           Tables
           <span class="icon is-small is-angle"><i class="fa fa-angle-down"></i></span>
-        </router-link>
+        </a>
         <expanding>
-          <ul v-show="show2">
+          <ul v-show="isExpanded('Tables')">
             <li>
               <router-link to="/tables/basic">Basic</router-link>
             </li>
@@ -107,7 +133,7 @@
             </li>
           </ul>
         </expanding>
-      </li>
+      </li> -->
     </ul>
   </aside>
 </template>
@@ -126,9 +152,15 @@ export default {
 
   data () {
     return {
-      show0: false,
-      show1: false,
-      show2: false
+    }
+  },
+
+  mounted () {
+  },
+
+  computed: {
+    menu () {
+      return this.$store.state.menu
     }
   }
 
@@ -148,7 +180,7 @@ export default {
   width: 180px;
   min-width: 45px;
   max-height: 100vh;
-  height: 100%;
+  height: calc(100% - 50px);
   z-index: 1024 - 1;
   background: #FFF;
   box-shadow: 0 2px 3px rgba(17, 17, 17, 0.1), 0 0 0 1px rgba(17, 17, 17, 0.1);

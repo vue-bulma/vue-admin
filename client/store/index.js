@@ -2,11 +2,13 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 
 import config from './config'
+import menu from './menu'
 
 Vue.use(Vuex)
 
 const state = {
   config,
+  menu,
   count: 0
 }
 
