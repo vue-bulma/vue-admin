@@ -31,6 +31,7 @@
     "vue-bulma-chartist": "github:vue-bulma/chartist",
     "vue-bulma-chartjs": "github:vue-bulma/chartjs",
     "vue-bulma-expanding": "github:vue-bulma/expanding",
+    "vue-peity": "github:vue-bulma/peity",
     "vue-router": "2.0.0-rc.3",
     "vuex": "2.0.0-rc.5",
     "vuex-router-sync": "3.0.0"

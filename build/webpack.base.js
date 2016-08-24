@@ -22,7 +22,9 @@ module.exports = {
     extensions: ['', '.js', '.vue', '.css', '.json'],
     fallback: [path.join(__dirname, '../node_modules')],
     alias: {
-      'assets': path.resolve(__dirname, '../client/assets')
+      'assets': path.resolve(__dirname, '../client/assets'),
+      // https://github.com/vuejs/vue/wiki/Vue-2.0-RC-Starter-Resources
+      'vue': 'vue/dist/vue.js'
     }
   },
   module: {
