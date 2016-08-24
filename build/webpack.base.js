@@ -24,7 +24,9 @@ module.exports = {
     alias: {
       'assets': path.resolve(__dirname, '../client/assets'),
       // https://github.com/vuejs/vue/wiki/Vue-2.0-RC-Starter-Resources
-      'vue': 'vue/dist/vue.js'
+      // runtime-only
+      'vue': 'vue/dist/vue.js',
+      'plotly.js': 'plotly.js/dist/plotly.js'
     }
   },
   module: {

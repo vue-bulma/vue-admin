@@ -6,6 +6,7 @@
 const Chartjs = resolve => require(['../views/charts/Chartjs.vue'], resolve)
 const Chartist = resolve => require(['../views/charts/Chartist.vue'], resolve)
 const Peity = resolve => require(['../views/charts/Peity.vue'], resolve)
+const Plotly = resolve => require(['../views/charts/Plotly.vue'], resolve)
 
 export default [
   {
@@ -43,7 +44,8 @@ export default [
       },
       {
         name: 'Plotly',
-        path: 'plotly'
+        path: 'plotly',
+        component: Plotly
       }
     ]
   },
