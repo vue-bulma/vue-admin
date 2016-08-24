@@ -4,6 +4,7 @@
 
 // lazy loading Components
 const Chartjs = resolve => require(['../views/charts/Chartjs.vue'], resolve)
+const Chartist = resolve => require(['../views/charts/Chartist.vue'], resolve)
 
 export default [
   {
@@ -25,13 +26,14 @@ export default [
 
     children: [
       {
+        name: 'Chartist',
+        path: 'chartist',
+        component: Chartist
+      },
+      {
         name: 'Chartjs',
         path: 'chartjs',
         component: Chartjs
-      },
-      {
-        name: 'Chartist',
-        path: 'chartist'
       },
       {
         name: 'Peity',
