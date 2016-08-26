@@ -22,18 +22,18 @@ export default {
     Breadcrumb
   },
 
-  data () {
-    return {
-    }
-  },
-
   computed: {
     name () {
       return this.$route.name
     },
 
     list () {
-      return this.$route.matched
+      let matched = this.$route.matched
+      let first = matched[0]
+      if (first.name !== 'Home' || first.path !== '') {
+        matched = [{ name: 'Home', path: '/' }].concat(matched)
+      }
+      return matched
     }
   }
 }
