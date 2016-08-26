@@ -1,9 +1,12 @@
 import Vue from 'vue'
+import Resource from 'vue-resource'
 import { sync } from 'vuex-router-sync'
 import App from './App.vue'
 import router from './router'
 import store from './store'
 import * as filters from './filters'
+
+Vue.use(Resource)
 
 sync(store, router)
 
