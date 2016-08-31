@@ -3,10 +3,10 @@
 // meta.label: display label
 
 // lazy loading Components
-const Chartjs = resolve => require(['../views/charts/Chartjs.vue'], resolve)
-const Chartist = resolve => require(['../views/charts/Chartist.vue'], resolve)
-const Peity = resolve => require(['../views/charts/Peity.vue'], resolve)
-const Plotly = resolve => require(['../views/charts/Plotly.vue'], resolve)
+// const Chartjs = resolve => require(['../views/charts/Chartjs.vue'], resolve)
+// const Chartist = resolve => require(['../views/charts/Chartist.vue'], resolve)
+// const Peity = resolve => require(['../views/charts/Peity.vue'], resolve)
+// const Plotly = resolve => require(['../views/charts/Plotly.vue'], resolve)
 
 export default [
   {
@@ -30,22 +30,22 @@ export default [
       {
         name: 'Chartist',
         path: 'chartist',
-        component: Chartist
+        component: require('../views/charts/Chartjs') // Chartist
       },
       {
         name: 'Chartjs',
         path: 'chartjs',
-        component: Chartjs
+        component: require('../views/charts/Chartjs') // Chartjs
       },
       {
         name: 'Peity',
         path: 'peity',
-        component: Peity
+        component: require('../views/charts/Peity') // Peity
       },
       {
         name: 'Plotly',
         path: 'plotly',
-        component: Plotly
+        component: require('../views/charts/Plotly') // Plotly
       }
     ]
   },
