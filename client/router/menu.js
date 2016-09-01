@@ -74,8 +74,8 @@ export default [
       },
       {
         name: 'Icons',
-        path: 'icons',
-        // component: require('../views/ui/Icons') // Icons
+        path: '/icons',
+        component: require('../views/ui/Icons') // Icons
       }
     ]
   },

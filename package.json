@@ -26,6 +26,7 @@
     "animate.css": "3.5.1",
     "bulma": "0.1.2",
     "font-awesome": "4.6.3",
+    "mdi": "1.7.22",
     "plotly.js": "1.16.3",
     "vue": "2.0.0-rc.4",
     "vue-bulma-breadcrumb": "github:vue-bulma/breadcrumb",
