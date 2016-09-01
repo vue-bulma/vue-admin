@@ -32,6 +32,7 @@
     "vue-bulma-chartist": "github:vue-bulma/chartist",
     "vue-bulma-chartjs": "github:vue-bulma/chartjs",
     "vue-bulma-expanding": "github:vue-bulma/expanding",
+    "vue-cleave": "github:vue-bulma/cleave",
     "vue-peity": "github:vue-bulma/peity",
     "vue-resource": "0.9.3",
     "vue-router": "2.0.0-rc.4",
