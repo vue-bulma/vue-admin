@@ -23,7 +23,7 @@
         <expanding v-if="item.children && item.children.length">
           <ul v-show="isExpanded(item)">
             <li v-for="subItem in item.children">
-              <router-link :to="(item.path || '') + '/' + subItem.path">
+              <router-link :to="generatePath(item, subItem)">
                 {{ subItem.meta && subItem.meta.label || subItem.name }}
               </router-link>
             </li>
@@ -52,7 +52,7 @@ export default {
     }
   },
 
-  created () {
+  mounted () {
     let route = this.$route
     if (route.name) {
       this.isReady = true
@@ -79,8 +79,35 @@ export default {
       let matched = route.matched
       let lastMatched = matched[matched.length - 1]
       let parent = lastMatched.parent || lastMatched
+
+      if (parent === lastMatched) {
+        const p = this.findParentFromMenu(route)
+        if (p) {
+          parent = p
+        }
+      }
+
       if ('expanded' in parent.meta && parent !== lastMatched) {
         parent.meta.expanded = true
+      }
+    },
+
+    generatePath (item, subItem) {
+      return `${item.component ? item.path + '/' : ''}${subItem.path}`
+    },
+
+    findParentFromMenu(route) {
+      const menu = this.menu
+      for (let i = 0, l = menu.length; i < l; i++) {
+        const item = menu[i]
+        const k = item.children && item.children.length
+        if (k) {
+          for (let j = 0; j < k; j++) {
+            if (item.children[j].name === route.name) {
+              return item
+            }
+          }
+        }
       }
     }
   },
