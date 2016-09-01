@@ -30,7 +30,7 @@ export default [
       {
         name: 'Chartist',
         path: 'chartist',
-        component: require('../views/charts/Chartjs') // Chartist
+        component: require('../views/charts/Chartist') // Chartist
       },
       {
         name: 'Chartjs',
@@ -59,19 +59,23 @@ export default [
     children: [
       {
         name: 'Buttons',
-        path: 'buttons'
+        path: '/buttons',
+        component: require('../views/ui/Buttons') // Buttons
       },
       {
         name: 'Form',
-        path: 'form'
+        path: '/form',
+        component: require('../views/ui/Form') // Form
       },
       {
         name: 'Typography',
-        path: 'typography'
+        path: '/typography',
+        component: require('../views/ui/Typography') // Typography
       },
       {
         name: 'Icons',
-        path: 'icons'
+        path: 'icons',
+        // component: require('../views/ui/Icons') // Icons
       }
     ]
   },
