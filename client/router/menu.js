@@ -152,14 +152,16 @@ export default [
     children: [
       {
         name: 'BasicTables',
-        path: 'tables/basic',
+        path: '/tables/basic',
         meta: {
           label: 'Basic Tables'
-        }
+        },
+        component: require('../views/tables/Basic') // Basic
       },
       {
         name: 'Handsontable',
-        path: 'tables/handsontable'
+        path: '/tables/handsontable',
+        component: require('../views/tables/Handsontable') // Handsontable
       }
     ]
   }
