@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <nprogress-container></nprogress-container>
     <navbar :show="true"></navbar>
     <sidebar :show="config.sidebar"></sidebar>
     <app-main></app-main>
@@ -8,6 +9,7 @@
 </template>
 
 <script>
+import NprogressContainer from 'vue-nprogress/src/NprogressContainer'
 import { Navbar, Sidebar, AppMain, FooterBar } from './components/layout/'
 
 export default {
@@ -15,7 +17,8 @@ export default {
     Navbar,
     Sidebar,
     AppMain,
-    FooterBar
+    FooterBar,
+    NprogressContainer
   },
 
   beforeMount () {
@@ -55,4 +58,27 @@ export default {
 
 $fa-font-path: '~font-awesome/fonts/';
 @import '~font-awesome/scss/font-awesome';
+
+.nprogress-container {
+  position: fixed !important;
+  width: 100%;
+  height: 50px;
+  z-index: 2048;
+
+  #nprogress {
+    $color: #48e79a;
+
+    .bar {
+      background: $color;
+    }
+    .peg {
+      box-shadow: 0 0 10px $color, 0 0 5px $color;
+    }
+
+    .spinner-icon {
+      border-top-color: $color;
+      border-left-color: $color;
+    }
+  }
+}
 </style>

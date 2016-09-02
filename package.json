@@ -35,6 +35,7 @@
     "vue-bulma-expanding": "github:vue-bulma/expanding",
     "vue-cleave": "github:vue-bulma/cleave",
     "vue-handsontable": "github:vue-bulma/handsontable",
+    "vue-nprogress": "github:vue-bulma/nprogress",
     "vue-peity": "github:vue-bulma/peity",
     "vue-resource": "0.9.3",
     "vue-router": "2.0.0-rc.4",
