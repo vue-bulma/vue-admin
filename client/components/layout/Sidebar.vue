@@ -22,7 +22,7 @@
 
         <expanding v-if="item.children && item.children.length">
           <ul v-show="isExpanded(item)">
-            <li v-for="subItem in item.children">
+            <li v-for="subItem in item.children" v-if="subItem.path">
               <router-link :to="generatePath(item, subItem)">
                 {{ subItem.meta && subItem.meta.label || subItem.name }}
               </router-link>
