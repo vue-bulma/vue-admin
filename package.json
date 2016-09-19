@@ -33,6 +33,7 @@
     "vue-bulma-chartist": "github:vue-bulma/chartist",
     "vue-bulma-chartjs": "github:vue-bulma/chartjs",
     "vue-bulma-expanding": "github:vue-bulma/expanding",
+    "vue-bulma-jump": "github:vue-bulma/jump",
     "vue-cleave": "github:vue-bulma/cleave",
     "vue-handsontable": "github:vue-bulma/handsontable",
     "vue-nprogress": "github:vue-bulma/nprogress",

@@ -86,11 +86,20 @@ export default [
       icon: 'fa-building-o',
       expanded: false
     },
+    component: require('../views/components'),
 
     children: [
       {
+        path: '',
+        component: require('../views/components/Default')
+      },
+      {
         name: 'BackToTop',
-        path: 'backToTop'
+        path: 'backToTop',
+        meta: {
+          repository: 'https://github.com/vue-bulma/jump'
+        },
+        component: require('../views/components/BackToTop') // BackToTop
       },
       {
         name: 'Collapse',
