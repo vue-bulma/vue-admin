@@ -24,6 +24,7 @@
   },
   "dependencies": {
     "animate.css": "3.5.2",
+    "animejs": "1.1.1",
     "bulma": "0.1.2",
     "font-awesome": "4.6.3",
     "mdi": "1.7.22",
@@ -32,6 +33,7 @@
     "vue-bulma-breadcrumb": "github:vue-bulma/breadcrumb",
     "vue-bulma-chartist": "github:vue-bulma/chartist",
     "vue-bulma-chartjs": "github:vue-bulma/chartjs",
+    "vue-bulma-collapse": "github:vue-bulma/collapse",
     "vue-bulma-expanding": "github:vue-bulma/expanding",
     "vue-bulma-jump": "github:vue-bulma/jump",
     "vue-cleave": "github:vue-bulma/cleave",

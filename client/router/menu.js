@@ -103,7 +103,11 @@ export default [
       },
       {
         name: 'Collapse',
-        path: 'collapse'
+        path: 'collapse',
+        meta: {
+          repository: 'https://github.com/vue-bulma/collapse'
+        },
+        component: require('../views/components/Collapse') // Collapse
       },
       {
         name: 'Datepicker',
