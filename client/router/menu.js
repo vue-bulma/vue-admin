@@ -135,7 +135,11 @@ export default [
       },
       {
         name: 'Modal',
-        path: 'modal'
+        path: 'modal',
+        meta: {
+          repository: 'https://github.com/vue-bulma/modal'
+        },
+        component: require('../views/components/Modal') // Modal
       },
       {
         name: 'Notification',
