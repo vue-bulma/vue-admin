@@ -127,7 +127,11 @@ export default [
       },
       {
         name: 'Message',
-        path: 'message'
+        path: 'message',
+        meta: {
+          repository: 'https://github.com/vue-bulma/message'
+        },
+        component: require('../views/components/Message') // Message
       },
       {
         name: 'Modal',

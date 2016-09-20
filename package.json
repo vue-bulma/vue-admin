@@ -38,6 +38,7 @@
     "vue-bulma-emoji": "github:vue-bulma/emoji",
     "vue-bulma-expanding": "github:vue-bulma/expanding",
     "vue-bulma-jump": "github:vue-bulma/jump",
+    "vue-bulma-message": "github:vue-bulma/message",
     "vue-cleave": "github:vue-bulma/cleave",
     "vue-handsontable": "github:vue-bulma/handsontable",
     "vue-nprogress": "github:vue-bulma/nprogress",
