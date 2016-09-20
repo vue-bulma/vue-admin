@@ -7,8 +7,7 @@
           <p class="card-header-title">{{ item.name }}</p>
         </header>
         <div class="card-content">
-          <div class="content">
-          </div>
+          <div class="content">{{ getDescription(item) }}</div>
         </div>
         <footer class="card-footer">
           <a class="card-footer-item" :href="getRepository(item)">Repository</a>
@@ -42,6 +41,10 @@ export default {
   methods: {
     getPath (item) {
       return this.parentPath + '/' + item.path
+    },
+
+    getDescription (item) {
+      return item.meta && item.meta.description
     },
 
     getRepository (item) {

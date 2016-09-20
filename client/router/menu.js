@@ -97,6 +97,7 @@ export default [
         name: 'BackToTop',
         path: 'backToTop',
         meta: {
+          description: 'Jump component is based on jump.js',
           repository: 'https://github.com/vue-bulma/jump'
         },
         component: require('../views/components/BackToTop') // BackToTop
@@ -105,6 +106,7 @@ export default [
         name: 'Collapse',
         path: 'collapse',
         meta: {
+          description: 'Collapse component',
           repository: 'https://github.com/vue-bulma/collapse'
         },
         component: require('../views/components/Collapse') // Collapse
@@ -113,6 +115,7 @@ export default [
         name: 'Datepicker',
         path: 'datepicker',
         meta: {
+          description: 'Datepicker component is based on flatpickr',
           repository: 'https://github.com/vue-bulma/datepicker'
         },
         component: require('../views/components/Datepicker') // Datepicker
@@ -121,6 +124,7 @@ export default [
         name: 'Emoji',
         path: 'emoji',
         meta: {
+          description: 'Emoji Component is based on emojione.com',
           repository: 'https://github.com/vue-bulma/emoji'
         },
         component: require('../views/components/Emoji') // Emoji
@@ -129,6 +133,7 @@ export default [
         name: 'Message',
         path: 'message',
         meta: {
+          description: 'Message component',
           repository: 'https://github.com/vue-bulma/message'
         },
         component: require('../views/components/Message') // Message
@@ -137,6 +142,7 @@ export default [
         name: 'Modal',
         path: 'modal',
         meta: {
+          description: 'Modal component',
           repository: 'https://github.com/vue-bulma/modal'
         },
         component: require('../views/components/Modal') // Modal
