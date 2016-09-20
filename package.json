@@ -35,6 +35,7 @@
     "vue-bulma-chartjs": "github:vue-bulma/chartjs",
     "vue-bulma-collapse": "github:vue-bulma/collapse",
     "vue-bulma-datepicker": "github:vue-bulma/datepicker",
+    "vue-bulma-emoji": "github:vue-bulma/emoji",
     "vue-bulma-expanding": "github:vue-bulma/expanding",
     "vue-bulma-jump": "github:vue-bulma/jump",
     "vue-cleave": "github:vue-bulma/cleave",

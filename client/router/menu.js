@@ -119,7 +119,11 @@ export default [
       },
       {
         name: 'Emoji',
-        path: 'emoji'
+        path: 'emoji',
+        meta: {
+          repository: 'https://github.com/vue-bulma/emoji'
+        },
+        component: require('../views/components/Emoji') // Emoji
       },
       {
         name: 'Message',
