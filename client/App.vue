@@ -64,6 +64,7 @@ $fa-font-path: '~font-awesome/fonts/';
   width: 100%;
   height: 50px;
   z-index: 2048;
+  pointer-events: none;
 
   #nprogress {
     $color: #48e79a;
