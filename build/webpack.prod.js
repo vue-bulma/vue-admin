@@ -46,12 +46,12 @@ config.vue.loaders = {
     loader: 'css-loader',
     fallbackLoader: 'vue-style-loader'
   }),
-  sass: ExtractTextPlugin.extract({
+  scss: ExtractTextPlugin.extract({
     loader: 'style-loader!css-loader!sass-loader',
     fallbackLoader: 'vue-style-loader'
   }),
-  scss: ExtractTextPlugin.extract({
-    loader: 'style-loader!css-loader!sass-loader',
+  stylus: ExtractTextPlugin.extract({
+    loader: 'style-loader!css-loader!stylus-loader',
     fallbackLoader: 'vue-style-loader'
   })
 }

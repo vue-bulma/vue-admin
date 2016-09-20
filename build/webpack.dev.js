@@ -17,7 +17,8 @@ config.module.loaders.push({
   loader: 'style-loader!css-loader!postcss-loader'
 })
 config.vue.loaders = {
-  scss: 'vue-style-loader!css-loader!sass-loader!postcss-loader'
+  scss: 'vue-style-loader!css-loader!sass-loader!postcss-loader',
+  stylus: 'vue-style-loader!css-loader!stylus-loader'
 }
 
 module.exports = config

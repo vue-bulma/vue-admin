@@ -36,6 +36,11 @@ module.exports = {
         loaders: ['vue']
       },
       {
+        test: /\.html$/,
+        loader: 'vue-html',
+        exclude: [/build\/index\.html/]
+      },
+      {
         test: /\.js$/,
         loaders: ['babel'],
         // /node_modules\/(?!vue-bulma-.*)/

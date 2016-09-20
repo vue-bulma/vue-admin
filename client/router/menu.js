@@ -111,7 +111,11 @@ export default [
       },
       {
         name: 'Datepicker',
-        path: 'datepicker'
+        path: 'datepicker',
+        meta: {
+          repository: 'https://github.com/vue-bulma/datepicker'
+        },
+        component: require('../views/components/Datepicker') // Datepicker
       },
       {
         name: 'Emoji',
