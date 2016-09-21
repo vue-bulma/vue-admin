@@ -157,8 +157,22 @@ export default [
         component: require('../views/components/notification') // Notification
       },
       {
-        name: 'Progress',
-        path: 'progress'
+        name: 'ProgressBar',
+        path: 'progress-bar',
+        meta: {
+          description: 'ProgressBar component',
+          repository: 'https://github.com/vue-bulma/progress-bar'
+        },
+        component: require('../views/components/ProgressBar') // ProgressBar
+      },
+      {
+        name: 'ProgressTracker',
+        path: 'progress-tracker',
+        meta: {
+          description: 'ProgressTracker component is based on progress-tracker',
+          repository: 'https://github.com/vue-bulma/progress-tracker'
+        },
+        component: require('../views/components/ProgressTracker') // ProgressTracker
       },
       {
         name: 'Rating',

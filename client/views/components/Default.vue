@@ -10,8 +10,18 @@
           <div class="content">{{ getDescription(item) }}</div>
         </div>
         <footer class="card-footer">
-          <a class="card-footer-item" :href="getRepository(item)">Repository</a>
-          <router-link :to="getPath(item)" class="card-footer-item">Demo</router-link>
+          <a class="card-footer-item" :href="getRepository(item)">
+            <span class="icon is-small">
+              <i class="fa fa-github" aria-hidden="true"></i>
+            </span>&nbsp;&nbsp;
+            Repository
+          </a>
+          <router-link :to="getPath(item)" class="card-footer-item">
+            <span class="icon is-small">
+              <i class="fa fa-link" aria-hidden="true"></i>
+            </span>&nbsp;&nbsp;
+            Demo
+          </router-link>
         </footer>
       </div>
     </div>
