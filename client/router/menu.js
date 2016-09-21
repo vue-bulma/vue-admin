@@ -149,7 +149,12 @@ export default [
       },
       {
         name: 'Notification',
-        path: 'notification'
+        path: 'notification',
+        meta: {
+          description: 'Notification component',
+          repository: 'https://github.com/vue-bulma/notification'
+        },
+        component: require('../views/components/notification') // Notification
       },
       {
         name: 'Progress',

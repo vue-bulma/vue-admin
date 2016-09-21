@@ -40,6 +40,7 @@
     "vue-bulma-jump": "github:vue-bulma/jump",
     "vue-bulma-message": "github:vue-bulma/message",
     "vue-bulma-modal": "github:vue-bulma/modal",
+    "vue-bulma-notification": "github:vue-bulma/notification",
     "vue-cleave": "github:vue-bulma/cleave",
     "vue-handsontable": "github:vue-bulma/handsontable",
     "vue-nprogress": "github:vue-bulma/nprogress",
