@@ -176,7 +176,12 @@ export default [
       },
       {
         name: 'Rating',
-        path: 'rating'
+        path: 'rating',
+        meta: {
+          description: 'Rating component is based on starability.css',
+          repository: 'https://github.com/vue-bulma/rating'
+        },
+        component: require('../views/components/Rating') // Rating
       },
       {
         name: 'Slider',

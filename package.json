@@ -43,6 +43,7 @@
     "vue-bulma-notification": "github:vue-bulma/notification",
     "vue-bulma-progress-bar": "github:vue-bulma/progress-bar",
     "vue-bulma-progress-tracker": "github:vue-bulma/progress-tracker",
+    "vue-bulma-rating": "github:vue-bulma/rating",
     "vue-cleave": "github:vue-bulma/cleave",
     "vue-handsontable": "github:vue-bulma/handsontable",
     "vue-nprogress": "github:vue-bulma/nprogress",
