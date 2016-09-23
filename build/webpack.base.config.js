@@ -1,26 +1,25 @@
-'use strict'
 const path = require('path')
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const vueConfig = require('./vue-loader.config')
 
-const postcss = [
-  require('autoprefixer')({
-    browsers: ['last 3 versions']
-  })
-]
+const ENV = process.env.NODE_ENV || 'development'
 
-module.exports = {
+const config = {
+  devtool: '#source-map',
+
   entry: {
-    app: './client/index.js'
+    app: './client/index.js',
+    vendor: ['vue', 'vue-router', 'vuex']
   },
+
   output: {
-    path: path.join(__dirname, '../dist/assets'),
     filename: '[name].js',
-    publicPath: './assets'
+    path: path.join(__dirname, '../dist/assets')
   },
+
   resolve: {
-    extensions: ['', '.js', '.vue', '.css', '.json'],
-    fallback: [path.join(__dirname, '../node_modules')],
+    extensions: ['.js', '.vue', '.css', '.json'],
     alias: {
       'assets': path.resolve(__dirname, '../client/assets'),
       // https://github.com/vuejs/vue/wiki/Vue-2.0-RC-Starter-Resources
@@ -29,30 +28,32 @@ module.exports = {
       'plotly.js': 'plotly.js/dist/plotly.js'
     }
   },
+
   module: {
+
     loaders: [
+
       {
         test: /\.vue$/,
         loaders: ['vue']
       },
-      {
-        test: /\.html$/,
-        loader: 'vue-html',
-        exclude: [/build\/index\.html/]
-      },
+
       {
         test: /\.js$/,
         loaders: ['babel'],
         // /node_modules\/(?!vue-bulma-.*)/
         exclude: [new RegExp(`node_modules\\${path.sep}\(\?\!vue-bulma-.*\)`)]
       },
+
       {
         test: /\.(png|jpg|gif|svg)$/,
-        loader: 'file',
+        loader: 'url',
         query: {
-          name: 'img/[name].[ext]?[hash:7]'
+          limit: 10000,
+          name: '[name].[ext]?[hash]'
         }
       },
+
       {
         test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
         loader: 'url',
@@ -61,20 +62,24 @@ module.exports = {
           name: 'fonts/[name].[ext]?[hash:7]'
         }
       }
+
     ]
+
   },
-  postcss,
-  vue: {
-    loaders: {},
-    postcss
-  },
+
   plugins: [
+    new webpack.LoaderOptionsPlugin({
+      vue: vueConfig
+    }),
     new HtmlWebpackPlugin({
       title: 'Vue Admin',
-      template: __dirname + '/index.html',
-      filename: '../index.html',
+      template: path.join(__dirname, '/index.html'),
+      filename: (ENV.startsWith('dev') ? '' : '../') + 'index.html',
       inject: true,
       favicon: 'client/assets/logo.png'
     })
   ]
+
 }
+
+module.exports = config
