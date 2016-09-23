@@ -16,7 +16,7 @@
             </span>&nbsp;&nbsp;
             Repository
           </a>
-          <router-link :to="getPath(item)" class="card-footer-item">
+          <router-link :to="{ name: item.name }" class="card-footer-item">
             <span class="icon is-small">
               <i class="fa fa-link" aria-hidden="true"></i>
             </span>&nbsp;&nbsp;
