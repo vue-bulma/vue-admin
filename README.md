@@ -61,4 +61,4 @@ Its ongoing development is made possible thanks to the support by these awesome 
 [Fangdun Cai]: https://twitter.com/_fundon
 [Vue]: http://vuejs.org
 [Bulma]: http://bulma.io
-[Vue-bulma]: https://github.com/vue-bulm://github.com/vue-bulma
+[Vue-bulma]: https://github.com/vue-bulma
