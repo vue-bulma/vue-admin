@@ -1,4 +1,4 @@
-jp align="center"><img width="200" src="https://github.com/fundon/vue-admin/blob/master/src/assets/logo@2x.png"></p>
+<p align="center"><img width="200" src="https://github.com/fundon/vue-admin/blob/master/src/assets/logo@2x.png"></p>
 
 <h1 align="center">Vue Admin</h1>
 
