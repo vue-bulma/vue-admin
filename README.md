@@ -1,4 +1,4 @@
-<p align="center"><img width="200" src="https://github.com/fundon/vue-admin/blob/master/src/assets/logo@2x.png"></p>
+jp align="center"><img width="200" src="https://github.com/fundon/vue-admin/blob/master/src/assets/logo@2x.png"></p>
 
 <h1 align="center">Vue Admin</h1>
 
@@ -14,18 +14,16 @@
   </sub>
 </p>
 
-<h1 align="center"><strong>Upgraded to Vue 2.0</strong></h1>
-
 
 ![](screenshots/app.png)
 
 
 ## Features
 
-* Powered by [Vue][] & [Bulma][] and Support Vue **2.0**
+* Powered by [Vue][] **2.0** & [Bulma][]
 * Responsive and Flexible Box Layout
 * [Variety of Charts](doc/charts.md)
-* [Rich Components](doc/components.md) or See [vue-bulma](https://github.com/vue-bulm://github.com/vue-bulma)
+* [Rich Components](doc/components.md) or See [vue-bulma][]
 * Based on the awesome third-party [libraries](doc/dependencies.md)
 
 
@@ -63,3 +61,4 @@ Its ongoing development is made possible thanks to the support by these awesome 
 [Fangdun Cai]: https://twitter.com/_fundon
 [Vue]: http://vuejs.org
 [Bulma]: http://bulma.io
+[Vue-bulma]: https://github.com/vue-bulm://github.com/vue-bulma
