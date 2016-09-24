@@ -14,31 +14,38 @@
   </sub>
 </p>
 
-<h1 align="center"><strong>Upgrading to Vue 2.0</strong></h1>
+<h1 align="center"><strong>Upgraded to Vue 2.0</strong></h1>
 
-## Notes
-
-  If you want to use Vue Admin with Vue 1.0 version, please checkout the [master](https://github.com/fundon/vue-admin/tree/master) branch.
 
 ![](screenshots/app.png)
 
+
 ## Features
 
+* Powered by [Vue][] & [Bulma][] and Support Vue **2.0**
 * Responsive and Flexible Box Layout
 * [Variety of Charts](doc/charts.md)
-* [Rich Components](doc/components.md)
-* Powered by [Vue][] & [Bulma][]
+* [Rich Components](doc/components.md) or See [vue-bulma](https://github.com/vue-bulm://github.com/vue-bulma)
 * Based on the awesome third-party [libraries](doc/dependencies.md)
+
 
 ## [Backers](backers.md)
 
 Its ongoing development is made possible thanks to the support by these awesome backers. If you'd like to join them, check out [Vue Admin & Vue Bulma](https://www.patreon.com/_fundon)'s Patreon campaign.
 
+
 ## [Development](doc/development.md)
+
 
 ### Requirements
 
   * NPM v3
+
+
+## Notes
+
+  If you want to use Vue Admin with Vue 1.0 version, please checkout the [master](https://github.com/fundon/vue-admin/tree/master) branch.
+
 
 ## Badges
 
