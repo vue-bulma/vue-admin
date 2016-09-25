@@ -10,7 +10,7 @@
 
 <script>
 import NprogressContainer from 'vue-nprogress/src/NprogressContainer'
-import { Navbar, Sidebar, AppMain, FooterBar } from './components/layout/'
+import { Navbar, Sidebar, AppMain, FooterBar } from 'components/layout/'
 
 export default {
   components: {

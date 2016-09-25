@@ -15,7 +15,7 @@ export default [
     meta: {
       icon: 'fa-tachometer'
     },
-    component: require('../views/dashboard')
+    component: require('views/dashboard')
   },
   {
     name: 'Charts',
@@ -24,28 +24,28 @@ export default [
       icon: 'fa-bar-chart-o',
       expanded: false
     },
-    component: require('../views/charts'),
+    component: require('views/charts'),
 
     children: [
       {
         name: 'Chartist',
         path: 'chartist',
-        component: require('../views/charts/Chartist') // Chartist
+        component: require('views/charts/Chartist') // Chartist
       },
       {
         name: 'Chartjs',
         path: 'chartjs',
-        component: require('../views/charts/Chartjs') // Chartjs
+        component: require('views/charts/Chartjs') // Chartjs
       },
       {
         name: 'Peity',
         path: 'peity',
-        component: require('../views/charts/Peity') // Peity
+        component: require('views/charts/Peity') // Peity
       },
       {
         name: 'Plotly',
         path: 'plotly',
-        component: require('../views/charts/Plotly') // Plotly
+        component: require('views/charts/Plotly') // Plotly
       }
     ]
   },
@@ -60,22 +60,22 @@ export default [
       {
         name: 'Buttons',
         path: '/buttons',
-        component: require('../views/ui/Buttons') // Buttons
+        component: require('views/ui/Buttons') // Buttons
       },
       {
         name: 'Form',
         path: '/form',
-        component: require('../views/ui/Form') // Form
+        component: require('views/ui/Form') // Form
       },
       {
         name: 'Typography',
         path: '/typography',
-        component: require('../views/ui/Typography') // Typography
+        component: require('views/ui/Typography') // Typography
       },
       {
         name: 'Icons',
         path: '/icons',
-        component: require('../views/ui/Icons') // Icons
+        component: require('views/ui/Icons') // Icons
       }
     ]
   },
@@ -86,12 +86,12 @@ export default [
       icon: 'fa-building-o',
       expanded: false
     },
-    component: require('../views/components'),
+    component: require('views/components'),
 
     children: [
       {
         path: '',
-        component: require('../views/components/Default')
+        component: require('views/components/Default')
       },
       {
         name: 'BackToTop',
@@ -100,7 +100,7 @@ export default [
           description: 'Jump component is based on jump.js',
           repository: 'https://github.com/vue-bulma/jump'
         },
-        component: require('../views/components/BackToTop') // BackToTop
+        component: require('views/components/BackToTop') // BackToTop
       },
       {
         name: 'Collapse',
@@ -109,7 +109,7 @@ export default [
           description: 'Collapse component',
           repository: 'https://github.com/vue-bulma/collapse'
         },
-        component: require('../views/components/Collapse') // Collapse
+        component: require('views/components/Collapse') // Collapse
       },
       {
         name: 'Datepicker',
@@ -118,7 +118,7 @@ export default [
           description: 'Datepicker component is based on flatpickr',
           repository: 'https://github.com/vue-bulma/datepicker'
         },
-        component: require('../views/components/Datepicker') // Datepicker
+        component: require('views/components/Datepicker') // Datepicker
       },
       {
         name: 'Emoji',
@@ -127,7 +127,7 @@ export default [
           description: 'Emoji Component is based on emojione.com',
           repository: 'https://github.com/vue-bulma/emoji'
         },
-        component: require('../views/components/Emoji') // Emoji
+        component: require('views/components/Emoji') // Emoji
       },
       {
         name: 'Message',
@@ -136,7 +136,7 @@ export default [
           description: 'Message component',
           repository: 'https://github.com/vue-bulma/message'
         },
-        component: require('../views/components/Message') // Message
+        component: require('views/components/Message') // Message
       },
       {
         name: 'Modal',
@@ -145,7 +145,7 @@ export default [
           description: 'Modal component',
           repository: 'https://github.com/vue-bulma/modal'
         },
-        component: require('../views/components/Modal') // Modal
+        component: require('views/components/Modal') // Modal
       },
       {
         name: 'Notification',
@@ -154,7 +154,7 @@ export default [
           description: 'Notification component',
           repository: 'https://github.com/vue-bulma/notification'
         },
-        component: require('../views/components/Notification') // Notification
+        component: require('views/components/Notification') // Notification
       },
       {
         name: 'ProgressBar',
@@ -163,7 +163,7 @@ export default [
           description: 'ProgressBar component',
           repository: 'https://github.com/vue-bulma/progress-bar'
         },
-        component: require('../views/components/ProgressBar') // ProgressBar
+        component: require('views/components/ProgressBar') // ProgressBar
       },
       {
         name: 'ProgressTracker',
@@ -172,7 +172,7 @@ export default [
           description: 'ProgressTracker component is based on progress-tracker',
           repository: 'https://github.com/vue-bulma/progress-tracker'
         },
-        component: require('../views/components/ProgressTracker') // ProgressTracker
+        component: require('views/components/ProgressTracker') // ProgressTracker
       },
       {
         name: 'Rating',
@@ -181,7 +181,7 @@ export default [
           description: 'Rating component is based on starability.css',
           repository: 'https://github.com/vue-bulma/rating'
         },
-        component: require('../views/components/Rating') // Rating
+        component: require('views/components/Rating') // Rating
       },
       {
         name: 'Slider',
