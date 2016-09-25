@@ -212,7 +212,12 @@ export default [
       },
       {
         name: 'Tooltip',
-        path: 'tooltip'
+        path: 'tooltip',
+        meta: {
+          description: 'Tooltip component is based on hint.css',
+          repository: 'https://github.com/vue-bulma/tooltip'
+        },
+        component: require('views/components/Tooltip') // Tooltip
       }
     ]
   },

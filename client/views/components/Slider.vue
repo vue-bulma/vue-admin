@@ -52,9 +52,9 @@
           <h1 class="title">Dynamics</h1>
           <div class="block">
             <p>
-              <!-- <tooltip type="success" :label="per" placement="top" always>
+              <tooltip type="success" :label="per" placement="top" always>
                 <span class="tooltip-value"></span>
-              </tooltip> -->
+              </tooltip>
               <slider type="success" size="large" :value="value" :max="100" :step="1" is-fullwidth @change="update"></slider>
             </p>
             <p>
@@ -68,12 +68,12 @@
 </template>
 
 <script>
-// import Tooltip from 'vue-bulma-tooltip'
+import Tooltip from 'vue-bulma-tooltip'
 import Slider from 'vue-bulma-slider'
 
 export default {
   components: {
-    // Tooltip
+    Tooltip,
     Slider
   },
 
