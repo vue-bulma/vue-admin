@@ -11,6 +11,6 @@
       <a href="https://vue-admin.fundon.me">Live Demo</a>
     </p>
 
-    <p>Supports Vue 2.0!</p>
+    <p>Supports Vue 2.0 and Bulma 0.2!</p>
   </div>
 </template>
