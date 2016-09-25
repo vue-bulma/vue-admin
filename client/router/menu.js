@@ -198,7 +198,12 @@ export default [
       },
       {
         name: 'Tabs',
-        path: 'tabs'
+        path: 'tabs',
+        meta: {
+          description: 'Tabs component',
+          repository: 'https://github.com/vue-bulma/tabs'
+        },
+        component: require('views/components/Tabs') // Tabs
       },
       {
         name: 'Tooltip',

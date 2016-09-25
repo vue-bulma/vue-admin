@@ -2,7 +2,7 @@
   <div>
     <div class="tile is-ancestor">
       <div class="tile is-parent">
-        <article class="tile is-child box">
+        <div class="tile is-child box">
           <h1 class="title">Alignment</h1>
           <div class="block is-flex">
             <tabs animation="slide" :only-fade="false">
@@ -28,11 +28,11 @@
               <tab-pane label="Documents">Document Tab</tab-pane>
             </tabs>
           </div>
-        </article>
+        </div>
       </div>
 
       <div class="tile is-parent">
-        <article class="tile is-child box">
+        <div class="tile is-child box">
           <h1 class="title">Sizes</h1>
           <div class="block is-flex">
             <tabs size="small">
@@ -58,84 +58,68 @@
               <tab-pane label="Documents">Document Tab</tab-pane>
             </tabs>
           </div>
-        </article>
+        </div>
       </div>
     </div>
 
     <div class="tile is-ancestor">
       <div class="tile is-parent">
-        <article class="tile is-child box">
+        <div class="tile is-child box">
           <h1 class="title">Styles</h1>
-          <div class="columns">
-            <div class="column is-flex">
-              <tabs type="boxed">
-                <tab-pane label="Pictures">Pictures Tab</tab-pane>
-                <tab-pane label="Music">Music Tab</tab-pane>
-                <tab-pane label="Videos">Video Tab</tab-pane>
-                <tab-pane label="Documents">Document Tab</tab-pane>
-              </tabs>
-            </div>
-            <div class="column is-flex">
-              <tabs type="toggle">
-                <tab-pane label="Pictures">Pictures Tab</tab-pane>
-                <tab-pane label="Music">Music Tab</tab-pane>
-                <tab-pane label="Videos">Video Tab</tab-pane>
-                <tab-pane label="Documents">Document Tab</tab-pane>
-              </tabs>
-            </div>
-            <div class="column is-flex">
-              <tabs type="boxed" :is-fullwidth="true" alignment="centered" size="large">
-                <tab-pane label="Pictures" icon="fa fa-image">Pictures Tab</tab-pane>
-                <tab-pane label="Music" icon="fa fa-music">Music Tab</tab-pane>
-                <tab-pane label="Videos" icon="fa fa-film">Video Tab</tab-pane>
-                <tab-pane label="Documents" icon="fa fa-file-text-o">Document Tab</tab-pane>
-              </tabs>
-            </div>
-          </div>
-        </article>
+            <tabs type="boxed">
+              <tab-pane label="Pictures">Pictures Tab</tab-pane>
+              <tab-pane label="Music">Music Tab</tab-pane>
+              <tab-pane label="Videos">Video Tab</tab-pane>
+              <tab-pane label="Documents">Document Tab</tab-pane>
+            </tabs>
+            <tabs type="toggle">
+              <tab-pane label="Pictures">Pictures Tab</tab-pane>
+              <tab-pane label="Music">Music Tab</tab-pane>
+              <tab-pane label="Videos">Video Tab</tab-pane>
+              <tab-pane label="Documents">Document Tab</tab-pane>
+            </tabs>
+            <tabs type="boxed" :is-fullwidth="true" alignment="centered" size="large">
+              <tab-pane label="Pictures" icon="fa fa-image">Pictures Tab</tab-pane>
+              <tab-pane label="Music" icon="fa fa-music">Music Tab</tab-pane>
+              <tab-pane label="Videos" icon="fa fa-film">Video Tab</tab-pane>
+              <tab-pane label="Documents" icon="fa fa-file-text-o">Document Tab</tab-pane>
+            </tabs>
+        </div>
       </div>
     </div>
 
     <div class="tile is-ancestor">
       <div class="tile is-parent">
-        <article class="tile is-child box">
+        <div class="tile is-child box">
           <h1 class="title">Layouts</h1>
-          <div class="columns">
-            <div class="column is-flex">
-              <tabs layout="bottom" :only-fade="false">
-                <tab-pane label="Pictures">
-                  <p>Simple responsive horizontal navigation tabs, with different styles</p>
-                  <p>Simple responsive horizontal navigation tabs, with different styles</p>
-                </tab-pane>
-                <tab-pane label="Music">Music Tab</tab-pane>
-                <tab-pane label="Videos">Video Tab</tab-pane>
-                <tab-pane label="Documents">Document Tab</tab-pane>
-              </tabs>
-            </div>
-            <div class="column is-flex">
-              <tabs layout="left" :only-fade="false">
-                <tab-pane label="Pictures">
-                  <p>Simple responsive horizontal navigation tabs, with different styles</p>
-                  <p>Simple responsive horizontal navigation tabs, with different styles</p>
-                </tab-pane>
-                <tab-pane label="Music">Music Tab</tab-pane>
-                <tab-pane label="Videos">Video Tab</tab-pane>
-                <tab-pane label="Documents">Document Tab</tab-pane>
-              </tabs>
-            </div>
-            <div class="column is-flex">
-              <tabs layout="right" animation="fade" :only-fade="false">
-                <tab-pane label="Pictures" icon="fa fa-image">
-                  <p>Simple responsive horizontal navigation tabs, with different styles</p>
-                  <p>Simple responsive horizontal navigation tabs, with different styles</p>
-                </tab-pane>
-                <tab-pane label="Music" icon="fa fa-music">Music Tab</tab-pane>
-                <tab-pane label="Videos" icon="fa fa-film">Video Tab</tab-pane>
-                <tab-pane label="Documents" icon="fa fa-file-text-o" selected>Document Tab</tab-pane>
-              </tabs>
-            </div>
-          </div>
-        </article>
+          <tabs layout="bottom" :only-fade="false">
+            <tab-pane label="Pictures">
+              <p>Simple responsive horizontal navigation tabs, with different styles</p>
+              <p>Simple responsive horizontal navigation tabs, with different styles</p>
+            </tab-pane>
+            <tab-pane label="Music">Music Tab</tab-pane>
+            <tab-pane label="Videos">Video Tab</tab-pane>
+            <tab-pane label="Documents">Document Tab</tab-pane>
+          </tabs>
+          <tabs layout="left" :only-fade="false">
+            <tab-pane label="Pictures">
+              <p>Simple responsive horizontal navigation tabs, with different styles</p>
+              <p>Simple responsive horizontal navigation tabs, with different styles</p>
+            </tab-pane>
+            <tab-pane label="Music">Music Tab</tab-pane>
+            <tab-pane label="Videos">Video Tab</tab-pane>
+            <tab-pane label="Documents">Document Tab</tab-pane>
+          </tabs>
+          <tabs layout="right" animation="fade" :only-fade="false">
+            <tab-pane label="Pictures" icon="fa fa-image">
+              <p>Simple responsive horizontal navigation tabs, with different styles</p>
+              <p>Simple responsive horizontal navigation tabs, with different styles</p>
+            </tab-pane>
+            <tab-pane label="Music" icon="fa fa-music">Music Tab</tab-pane>
+            <tab-pane label="Videos" icon="fa fa-film">Video Tab</tab-pane>
+            <tab-pane label="Documents" icon="fa fa-file-text-o" selected>Document Tab</tab-pane>
+          </tabs>
+        </div>
       </div>
     </div>
   </div>
@@ -153,8 +137,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.column {
-  margin: 10px;
-  border: 1px solid #fce473;
+.tabs {
+  margin: 20px;
 }
 </style>
