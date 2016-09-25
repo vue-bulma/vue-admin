@@ -20,7 +20,7 @@
 
 ## Features
 
-* Powered by [Vue][] **2.0** & [Bulma][]
+* Powered by [Vue][] **2.0** & [Bulma][] **0.2**
 * Responsive and Flexible Box Layout
 * [Variety of Charts](doc/charts.md)
 * [Rich Components](doc/components.md) or See [vue-bulma][]
