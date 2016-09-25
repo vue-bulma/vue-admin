@@ -154,7 +154,7 @@ export default [
           description: 'Notification component',
           repository: 'https://github.com/vue-bulma/notification'
         },
-        component: require('../views/components/notification') // Notification
+        component: require('../views/components/Notification') // Notification
       },
       {
         name: 'ProgressBar',
