@@ -6,22 +6,22 @@
           <h1 class="title">Styles</h1>
           <div class="block styles-box">
             <p>
-              <switch checked></switch>
+              <vb-switch checked></vb-switch>
             </p>
             <p>
-              <switch checked type="primary"></switch>
+              <vb-switch checked type="primary"></vb-switch>
             </p>
             <p>
-              <switch checked type="info"></switch>
+              <vb-switch checked type="info"></vb-switch>
             </p>
             <p>
-              <switch checked type="success"></switch>
+              <vb-switch checked type="success"></vb-switch>
             </p>
             <p>
-              <switch checked type="warning"></switch>
+              <vb-switch checked type="warning"></vb-switch>
             </p>
             <p>
-              <switch checked type="danger"></switch>
+              <vb-switch checked type="danger"></vb-switch>
             </p>
           </div>
         </article>
@@ -32,16 +32,16 @@
           <h1 class="title">Sizes</h1>
           <div class="block">
             <p>
-              <switch size="small"></switch>
+              <vb-switch size="small"></vb-switch>
             </p>
             <p>
-              <switch size=""></switch>
+              <vb-switch size=""></vb-switch>
             </p>
             <p>
-              <switch size="medium"></switch>
+              <vb-switch size="medium"></vb-switch>
             </p>
             <p>
-              <switch size="large"></switch>
+              <vb-switch size="large"></vb-switch>
             </p>
           </div>
         </article>
@@ -52,7 +52,7 @@
           <h1 class="title">Dynamics</h1>
           <div class="block">
             <p>
-              <switch type="success" size="large" :value.sync="value" checked></switch>
+              <vb-switch type="success" size="large" :checked="value" @change="updateValue"></vb-switch>
             </p>
             <p>
               {{ value }}
@@ -65,19 +65,26 @@
 </template>
 
 <script>
-import Switch from 'vue-bulma-switch'
+// do not use below code, because `Switch` is svg tag.
+// import Switch from 'vue-bulma-switch'
+import VbSwitch from 'vue-bulma-switch'
 
 export default {
   components: {
-    Switch
+    VbSwitch
   },
 
   data () {
     return {
       value: false
     }
-  }
+  },
 
+  methods: {
+    updateValue (val) {
+      this.value = val
+    }
+  }
 }
 </script>
 

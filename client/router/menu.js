@@ -189,7 +189,12 @@ export default [
       },
       {
         name: 'Switch',
-        path: 'switch'
+        path: 'switch',
+        meta: {
+          description: 'Switch component',
+          repository: 'https://github.com/vue-bulma/switch'
+        },
+        component: require('views/components/Switch') // Switch
       },
       {
         name: 'Tabs',

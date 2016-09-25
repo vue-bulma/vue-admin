@@ -47,6 +47,7 @@
     "vue-bulma-progress-tracker": "github:vue-bulma/progress-tracker",
     "vue-bulma-rating": "github:vue-bulma/rating",
     "vue-bulma-slider": "github:vue-bulma/slider",
+    "vue-bulma-switch": "github:vue-bulma/switch",
     "vue-bulma-tooltip": "github:vue-bulma/tooltip",
     "vue-cleave": "github:vue-bulma/cleave",
     "vue-handsontable": "github:vue-bulma/handsontable",
