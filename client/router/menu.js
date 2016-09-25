@@ -185,7 +185,12 @@ export default [
       },
       {
         name: 'Slider',
-        path: 'slider'
+        path: 'slider',
+        meta: {
+          description: 'Slider component',
+          repository: 'https://github.com/vue-bulma/slider'
+        },
+        component: require('views/components/Slider') // Slider
       },
       {
         name: 'Switch',
