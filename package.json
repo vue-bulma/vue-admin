@@ -27,7 +27,7 @@
   "dependencies": {
     "animate.css": "3.5.2",
     "animejs": "1.1.1",
-    "bulma": "0.2.0",
+    "bulma": "0.2.1",
     "font-awesome": "4.6.3",
     "mdi": "1.7.22",
     "plotly.js": "1.17.3",
