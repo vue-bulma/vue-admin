@@ -111,13 +111,9 @@
             <tab-pane label="Documents">Document Tab</tab-pane>
           </tabs>
           <tabs layout="right" animation="fade" :only-fade="false">
-            <tab-pane label="Pictures" icon="fa fa-image">
-              <p>Simple responsive horizontal navigation tabs, with different styles</p>
-              <p>Simple responsive horizontal navigation tabs, with different styles</p>
+            <tab-pane v-for="item in items" :label="item.label" :icon="'fa fa-' + item.icon">
+              {{ item.desc }}
             </tab-pane>
-            <tab-pane label="Music" icon="fa fa-music">Music Tab</tab-pane>
-            <tab-pane label="Videos" icon="fa fa-film">Video Tab</tab-pane>
-            <tab-pane label="Documents" icon="fa fa-file-text-o" selected>Document Tab</tab-pane>
           </tabs>
         </div>
       </div>
@@ -132,12 +128,55 @@ export default {
   components: {
     Tabs,
     TabPane
+  },
+
+  data () {
+    return {
+      items: [
+        {
+          icon: 'image',
+          label: 'Pictures',
+          desc: 'Simple responsive horizontal navigation tabs, with different styles'
+        },
+        {
+          icon: 'music',
+          label: 'Music',
+          desc: 'Music Tab'
+        },
+        {
+          icon: 'film',
+          label: 'Videos',
+          desc: 'Video Tab'
+        },
+        {
+          icon: 'file-text-o',
+          label: 'Documents',
+          desc: 'Document Tab'
+        }
+      ]
+    }
+  },
+
+  mounted () {
+    this.items.splice(0, 1)
+    setInterval(() => {
+      this.randomTabs()
+    }, 3000)
+  },
+
+  methods: {
+    randomTabs () {
+      this.items.unshift(this.items.pop())
+    }
   }
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .tabs {
   margin: 20px;
+  .tab-content {
+    min-height: 50px;
+  }
 }
 </style>
