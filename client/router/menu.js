@@ -28,6 +28,11 @@ export default [
 
     children: [
       {
+        name: 'CanvasGauges',
+        path: 'canvas-gauges',
+        component: require('views/charts/CanvasGauges') // CanvasGauges
+      },
+      {
         name: 'Chartist',
         path: 'chartist',
         component: require('views/charts/Chartist') // Chartist
