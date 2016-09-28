@@ -96,7 +96,7 @@ export default {
       return `${item.component ? item.path + '/' : ''}${subItem.path}`
     },
 
-    findParentFromMenu(route) {
+    findParentFromMenu (route) {
       const menu = this.menu
       for (let i = 0, l = menu.length; i < l; i++) {
         const item = menu[i]

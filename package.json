@@ -76,7 +76,7 @@
     "eslint-loader": "^1.5.0",
     "eslint-plugin-html": "^1.5.3",
     "eslint-plugin-promise": "^2.0.1",
-    "eslint-plugin-standard": "^2.0.0",
+    "eslint-plugin-standard": "^2.0.1",
     "eventsource-polyfill": "^0.9.6",
     "express": "^4.14.0",
     "extract-text-webpack-plugin": "^2.0.0-beta.4",

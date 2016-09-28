@@ -24,7 +24,7 @@
 </template>
 
 <script>
-import { LinearGauge, RadialGauge }  from 'vue-canvas-gauges'
+import { LinearGauge, RadialGauge } from 'vue-canvas-gauges'
 
 export default {
   components: {

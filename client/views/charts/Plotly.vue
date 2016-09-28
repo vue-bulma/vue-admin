@@ -266,10 +266,13 @@ export default {
 
   methods: {
     fetchData () {
-       Plotly.d3.csv('https://raw.githubusercontent.com/plotly/datasets/master/2014_us_cities.csv', (err, rows) => {
-         this.rows = rows
-         this.drawMap()
-       })
+      Plotly.d3.csv('https://raw.githubusercontent.com/plotly/datasets/master/2014_us_cities.csv', (err, rows) => {
+        if (err) {
+          rows = []
+        }
+        this.rows = rows
+        this.drawMap()
+      })
     },
 
     drawMap () {

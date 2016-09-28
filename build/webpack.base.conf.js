@@ -34,6 +34,20 @@ module.exports = {
     loaders: [
       {
         test: /\.vue$/,
+        loader: ['eslint'],
+        include: projectRoot,
+        exclude: /node_modules/,
+        enforce: 'pre'
+      },
+      {
+        test: /\.js/,
+        loader: ['eslint'],
+        include: projectRoot,
+        exclude: /node_modules/,
+        enforce: 'pre'
+      },
+      {
+        test: /\.vue$/,
         loader: ['vue']
       },
       {

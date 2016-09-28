@@ -13,32 +13,32 @@ const state = {
 }
 
 const mutations = {
-  INCREMENT(state) {
+  INCREMENT (state) {
     state.count++
   },
-  SIDEBAR(state, status = true) {
+  SIDEBAR (state, status = true) {
     state.config.sidebar = status
   }
 }
 
 const actions = {
-  INCREMENT({ commit }) {
+  INCREMENT ({ commit }) {
     commit('INCREMENT')
   },
-  INCREMENT_ASYNC({ commit }) {
+  INCREMENT_ASYNC ({ commit }) {
     setTimeout(() => {
       commit('INCREMENT')
     }, 1000)
   },
 
   // Sidebar: show, hide, toggle
-  SHOW_SIDEBAR({ commit }) {
+  SHOW_SIDEBAR ({ commit }) {
     commit('SIDEBAR', true)
   },
-  HIDE_SIDEBAR({ commit }) {
+  HIDE_SIDEBAR ({ commit }) {
     commit('SIDEBAR', false)
   },
-  TOGGLE_SIDEBAR({ commit, state }) {
+  TOGGLE_SIDEBAR ({ commit, state }) {
     commit('SIDEBAR', !state.config.sidebar)
   }
 }
