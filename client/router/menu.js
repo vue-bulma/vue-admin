@@ -180,6 +180,15 @@ export default [
         component: require('views/components/ProgressTracker') // ProgressTracker
       },
       {
+        name: 'Quill',
+        path: 'quill',
+        meta: {
+          description: 'Your powerful, rich text editor',
+          repository: 'https://github.com/vue-bulma/quill'
+        },
+        component: require('views/components/Quill') // Quill
+      },
+      {
         name: 'Rating',
         path: 'rating',
         meta: {

@@ -46,6 +46,7 @@
     "vue-bulma-notification": "github:vue-bulma/notification",
     "vue-bulma-progress-bar": "github:vue-bulma/progress-bar",
     "vue-bulma-progress-tracker": "github:vue-bulma/progress-tracker",
+    "vue-bulma-quill": "github:vue-bulma/quill",
     "vue-bulma-rating": "github:vue-bulma/rating",
     "vue-bulma-slider": "github:vue-bulma/slider",
     "vue-bulma-switch": "github:vue-bulma/switch",
