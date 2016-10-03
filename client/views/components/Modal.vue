@@ -2,21 +2,21 @@
   <div>
     <modal></modal>
     <div class="tile is-ancestor">
-      <div class="tile is-parent">
+      <div class="tile is-parent is-4">
         <article class="tile is-child box">
           <h1 class="title">Classic</h1>
           <a class="button is-primary is-large modal-button" @click="openModalBasic">Launch example modal</a>
         </article>
       </div>
 
-      <div class="tile is-parent">
+      <div class="tile is-parent is-4">
         <article class="tile is-child box">
           <h1 class="title">Image</h1>
           <a class="button is-primary is-large modal-button" @click="openModalImage">Launch image modal</a>
         </article>
       </div>
 
-      <div class="tile is-parent">
+      <div class="tile is-parent is-4">
         <article class="tile is-child box">
           <h1 class="title">Card</h1>
           <a class="button is-primary is-large modal-button" @click="openModalCard()">Launch modal card</a>

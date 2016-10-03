@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="tile is-ancestor">
-      <div class="tile is-parent">
+      <div class="tile is-parent is-3">
         <article class="tile is-child box">
           <h4 class="title">Pie</h4>
           <peity :type="'pie'" :data="'1/5'"></peity>
@@ -13,7 +13,7 @@
           <peity :type="'pie'" :data="'1,2,3,2,2'"></peity>
         </article>
       </div>
-      <div class="tile is-parent">
+      <div class="tile is-parent is-3">
         <article class="tile is-child box">
           <h4 class="title">Donut</h4>
           <peity :type="'donut'" :data="'1/5'"></peity>
@@ -25,7 +25,7 @@
           <peity :type="'donut'" :data="'1,2,3,2,2'"></peity>
         </article>
       </div>
-      <div class="tile is-parent">
+      <div class="tile is-parent is-3">
         <article class="tile is-child box">
           <h4 class="title">Line</h4>
           <peity :type="'line'" :data="'5,3,9,6,5,9,7,3,5,2'"></peity>
@@ -33,7 +33,7 @@
           <peity :type="'line'" :data="'0,-3,-6,-4,-5,-4,-7,-3,-5,-2'"></peity>
         </article>
       </div>
-      <div class="tile is-parent">
+      <div class="tile is-parent is-3">
         <article class="tile is-child box">
           <h4 class="title">Bar</h4>
           <peity :type="'bar'" :data="'5,3,9,6,5,9,7,3,5,2'"></peity>
@@ -44,7 +44,7 @@
     </div>
 
     <div class="tile is-ancestor">
-      <div class="tile is-parent">
+      <div class="tile is-parent is-6">
         <article class="tile is-child box">
           <h4 class="title">Options <strong>:options="{}"</strong></h4>
           <peity :type="'donut'" :options='{ "fill": ["red", "#eeeeee"], "innerRadius": 10, "radius": 40 }' :data="'1/7'"></peity>
@@ -56,7 +56,7 @@
           <peity :type="'donut'" :options='{ "fill": ["violet", "#eeeeee"], "innerRadius": 15, "radius": 16 }' :data="'7/7'"></peity>
         </article>
       </div>
-      <div class="tile is-parent">
+      <div class="tile is-parent is-6">
         <article class="tile is-child box">
           <h4 class="title">Updating</h4>
           <peity :type="'line'" :options='{ width: "50%" }' :data="lineData"></peity>

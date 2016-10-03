@@ -28,7 +28,7 @@
     </div>
 
     <div class="tile is-ancestor">
-      <div class="tile is-parent">
+      <div class="tile is-parent is-6">
         <article class="tile is-child box">
           <h4 class="title">Five</h4>
           <div class="content">
@@ -36,7 +36,7 @@
           </div>
         </article>
       </div>
-      <div class="tile is-parent">
+      <div class="tile is-parent is-6">
         <article class="tile is-child box">
           <h4 class="title">Six</h4>
           <div class="content">

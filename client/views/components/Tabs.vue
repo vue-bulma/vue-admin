@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="tile is-ancestor">
-      <div class="tile is-parent">
+      <div class="tile is-parent is-6">
         <div class="tile is-child box">
           <h1 class="title">Alignment</h1>
           <div class="block is-flex">
@@ -31,7 +31,7 @@
         </div>
       </div>
 
-      <div class="tile is-parent">
+      <div class="tile is-parent is-6">
         <div class="tile is-child box">
           <h1 class="title">Sizes</h1>
           <div class="block is-flex">
@@ -66,24 +66,24 @@
       <div class="tile is-parent">
         <div class="tile is-child box">
           <h1 class="title">Styles</h1>
-            <tabs type="boxed">
-              <tab-pane label="Pictures">Pictures Tab</tab-pane>
-              <tab-pane label="Music">Music Tab</tab-pane>
-              <tab-pane label="Videos">Video Tab</tab-pane>
-              <tab-pane label="Documents">Document Tab</tab-pane>
-            </tabs>
-            <tabs type="toggle">
-              <tab-pane label="Pictures">Pictures Tab</tab-pane>
-              <tab-pane label="Music">Music Tab</tab-pane>
-              <tab-pane label="Videos">Video Tab</tab-pane>
-              <tab-pane label="Documents">Document Tab</tab-pane>
-            </tabs>
-            <tabs type="boxed" :is-fullwidth="true" alignment="centered" size="large">
-              <tab-pane label="Pictures" icon="fa fa-image">Pictures Tab</tab-pane>
-              <tab-pane label="Music" icon="fa fa-music">Music Tab</tab-pane>
-              <tab-pane label="Videos" icon="fa fa-film">Video Tab</tab-pane>
-              <tab-pane label="Documents" icon="fa fa-file-text-o">Document Tab</tab-pane>
-            </tabs>
+          <tabs type="boxed">
+            <tab-pane label="Pictures">Pictures Tab</tab-pane>
+            <tab-pane label="Music">Music Tab</tab-pane>
+            <tab-pane label="Videos">Video Tab</tab-pane>
+            <tab-pane label="Documents">Document Tab</tab-pane>
+          </tabs>
+          <tabs type="toggle">
+            <tab-pane label="Pictures">Pictures Tab</tab-pane>
+            <tab-pane label="Music">Music Tab</tab-pane>
+            <tab-pane label="Videos">Video Tab</tab-pane>
+            <tab-pane label="Documents">Document Tab</tab-pane>
+          </tabs>
+          <tabs type="boxed" :is-fullwidth="true" alignment="centered" size="large">
+            <tab-pane label="Pictures" icon="fa fa-image">Pictures Tab</tab-pane>
+            <tab-pane label="Music" icon="fa fa-music">Music Tab</tab-pane>
+            <tab-pane label="Videos" icon="fa fa-film">Video Tab</tab-pane>
+            <tab-pane label="Documents" icon="fa fa-file-text-o">Document Tab</tab-pane>
+          </tabs>
         </div>
       </div>
     </div>

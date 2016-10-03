@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="tile is-ancestor">
-      <div class="tile is-parent">
+      <div class="tile is-parent is-4">
         <article class="tile is-child box">
           <h1 class="title">Styles</h1>
           <div class="block styles-box">
@@ -27,7 +27,7 @@
         </article>
       </div>
 
-      <div class="tile is-parent">
+      <div class="tile is-parent is-4">
         <article class="tile is-child box">
           <h1 class="title">Sizes</h1>
           <div class="block">
@@ -47,7 +47,7 @@
         </article>
       </div>
 
-      <div class="tile is-parent">
+      <div class="tile is-parent is-4">
         <article class="tile is-child box">
           <h1 class="title">Dynamics</h1>
           <div class="block">

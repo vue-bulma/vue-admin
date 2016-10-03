@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="tile is-ancestor">
-      <div class="tile is-parent">
+      <div class="tile is-parent is-2">
         <article class="tile is-child box">
           <h1 class="title">Controls</h1>
           <div class="block">
@@ -57,7 +57,8 @@
           </div>
         </article>
       </div>
-      <div class="tile is-parent">
+
+      <div class="tile is-parent is-2">
         <article class="tile is-child box">
           <h1 class="title">Colors</h1>
           <div class="block">
@@ -79,7 +80,8 @@
           </div>
         </article>
       </div>
-      <div class="tile is-parent">
+
+      <div class="tile is-parent is-2">
         <article class="tile is-child box">
           <h1 class="title">Sizes</h1>
           <div class="block">
@@ -98,7 +100,8 @@
           </div>
         </article>
       </div>
-      <div class="tile is-parent">
+
+      <div class="tile is-parent is-3">
         <article class="tile is-child box">
           <h1 class="title">States</h1>
           <div class="block">
@@ -141,7 +144,8 @@
           </div>
         </article>
       </div>
-      <div class="tile is-parent">
+
+      <div class="tile is-parent is-3">
         <article class="tile is-child box">
           <h1 class="title">With Font Awesome icons</h1>
           <div class="block">

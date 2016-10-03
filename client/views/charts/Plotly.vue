@@ -1,19 +1,19 @@
 <template>
   <div>
     <div class="tile is-ancestor">
-      <div class="tile is-parent">
+      <div class="tile is-parent is-4">
         <article class="tile is-child box">
           <h4 class="title">Pie</h4>
           <div ref="pie"></div>
         </article>
       </div>
-      <div class="tile is-parent">
+      <div class="tile is-parent is-4">
         <article class="tile is-child box">
           <h4 class="title">Doughnut</h4>
           <div ref="doughnut"></div>
         </article>
       </div>
-      <div class="tile is-parent">
+      <div class="tile is-parent is-4">
         <article class="tile is-child box">
           <h4 class="title">Polar</h4>
           <div ref="polar"></div>
@@ -31,19 +31,19 @@
     </div>
 
     <div class="tile is-ancestor">
-      <div class="tile is-parent">
+      <div class="tile is-parent is-4">
         <article class="tile is-child box">
           <h4 class="title">Histogram</h4>
           <div ref="histogram"></div>
         </article>
       </div>
-      <div class="tile is-parent">
+      <div class="tile is-parent is-4">
         <article class="tile is-child box">
           <h4 class="title">Line</h4>
           <div ref="line"></div>
         </article>
       </div>
-      <div class="tile is-parent">
+      <div class="tile is-parent is-4">
         <article class="tile is-child box">
           <h4 class="title">Bar</h4>
           <div ref="bar"></div>

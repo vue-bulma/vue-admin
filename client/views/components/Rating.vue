@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="tile is-ancestor">
-      <div class="tile is-parent">
+      <div class="tile is-parent is-6">
         <article class="tile is-child box">
           <h1 class="title">Sugarcoated rating.</h1>
           <h2 class="subtitle">Accessible to everyone.</h2>
@@ -28,7 +28,7 @@
         </article>
       </div>
 
-      <div class="tile is-parent">
+      <div class="tile is-parent is-6">
         <article class="tile is-child box">
           <h1 class="title">Dynamics</h1>
           <div class="block">

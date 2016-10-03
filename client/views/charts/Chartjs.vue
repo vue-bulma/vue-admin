@@ -1,19 +1,19 @@
 <template>
   <div>
     <div class="tile is-ancestor">
-      <div class="tile is-parent">
+      <div class="tile is-parent is-4">
         <article class="tile is-child box">
           <h4 class="title">PIE</h4>
           <chart :type="'pie'" :data="pieData" :options="options"></chart>
         </article>
       </div>
-      <div class="tile is-parent">
+      <div class="tile is-parent is-4">
         <article class="tile is-child box">
           <h4 class="title">DOUGHNUT</h4>
           <chart :type="'doughnut'" :data="pieData" :options="options"></chart>
         </article>
       </div>
-      <div class="tile is-parent">
+      <div class="tile is-parent is-4">
         <article class="tile is-child box">
           <h4 class="title">POLAR</h4>
           <chart :type="'polarArea'" :data="pieData" :options="options"></chart>
@@ -22,13 +22,13 @@
     </div>
 
     <div class="tile is-ancestor">
-      <div class="tile is-parent">
+      <div class="tile is-parent is-6">
         <article class="tile is-child box">
           <h4 class="title">ANIMATED RADAR</h4>
           <chart :type="'radar'" :data="waveData" :options="options"></chart>
         </article>
       </div>
-      <div class="tile is-parent">
+      <div class="tile is-parent is-6">
         <article class="tile is-child box">
           <h4 class="title">ANIMATED BARS</h4>
           <chart :type="'bar'" :data="waveData" :options="options"></chart>
@@ -37,19 +37,19 @@
     </div>
 
     <div class="tile is-ancestor">
-      <div class="tile is-parent">
+      <div class="tile is-parent is-4">
         <article class="tile is-child box">
           <h4 class="title">RADAR</h4>
           <chart :type="'radar'" :data="seriesData" :options="options_3"></chart>
         </article>
       </div>
-      <div class="tile is-parent">
+      <div class="tile is-parent is-4">
         <article class="tile is-child box">
           <h4 class="title">LINE</h4>
           <chart :type="'line'" :data="seriesData" :options="options_3"></chart>
         </article>
       </div>
-      <div class="tile is-parent">
+      <div class="tile is-parent is-4">
         <article class="tile is-child box">
           <h4 class="title">BARS</h4>
           <chart :type="'bar'" :data="seriesData" :options="options_3"></chart>

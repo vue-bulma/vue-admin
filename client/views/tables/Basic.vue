@@ -85,7 +85,7 @@
     </div>
 
     <div class="tile is-ancestor">
-      <div class="tile is-parent">
+      <div class="tile is-parent is-4">
         <article class="tile is-child box">
           <h4 class="title">Table is-bordered</h4>
           <table class="table is-bordered">
@@ -104,7 +104,7 @@
           </table>
         </article>
       </div>
-      <div class="tile is-parent">
+      <div class="tile is-parent is-4">
         <article class="tile is-child box">
           <h4 class="title">Table is-striped</h4>
           <table class="table is-striped">
@@ -131,7 +131,7 @@
           </table>
         </article>
       </div>
-      <div class="tile is-parent">
+      <div class="tile is-parent is-4">
         <article class="tile is-child box">
           <h4 class="title">Table is-narrow</h4>
           <table class="table is-narrow">

@@ -1,6 +1,6 @@
 <template>
   <div class="tile is-ancestor">
-    <div class="tile is-parent">
+    <div class="tile is-parent is-6">
       <article class="tile is-child box">
         <h1 class="title">Font Awesome</h1>
         <h3 class="subtitle">
@@ -29,7 +29,7 @@
       </article>
     </div>
 
-    <div class="tile is-parent">
+    <div class="tile is-parent is-6">
       <article class="tile is-child box">
         <h1 class="title">Material Design Icons</h1>
         <h3 class="subtitle">
