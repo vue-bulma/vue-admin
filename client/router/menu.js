@@ -3,10 +3,8 @@
 // meta.label: display label
 
 // lazy loading Components
-// const Chartjs = resolve => require(['../views/charts/Chartjs.vue'], resolve)
-// const Chartist = resolve => require(['../views/charts/Chartist.vue'], resolve)
-// const Peity = resolve => require(['../views/charts/Peity.vue'], resolve)
-// const Plotly = resolve => require(['../views/charts/Plotly.vue'], resolve)
+// https://github.com/vuejs/vue-router/blob/dev/examples/lazy-loading/app.js#L8
+const lazyLoading = (name, index = false) => () => System.import(`views/${name}${index ? '/index' : ''}.vue`)
 
 export default [
   {
@@ -15,7 +13,7 @@ export default [
     meta: {
       icon: 'fa-tachometer'
     },
-    component: require('views/dashboard')
+    component: lazyLoading('dashboard', true)
   },
   {
     name: 'Charts',
@@ -24,33 +22,33 @@ export default [
       icon: 'fa-bar-chart-o',
       expanded: false
     },
-    component: require('views/charts'),
+    component: lazyLoading('charts', true),
 
     children: [
       {
         name: 'CanvasGauges',
         path: 'canvas-gauges',
-        component: require('views/charts/CanvasGauges') // CanvasGauges
+        component: lazyLoading('charts/CanvasGauges')
       },
       {
         name: 'Chartist',
         path: 'chartist',
-        component: require('views/charts/Chartist') // Chartist
+        component: lazyLoading('charts/Chartist')
       },
       {
         name: 'Chartjs',
         path: 'chartjs',
-        component: require('views/charts/Chartjs') // Chartjs
+        component: lazyLoading('charts/Chartjs')
       },
       {
         name: 'Peity',
         path: 'peity',
-        component: require('views/charts/Peity') // Peity
+        component: lazyLoading('charts/Peity')
       },
       {
         name: 'Plotly',
         path: 'plotly',
-        component: require('views/charts/Plotly') // Plotly
+        component: lazyLoading('charts/Plotly')
       }
     ]
   },
@@ -65,22 +63,22 @@ export default [
       {
         name: 'Buttons',
         path: '/buttons',
-        component: require('views/ui/Buttons') // Buttons
+        component: lazyLoading('ui/Buttons')
       },
       {
         name: 'Form',
         path: '/form',
-        component: require('views/ui/Form') // Form
+        component: lazyLoading('ui/Form')
       },
       {
         name: 'Typography',
         path: '/typography',
-        component: require('views/ui/Typography') // Typography
+        component: lazyLoading('ui/Typography')
       },
       {
         name: 'Icons',
         path: '/icons',
-        component: require('views/ui/Icons') // Icons
+        component: lazyLoading('ui/Icons')
       }
     ]
   },
@@ -91,12 +89,12 @@ export default [
       icon: 'fa-building-o',
       expanded: false
     },
-    component: require('views/components'),
+    component: lazyLoading('components'),
 
     children: [
       {
         path: '',
-        component: require('views/components/Default')
+        component: lazyLoading('components/Default')
       },
       {
         name: 'BackToTop',
@@ -105,7 +103,7 @@ export default [
           description: 'Jump component is based on jump.js',
           repository: 'https://github.com/vue-bulma/jump'
         },
-        component: require('views/components/BackToTop') // BackToTop
+        component: lazyLoading('components/BackToTop')
       },
       {
         name: 'Collapse',
@@ -114,7 +112,7 @@ export default [
           description: 'Collapse component',
           repository: 'https://github.com/vue-bulma/collapse'
         },
-        component: require('views/components/Collapse') // Collapse
+        component: lazyLoading('components/Collapse')
       },
       {
         name: 'Datepicker',
@@ -123,7 +121,7 @@ export default [
           description: 'Datepicker component is based on flatpickr',
           repository: 'https://github.com/vue-bulma/datepicker'
         },
-        component: require('views/components/Datepicker') // Datepicker
+        component: lazyLoading('components/Datepicker')
       },
       {
         name: 'Emoji',
@@ -132,7 +130,7 @@ export default [
           description: 'Emoji Component is based on emojione.com',
           repository: 'https://github.com/vue-bulma/emoji'
         },
-        component: require('views/components/Emoji') // Emoji
+        component: lazyLoading('components/Emoji')
       },
       {
         name: 'Message',
@@ -141,7 +139,7 @@ export default [
           description: 'Message component',
           repository: 'https://github.com/vue-bulma/message'
         },
-        component: require('views/components/Message') // Message
+        component: lazyLoading('components/Message')
       },
       {
         name: 'Modal',
@@ -150,7 +148,7 @@ export default [
           description: 'Modal component',
           repository: 'https://github.com/vue-bulma/modal'
         },
-        component: require('views/components/Modal') // Modal
+        component: lazyLoading('components/Modal')
       },
       {
         name: 'Notification',
@@ -159,7 +157,7 @@ export default [
           description: 'Notification component',
           repository: 'https://github.com/vue-bulma/notification'
         },
-        component: require('views/components/Notification') // Notification
+        component: lazyLoading('components/Notification')
       },
       {
         name: 'ProgressBar',
@@ -168,7 +166,7 @@ export default [
           description: 'ProgressBar component',
           repository: 'https://github.com/vue-bulma/progress-bar'
         },
-        component: require('views/components/ProgressBar') // ProgressBar
+        component: lazyLoading('components/ProgressBar')
       },
       {
         name: 'ProgressTracker',
@@ -177,7 +175,7 @@ export default [
           description: 'ProgressTracker component is based on progress-tracker',
           repository: 'https://github.com/vue-bulma/progress-tracker'
         },
-        component: require('views/components/ProgressTracker') // ProgressTracker
+        component: lazyLoading('components/ProgressTracker')
       },
       {
         name: 'Quill',
@@ -186,7 +184,7 @@ export default [
           description: 'Your powerful, rich text editor',
           repository: 'https://github.com/vue-bulma/quill'
         },
-        component: require('views/components/Quill') // Quill
+        component: lazyLoading('components/Quill')
       },
       {
         name: 'Rating',
@@ -195,7 +193,7 @@ export default [
           description: 'Rating component is based on starability.css',
           repository: 'https://github.com/vue-bulma/rating'
         },
-        component: require('views/components/Rating') // Rating
+        component: lazyLoading('components/Rating')
       },
       {
         name: 'Slider',
@@ -204,7 +202,7 @@ export default [
           description: 'Slider component',
           repository: 'https://github.com/vue-bulma/slider'
         },
-        component: require('views/components/Slider') // Slider
+        component: lazyLoading('components/Slider')
       },
       {
         name: 'Switch',
@@ -213,7 +211,7 @@ export default [
           description: 'Switch component',
           repository: 'https://github.com/vue-bulma/switch'
         },
-        component: require('views/components/Switch') // Switch
+        component: lazyLoading('components/Switch')
       },
       {
         name: 'Tabs',
@@ -222,7 +220,7 @@ export default [
           description: 'Tabs component',
           repository: 'https://github.com/vue-bulma/tabs'
         },
-        component: require('views/components/Tabs') // Tabs
+        component: lazyLoading('components/Tabs')
       },
       {
         name: 'Tooltip',
@@ -231,7 +229,7 @@ export default [
           description: 'Tooltip component is based on hint.css',
           repository: 'https://github.com/vue-bulma/tooltip'
         },
-        component: require('views/components/Tooltip') // Tooltip
+        component: lazyLoading('components/Tooltip')
       }
     ]
   },
@@ -249,12 +247,12 @@ export default [
         meta: {
           label: 'Basic Tables'
         },
-        component: require('../views/tables/Basic') // Basic
+        component: lazyLoading('tables/Basic')
       },
       {
         name: 'Handsontable',
         path: '/tables/handsontable',
-        component: require('../views/tables/Handsontable') // Handsontable
+        component: lazyLoading('tables/Handsontable')
       }
     ]
   }
