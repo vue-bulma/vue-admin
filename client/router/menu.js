@@ -89,7 +89,7 @@ export default [
       icon: 'fa-building-o',
       expanded: false
     },
-    component: lazyLoading('components'),
+    component: lazyLoading('components', true),
 
     children: [
       {
