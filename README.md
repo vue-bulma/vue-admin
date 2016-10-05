@@ -49,7 +49,7 @@ Its ongoing development is made possible thanks to the support by these awesome 
 
   * NPM v3
 
-  * Webpac v2
+  * Webpack v2
 
 
 ## Notes
