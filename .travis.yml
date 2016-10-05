@@ -7,7 +7,6 @@ node_js:
 
 before_install:
   - npm install npm@latest -g
-  - npm install
 
 script:
   - node --version
