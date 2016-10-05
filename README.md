@@ -49,10 +49,12 @@ Its ongoing development is made possible thanks to the support by these awesome 
 
   * NPM v3
 
+  * Webpac v2
+
 
 ## Notes
 
-  If you want to use Vue Admin with Vue 1.0 version, please checkout the [master](https://github.com/fundon/vue-admin/tree/master) branch.
+  If you want to use Vue Admin with Vue 1.0 version, please checkout the [vue-v1](https://github.com/fundon/vue-admin/tree/vue-v1) branch.
 
 
 ---
