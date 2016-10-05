@@ -1,19 +1,29 @@
-<p align="center"><img width="200" src="https://github.com/fundon/vue-admin/blob/master/src/assets/logo@2x.png"></p>
+<div align="center">
+<p><img width="200" src="https://github.com/fundon/vue-admin/blob/master/src/assets/logo@2x.png"></p>
 
-<h1 align="center">Vue Admin</h1>
+<h1>Vue Admin</h1>
 
-<p align="center">
+<p>
   <strong>Vue Admin Panel Framework</strong>,
   <a href="https://vue-admin.fundon.me">Live Demo</a>
 </p>
 
-<p align="center">
+<p>
   <sub>Made with ❤︎ by
     <a href="https://twitter.com/_fundon">Fangdun Cai</a> and
     <a href="https://github.com/fundon/vue-admin/graphs/contributors">contributors</a>
   </sub>
 </p>
 
+<p>
+<a href="https://npmjs.org/package/vue-admin"><img src="https://img.shields.io/npm/v/vue-admin.svg" alt="NPM version"></a>
+<a href="https://www.npmjs.com/package/vue-admin"><img src="https://img.shields.io/badge/license-MIT-green.svg" alt="MIT License"></a>
+<a href="https://travis-ci.org/fundon/vue-admin"><img src="https://img.shields.io/travis/fundon/vue-admin.svg?label=linux" alt="Linux Build"></a>
+<a href="https://ci.appveyor.com/project/fundon/vue-admin"><img src="https://img.shields.io/appveyor/ci/fundon/vue-admin/master.svg?label=windows" alt="Window Build"/></a>
+<a href="https://gitter.im/fundon/vue-admin?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge"><img src="https://badges.gitter.im/fundon/vue-admin.svg" alt="Gitter"></a>
+</p>
+
+</div>
 
 ![](screenshots/app.png)
 
@@ -44,11 +54,6 @@ Its ongoing development is made possible thanks to the support by these awesome 
 
   If you want to use Vue Admin with Vue 1.0 version, please checkout the [master](https://github.com/fundon/vue-admin/tree/master) branch.
 
-
-## Badges
-
-![](https://img.shields.io/badge/license-MIT-blue.svg)
-[![Gitter](https://badges.gitter.im/fundon/vue-admin.svg)](https://gitter.im/fundon/vue-admin?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
 ---
 
