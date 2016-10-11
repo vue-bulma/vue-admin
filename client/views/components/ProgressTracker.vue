@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="tile is-ancestor">
-      <div class="tile is-parent is-4">
+      <div class="tile is-parent is-6">
         <article class="tile is-child box">
           <h1 class="title">Tracker Styles</h1>
           <div class="block styles-box">
@@ -24,7 +24,17 @@
         </article>
       </div>
 
-      <div class="tile is-parent is-4">
+      <div class="tile is-parent is-6">
+        <article class="tile is-child box">
+          <h1 class="title">Tracker Dynamics</h1>
+          <div class="block">
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <div class="tile is-ancestor">
+      <div class="tile is-parent">
         <article class="tile is-child box">
           <h1 class="title">Tracker Alignments</h1>
           <div class="block">
@@ -55,14 +65,6 @@
             <progress-tracker text alignment="right">
               <step-item v-for="item in stepItems" :marker="item.marker" :title="item.title"></step-item>
             </progress-tracker>
-          </div>
-        </article>
-      </div>
-
-      <div class="tile is-parent is-4">
-        <article class="tile is-child box">
-          <h1 class="title">Tracker Dynamics</h1>
-          <div class="block">
           </div>
         </article>
       </div>

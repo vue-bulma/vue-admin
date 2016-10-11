@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="tile is-ancestor">
-      <div class="tile is-parent is-4">
+      <div class="tile is-parent">
         <article class="tile is-child box">
           <h1 class="title">Placements</h1>
           <div class="columns is-multiline is-mobile">
@@ -71,8 +71,10 @@
           </div>
         </article>
       </div>
+    </div>
 
-      <div class="tile is-parent is-4">
+    <div class="tile is-ancestor">
+      <div class="tile is-parent is-6">
         <article class="tile is-child box">
           <h1 class="title">Styles</h1>
           <div class="columns is-multiline is-mobile">
@@ -115,7 +117,7 @@
         </article>
       </div>
 
-      <div class="tile is-parent is-4">
+      <div class="tile is-parent is-6">
         <article class="tile is-child box">
           <h1 class="title">Sizes</h1>
           <div class="columns is-multiline is-mobile">
