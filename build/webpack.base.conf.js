@@ -20,8 +20,7 @@ module.exports = {
     extensions: ['.js', '.vue', '.css', '.json'],
     alias: {
       // https://github.com/vuejs/vue/wiki/Vue-2.0-RC-Starter-Resources
-      // runtime-only
-      'vue': 'vue/dist/vue',
+      // 'vue': 'vue/dist/vue',
       'src': path.resolve(__dirname, '../client'),
       'assets': path.resolve(__dirname, '../client/assets'),
       'components': path.resolve(__dirname, '../client/components'),
