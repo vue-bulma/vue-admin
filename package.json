@@ -59,7 +59,7 @@
     "vue-canvas-gauges": "github:vue-bulma/canvas-gauges",
     "vue-cleave": "1.1.0",
     "vue-handsontable": "github:vue-bulma/handsontable",
-    "vue-nprogress": "github:vue-bulma/nprogress",
+    "vue-nprogress": "0.1.0",
     "vue-peity": "github:vue-bulma/peity",
     "vue-resource": "1.0.3",
     "vue-router": "2.0.0",
