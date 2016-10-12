@@ -57,7 +57,7 @@
     "vue-bulma-tabs": "github:vue-bulma/tabs",
     "vue-bulma-tooltip": "github:vue-bulma/tooltip",
     "vue-canvas-gauges": "github:vue-bulma/canvas-gauges",
-    "vue-cleave": "github:vue-bulma/cleave",
+    "vue-cleave": "1.1.0",
     "vue-handsontable": "github:vue-bulma/handsontable",
     "vue-nprogress": "github:vue-bulma/nprogress",
     "vue-peity": "github:vue-bulma/peity",
