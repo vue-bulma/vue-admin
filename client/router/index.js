@@ -6,7 +6,7 @@ import menu from './menu'
 Vue.use(Router)
 
 export default new Router({
-  mode: 'history',
+  mode: 'hash', // Demo is living in GitHub.io, so required!
   linkActiveClass: 'is-active',
   scrollBehavior: () => ({ y: 0 }),
   routes: [
