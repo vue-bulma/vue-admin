@@ -9,10 +9,12 @@
         </div>
         <div class="nav-center">
           <a class="nav-item hero-brand" href="/">
-            <img src="~assets/logo.svg" alt="Vue Admin Panel Framework">
-            <div class="is-hidden-mobile">
-              <span class="vue">Vue</span><strong class="admin">Admin</strong>
-            </div>
+            <img src="~assets/logo.svg" :alt="description">
+            <tooltip :label="'v' + version" placement="right" type="success" size="small" :no-animate="true" :always="true" :rounded="true">
+              <div class="is-hidden-mobile">
+                <span class="vue">Vue</span><strong class="admin">Admin</strong>
+              </div>
+            </tooltip>
           </a>
         </div>
         <div class="nav-right is-flex"></div>
@@ -22,10 +24,20 @@
 </template>
 
 <script>
+import Tooltip from 'vue-bulma-tooltip'
+
 export default {
+
+  components: {
+    Tooltip
+  },
 
   props: {
     show: Boolean
+  },
+
+  data () {
+    return this.$store.state.pkg
   }
 
 }

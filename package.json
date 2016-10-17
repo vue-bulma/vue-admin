@@ -1,8 +1,9 @@
 {
   "name": "vue-admin",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "Vue Admin Panel Framework",
   "repository": "fundon/vue-admin",
+  "homepage": "https://vue-admin.fundon.me",
   "license": "MIT",
   "author": {
     "name": "Fangdun Cai",
@@ -18,8 +19,8 @@
     "vue"
   ],
   "engines": {
-    "node": ">= 4",
-    "npm": ">= 3"
+    "node": ">=4",
+    "npm": ">=3"
   },
   "scripts": {
     "clean": "rm -rf dist",
@@ -91,6 +92,7 @@
     "file-loader": "^0.9.0",
     "html-webpack-plugin": "^2.22.0",
     "http-proxy-middleware": "^0.17.1",
+    "json-loader": "^0.5.4",
     "node-sass": "^3.10.0",
     "ora": "^0.3.0",
     "postcss-loader": "^1.0.0",

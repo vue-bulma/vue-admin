@@ -20,11 +20,12 @@ module.exports = {
     extensions: ['.js', '.vue', '.css', '.json'],
     alias: {
       // https://github.com/vuejs/vue/wiki/Vue-2.0-RC-Starter-Resources
-      // 'vue': 'vue/dist/vue',
-      'src': path.resolve(__dirname, '../client'),
-      'assets': path.resolve(__dirname, '../client/assets'),
-      'components': path.resolve(__dirname, '../client/components'),
-      'views': path.resolve(__dirname, '../client/views'),
+      // vue: 'vue/dist/vue',
+      package: path.resolve(__dirname, '../package.json'),
+      src: path.resolve(__dirname, '../client'),
+      assets: path.resolve(__dirname, '../client/assets'),
+      components: path.resolve(__dirname, '../client/components'),
+      views: path.resolve(__dirname, '../client/views'),
       // third-party
       'plotly.js': 'plotly.js/dist/plotly'
     }
@@ -39,7 +40,7 @@ module.exports = {
         enforce: 'pre'
       },
       {
-        test: /\.js/,
+        test: /\.js$/,
         loader: ['eslint'],
         include: projectRoot,
         exclude: /node_modules/,
@@ -50,15 +51,15 @@ module.exports = {
         loader: ['vue']
       },
       {
+        test: /\.json$/,
+        loader: 'json'
+      },
+      {
         test: /\.js$/,
         loader: ['babel'],
         include: projectRoot,
         // /node_modules\/(?!vue-bulma-.*)/
         exclude: [new RegExp(`node_modules\\${path.sep}\(\?\!vue-bulma-.*\)`)]
-      },
-      {
-        test: /\.json$/,
-        loader: 'json'
       },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,

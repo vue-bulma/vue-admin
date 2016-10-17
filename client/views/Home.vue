@@ -1,16 +1,32 @@
 <template>
   <div class="content has-text-centered">
     <p>
-      <img width="200" src="~assets/logo.svg" alt="Vue Admin Panel Framework">
+      <img width="200" src="~assets/logo.svg" :alt="description">
     </p>
 
-    <h1 class="is-title is-bold">Vue Admin</h1>
+    <h1 class="is-title is-bold">{{ name.replace('-', ' ') }}</h1>
 
     <p>
-      <strong>Vue Admin Panel Framework</strong>,
-      <a href="https://vue-admin.fundon.me">Live Demo</a>
+      <strong>{{ description }}</strong>,
+      <a :href="homepage">Live Demo</a>
     </p>
 
     <p>Supports Vue 2.0 and Bulma 0.2!</p>
   </div>
 </template>
+
+<script>
+export default {
+
+  data () {
+    return this.$store.state.pkg
+  }
+
+}
+</script>
+
+<style lang="scss" scoped>
+.is-title {
+  text-transform: capitalize;
+}
+</style>

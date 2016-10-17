@@ -1,12 +1,14 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 
+import pkg from 'package'
 import config from './config'
 import menu from '../router/menu'
 
 Vue.use(Vuex)
 
 const state = {
+  pkg,
   config,
   menu,
   count: 0
