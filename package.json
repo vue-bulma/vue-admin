@@ -61,7 +61,7 @@
     "vue-cleave": "1.1.0",
     "vue-handsontable": "github:vue-bulma/handsontable",
     "vue-nprogress": "0.1.0",
-    "vue-peity": "github:vue-bulma/peity",
+    "vue-peity": "0.4.0",
     "vue-resource": "1.0.3",
     "vue-router": "2.0.1",
     "vuex": "2.0.0",
