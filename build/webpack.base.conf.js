@@ -1,3 +1,5 @@
+'use strict'
+
 const path = require('path')
 const webpack = require('webpack')
 const config = require('../config')
@@ -59,7 +61,7 @@ module.exports = {
         loader: ['babel'],
         include: projectRoot,
         // /node_modules\/(?!vue-bulma-.*)/
-        exclude: [new RegExp(`node_modules\\${path.sep}\(\?\!vue-bulma-.*\)`)]
+        exclude: [new RegExp(`node_modules\\${path.sep}(?!vue-bulma-.*)`)]
       },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
