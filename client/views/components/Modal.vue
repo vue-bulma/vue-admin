@@ -73,7 +73,8 @@ export default {
 
     openModalCard () {
       openCardModal({
-        title: 'Modal title'
+        title: 'Modal title',
+        url: this.$store.state.pkg.homepage
       })
     }
   }
