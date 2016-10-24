@@ -17,6 +17,10 @@
     orbit-camera-controller "^4.0.0"
     turntable-camera-controller "^3.0.0"
 
+"7zip@0.0.6":
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/7zip/-/7zip-0.0.6.tgz#9cafb171af82329490353b4816f03347aa150a30"
+
 a-big-triangle@^1.0.0:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/a-big-triangle/-/a-big-triangle-1.0.2.tgz#f1fb2fd4abe933db9a6ac0e2b9f486fe1bf2dde1"
@@ -1621,6 +1625,10 @@ cross-spawn@^3.0.0, cross-spawn@^3.0.1:
     lru-cache "^4.0.1"
     which "^1.2.9"
 
+cross-unzip@0.0.2:
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/cross-unzip/-/cross-unzip-0.0.2.tgz#5183bc47a09559befcf98cc4657964999359372f"
+
 cryptiles@2.x.x:
   version "2.0.5"
   resolved "https://registry.yarnpkg.com/cryptiles/-/cryptiles-2.0.5.tgz#3bdfecdc608147c1c67202fa291e7dca59eaa3b8"
@@ -2010,6 +2018,16 @@ editorconfig@^0.13.2:
 ee-first@1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/ee-first/-/ee-first-1.1.1.tgz#590c61156b0ae2f4f0255732a158b266bc56b21d"
+
+electron-devtools-installer:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/electron-devtools-installer/-/electron-devtools-installer-2.0.1.tgz#d52dcb3a430a95b771dc01d8deb13fcbdaa8d13c"
+  dependencies:
+    "7zip" "0.0.6"
+    cross-unzip "0.0.2"
+    request "^2.72.0"
+    rimraf "^2.5.2"
+    semver "^5.3.0"
 
 electron-download@^3.0.1:
   version "3.0.1"
@@ -5876,7 +5894,7 @@ repeating@^2.0.0:
   dependencies:
     is-finite "^1.0.0"
 
-request@^2.39.0, request@^2.45.0, request@^2.61.0, request@2, request@2.x:
+request@^2.39.0, request@^2.45.0, request@^2.61.0, request@^2.72.0, request@2, request@2.x:
   version "2.75.0"
   resolved "https://registry.yarnpkg.com/request/-/request-2.75.0.tgz#d2b8268a286da13eaa5d01adf5d18cc90f657d93"
   dependencies:
@@ -5970,7 +5988,7 @@ right-now@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/right-now/-/right-now-1.0.0.tgz#6e89609deebd7dcdaf8daecc9aea39cf585a0918"
 
-rimraf@^2.2.8, rimraf@~2.5.0, rimraf@~2.5.1, rimraf@2:
+rimraf@^2.2.8, rimraf@^2.5.2, rimraf@~2.5.0, rimraf@~2.5.1, rimraf@2:
   version "2.5.4"
   resolved "https://registry.yarnpkg.com/rimraf/-/rimraf-2.5.4.tgz#96800093cbf1a0c86bd95b4625467535c29dfa04"
   dependencies:
