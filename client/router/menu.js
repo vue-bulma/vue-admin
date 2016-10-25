@@ -232,6 +232,15 @@ export default [
           repository: 'https://github.com/vue-bulma/tooltip'
         },
         component: lazyLoading('components/Tooltip')
+      },
+      {
+        name: 'Lory',
+        path: 'lory',
+        meta: {
+          description: 'Slider component is based on lory, lory: ☀ Touch enabled minimalistic slider',
+          repository: 'https://github.com/vue-bulma/lory'
+        },
+        component: lazyLoading('components/Lory')
       }
     ]
   },

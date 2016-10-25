@@ -4244,6 +4244,10 @@ loose-envify@^1.0.0:
   dependencies:
     js-tokens "^1.0.1"
 
+lory.js@^2.2.1:
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/lory.js/-/lory.js-2.2.1.tgz#e45ff82f1e403ee9df5e9c01b31636a09f45a743"
+
 loud-rejection@^1.0.0:
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/loud-rejection/-/loud-rejection-1.6.0.tgz#5b46f80147edee578870f086d04821cf998e551f"
@@ -7011,9 +7015,9 @@ vt-pbf@^2.0.2:
   dependencies:
     chart.js "2.2.1"
 
-"vue-bulma-collapse@github:vue-bulma/collapse":
-  version "1.0.0"
-  resolved "https://codeload.github.com/vue-bulma/collapse/tar.gz/0b5cad0592fc34301b0b02a5002adaa5b4fcaacd"
+vue-bulma-collapse@1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/vue-bulma-collapse/-/vue-bulma-collapse-1.0.2.tgz#1e91000bd738c778656eec3cb89009e98847503c"
 
 "vue-bulma-datepicker@github:vue-bulma/datepicker":
   version "1.1.0"
@@ -7139,6 +7143,12 @@ vue-loader@^9.7.0:
     vue-style-loader "^1.0.0"
     vue-template-compiler "^2.0.0-rc.3"
     vue-template-es2015-compiler "^1.0.0"
+
+vue-lory@0.0.3:
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/vue-lory/-/vue-lory-0.0.3.tgz#c22acaac70edfb5057674fe18c563833a6a84627"
+  dependencies:
+    lory.js "^2.2.1"
 
 vue-nprogress@0.1.2:
   version "0.1.2"
