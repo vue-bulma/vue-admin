@@ -131,8 +131,8 @@
             <item>4</item>
             <item>5</item>
             <item>6</item>
-            <prev slot="actions"></prev>
-            <next slot="actions"></next>
+            <prev slot="actions" color="#dbdbdb"></prev>
+            <next slot="actions" color="#dbdbdb"></next>
           </lory>
         </article>
       </div>
