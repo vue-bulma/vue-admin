@@ -88,15 +88,15 @@
       <div class="tile is-parent">
         <article class="tile is-child box notification is-warning">
           <h1 class="title">Multiple slides to scroll</h1>
-          <lory class="columns" :options="{ enableMouseEvents: true, infinite: 4, slidesToScroll: 4 }">
-            <item class="column is-3">1</item>
-            <item class="column is-3">2</item>
-            <item class="column is-3">3</item>
-            <item class="column is-3">4</item>
-            <item class="column is-3">5</item>
-            <item class="column is-3">6</item>
-            <item class="column is-3">7</item>
-            <item class="column is-3">8</item>
+          <lory class="columns is-mobile" :options="{ enableMouseEvents: true, infinite: 4, slidesToScroll: 4 }">
+            <item class="column is-one-quarter-mobile is-3">1</item>
+            <item class="column is-one-quarter-mobile is-3">2</item>
+            <item class="column is-one-quarter-mobile is-3">3</item>
+            <item class="column is-one-quarter-mobile is-3">4</item>
+            <item class="column is-one-quarter-mobile is-3">5</item>
+            <item class="column is-one-quarter-mobile is-3">6</item>
+            <item class="column is-one-quarter-mobile is-3">7</item>
+            <item class="column is-one-quarter-mobile is-3">8</item>
           </lory>
         </article>
       </div>
@@ -106,15 +106,15 @@
       <div class="tile is-parent">
         <article class="tile is-child box notification is-info">
           <h1 class="title">Custom easings</h1>
-          <lory class="columns js_rewind" :options="{ enableMouseEvents: true, infinite: 4, slidesToScroll: 4, slideSpeed: 1000, ease: 'cubic-bezier(0.455, 0.03, 0.515, 0.955)', rewind: true }">
-            <item class="column is-3">1</item>
-            <item class="column is-3">2</item>
-            <item class="column is-3">3</item>
-            <item class="column is-3">4</item>
-            <item class="column is-3">5</item>
-            <item class="column is-3">6</item>
-            <item class="column is-3">7</item>
-            <item class="column is-3">8</item>
+          <lory class="columns is-mobile js_rewind" :options="{ enableMouseEvents: true, infinite: 4, slidesToScroll: 4, slideSpeed: 1000, ease: 'cubic-bezier(0.455, 0.03, 0.515, 0.955)', rewind: true }">
+            <item class="column is-one-quarter-mobile is-3">1</item>
+            <item class="column is-one-quarter-mobile is-3">2</item>
+            <item class="column is-one-quarter-mobile is-3">3</item>
+            <item class="column is-one-quarter-mobile is-3">4</item>
+            <item class="column is-one-quarter-mobile is-3">5</item>
+            <item class="column is-one-quarter-mobile is-3">6</item>
+            <item class="column is-one-quarter-mobile is-3">7</item>
+            <item class="column is-one-quarter-mobile is-3">8</item>
           </lory>
         </article>
       </div>
