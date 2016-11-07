@@ -100,6 +100,7 @@
     "imports-loader": "^0.6.5",
     "json-loader": "^0.5.4",
     "node-sass": "^3.11.2",
+    "opn": "^4.0.2",
     "ora": "^0.3.0",
     "postcss-loader": "^1.1.0",
     "progress-bar-webpack-plugin": "^1.9.0",
