@@ -3,14 +3,14 @@
     <div class="hero-head">
       <nav class="nav">
         <div class="nav-left">
-          <a class="nav-item is-hidden-tablet" @click="$store.dispatch('TOGGLE_SIDEBAR')">
+          <a class="nav-item is-hidden-tablet" @click="toggleSidebar(!sidebar.opened)">
             <i class="fa fa-bars" aria-hidden="true"></i>
           </a>
         </div>
         <div class="nav-center">
           <a class="nav-item hero-brand" href="/">
-            <img src="~assets/logo.svg" :alt="description">
-            <tooltip :label="'v' + version" placement="right" type="success" size="small" :no-animate="true" :always="true" :rounded="true">
+            <img src="~assets/logo.svg" :alt="pkginfo.description">
+            <tooltip :label="'v' + pkginfo.version" placement="right" type="success" size="small" :no-animate="true" :always="true" :rounded="true">
               <div class="is-hidden-mobile">
                 <span class="vue">Vue</span><strong class="admin">Admin</strong>
               </div>
@@ -25,6 +25,7 @@
 
 <script>
 import Tooltip from 'vue-bulma-tooltip'
+import { mapGetters, mapActions } from 'vuex'
 
 export default {
 
@@ -36,10 +37,14 @@ export default {
     show: Boolean
   },
 
-  data () {
-    return this.$store.state.pkg
-  }
+  computed: mapGetters({
+    pkginfo: 'pkg',
+    sidebar: 'sidebar'
+  }),
 
+  methods: mapActions([
+    'toggleSidebar'
+  ])
 }
 </script>
 

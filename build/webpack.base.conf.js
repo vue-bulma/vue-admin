@@ -29,7 +29,9 @@ module.exports = {
       components: path.resolve(__dirname, '../client/components'),
       views: path.resolve(__dirname, '../client/views'),
       // third-party
-      'plotly.js': 'plotly.js/dist/plotly'
+      'plotly.js': 'plotly.js/dist/plotly',
+      // vue-addon
+      'vuex-store': path.resolve(__dirname, '../client/store')
     }
   },
   module: {

@@ -30,12 +30,14 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 export default {
 
   computed: {
-    parent () {
-      return this.$store.state.menu.filter(c => c.name === 'Components')[0]
-    },
+    ...mapGetters({
+      parent: 'componententry'
+    }),
 
     parentPath () {
       const parent = this.parent

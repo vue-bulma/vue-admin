@@ -1,8 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-
-import menu from './menu'
-
+import menuModule from 'vuex-store/modules/menu'
 Vue.use(Router)
 
 export default new Router({
@@ -15,7 +13,7 @@ export default new Router({
       path: '/',
       component: require('../views/Home')
     },
-    ...generateRoutesFromMenu(menu),
+    ...generateRoutesFromMenu(menuModule.state.items),
     {
       path: '*',
       redirect: '/'
