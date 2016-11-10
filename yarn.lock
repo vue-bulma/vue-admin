@@ -2059,13 +2059,6 @@ ee-first@1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/ee-first/-/ee-first-1.1.1.tgz#590c61156b0ae2f4f0255732a158b266bc56b21d"
 
-electron:
-  version "1.4.5"
-  resolved "https://registry.yarnpkg.com/electron/-/electron-1.4.5.tgz#829c4884d641d88398805a7f94a37ec432a00bf3"
-  dependencies:
-    electron-download "^3.0.1"
-    extract-zip "^1.0.3"
-
 electron-devtools-installer@^2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/electron-devtools-installer/-/electron-devtools-installer-2.0.1.tgz#d52dcb3a430a95b771dc01d8deb13fcbdaa8d13c"
@@ -2089,6 +2082,13 @@ electron-download@^3.0.1:
     rc "^1.1.2"
     semver "^5.3.0"
     sumchecker "^1.2.0"
+
+electron@^1.4.6:
+  version "1.4.6"
+  resolved "https://registry.yarnpkg.com/electron/-/electron-1.4.6.tgz#7e8ea042f03ff3f14f48afa132f7fdecc29b3df5"
+  dependencies:
+    electron-download "^3.0.1"
+    extract-zip "^1.0.3"
 
 elliptic@^6.0.0:
   version "6.3.2"
@@ -7286,9 +7286,9 @@ webpack-dev-middleware@^1.8.4:
     path-is-absolute "^1.0.0"
     range-parser "^1.0.3"
 
-webpack-hot-middleware:
-  version "2.13.1"
-  resolved "https://registry.yarnpkg.com/webpack-hot-middleware/-/webpack-hot-middleware-2.13.1.tgz#104350e044be58ba3b7ef1c39513d69562841975"
+webpack-hot-middleware@^2.13.2:
+  version "2.13.2"
+  resolved "https://registry.yarnpkg.com/webpack-hot-middleware/-/webpack-hot-middleware-2.13.2.tgz#6500b15e6d4f1a9590f8df708183f4d2ac2c3e9e"
   dependencies:
     ansi-html "0.0.6"
     html-entities "^1.2.0"
