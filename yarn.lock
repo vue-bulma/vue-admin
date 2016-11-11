@@ -287,12 +287,12 @@ autoprefixer@^6.3.1, autoprefixer@^6.4.1:
     postcss "^5.2.4"
     postcss-value-parser "^3.2.3"
 
-autoprefixer@^6.5.2:
-  version "6.5.2"
-  resolved "https://registry.yarnpkg.com/autoprefixer/-/autoprefixer-6.5.2.tgz#37cc910c5e1139ad341a006d5f6d441a380b742b"
+autoprefixer@6.5.3:
+  version "6.5.3"
+  resolved "https://registry.yarnpkg.com/autoprefixer/-/autoprefixer-6.5.3.tgz#2d853af66d04449fcf50db3066279ab54c3e4b01"
   dependencies:
     browserslist "~1.4.0"
-    caniuse-db "^1.0.30000576"
+    caniuse-db "^1.0.30000578"
     normalize-range "^0.1.2"
     num2fraction "^1.2.2"
     postcss "^5.2.5"
@@ -1189,9 +1189,9 @@ caniuse-db@^1.0.30000539, caniuse-db@^1.0.30000554:
   version "1.0.30000566"
   resolved "https://registry.yarnpkg.com/caniuse-db/-/caniuse-db-1.0.30000566.tgz#9463db955f509136fd35b385903bb61b07150f27"
 
-caniuse-db@^1.0.30000576:
-  version "1.0.30000576"
-  resolved "https://registry.yarnpkg.com/caniuse-db/-/caniuse-db-1.0.30000576.tgz#c0623997f6b1ff3b56fa33b352fe44874f61c0ce"
+caniuse-db@^1.0.30000578:
+  version "1.0.30000578"
+  resolved "https://registry.yarnpkg.com/caniuse-db/-/caniuse-db-1.0.30000578.tgz#fc4106bda3ca19df4bd9f35e491063f3d498ff31"
 
 canvas-gauges@2.0.6:
   version "2.0.6"
@@ -5382,9 +5382,9 @@ postcss-load-plugins@^2.0.0:
     cosmiconfig "^2.1.0"
     object-assign "^4.1.0"
 
-postcss-loader@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/postcss-loader/-/postcss-loader-1.1.0.tgz#4eb0bcbfc710b8b11406f3ea6650aaaa6e51b84f"
+postcss-loader@1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/postcss-loader/-/postcss-loader-1.1.1.tgz#cbc4cb75fbdcfa6c9fc3c7ec342ae04064f1c8fb"
   dependencies:
     loader-utils "^0.2.16"
     object-assign "^4.1.0"

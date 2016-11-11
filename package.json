@@ -73,7 +73,7 @@
     "wysiwyg.css": "0.0.2"
   },
   "devDependencies": {
-    "autoprefixer": "^6.5.2",
+    "autoprefixer": "^6.5.3",
     "babel-core": "^6.18.2",
     "babel-eslint": "^7.1.0",
     "babel-loader": "^6.2.7",
@@ -102,7 +102,7 @@
     "node-sass": "^3.11.2",
     "opn": "^4.0.2",
     "ora": "^0.3.0",
-    "postcss-loader": "^1.1.0",
+    "postcss-loader": "^1.1.1",
     "progress-bar-webpack-plugin": "^1.9.0",
     "sass-loader": "^4.0.2",
     "serve-favicon": "^2.3.0",
