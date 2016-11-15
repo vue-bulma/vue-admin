@@ -67,7 +67,7 @@
     "vue-nprogress": "0.1.2",
     "vue-peity": "0.4.0",
     "vue-resource": "1.0.3",
-    "vue-router": "2.0.1",
+    "vue-router": "2.0.2",
     "vuex": "2.0.0",
     "vuex-router-sync": "3.0.0",
     "wysiwyg.css": "0.0.2"
@@ -85,7 +85,7 @@
     "css-loader": "^0.25.0",
     "electron": "^1.4.6",
     "electron-devtools-installer": "^2.0.1",
-    "eslint": "^3.10.0",
+    "eslint": "^3.10.1",
     "eslint-config-standard": "^6.1.0",
     "eslint-loader": "^1.6.1",
     "eslint-plugin-html": "^1.6.0",
@@ -99,7 +99,7 @@
     "http-proxy-middleware": "^0.17.1",
     "imports-loader": "^0.6.5",
     "json-loader": "^0.5.4",
-    "node-sass": "^3.12.0",
+    "node-sass": "^3.12.5",
     "opn": "^4.0.2",
     "ora": "^0.3.0",
     "postcss-loader": "^1.1.1",
@@ -111,11 +111,11 @@
     "stylus-loader": "^2.3.1",
     "url-loader": "^0.5.7",
     "vue-html-loader": "^1.2.3",
-    "vue-loader": "^9.9.0",
+    "vue-loader": "^9.9.3",
     "vue-template-compiler": "^2.0.5",
     "webpack": "^2.1.0-beta.26",
     "webpack-dev-middleware": "^1.8.4",
     "webpack-hot-middleware": "^2.13.2",
-    "webpack-merge": "^0.15.0"
+    "webpack-merge": "^0.16.0"
   }
 }
