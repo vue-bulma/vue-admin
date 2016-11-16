@@ -39,7 +39,7 @@
     "font-awesome": "4.7.0",
     "mdi": "1.7.22",
     "plotly": "1.0.6",
-    "plotly.js": "1.19.2",
+    "plotly.js": "1.20.0",
     "vue": "2.0.5",
     "vue-bulma-breadcrumb": "github:vue-bulma/breadcrumb",
     "vue-bulma-chartist": "github:vue-bulma/chartist",
@@ -85,7 +85,7 @@
     "css-loader": "^0.25.0",
     "electron": "^1.4.6",
     "electron-devtools-installer": "^2.0.1",
-    "eslint": "^3.10.1",
+    "eslint": "^3.10.2",
     "eslint-config-standard": "^6.1.0",
     "eslint-loader": "^1.6.1",
     "eslint-plugin-html": "^1.6.0",
@@ -99,7 +99,7 @@
     "http-proxy-middleware": "^0.17.1",
     "imports-loader": "^0.6.5",
     "json-loader": "^0.5.4",
-    "node-sass": "^3.12.5",
+    "node-sass": "^3.13.0",
     "opn": "^4.0.2",
     "ora": "^0.3.0",
     "postcss-loader": "^1.1.1",
@@ -111,11 +111,10 @@
     "stylus-loader": "^2.3.1",
     "url-loader": "^0.5.7",
     "vue-html-loader": "^1.2.3",
-    "vue-loader": "^9.9.3",
-    "vue-template-compiler": "^2.0.5",
-    "webpack": "^2.1.0-beta.26",
+    "vue-loader": "^9.9.5",
+    "webpack": "^2.1.0-beta.27",
     "webpack-dev-middleware": "^1.8.4",
     "webpack-hot-middleware": "^2.13.2",
-    "webpack-merge": "^0.16.0"
+    "webpack-merge": "^0.17.0"
   }
 }
