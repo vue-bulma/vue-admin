@@ -38,36 +38,36 @@ module.exports = {
     loaders: [
       {
         test: /\.vue$/,
-        loader: ['eslint'],
+        loader: ['eslint-loader'],
         include: projectRoot,
         exclude: /node_modules/,
         enforce: 'pre'
       },
       {
         test: /\.js$/,
-        loader: ['eslint'],
+        loader: ['eslint-loader'],
         include: projectRoot,
         exclude: /node_modules/,
         enforce: 'pre'
       },
       {
         test: /\.vue$/,
-        loader: ['vue']
+        loader: ['vue-loader']
       },
       {
         test: /\.json$/,
-        loader: 'json'
+        loader: 'json-loader'
       },
       {
         test: /\.js$/,
-        loader: ['babel'],
+        loader: ['babel-loader'],
         include: projectRoot,
         // /node_modules\/(?!vue-bulma-.*)/
         exclude: [new RegExp(`node_modules\\${path.sep}(?!vue-bulma-.*)`)]
       },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
-        loader: 'url',
+        loader: 'url-loader',
         query: {
           limit: 10000,
           name: utils.assetsPath('img/[name].[hash:7].[ext]')
@@ -75,7 +75,7 @@ module.exports = {
       },
       {
         test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
-        loader: 'url',
+        loader: 'url-loader',
         query: {
           limit: 10000,
           name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
