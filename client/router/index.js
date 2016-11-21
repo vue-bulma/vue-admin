@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import menuModule from '../store/modules/menu'
+import menuModule from 'vuex-store/modules/menu'
 Vue.use(Router)
 
 export default new Router({
