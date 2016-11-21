@@ -6,7 +6,7 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import * as filters from './filters'
-import { TOGGLE_SIDEBAR } from 'vuex-store/mutation-types'
+import { TOGGLE_SIDEBAR } from './store/mutation-types'
 
 Vue.use(Resource)
 Vue.use(NProgress)
