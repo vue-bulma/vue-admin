@@ -1,8 +1,15 @@
+#Logs
+*.log
+npm-debug.log*
+
 .DS_Store
 node_modules/
 dist/
-npm-debug.log
-yarn-error.log
-selenium-debug.log
 test/unit/coverage
 test/e2e/reports
+
+#Webstorm metadata
+.idea
+
+#VSCode metadata
+.vscode
