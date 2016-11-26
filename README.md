@@ -47,7 +47,9 @@ Its ongoing development is made possible thanks to the support by these awesome 
 
 ### Requirements
 
-  * NPM v3
+  * Node >= v5
+
+  * NPM >= v3
 
   * Webpack v2
 
