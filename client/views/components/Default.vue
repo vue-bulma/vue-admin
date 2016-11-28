@@ -2,37 +2,23 @@
   <div class="columns is-multiline is-mobile">
 
     <div class="column is-half-mobile is-one-third-tablet is-one-third-desktop" v-for="item in items" v-if="item.name">
-      <div class="card is-fullwidth">
-        <header class="card-header">
-          <p class="card-header-title">{{ item.name }}</p>
-        </header>
-        <div class="card-content">
-          <div class="content">{{ getDescription(item) }}</div>
-        </div>
-        <footer class="card-footer">
-          <a class="card-footer-item" :href="getRepository(item)">
-            <span class="icon is-small">
-              <i class="fa fa-github" aria-hidden="true"></i>
-            </span>&nbsp;&nbsp;
-            Repository
-          </a>
-          <router-link :to="{ name: item.name }" class="card-footer-item">
-            <span class="icon is-small">
-              <i class="fa fa-link" aria-hidden="true"></i>
-            </span>&nbsp;&nbsp;
-            Demo
-          </router-link>
-        </footer>
-      </div>
+      <base-card 
+        :title="item.name" 
+        :content="getDescription(item)" 
+        :actions="getActions(item)"></base-card>
     </div>
-
+    
   </div>
 </template>
 
 <script>
 import { mapGetters } from 'vuex'
+import { BaseCard } from 'vue-bulma-card'
 
 export default {
+  components: {
+    BaseCard
+  },
 
   computed: {
     ...mapGetters({
@@ -51,16 +37,20 @@ export default {
   },
 
   methods: {
-    getPath (item) {
-      return this.parentPath + '/' + item.path
+    getActions (item) {
+      return [{
+        text: 'Repository',
+        icon: 'github',
+        href: item.meta && item.meta.repository
+      }, {
+        text: 'Demo',
+        icon: 'link',
+        name: item.name
+      }]
     },
 
     getDescription (item) {
       return item.meta && item.meta.description
-    },
-
-    getRepository (item) {
-      return item.meta && item.meta.repository
     }
   }
 
