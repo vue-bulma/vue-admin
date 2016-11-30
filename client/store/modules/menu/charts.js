@@ -1,4 +1,4 @@
-import { lazyLoading } from './lazyLoading'
+import lazyLoading from './lazyLoading'
 
 export default {
   name: 'Charts',

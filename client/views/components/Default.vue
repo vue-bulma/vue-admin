@@ -26,13 +26,11 @@ export default {
     }),
 
     parentPath () {
-      const parent = this.parent
-      return parent ? parent.path : ''
+      return this.parent ? this.parent.path : ''
     },
 
     items () {
-      const parent = this.parent
-      return parent ? parent.children : []
+      return (this.parent ? this.parent.children : []).filter(item => item.path)
     }
   },
 

@@ -1,16 +1,17 @@
-import { lazyLoading } from './lazyLoading'
+import lazyLoading from './lazyLoading'
 
 export default {
-  name: 'Components',
   path: '/components',
   meta: {
     icon: 'fa-building-o',
-    expanded: false
+    expanded: false,
+    label: 'Components'
   },
   component: lazyLoading('components', true),
 
   children: [
     {
+      name: 'Components',
       path: '',
       component: lazyLoading('components/Default')
     },

@@ -85,15 +85,16 @@ export default {
       let matched = route.matched
       let lastMatched = matched[matched.length - 1]
       let parent = lastMatched.parent || lastMatched
+      const isParent = parent === lastMatched
 
-      if (parent === lastMatched) {
+      if (isParent) {
         const p = this.findParentFromMenu(route)
         if (p) {
           parent = p
         }
       }
 
-      if ('expanded' in parent.meta && parent !== lastMatched) {
+      if ('expanded' in parent.meta && !isParent) {
         this.expandMenu({
           item: parent,
           expanded: true

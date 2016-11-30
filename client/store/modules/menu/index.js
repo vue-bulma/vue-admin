@@ -1,5 +1,5 @@
 import * as types from '../../mutation-types'
-import { lazyLoading } from './lazyLoading'
+import lazyLoading from './lazyLoading'
 import charts from './charts'
 import uifeatures from './uifeatures'
 import components from './components'
