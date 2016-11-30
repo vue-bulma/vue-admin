@@ -6907,6 +6907,10 @@ vt-pbf@^2.0.2:
   version "1.0.0"
   resolved "https://codeload.github.com/vue-bulma/breadcrumb/tar.gz/0fe6b751313f8d586f60cb05b9b7f272cb4f2d5a"
 
+"vue-bulma-card@github:vue-bulma/card":
+  version "1.0.0"
+  resolved "https://codeload.github.com/vue-bulma/card/tar.gz/b24d4a4f48cd4d697be2d298adc7e832908e8b0f"
+
 "vue-bulma-chartist@github:vue-bulma/chartist":
   version "1.0.0"
   resolved "https://codeload.github.com/vue-bulma/chartist/tar.gz/8985d8b97465e531392ef36d7cac6fff669f6cc8"
