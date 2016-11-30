@@ -58,7 +58,7 @@
     "vue-bulma-quill": "0.0.1",
     "vue-bulma-rating": "github:vue-bulma/rating",
     "vue-bulma-slider": "github:vue-bulma/slider",
-    "vue-bulma-switch": "github:vue-bulma/switch",
+    "vue-bulma-switch": "1.0.2",
     "vue-bulma-tabs": "github:vue-bulma/tabs",
     "vue-bulma-tooltip": "github:vue-bulma/tooltip",
     "vue-canvas-gauges": "github:vue-bulma/canvas-gauges",

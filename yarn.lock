@@ -6989,9 +6989,9 @@ vue-bulma-quill@0.0.1:
   version "1.0.0"
   resolved "https://codeload.github.com/vue-bulma/slider/tar.gz/7999ed9491730581ad8fd399dcc07ed3719d6d3f"
 
-"vue-bulma-switch@github:vue-bulma/switch":
-  version "1.0.0"
-  resolved "https://codeload.github.com/vue-bulma/switch/tar.gz/1479488929fd7ffd50a1d596c6adaf3c336cdbae"
+vue-bulma-switch@1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/vue-bulma-switch/-/vue-bulma-switch-1.0.2.tgz#2270bc36f0a9491fae873546caf8908f3ade5e8d"
 
 "vue-bulma-tabs@github:vue-bulma/tabs":
   version "1.0.0"
