@@ -38,21 +38,21 @@ module.exports = {
     loaders: [
       {
         test: /\.vue$/,
-        loader: ['eslint-loader'],
+        loader: 'eslint-loader',
         include: projectRoot,
         exclude: /node_modules/,
         enforce: 'pre'
       },
       {
         test: /\.js$/,
-        loader: ['eslint-loader'],
+        loader: 'eslint-loader',
         include: projectRoot,
         exclude: /node_modules/,
         enforce: 'pre'
       },
       {
         test: /\.vue$/,
-        loader: ['vue-loader']
+        loader: 'vue-loader'
       },
       {
         test: /\.json$/,
@@ -60,7 +60,7 @@ module.exports = {
       },
       {
         test: /\.js$/,
-        loader: ['babel-loader'],
+        loader: 'babel-loader',
         include: projectRoot,
         // /node_modules\/(?!vue-bulma-.*)/
         exclude: [new RegExp(`node_modules\\${path.sep}(?!vue-bulma-.*)`)]
