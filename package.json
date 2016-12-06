@@ -59,7 +59,7 @@
     "vue-bulma-rating": "github:vue-bulma/rating",
     "vue-bulma-slider": "github:vue-bulma/slider",
     "vue-bulma-switch": "1.0.2",
-    "vue-bulma-tabs": "github:vue-bulma/tabs",
+    "vue-bulma-tabs": "1.1.1",
     "vue-bulma-tooltip": "github:vue-bulma/tooltip",
     "vue-canvas-gauges": "github:vue-bulma/canvas-gauges",
     "vue-cleave": "1.1.0",
