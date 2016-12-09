@@ -2,8 +2,8 @@
   "name": "vue-admin",
   "version": "0.1.11",
   "description": "Vue Admin Panel Framework",
-  "repository": "fundon/vue-admin",
-  "homepage": "https://vue-admin.fundon.me",
+  "repository": "vue-bulma/vue-admin",
+  "homepage": "https://admin.vuebulma.com",
   "license": "MIT",
   "author": {
     "name": "Fangdun Cai",

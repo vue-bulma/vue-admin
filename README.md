@@ -5,7 +5,7 @@
 
 <p>
   <strong>Vue Admin Panel Framework</strong>,
-  <a href="https://vue-admin.fundon.me">Live Demo</a>
+  <a href="https://admin.vuebulma.com">Live Demo</a>
 </p>
 
 <p>
@@ -56,7 +56,7 @@ Its ongoing development is made possible thanks to the support by these awesome 
 
 ## Notes
 
-  If you want to use Vue Admin with Vue 1.0 version, please checkout the [vue-v1](https://github.com/fundon/vue-admin/tree/vue-v1) branch.
+  If you want to use Vue Admin with Vue 1.0 version, please checkout the [vue-v1](https://github.com/vue-bulma/vue-admin/tree/vue-v1) branch.
 
 
 ---
@@ -66,7 +66,7 @@ Its ongoing development is made possible thanks to the support by these awesome 
 > Twitter [@_fundon](https://twitter.com/_fundon)
 
 
-[Live Demo]: https://vue-admin.fundon.me/
+[Live Demo]: https://admin.vuebulma.com/
 [Fangdun Cai]: https://twitter.com/_fundon
 [Vue]: http://vuejs.org
 [Bulma]: http://bulma.io
