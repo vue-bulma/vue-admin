@@ -11,6 +11,9 @@ import { TOGGLE_SIDEBAR } from 'vuex-store/mutation-types'
 Vue.use(Resource)
 Vue.use(NProgress)
 
+// Enable devtools
+Vue.config.devtools = true
+
 sync(store, router)
 
 const nprogress = new NProgress({ parent: '.nprogress-container' })

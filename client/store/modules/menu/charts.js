@@ -10,13 +10,6 @@ export default {
   component: lazyLoading('charts', true),
 
   children: [
-    /*
-    {
-      name: 'CanvasGauges',
-      path: 'canvas-gauges',
-      component: lazyLoading('charts/CanvasGauges')
-    },
-    */
     {
       name: 'Chartist',
       path: 'chartist',
