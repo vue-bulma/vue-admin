@@ -1,5 +1,5 @@
 <template>
-  <modal :visible="true">
+  <modal :visible="visible" @close="close">
     <div class="box">
       <article class="media">
         <div class="media-left">
@@ -40,6 +40,16 @@ import { Modal } from 'vue-bulma-modal'
 export default {
   components: {
     Modal
+  },
+
+  props: {
+    visible: Boolean
+  },
+
+  methods: {
+    close () {
+      this.$emit('close')
+    }
   }
 }
 </script>
