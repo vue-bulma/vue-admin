@@ -57,10 +57,6 @@ module.exports = {
         loader: 'vue-loader'
       },
       {
-        test: /\.json$/,
-        loader: 'json-loader'
-      },
-      {
         test: /\.js$/,
         loader: 'babel-loader',
         include: projectRoot,
