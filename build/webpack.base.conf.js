@@ -95,5 +95,9 @@ module.exports = {
         ]
       }
     })
-  ]
+  ],
+  // See https://github.com/webpack/webpack/issues/3486
+  performance: {
+    hints: false
+  }
 }
