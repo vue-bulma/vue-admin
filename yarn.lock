@@ -2604,9 +2604,9 @@ flat-cache@^1.2.1:
     graceful-fs "^4.1.2"
     write "^0.2.1"
 
-flatpickr@2.0.0-rc.8:
-  version "2.0.0-rc.8"
-  resolved "https://registry.yarnpkg.com/flatpickr/-/flatpickr-2.0.0-rc.8.tgz#9dd8cd1b3dbb44e41437d4fb4f8e81e781feba6f"
+flatpickr@2.2.4:
+  version "2.2.4"
+  resolved "https://registry.yarnpkg.com/flatpickr/-/flatpickr-2.2.4.tgz#6d708a7771fb888963ec9db8979a039f0f0db208"
 
 flatten@^1.0.2:
   version "1.0.2"
@@ -5400,8 +5400,8 @@ postcss-selector-parser@^2.0.0:
     uniq "^1.0.1"
 
 postcss-svgo@^2.1.1:
-  version "2.1.5"
-  resolved "https://registry.yarnpkg.com/postcss-svgo/-/postcss-svgo-2.1.5.tgz#46fc0363f01bab6a36a9abb01c229fcc45363094"
+  version "2.1.6"
+  resolved "https://registry.yarnpkg.com/postcss-svgo/-/postcss-svgo-2.1.6.tgz#b6df18aa613b666e133f08adb5219c2684ac108d"
   dependencies:
     is-svg "^2.0.0"
     postcss "^5.0.14"
@@ -6990,11 +6990,11 @@ vue-bulma-collapse@1.0.3:
   dependencies:
     animejs "1"
 
-"vue-bulma-datepicker@github:vue-bulma/datepicker":
-  version "1.1.0"
-  resolved "https://codeload.github.com/vue-bulma/datepicker/tar.gz/81e8cbb38d8bc3ad7d9e2b05bc2d3bcbf58ca70a"
+vue-bulma-datepicker@1.2.3:
+  version "1.2.3"
+  resolved "https://registry.yarnpkg.com/vue-bulma-datepicker/-/vue-bulma-datepicker-1.2.3.tgz#82564a04d532610853d6a03bbb780d5e42b527f7"
   dependencies:
-    flatpickr "2.0.0-rc.8"
+    flatpickr "2.2.4"
 
 "vue-bulma-emoji@github:vue-bulma/emoji":
   version "0.0.1"
