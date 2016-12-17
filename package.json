@@ -41,6 +41,7 @@
     "plotly": "1.0.6",
     "plotly.js": "1.20.5",
     "vue": "2.1.4",
+    "vue-bulma-brace": "0.0.1",
     "vue-bulma-breadcrumb": "github:vue-bulma/breadcrumb",
     "vue-bulma-card": "github:vue-bulma/card",
     "vue-bulma-chartist": "github:vue-bulma/chartist",

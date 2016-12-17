@@ -25,6 +25,15 @@ export default {
       component: lazyLoading('components/BackToTop')
     },
     {
+      name: 'Brace',
+      path: 'brace',
+      meta: {
+        description: 'Code editor component that based on brace',
+        repository: 'https://github.com/vue-bulma/brace'
+      },
+      component: lazyLoading('components/Brace')
+    },
+    {
       name: 'Collapse',
       path: 'collapse',
       meta: {
