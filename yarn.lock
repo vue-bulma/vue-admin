@@ -996,6 +996,12 @@ box-intersect@^1.0.1:
     bit-twiddle "^1.0.2"
     typedarray-pool "^1.1.0"
 
+brace@^0.9.1:
+  version "0.9.1"
+  resolved "http://registry.npm.taobao.org/brace/download/brace-0.9.1.tgz#19dcbae2faec9a9920a0452ec64d8d84df45e7b6"
+  dependencies:
+    w3c-blob "0.0.1"
+
 brace-expansion@^1.0.0:
   version "1.1.6"
   resolved "https://registry.yarnpkg.com/brace-expansion/-/brace-expansion-1.1.6.tgz#7197d7eaa9b87e648390ea61fc66c84427420df9"
@@ -6964,6 +6970,12 @@ vt-pbf@^2.0.2:
     point-geometry "0.0.0"
     vector-tile "^1.1.3"
 
+vue-bulma-brace@^0.0.1:
+  version "0.0.1"
+  resolved "http://registry.npm.taobao.org/vue-bulma-brace/download/vue-bulma-brace-0.0.1.tgz#8eb140c779d1b3c3cfd66bb4cbe6209e4a7d37d5"
+  dependencies:
+    brace "^0.9.1"
+
 "vue-bulma-breadcrumb@github:vue-bulma/breadcrumb":
   version "1.0.0"
   resolved "https://codeload.github.com/vue-bulma/breadcrumb/tar.gz/0fe6b751313f8d586f60cb05b9b7f272cb4f2d5a"
@@ -7168,6 +7180,10 @@ watchpack@^1.0.0:
     async "2.0.0-rc.4"
     chokidar "^1.4.3"
     graceful-fs "^4.1.2"
+
+w3c-blob@0.0.1:
+  version "0.0.1"
+  resolved "http://registry.npm.taobao.org/w3c-blob/download/w3c-blob-0.0.1.tgz#b0cd352a1a50f515563420ffd5861f950f1d85b8"
 
 weak-map@^1.0.5:
   version "1.0.5"
