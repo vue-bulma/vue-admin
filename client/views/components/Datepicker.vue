@@ -5,7 +5,7 @@
         <article class="tile is-child box">
           <h1 class="title">Basics</h1>
           <p class="control">
-            <datepicker :value.sync="value"></datepicker>
+            <datepicker :inputClass="{ test: true }" v-model="value"></datepicker>
           </p>
           <p class="control">
             <datepicker placeholder="European Format ('d-m-Y')" :config="{ dateFormat: 'd-m-Y', static: true }"></datepicker>
@@ -33,7 +33,7 @@
       <div class="tile is-parent">
         <article class="tile is-child box">
           <h1 class="title">Form addons</h1>
-          <datepicker :config="{ wrap: true }" readonly>
+          <datepicker :inputClass="{ test: true }" :config="{ wrap: true }" readonly>
             <a class="button" data-toggle><i class="fa fa-calendar"></i></a>
             <a class="button" data-clear><i class="fa fa-close"></i></a>
           </datepicker>
@@ -152,12 +152,12 @@ export default {
 
   mounted () {
     const { checkIn, checkOut } = this.$refs
-    checkIn.datepicker.set('onChange', (d) => {
-      checkOut.datepicker.set('minDate', d.fp_incr(1))
+    checkIn.datepicker.set('onChange', (selectedDates, dateStr, instance) => {
+      checkOut.datepicker.set('minDate', selectedDates[0].fp_incr(1))
     })
 
-    checkOut.datepicker.set('onChange', (d) => {
-      checkIn.datepicker.set('maxDate', d)
+    checkOut.datepicker.set('onChange', (selectedDates, dateStr, instance) => {
+      checkIn.datepicker.set('maxDate', dateStr)
     })
   },
 

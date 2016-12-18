@@ -57,10 +57,6 @@ module.exports = {
         loader: 'vue-loader'
       },
       {
-        test: /\.json$/,
-        loader: 'json-loader'
-      },
-      {
         test: /\.js$/,
         loader: 'babel-loader',
         include: projectRoot,
@@ -99,5 +95,9 @@ module.exports = {
         ]
       }
     })
-  ]
+  ],
+  // See https://github.com/webpack/webpack/issues/3486
+  performance: {
+    hints: false
+  }
 }
