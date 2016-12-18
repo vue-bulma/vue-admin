@@ -117,8 +117,8 @@ import Brace from 'vue-bulma-brace'
 import * as brace from 'brace'
 import 'brace/ext/modelist'
 import 'brace/ext/themelist'
-var modelist = brace.acequire('ace/ext/modelist')
-var themelist = brace.acequire('ace/ext/themelist')
+const modelist = brace.acequire('ace/ext/modelist')
+const themelist = brace.acequire('ace/ext/themelist')
 
 export default {
   components: {
