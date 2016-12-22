@@ -69,7 +69,7 @@
     "vue-resource": "1.0.3",
     "vue-router": "2.1.1",
     "vuex": "2.1.1",
-    "vuex-router-sync": "4.0.1",
+    "vuex-router-sync": "4.0.2",
     "wysiwyg.css": "0.0.2"
   },
   "devDependencies": {
