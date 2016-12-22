@@ -58,12 +58,12 @@ Its ongoing development is made possible thanks to the support by these awesome 
 
   If you want to use Vue Admin with Vue 1.0 version, please checkout the [vue-v1](https://github.com/vue-bulma/vue-admin/tree/vue-v1) branch.
 
+  Launch Vue Admin as a desktop application! Please check [Run Project with Electron](https://github.com/vue-bulma/vue-admin/wiki/Guide#run-project-with-electron)
 
----
 
-> [fundon.me](https://fundon.me) &nbsp;&middot;&nbsp;
-> GitHub [@fundon](https://github.com/fundon) &nbsp;&middot;&nbsp;
-> Twitter [@_fundon](https://twitter.com/_fundon)
+## Maintainers
++ [fundon](https://github.com/fundon) &nbsp;&middot;&nbsp; [fundon.me](https://fundon.me) &nbsp;&middot;&nbsp; [Twitter@fundon](https://twitter.com/_fundon)
++ [luventa](https://github.com/luventa)
 
 
 [Live Demo]: https://admin.vuebulma.com/
