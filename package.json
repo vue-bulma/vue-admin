@@ -65,7 +65,7 @@
     "vue-handsontable": "github:vue-bulma/handsontable",
     "vue-lory": "0.0.4",
     "vue-nprogress": "0.1.4",
-    "vue-peity": "0.4.0",
+    "vue-peity": "0.5.0",
     "vue-resource": "1.0.3",
     "vue-router": "2.1.1",
     "vuex": "2.1.1",
@@ -73,7 +73,7 @@
     "wysiwyg.css": "0.0.2"
   },
   "devDependencies": {
-    "autoprefixer": "^6.5.4",
+    "autoprefixer": "^6.6.0",
     "babel-core": "^6.21.0",
     "babel-eslint": "^7.1.1",
     "babel-loader": "^6.2.10",
@@ -101,7 +101,7 @@
     "opn": "^4.0.2",
     "ora": "^0.4.0",
     "postcss-loader": "^1.2.1",
-    "progress-bar-webpack-plugin": "^1.9.0",
+    "progress-bar-webpack-plugin": "^1.9.1",
     "sass-loader": "^4.1.1",
     "serve-favicon": "^2.3.2",
     "style-loader": "^0.13.1",
@@ -113,7 +113,7 @@
     "vue-template-compiler": "2.1.6",
     "webpack": "^2.1.0-beta.28",
     "webpack-dev-middleware": "^1.9.0",
-    "webpack-hot-middleware": "^2.13.2",
-    "webpack-merge": "^1.1.2"
+    "webpack-hot-middleware": "^2.14.0",
+    "webpack-merge": "^2.0.0"
   }
 }
