@@ -94,7 +94,7 @@
     "express": "^4.14.0",
     "extract-text-webpack-plugin": "^2.0.0-beta.4",
     "file-loader": "^0.9.0",
-    "html-webpack-plugin": "^2.24.1",
+    "html-webpack-plugin": "^2.25.0",
     "http-proxy-middleware": "^0.17.3",
     "imports-loader": "^0.7.0",
     "node-sass": "^4.1.1",
