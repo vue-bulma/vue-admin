@@ -52,10 +52,10 @@
           <h1 class="title">Dynamics</h1>
           <div class="block">
             <p>
-              <vb-switch type="success" size="large" checked v-model="value"></vb-switch>
+              <vb-switch type="success" size="large" :checked="value" v-model="value"></vb-switch>
             </p>
             <p>
-              {{ text }}
+              {{ switchStat }}
             </p>
           </div>
         </article>
@@ -76,14 +76,13 @@ export default {
 
   data () {
     return {
-      value: false,
-      text: ''
+      value: false
     }
   },
 
-  watch: {
-    value (val) {
-      this.text = val ? 'Right' : 'Wrong'
+  computed: {
+    switchStat () {
+      return this.value ? 'On' : 'Off'
     }
   }
 }
