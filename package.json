@@ -109,7 +109,7 @@
     "stylus-loader": "^2.4.0",
     "url-loader": "^0.5.7",
     "vue-html-loader": "^1.2.3",
-    "vue-loader": "10.0.2",
+    "vue-loader": "^10.0.2",
     "vue-template-compiler": "2.1.10",
     "webpack": "2.2.0",
     "webpack-dev-middleware": "^1.9.0",
