@@ -40,7 +40,7 @@
     "mdi": "1.7.22",
     "plotly.js": "1.21.2",
     "vue": "2.1.10",
-    "vue-bulma-brace": "0.0.1",
+    "vue-bulma-brace": "0.0.2",
     "vue-bulma-breadcrumb": "github:vue-bulma/breadcrumb",
     "vue-bulma-card": "1.0.1",
     "vue-bulma-chartist": "github:vue-bulma/chartist",

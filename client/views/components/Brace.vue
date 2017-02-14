@@ -104,7 +104,8 @@
           :codefolding="this.selected.codefolding"
           :softwrap="this.selected.softwrap"
           :selectionstyle="this.selected.selectionstyle"
-          :highlightline="this.selected.highlightline === 'true'">
+          :highlightline="this.selected.highlightline === 'true'"
+          @code-change="oncodeChange">
         </brace>
       </article>
     </div>
@@ -127,6 +128,7 @@ export default {
 
   data () {
     return {
+      code: '',
       modes: modelist.modes,
       themes: themelist.themes,
       fontsize: ['12px', '13px', '14px', '16px', '18px', '20px', '22px', '24px'],
@@ -141,6 +143,12 @@ export default {
         selectionstyle: 'text',
         highlightline: 'true'
       }
+    }
+  },
+
+  methods: {
+    oncodeChange (code) {
+      this.code = code
     }
   }
 }
