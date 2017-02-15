@@ -4094,13 +4094,13 @@ mapbox-gl-function@^1.2.1:
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/mapbox-gl-function/-/mapbox-gl-function-1.3.0.tgz#cee3d95750c189d45e83ab41a0a57fc2a8a509bc"
 
-"mapbox-gl-shaders@github:mapbox/mapbox-gl-shaders#de2ab007455aa2587c552694c68583f94c9f2747":
+mapbox-gl-shaders@mapbox/mapbox-gl-shaders#de2ab007455aa2587c552694c68583f94c9f2747:
   version "1.0.0"
   resolved "https://codeload.github.com/mapbox/mapbox-gl-shaders/tar.gz/de2ab007455aa2587c552694c68583f94c9f2747"
   dependencies:
     brfs "^1.4.0"
 
-"mapbox-gl-style-spec@github:mapbox/mapbox-gl-style-spec#83b1a3e5837d785af582efd5ed1a212f2df6a4ae":
+mapbox-gl-style-spec@mapbox/mapbox-gl-style-spec#83b1a3e5837d785af582efd5ed1a212f2df6a4ae:
   version "8.8.0"
   resolved "https://codeload.github.com/mapbox/mapbox-gl-style-spec/tar.gz/83b1a3e5837d785af582efd5ed1a212f2df6a4ae"
   dependencies:
@@ -6808,9 +6808,9 @@ vue-bulma-card@1.0.1:
   dependencies:
     chartist "0.9.8"
 
-"vue-bulma-chartjs@github:vue-bulma/chartjs":
-  version "1.0.0"
-  resolved "https://codeload.github.com/vue-bulma/chartjs/tar.gz/415b17836f887941abd636d1bab7a69fc9bda3a6"
+vue-bulma-chartjs@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/vue-bulma-chartjs/-/vue-bulma-chartjs-1.0.1.tgz#fb9d3cb20671f3c2ca1666c369fc6f2f1a9327b3"
   dependencies:
     chart.js "2.2.1"
 
@@ -6876,21 +6876,21 @@ vue-bulma-quill@0.0.1:
   dependencies:
     starability "1.0.5"
 
-"vue-bulma-slider@github:vue-bulma/slider":
-  version "1.0.1"
-  resolved "https://codeload.github.com/vue-bulma/slider/tar.gz/14afc21b2b6d864623b9ba6faaf08314351b7208"
+vue-bulma-slider@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/vue-bulma-slider/-/vue-bulma-slider-1.0.2.tgz#7b8e0dd0bc2c1a7c5e77d117059847ba41eaff14"
 
 vue-bulma-switch@1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/vue-bulma-switch/-/vue-bulma-switch-1.0.2.tgz#2270bc36f0a9491fae873546caf8908f3ade5e8d"
 
-vue-bulma-tabs@1.1.1:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/vue-bulma-tabs/-/vue-bulma-tabs-1.1.1.tgz#9ae8767c959a28e4bc602079b7f21d0a02e46344"
+vue-bulma-tabs@^1.1.2:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/vue-bulma-tabs/-/vue-bulma-tabs-1.1.2.tgz#162f5a459a9bd90b5fba097d61bcb1c8823c2eb8"
 
-"vue-bulma-tooltip@github:vue-bulma/tooltip":
-  version "1.0.1"
-  resolved "https://codeload.github.com/vue-bulma/tooltip/tar.gz/cadad562c183b73921861525e8539652abfbac72"
+vue-bulma-tooltip@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/vue-bulma-tooltip/-/vue-bulma-tooltip-1.0.2.tgz#2f86f7e70ff4a521e7b1233894bb1f1b9f1bbb3d"
   dependencies:
     classnames "2.2.5"
     hint.css "2.4.1"
