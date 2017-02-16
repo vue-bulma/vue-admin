@@ -1,22 +1,26 @@
-// https://github.com/shelljs/shelljs
 'use strict'
 
-require('shelljs/global')
-env.NODE_ENV = 'production'
+require('./check-versions')()
 
-const path = require('path')
-const config = require('../config')
+process.env.NODE_ENV = 'production'
+
 const ora = require('ora')
+const path = require('path')
+const chalk = require('chalk')
+const shell = require('shelljs')
 const webpack = require('webpack')
+const config = require('../config')
 const webpackConfig = require('./webpack.prod.conf')
 
 const spinner = ora('building for production...')
 spinner.start()
 
 const assetsPath = path.join(config.build.assetsRoot, config.build.assetsSubDirectory)
-rm('-rf', assetsPath)
-mkdir('-p', assetsPath)
-cp('-R', 'assets/', assetsPath)
+shell.rm('-rf', assetsPath)
+shell.mkdir('-p', assetsPath)
+shell.config.silent = true
+shell.cp('-R', 'assets/*', assetsPath)
+shell.config.silent = false
 
 const compiler = webpack(webpackConfig)
 const ProgressPlugin = require('webpack/lib/ProgressPlugin')
@@ -31,5 +35,11 @@ compiler.run((err, stats) => {
     children: false,
     chunks: false,
     chunkModules: false
-  }) + '\n')
+  }) + '\n\n')
+
+  console.log(chalk.cyan('  Build complete.\n'))
+  console.log(chalk.yellow(
+    '  Tip: built files are meant to be served over an HTTP server.\n' +
+    '  Opening index.html over file:// won\'t work.\n'
+  ))
 })
