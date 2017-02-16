@@ -45,7 +45,6 @@ const webpackConfig = merge(baseWebpackConfig, {
         comments: false
       }
     }),
-    new webpack.optimize.OccurrenceOrderPlugin(),
     // extract css into its own file
     new ExtractTextPlugin(utils.assetsPath('css/[name].[contenthash].css')),
     // generate dist index.html with correct asset hash for caching.

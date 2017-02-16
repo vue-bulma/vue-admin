@@ -1,12 +1,9 @@
 'use strict'
 
 const path = require('path')
-const webpack = require('webpack')
 const config = require('../config')
 const utils = require('./utils')
 const projectRoot = path.resolve(__dirname, '../')
-
-const isProduction = process.env.NODE_ENV === 'production'
 
 module.exports = {
   entry: {
@@ -17,7 +14,9 @@ module.exports = {
   },
   output: {
     path: config.build.assetsRoot,
-    publicPath: isProduction ? config.build.assetsPublicPath : config.dev.assetsPublicPath,
+    publicPath: process.env.NODE_ENV === 'production'
+      ? config.build.assetsPublicPath
+      : config.dev.assetsPublicPath,
     filename: '[name].js'
   },
   resolve: {
@@ -39,22 +38,19 @@ module.exports = {
   module: {
     loaders: [
       {
-        test: /\.vue$/,
+        test: /\.(js|vue)$/,
         loader: 'eslint-loader',
         include: projectRoot,
         exclude: /node_modules/,
-        enforce: 'pre'
-      },
-      {
-        test: /\.js$/,
-        loader: 'eslint-loader',
-        include: projectRoot,
-        exclude: /node_modules/,
-        enforce: 'pre'
+        enforce: 'pre',
+        options: {
+          formatter: require('eslint-friendly-formatter')
+        }
       },
       {
         test: /\.vue$/,
-        loader: 'vue-loader'
+        loader: 'vue-loader',
+        options: require('./vue-loader.conf')
       },
       {
         test: /\.js$/,
@@ -81,21 +77,6 @@ module.exports = {
       }
     ]
   },
-  plugins: [
-    new webpack.LoaderOptionsPlugin({
-      vue: {
-        loaders: utils.cssLoaders({
-          sourceMap: isProduction,
-          extract: isProduction
-        }),
-        postcss: [
-          require('autoprefixer')({
-            browsers: ['last 3 versions']
-          })
-        ]
-      }
-    })
-  ],
   // See https://github.com/webpack/webpack/issues/3486
   performance: {
     hints: false
