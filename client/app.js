@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import Resource from 'vue-resource'
+import axios from 'axios'
 import NProgress from 'vue-nprogress'
 import { sync } from 'vuex-router-sync'
 import App from './App.vue'
@@ -8,7 +8,8 @@ import store from './store'
 import * as filters from './filters'
 import { TOGGLE_SIDEBAR } from 'vuex-store/mutation-types'
 
-Vue.use(Resource)
+Vue.prototype.$http = axios
+Vue.axios = axios
 Vue.use(NProgress)
 
 // Enable devtools
