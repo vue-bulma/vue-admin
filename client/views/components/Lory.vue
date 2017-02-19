@@ -1,5 +1,6 @@
 <template>
   <div>
+    <code-link :codeURL="codeURL"></code-link>
     <div class="tile is-ancestor">
       <div class="tile is-parent">
         <article class="tile is-child box notification is-primary">
@@ -142,13 +143,20 @@
 
 <script>
 import { Lory, Item, Prev, Next } from 'vue-lory'
+import CodeLink from '../CodeLink'
 
 export default {
   components: {
     Lory,
     Item,
     Prev,
-    Next
+    Next,
+    CodeLink
+  },
+  data () {
+    return {
+      codeURL: 'https://github.com/vue-bulma/vue-admin/blob/master/client/views/components/Lory.vue'
+    }
   }
 }
 </script>

@@ -1,5 +1,6 @@
 <template>
   <div>
+    <code-link :codeURL="codeURL"></code-link>
     <div class="tile is-ancestor">
       <div class="tile is-parent is-4">
         <article class="tile is-child box">
@@ -61,14 +62,17 @@
 
 <script>
 import Chart from 'vue-bulma-chartjs'
+import CodeLink from '../CodeLink'
 
 export default {
   components: {
-    Chart
+    Chart,
+    CodeLink
   },
 
   data () {
     return {
+      codeURL: 'https://github.com/vue-bulma/vue-admin/blob/master/client/views/charts/Chartjs.vue',
       labels: ['Sleeping', 'Designing', 'Coding', 'Cycling'],
       data: [20, 40, 5, 35],
 

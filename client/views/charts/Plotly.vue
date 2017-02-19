@@ -1,5 +1,6 @@
 <template>
   <div>
+    <code-link :codeURL="codeURL"></code-link>
     <div class="tile is-ancestor">
       <div class="tile is-parent is-4">
         <article class="tile is-child box">
@@ -55,9 +56,12 @@
 
 <script>
 import Plotly from 'plotly.js'
+import CodeLink from '../CodeLink'
 
 export default {
-
+  components: {
+    CodeLink
+  },
   created () {
     this.fetchData()
   },
@@ -260,6 +264,7 @@ export default {
 
   data () {
     return {
+      codeURL: 'https://github.com/vue-bulma/vue-admin/blob/master/client/views/charts/Plotly.vue',
       rows: []
     }
   },

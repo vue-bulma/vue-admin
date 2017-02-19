@@ -1,5 +1,6 @@
 <template>
   <div>
+    <code-link :codeURL="codeURL"></code-link>
     <div class="tile is-ancestor">
       <div class="tile is-parent is-6">
         <article class="tile is-child box">
@@ -74,15 +75,18 @@
 
 <script>
 import ProgressTracker, { StepItem } from 'vue-bulma-progress-tracker'
+import CodeLink from '../CodeLink'
 
 export default {
   components: {
     ProgressTracker,
-    StepItem
+    StepItem,
+    CodeLink
   },
 
   data () {
     return {
+      codeURL: 'https://github.com/vue-bulma/vue-admin/blob/master/client/views/components/ProgressTracker.vue',
       stepItems: [
         {
           title: 'Step 1'

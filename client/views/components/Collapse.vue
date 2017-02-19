@@ -1,5 +1,6 @@
 <template>
   <div>
+    <code-link :codeURL="codeURL"></code-link>
     <div class="tile is-ancestor">
       <div class="tile is-parent is-4">
         <article class="tile is-child box">
@@ -75,11 +76,18 @@
 
 <script>
 import { Collapse, Item as CollapseItem } from 'vue-bulma-collapse'
+import CodeLink from '../CodeLink'
 
 export default {
   components: {
     Collapse,
-    CollapseItem
+    CollapseItem,
+    CodeLink
+  },
+  data () {
+    return {
+      codeURL: 'https://github.com/vue-bulma/vue-admin/blob/master/client/views/components/Collapse.vue'
+    }
   }
 }
 </script>

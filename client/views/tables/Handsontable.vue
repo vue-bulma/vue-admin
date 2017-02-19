@@ -1,5 +1,6 @@
 <template>
   <div>
+    <code-link :codeURL="codeURL"></code-link>
     <div class="tile is-ancestor">
       <div class="tile is-parent">
         <article class="tile is-child box">
@@ -12,15 +13,18 @@
 </template>
 
 <script>
+import CodeLink from '../CodeLink'
 import Handsontable from 'vue-handsontable'
 
 export default {
   components: {
-    Handsontable
+    Handsontable,
+    CodeLink
   },
 
   data () {
     return {
+      codeURL: 'https://github.com/vue-bulma/vue-admin/blob/master/client/views/tables/Handsontable.vue',
       rawData: [
         ['', 'Kia', 'Nissan', 'Toyota', 'Honda'],
         ['2008', 10, 11, 12, 13],

@@ -1,5 +1,6 @@
 <template>
   <div>
+    <code-link :codeURL="codeURL"></code-link>
     <div class="tile is-ancestor">
       <div class="tile is-parent">
         <article class="tile is-child box">
@@ -50,14 +51,17 @@
 
 <script>
 import Chartist from 'vue-bulma-chartist'
+import CodeLink from '../CodeLink'
 
 export default {
   components: {
-    Chartist
+    Chartist,
+    CodeLink
   },
 
   data () {
     return {
+      codeURL: 'https://github.com/vue-bulma/vue-admin/blob/master/client/views/charts/Chartist.vue',
       series: [
         [12, 9, 7, 8, 5],
         [2, 1, 3.5, 7, 3],

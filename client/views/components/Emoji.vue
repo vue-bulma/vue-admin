@@ -1,5 +1,6 @@
 <template>
   <div>
+    <code-link :codeURL="codeURL"></code-link>
     <div class="tile is-ancestor">
       <div class="tile is-parent">
         <article class="tile is-child box">
@@ -50,12 +51,19 @@
 <script>
 import Vue from 'vue'
 import { EmojiIcon, filter } from 'vue-bulma-emoji'
+import CodeLink from '../CodeLink'
 
 Vue.use(filter)
 
 export default {
   components: {
-    EmojiIcon
+    EmojiIcon,
+    CodeLink
+  },
+  data () {
+    return {
+      codeURL: 'https://github.com/vue-bulma/vue-admin/blob/master/client/views/components/Emoji.vue'
+    }
   }
 }
 </script>

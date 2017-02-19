@@ -1,5 +1,6 @@
 <template>
   <div>
+    <code-link :codeURL="codeURL"></code-link>
     <div class="tile is-ancestor">
       <div class="tile is-parent is-4">
         <article class="tile is-child box">
@@ -70,16 +71,19 @@
 <script>
 import Tooltip from 'vue-bulma-tooltip'
 import Slider from 'vue-bulma-slider'
+import CodeLink from '../CodeLink'
 
 export default {
   components: {
     Tooltip,
-    Slider
+    Slider,
+    CodeLink
   },
 
   data () {
     return {
-      value: 23
+      value: 23,
+      codeURL: 'https://github.com/vue-bulma/vue-admin/blob/master/client/views/components/Slider.vue'
     }
   },
 

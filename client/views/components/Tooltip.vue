@@ -1,5 +1,6 @@
 <template>
   <div>
+    <code-link :codeURL="codeURL"></code-link>
     <div class="tile is-ancestor">
       <div class="tile is-parent">
         <article class="tile is-child box">
@@ -151,10 +152,17 @@
 
 <script>
 import Tooltip from 'vue-bulma-tooltip'
+import CodeLink from '../CodeLink'
 
 export default {
   components: {
-    Tooltip
+    Tooltip,
+    CodeLink
+  },
+  data () {
+    return {
+      codeURL: 'https://github.com/vue-bulma/vue-admin/blob/master/client/views/components/Tooltip.vue'
+    }
   }
 }
 </script>
