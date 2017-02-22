@@ -128,7 +128,7 @@
         <article class="tile is-child box">
           <h1 class="title">Localization</h1>
           <p class="control">
-            <datepicker :l10n="l10n"></datepicker>
+            <datepicker :config="{ locale: l10n }"></datepicker>
           </p>
         </article>
       </div>
