@@ -1,9 +1,7 @@
 <template>
   <div class="box">
-    <h3 class="title">
-      Your powerful, rich text editor.
-      <a href="http://quilljs.com">http://quilljs.com</a>
-    </h3>
+    <h1 class="title">Your powerful, rich text editor.</h1>
+    <h2 class="subtitle"><a href="http://quilljs.com">http://quilljs.com</a></h2>
     <quill :options="{ theme: 'snow' }">
       <h2>One Ring to Rule Them All</h2>
       <p><a href="http://en.wikipedia.org/wiki/One_Ring">http://en.wikipedia.org/wiki/One_Ring</a></p>
