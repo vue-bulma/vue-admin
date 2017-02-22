@@ -1,5 +1,6 @@
 <template>
   <div>
+    <code-link :codeURL="codeURL"></code-link>
     <div class="tile is-ancestor">
       <div class="tile is-parent is-2">
         <article class="tile is-child box">
@@ -335,11 +336,18 @@
 
 <script>
 import Cleave from 'vue-cleave'
+import CodeLink from '../CodeLink'
 import 'cleave.js/dist/addons/cleave-phone.cn'
 
 export default {
   components: {
-    Cleave
+    Cleave,
+    CodeLink
+  },
+  data () {
+    return {
+      codeURL: 'https://github.com/vue-bulma/vue-admin/blob/master/client/views/dashboard/index.vue'
+    }
   }
 }
 </script>

@@ -1,5 +1,6 @@
 <template>
   <div>
+    <code-link :codeURL="codeURL"></code-link>
     <div class="tile is-ancestor">
       <div class="tile is-parent is-4">
         <article class="tile is-child box">
@@ -179,6 +180,18 @@
 </template>
 
 <script>
+import CodeLink from '../CodeLink'
+
+export default {
+  components: {
+    CodeLink
+  },
+  data () {
+    return {
+      codeURL: 'https://github.com/vue-bulma/vue-admin/blob/master/client/views/ui/Buttons.vue'
+    }
+  }
+}
 </script>
 
 <style scoped>

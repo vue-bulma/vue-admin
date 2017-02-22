@@ -1,5 +1,6 @@
 <template>
   <div>
+    <code-link :codeURL="codeURL"></code-link>
     <div class="tile is-ancestor">
       <div class="tile is-parent is-4">
         <article class="tile is-child box">
@@ -31,6 +32,7 @@ import Vue from 'vue'
 import Modal from './modals/Modal'
 import ImageModal from './modals/ImageModal'
 import CardModal from './modals/CardModal'
+import CodeLink from '../CodeLink'
 
 const ImageModalComponent = Vue.extend(ImageModal)
 const CardModalComponent = Vue.extend(CardModal)
@@ -55,14 +57,16 @@ const openCardModal = (propsData = {
 
 export default {
   components: {
-    Modal
+    Modal,
+    CodeLink
   },
 
   data () {
     return {
       showModal: true,
       cardModal: null,
-      imageModal: null
+      imageModal: null,
+      codeURL: 'https://github.com/vue-bulma/vue-admin/blob/master/client/views/components/Modal.vue'
     }
   },
 

@@ -1,5 +1,6 @@
 <template>
   <div>
+    <code-link :codeURL="codeURL"></code-link>
     <div class="tile is-ancestor">
       <div class="tile is-parent is-3">
         <article class="tile is-child box">
@@ -68,14 +69,17 @@
 
 <script>
 import Peity from 'vue-peity'
+import CodeLink from '../CodeLink'
 
 export default {
   components: {
-    Peity
+    Peity,
+    CodeLink
   },
 
   data () {
     return {
+      codeURL: 'https://github.com/vue-bulma/vue-admin/blob/master/client/views/charts/Peity.vue',
       data: [5, 3, 9, 6, 5, 9, 7, 3, 5, 2, 5, 3, 9, 6, 5, 9, 7, 3, 5, 2]
     }
   },

@@ -1,5 +1,6 @@
 <template>
   <div>
+    <code-link :codeURL="codeURL"></code-link>
     <div class="tile is-ancestor">
       <div class="tile is-parent">
         <article class="tile is-child box">
@@ -138,15 +139,18 @@
 
 <script>
 import Datepicker from 'vue-bulma-datepicker'
+import CodeLink from '../CodeLink'
 
 export default {
   components: {
-    Datepicker
+    Datepicker,
+    CodeLink
   },
 
   data () {
     return {
-      value: '2016-12-12'
+      value: '2016-12-12',
+      codeURL: 'https://github.com/vue-bulma/vue-admin/blob/master/client/views/components/Datepicker.vue'
     }
   },
 

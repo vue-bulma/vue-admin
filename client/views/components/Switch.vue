@@ -1,5 +1,6 @@
 <template>
   <div>
+    <code-link :codeURL="codeURL"></code-link>
     <div class="tile is-ancestor">
       <div class="tile is-parent is-4">
         <article class="tile is-child box">
@@ -68,15 +69,18 @@
 // do not use below code, because `Switch` is svg tag.
 // import Switch from 'vue-bulma-switch'
 import VbSwitch from 'vue-bulma-switch'
+import CodeLink from '../CodeLink'
 
 export default {
   components: {
-    VbSwitch
+    VbSwitch,
+    CodeLink
   },
 
   data () {
     return {
-      value: false
+      value: false,
+      codeURL: 'https://github.com/vue-bulma/vue-admin/blob/master/client/views/components/Switch.vue'
     }
   },
 

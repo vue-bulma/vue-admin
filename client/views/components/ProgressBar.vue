@@ -1,5 +1,6 @@
 <template>
   <div>
+    <code-link :codeURL="codeURL"></code-link>
     <div class="tile is-ancestor">
       <div class="tile is-parent is-4">
         <article class="tile is-child box">
@@ -53,15 +54,18 @@
 
 <script>
 import ProgressBar from 'vue-bulma-progress-bar'
+import CodeLink from '../CodeLink'
 
 export default {
   components: {
-    ProgressBar
+    ProgressBar,
+    CodeLink
   },
 
   data () {
     return {
-      dynamicValue: 60
+      dynamicValue: 60,
+      codeURL: 'https://github.com/vue-bulma/vue-admin/blob/master/client/views/components/ProgressBar.vue'
     }
   },
 

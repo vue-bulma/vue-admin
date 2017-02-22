@@ -1,5 +1,6 @@
 <template>
   <div class="notifications-box">
+    <code-link :codeURL="codeURL"></code-link>
     <div class="tile is-ancestor">
       <div class="tile is-parent is-6">
         <article class="tile is-child box">
@@ -42,6 +43,7 @@
 <script>
 import Vue from 'vue'
 import Notification from 'vue-bulma-notification'
+import CodeLink from '../CodeLink'
 
 const NotificationComponent = Vue.extend(Notification)
 
@@ -61,7 +63,15 @@ const openNotification = (propsData = {
 
 export default {
   components: {
-    Notification
+    Notification,
+    CodeLink
+  },
+
+  data () {
+    return {
+      codeURL: 'https://github.com/vue-bulma/vue-admin/blob/master/client/views/components/Notification.vue'
+
+    }
   },
 
   mounted () {

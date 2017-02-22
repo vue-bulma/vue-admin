@@ -1,5 +1,6 @@
 <template>
   <div>
+    <code-link :codeURL="codeURL"></code-link>
     <div class="tile is-ancestor">
       <div class="tile is-parent is-6">
         <div class="tile is-child box">
@@ -123,15 +124,18 @@
 
 <script>
 import { Tabs, TabPane } from 'vue-bulma-tabs'
+import CodeLink from '../CodeLink'
 
 export default {
   components: {
     Tabs,
-    TabPane
+    TabPane,
+    CodeLink
   },
 
   data () {
     return {
+      codeURL: 'https://github.com/vue-bulma/vue-admin/blob/master/client/views/components/Tabs.vue',
       items: [
         {
           icon: 'image',
