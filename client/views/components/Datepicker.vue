@@ -30,48 +30,37 @@
           </p>
         </article>
       </div>
-      <div class="tile is-parent">
+      <div class="tile is-parent is-vertical">
         <article class="tile is-child box">
           <h1 class="title">Form addons</h1>
           <datepicker :inputClass="{ test: true }" :config="{ wrap: true }" readonly>
             <a class="button" data-toggle><i class="fa fa-calendar"></i></a>
             <a class="button" data-clear><i class="fa fa-close"></i></a>
           </datepicker>
-          <h1 class="title">Inline or embedded calendar</h1>
-          <p class="control">
-            <datepicker placeholder="Pick date and time" :config="{ inline: true }"></datepicker>
-          </p>
+        </article>
+        <article class="tile is-child box">
           <h1 class="title">Display week numbers</h1>
           <p class="control">
             <datepicker placeholder="Enabled week numbers" :config="{ weekNumbers: true }"></datepicker>
+          </p>
+        </article>
+        <article class="tile is-child box">
+          <h1 class="title">Date Range</h1>
+          <p class="control">
+            <datepicker placeholder="Select a range" :config="{ mode: 'range' }"></datepicker>
           </p>
         </article>
       </div>
     </div>
 
     <div class="tile is-ancestor">
-      <div class="tile is-parent">
-        <article class="tile is-child box">
-          <h1 class="title">DateTime or Time Picker</h1>
-          <p class="control">
-            <datepicker placeholder="Pick date and time" :config="{ enableTime: true }"></datepicker>
-          </p>
-          <p class="control">
-            <datepicker placeholder="24 hour time" :config="{ enableTime: true, time_24hr: true, dateFormat: 'Y-m-d H:i' }"></datepicker>
-          </p>
-          <p class="control">
-            <datepicker placeholder="Pick date and time" :config="{ enableTime: true, enableSeconds: true, dateFormat: 'Y-m-d h:i:S K' }"></datepicker>
-          </p>
-          <p class="control">
-            <datepicker placeholder="Pick date and time" :config="{ enableTime: true, enableSeconds: true, noCalendar: true }" value="09:00:00"></datepicker>
-          </p>
-        </article>
-      </div>
-      <div class="tile is-parent">
+      <div class="tile is-parent is-vertical">
         <article class="tile is-child box">
           <h1 class="title">Preload date and time</h1>
           <p class="control">
-            <datepicker placeholder="The real input is hidden :^)" :config="{ altInput: true, altFormat: 'F j, Y' }"></datepicker>
+            <!-- TODO: click out side cannot handle hidden input yet. Will fix this later. -->
+            <datepicker placeholder="The real input is hidden :^)" :config="{ altInput: false, altFormat: 'F j, Y' }"></datepicker>
+            <!-- <datepicker placeholder="The real input is hidden :^)" :config="{ altInput: true, altFormat: 'F j, Y' }"></datepicker> -->
           </p>
           <p class="control">
             <datepicker :config="{ defaultDate: '2016-03-01 03:30:00 -0300', enableTime: true }"></datepicker>
@@ -79,6 +68,8 @@
           <p class="control">
             <datepicker :config="{ defaultDate: '2016-12-27T16:16:22.585Z', enableTime: true }"></datepicker>
           </p>
+        </article>
+        <article class="tile is-child box">
           <h1 class="title">UTC mode</h1>
           <p class="control">
             <datepicker :config="{ utc: true, defaultDate: '2016-03-01 03:30:00 -0300', enableTime: true }"></datepicker>
@@ -88,10 +79,38 @@
           </p>
         </article>
       </div>
+      <div class="tile is-parent">
+        <article class="tile is-child box">
+          <h1 class="title">Inline or embedded calendar</h1>
+          <p class="control">
+            <datepicker placeholder="Pick date and time" :config="{ inline: true }"></datepicker>
+          </p>
+        </article>
+      </div>
     </div>
 
     <div class="tile is-ancestor">
-      <div class="tile is-parent">
+      <div class="tile is-parent is-vertical">
+        <article class="tile is-child box">
+          <h1 class="title">DateTime Picker</h1>
+          <p class="control">
+            <datepicker placeholder="Pick date and time" :config="{ enableTime: true }"></datepicker>
+          </p>
+          <p class="control">
+            <datepicker placeholder="24 hour time" :config="{ enableTime: true, time_24hr: true, dateFormat: 'Y-m-d H:i' }"></datepicker>
+          </p>
+          <p class="control">
+            <datepicker placeholder="Pick date and time" :config="{ enableTime: true, enableSeconds: true, dateFormat: 'Y-m-d h:i:S K' }"></datepicker>
+          </p>
+        </article>
+        <article class="tile is-child box">
+          <h1 class="title">Time Picker</h1>
+          <p class="control">
+            <datepicker placeholder="Pick time" :config="{ enableTime: true, enableSeconds: true, noCalendar: true }" value="09:00:00"></datepicker>
+          </p>
+        </article>
+      </div>
+      <div class="tile is-parent is-vertical">
         <article class="tile is-child box">
           <h1 class="title">Disable specific dates or date intervals</h1>
           <p class="control">
@@ -101,10 +120,8 @@
             <datepicker placeholder="disabled September 6-9 & August 25-31 2016" :config="{ disable: [ { from : '2016-09-06', to : '2016-09-09' }, { from : '2016-08-25', to : '2016-08-31' } ], minDate: 'today', dateFormat: 'Y-m-d' }"></datepicker>
           </p>
         </article>
-      </div>
-      <div class="tile is-parent">
         <article class="tile is-child box">
-          <h1 class="title">Setting options on the fly</h1>
+          <h1 class="title">Setting options dynamically</h1>
           <p class="control">
             <datepicker ref="checkIn" placeholder="Check-In Date" :config="{ minDate: new Date() }"></datepicker>
           </p>

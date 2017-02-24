@@ -6841,11 +6841,12 @@ vue-bulma-collapse@1.0.3:
   dependencies:
     animejs "1"
 
-vue-bulma-datepicker@1.2.3:
-  version "1.2.3"
-  resolved "https://registry.yarnpkg.com/vue-bulma-datepicker/-/vue-bulma-datepicker-1.2.3.tgz#82564a04d532610853d6a03bbb780d5e42b527f7"
+vue-bulma-datepicker@1.2.6:
+  version "1.2.6"
+  resolved "https://registry.yarnpkg.com/vue-bulma-datepicker/-/vue-bulma-datepicker-1.2.6.tgz#e7c92032413b55ac0ab8bcb77737dadc70b6f3db"
   dependencies:
     flatpickr "2.2.4"
+    vue-click-outside "1.0.1"
 
 "vue-bulma-emoji@github:vue-bulma/emoji":
   version "0.0.1"
@@ -6921,6 +6922,10 @@ vue-cleave@1.1.1:
   resolved "https://registry.yarnpkg.com/vue-cleave/-/vue-cleave-1.1.1.tgz#4289be39dad33a753513a88983435eb89094723b"
   dependencies:
     cleave.js "0.7.14"
+
+vue-click-outside@1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/vue-click-outside/-/vue-click-outside-1.0.1.tgz#83ff0ad3912c53fe5d171a4127234edc38ff8b4e"
 
 "vue-handsontable@github:vue-bulma/handsontable":
   version "0.0.0"
