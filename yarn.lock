@@ -2573,9 +2573,9 @@ flat-cache@^1.2.1:
     graceful-fs "^4.1.2"
     write "^0.2.1"
 
-flatpickr@2.2.4:
-  version "2.2.4"
-  resolved "https://registry.yarnpkg.com/flatpickr/-/flatpickr-2.2.4.tgz#6d708a7771fb888963ec9db8979a039f0f0db208"
+flatpickr@2.4.2:
+  version "2.4.2"
+  resolved "https://registry.yarnpkg.com/flatpickr/-/flatpickr-2.4.2.tgz#8a92ef6daac4fd298f0dd247e13228197de58e7d"
 
 flatten@^1.0.2:
   version "1.0.2"
@@ -6841,11 +6841,11 @@ vue-bulma-collapse@1.0.3:
   dependencies:
     animejs "1"
 
-vue-bulma-datepicker@1.2.6:
-  version "1.2.6"
-  resolved "https://registry.yarnpkg.com/vue-bulma-datepicker/-/vue-bulma-datepicker-1.2.6.tgz#e7c92032413b55ac0ab8bcb77737dadc70b6f3db"
+vue-bulma-datepicker@^1.2.8:
+  version "1.2.8"
+  resolved "https://registry.yarnpkg.com/vue-bulma-datepicker/-/vue-bulma-datepicker-1.2.8.tgz#ef6655e35f3f5cbb7341aeb5f38de3d023eee68d"
   dependencies:
-    flatpickr "2.2.4"
+    flatpickr "2.4.2"
     vue-click-outside "1.0.1"
 
 "vue-bulma-emoji@github:vue-bulma/emoji":

@@ -47,7 +47,7 @@
     "vue-bulma-chartist": "github:vue-bulma/chartist",
     "vue-bulma-chartjs": "^1.0.1",
     "vue-bulma-collapse": "1.0.3",
-    "vue-bulma-datepicker": "1.2.6",
+    "vue-bulma-datepicker": "^1.2.8",
     "vue-bulma-emoji": "github:vue-bulma/emoji",
     "vue-bulma-expanding": "github:vue-bulma/expanding",
     "vue-bulma-jump": "github:vue-bulma/jump",
