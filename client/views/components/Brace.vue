@@ -96,8 +96,9 @@
         </article>
     </div>
     <div class="tile is-parent">
-      <article class="tile is-child box">
-        <brace style="height: 100%" 
+      <article class="tile is-child box brace-container">
+        <brace
+          style="min-height: 100%; min-width: 100%" 
           :fontsize="this.selected.fontsize" 
           :theme="this.selected.theme" 
           :mode="this.selected.mode"
@@ -157,5 +158,8 @@ export default {
 <style lang="scss" scoped>
 .control-label {
   min-width: 100px;
+}
+.brace-container {
+  display: flex;
 }
 </style>
