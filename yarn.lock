@@ -6819,9 +6819,9 @@ vue-bulma-brace@^0.0.3:
   version "1.0.1"
   resolved "https://codeload.github.com/vue-bulma/breadcrumb/tar.gz/1931329dd913fc03d9982b6b09e78aeff6f7393d"
 
-vue-bulma-card@1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/vue-bulma-card/-/vue-bulma-card-1.0.1.tgz#d4b03a9a6b88319bd988aa65487ffb35c39c6703"
+vue-bulma-card@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/vue-bulma-card/-/vue-bulma-card-1.0.2.tgz#f9d9285672c58fb0ec4018e8751f0ff4bccd961d"
 
 "vue-bulma-chartist@github:vue-bulma/chartist":
   version "1.0.0"
