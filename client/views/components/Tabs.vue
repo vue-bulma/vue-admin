@@ -111,7 +111,7 @@
             <tab-pane label="Documents">Document Tab</tab-pane>
           </tabs>
           <tabs layout="right" animation="fade" :only-fade="false">
-            <tab-pane v-for="item in items" :label="item.label" :icon="'fa fa-' + item.icon">
+            <tab-pane v-for="item in items" :key="item.label" :label="item.label" :icon="'fa fa-' + item.icon">
               {{ item.desc }}
             </tab-pane>
           </tabs>

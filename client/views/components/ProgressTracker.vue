@@ -6,19 +6,19 @@
           <h1 class="title">Tracker Styles</h1>
           <div class="block styles-box">
             <progress-tracker>
-              <step-item v-for="n in [1, 2, 3, 4, 5]" :is-complete="n < 3" :is-active="n === 3"></step-item>
+              <step-item v-for="(item, index) in [1, 2, 3, 4, 5]" :key="index" :is-complete="item < 3" :is-active="item === 3"></step-item>
             </progress-tracker>
             <progress-tracker>
-              <step-item v-for="n in [1, 2, 3, 4, 5]" :marker="n + ''"></step-item>
+              <step-item v-for="(item, index) in [1, 2, 3, 4, 5]" :key="index" :marker="item + ''"></step-item>
             </progress-tracker>
             <progress-tracker>
-              <step-item v-for="n in [1, 2, 3, 'A', 'B']" :marker="n + ''"></step-item>
+              <step-item v-for="(item, index) in [1, 2, 3, 'A', 'B']" :key="index" :marker="item + ''"></step-item>
             </progress-tracker>
             <progress-tracker border>
-              <step-item v-for="n in [1, 2, 3, 'A', 'B']" :marker="n + ''"></step-item>
+              <step-item v-for="(item, index) in [1, 2, 3, 'A', 'B']" :key="index" :marker="item + ''"></step-item>
             </progress-tracker>
             <progress-tracker spaced>
-              <step-item v-for="n in [1, 2, 3, 'A', 'B']" :marker="n + ''"></step-item>
+              <step-item v-for="(item, index) in [1, 2, 3, 'A', 'B']" :key="key" :marker="item + ''"></step-item>
             </progress-tracker>
           </div>
         </article>
@@ -39,31 +39,31 @@
           <h1 class="title">Tracker Alignments</h1>
           <div class="block">
             <progress-tracker>
-              <step-item v-for="n in [1, 2, 3, 4, 5]"></step-item>
+              <step-item v-for="(item, index) in [1, 2, 3, 4, 5]" :key="index"></step-item>
             </progress-tracker>
             <progress-tracker alignment="center">
-              <step-item v-for="n in [1, 2, 3, 4, 5]"></step-item>
+              <step-item v-for="(item, index) in [1, 2, 3, 4, 5]" :key="index"></step-item>
             </progress-tracker>
             <progress-tracker alignment="right">
-              <step-item v-for="n in [1, 2, 3, 4, 5]"></step-item>
+              <step-item v-for="(item, index) in [1, 2, 3, 4, 5]" :key="index"></step-item>
             </progress-tracker>
             <progress-tracker word>
-              <step-item v-for="item in stepItems" :marker="item.marker" :title="item.title"></step-item>
+              <step-item v-for="item in stepItems" :key="item.title" :marker="item.marker" :title="item.title"></step-item>
             </progress-tracker>
             <progress-tracker word word-align="center">
-              <step-item v-for="item in stepItems" :marker="item.marker" :title="item.title"></step-item>
+              <step-item v-for="item in stepItems" :key="item.title" :marker="item.marker" :title="item.title"></step-item>
             </progress-tracker>
             <progress-tracker word text-align="right">
-              <step-item v-for="item in stepItems" :marker="item.marker" :title="item.title"></step-item>
+              <step-item v-for="item in stepItems" :key="item.title" :marker="item.marker" :title="item.title"></step-item>
             </progress-tracker>
             <progress-tracker text>
-              <step-item v-for="item in stepItems" :marker="item.marker" :title="item.title"></step-item>
+              <step-item v-for="item in stepItems" :key="item.title" :marker="item.marker" :title="item.title"></step-item>
             </progress-tracker>
             <progress-tracker text alignment="center">
-              <step-item v-for="item in stepItems" :marker="item.marker" :title="item.title"></step-item>
+              <step-item v-for="item in stepItems" :key="item.title" :marker="item.marker" :title="item.title"></step-item>
             </progress-tracker>
             <progress-tracker text alignment="right">
-              <step-item v-for="item in stepItems" :marker="item.marker" :title="item.title"></step-item>
+              <step-item v-for="item in stepItems" :key="item.title" :marker="item.marker" :title="item.title"></step-item>
             </progress-tracker>
           </div>
         </article>
