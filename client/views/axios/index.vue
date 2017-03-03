@@ -131,10 +131,10 @@ export default {
         }],
         params: {
           parameters: {
-            'Normalized': false,
-            'NumberOfDays': parseInt(this.params.numberOfDays),
-            'DataPeriod': this.params.dataPeriod,
-            'Elements': [{'Symbol': this.params.symbol, 'Type': 'price', 'Params': ['c']}]
+            Normalized: false,
+            NumberOfDays: parseInt(this.params.numberOfDays),
+            DataPeriod: this.params.dataPeriod,
+            Elements: [{'Symbol': this.params.symbol, 'Type': 'price', 'Params': ['c']}]
           }
         }
       }).then((response) => {
