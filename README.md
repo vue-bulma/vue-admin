@@ -39,42 +39,11 @@
 
 ## [Backers](backers.md)
 
-Its ongoing development is made possible thanks to the support by these awesome backers. If you'd like to join them, check out [Vue Admin & Vue Bulma](https://www.patreon.com/_fundon)'s Patreon campaign.
+Its ongoing development is made possible thanks to the support by these awesome backers. If you'd like to join them, check out:
 
+* [Patreon campaign](https://www.patreon.com/_fundon)
 
-## [Development](doc/development.md)
-
-
-### Requirements
-
-  * Node >= v5
-
-  * NPM >= v3
-
-  * Webpack v2
-
-
-## Notes
-
-  If you want to use Vue Admin with Vue 1.0 version, please checkout the [vue-v1](https://github.com/vue-bulma/vue-admin/tree/vue-v1) branch.
-
-  Launch Vue Admin as a desktop application! Please check [Run Project with Electron](https://github.com/vue-bulma/vue-admin/wiki/Guide#run-project-with-electron)
-
-
-## Maintainers
-+ [fundon](https://github.com/fundon) &nbsp;&middot;&nbsp; [fundon.me](https://fundon.me) &nbsp;&middot;&nbsp; [Twitter@fundon](https://twitter.com/_fundon)
-+ [luventa](https://github.com/luventa)
-
-
-[Live Demo]: https://admin.vuebulma.com/
-[Fangdun Cai]: https://twitter.com/_fundon
-[Vue]: http://vuejs.org
-[Bulma]: http://bulma.io
-[Vue-bulma]: https://github.com/vue-bulma
-
-## Backers
-
-Support us with a monthly donation and help us continue our activities. [[Become a backer](https://opencollective.com/vue-admin#backer)]
+* [OpenCollective](https://opencollective.com/vue-admin#backer): Support us with a monthly donation and help us continue our activities
 
 <a href="https://opencollective.com/vue-admin/backer/0/website" target="_blank"><img src="https://opencollective.com/vue-admin/backer/0/avatar.svg"></a>
 <a href="https://opencollective.com/vue-admin/backer/1/website" target="_blank"><img src="https://opencollective.com/vue-admin/backer/1/avatar.svg"></a>
@@ -141,4 +110,35 @@ Become a sponsor and get your logo on our README on Github with a link to your s
 <a href="https://opencollective.com/vue-admin/sponsor/27/website" target="_blank"><img src="https://opencollective.com/vue-admin/sponsor/27/avatar.svg"></a>
 <a href="https://opencollective.com/vue-admin/sponsor/28/website" target="_blank"><img src="https://opencollective.com/vue-admin/sponsor/28/avatar.svg"></a>
 <a href="https://opencollective.com/vue-admin/sponsor/29/website" target="_blank"><img src="https://opencollective.com/vue-admin/sponsor/29/avatar.svg"></a>
+
+
+## [Development](doc/development.md)
+
+
+### Requirements
+
+  * Node >= v5
+
+  * NPM >= v3
+
+  * Webpack v2
+
+
+## Notes
+
+  If you want to use Vue Admin with Vue 1.0 version, please checkout the [vue-v1](https://github.com/vue-bulma/vue-admin/tree/vue-v1) branch.
+
+  Launch Vue Admin as a desktop application! Please check [Run Project with Electron](https://github.com/vue-bulma/vue-admin/wiki/Guide#run-project-with-electron)
+
+
+## Maintainers
++ [fundon](https://github.com/fundon) &nbsp;&middot;&nbsp; [fundon.me](https://fundon.me) &nbsp;&middot;&nbsp; [Twitter@fundon](https://twitter.com/_fundon)
++ [luventa](https://github.com/luventa)
+
+
+[Live Demo]: https://admin.vuebulma.com/
+[Fangdun Cai]: https://twitter.com/_fundon
+[Vue]: http://vuejs.org
+[Bulma]: http://bulma.io
+[Vue-bulma]: https://github.com/vue-bulma
 
