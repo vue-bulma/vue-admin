@@ -25,7 +25,7 @@
 
 </div>
 
-![](screenshots/app.png)
+![](screenshots/preview.jpg)
 
 
 ## Features
