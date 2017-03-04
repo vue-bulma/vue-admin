@@ -2,6 +2,10 @@
 
 Thank you for your supports!
 
+* [Thomas_Leong](https://www.patreon.com/user/creators?u=5244543)
+
+* [wen](https://www.patreon.com/user/creators?u=5239734)
+
 * [Joris Vanhecke](https://www.patreon.com/user/creators?u=5145359)
 
 * [datastream](https://www.patreon.com/user/creators?u=4315833)
