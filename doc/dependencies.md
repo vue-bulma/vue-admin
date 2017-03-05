@@ -20,7 +20,6 @@
 | Fonts | [font-awesome][], [Material Design icons][] |  
 | Progress | [progress-tracker][] |  
 | Rating | [Starability.css][] |  
-| Tables | [Handsontable][] |  
 | Tooltip | [hint.css][] |  
 | ... | ... |  
 
@@ -56,8 +55,6 @@
 [chartist.js]: https://gionkunz.github.io/chartist-js/index.html
 [peity]: https://github.com/benpickles/peity
 [plotly.js]: https://github.com/plotly/plotly.js
-
-[Handsontable]: https://handsontable.com
 
 [font-awesome]: http://fontawesome.io
 [Material Design icons]: http://google.github.io/material-design-icons/

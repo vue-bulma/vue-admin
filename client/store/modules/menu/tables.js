@@ -16,14 +16,6 @@ export default {
         link: 'tables/Basic.vue'
       },
       component: lazyLoading('tables/Basic')
-    },
-    {
-      name: 'Handsontable',
-      path: '/tables/handsontable',
-      meta: {
-        link: 'tables/Handsontable.vue'
-      },
-      component: lazyLoading('tables/Handsontable')
     }
   ]
 }

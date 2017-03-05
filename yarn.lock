@@ -3404,15 +3404,6 @@ gulplog@^1.0.0:
   dependencies:
     glogg "^1.0.0"
 
-handsontable@^0.31.0:
-  version "0.31.0"
-  resolved "https://registry.yarnpkg.com/handsontable/-/handsontable-0.31.0.tgz#62907b31784ea34398470de87c96e434caff003b"
-  dependencies:
-    moment "^2.13.0"
-    numbro "^1.8.0"
-    pikaday "^1.4.0"
-    zeroclipboard "^2.2.0"
-
 har-validator@~2.0.6:
   version "2.0.6"
   resolved "https://registry.yarnpkg.com/har-validator/-/har-validator-2.0.6.tgz#cdcbc08188265ad119b6a5a7c8ab70eecfb5d27d"
@@ -4535,7 +4526,7 @@ mkdirp@0.5.x, "mkdirp@>=0.5 0", mkdirp@^0.5.0, mkdirp@^0.5.1, mkdirp@~0.5.0, mkd
   dependencies:
     minimist "0.0.8"
 
-moment@2.x, moment@^2.10.6, moment@^2.13.0:
+moment@^2.10.6:
   version "2.17.1"
   resolved "https://registry.yarnpkg.com/moment/-/moment-2.17.1.tgz#fed9506063f36b10f066c8b59a144d7faebe1d82"
 
@@ -4874,10 +4865,6 @@ number-is-nan@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/number-is-nan/-/number-is-nan-1.0.1.tgz#097b602b53422a522c1afb8790318336941a011d"
 
-numbro@^1.8.0:
-  version "1.9.3"
-  resolved "https://registry.yarnpkg.com/numbro/-/numbro-1.9.3.tgz#47f727f580aef49fcd5fdd5fa2af7e603e68b530"
-
 numeric@^1.2.6:
   version "1.2.6"
   resolved "https://registry.yarnpkg.com/numeric/-/numeric-1.2.6.tgz#765b02bef97988fcf880d4eb3f36b80fa31335aa"
@@ -5145,12 +5132,6 @@ permutation-rank@^1.0.0:
 pify@^2.0.0, pify@^2.3.0:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/pify/-/pify-2.3.0.tgz#ed141a6ac043a849ea588498e7dca8b15330e90c"
-
-pikaday@^1.4.0:
-  version "1.5.1"
-  resolved "https://registry.yarnpkg.com/pikaday/-/pikaday-1.5.1.tgz#0a48549bc1a14ea1d08c44074d761bc2f2bfcfd3"
-  optionalDependencies:
-    moment "2.x"
 
 pinkie-promise@^2.0.0:
   version "2.0.1"
@@ -7191,12 +7172,6 @@ vue-click-outside@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/vue-click-outside/-/vue-click-outside-1.0.2.tgz#b2803d0b949163f4824c72829e677e4f9f7ca6a8"
 
-vue-handsontable@^0.0.1:
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/vue-handsontable/-/vue-handsontable-0.0.1.tgz#ef1818a9a6d49809895bd807a9705fb290ef8706"
-  dependencies:
-    handsontable "^0.31.0"
-
 vue-hot-reload-api@^2.0.11:
   version "2.0.11"
   resolved "https://registry.yarnpkg.com/vue-hot-reload-api/-/vue-hot-reload-api-2.0.11.tgz#bf26374fb73366ce03f799e65ef5dfd0e28a1568"
@@ -7541,7 +7516,3 @@ zero-crossings@^1.0.0:
   resolved "https://registry.yarnpkg.com/zero-crossings/-/zero-crossings-1.0.1.tgz#c562bd3113643f3443a245d12406b88b69b9a9ff"
   dependencies:
     cwise-compiler "^1.0.0"
-
-zeroclipboard@^2.2.0:
-  version "2.3.0"
-  resolved "https://registry.yarnpkg.com/zeroclipboard/-/zeroclipboard-2.3.0.tgz#592ebd833a4308688b0739697d3dbf989002c9af"
