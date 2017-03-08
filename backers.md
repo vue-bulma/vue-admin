@@ -2,6 +2,8 @@
 
 Thank you for your supports!
 
+* [WerGimity](https://www.patreon.com/user/creators?u=5268464)
+
 * [Thomas_Leong](https://www.patreon.com/user/creators?u=5244543)
 
 * [wen](https://www.patreon.com/user/creators?u=5239734)
