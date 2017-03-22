@@ -11,7 +11,7 @@
 ## UI Components
 
 | Component | Library |  
-| --- | --- | --- |  
+| --- | --- |
 | Animations & Transitions | [animate.css][] & [animejs][] |  
 | BackToTop | [jump.js][] |  
 | Cleave | [cleave.js][] |  
