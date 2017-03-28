@@ -17,7 +17,10 @@
             </tooltip>
           </a>
         </div>
-        <div class="nav-right is-flex"></div>
+        <div class="nav-right is-flex">
+          <router-link v-if="!$auth.check()" to="/login" class="nav-item">Login</router-link>
+          <a v-if="$auth.check()" @click="logout" class="nav-item">Logout</a>
+        </div>
       </nav>
     </div>
   </section>
@@ -42,9 +45,21 @@ export default {
     sidebar: 'sidebar'
   }),
 
-  methods: mapActions([
-    'toggleSidebar'
-  ])
+  methods: {
+    ...mapActions([
+      'toggleSidebar'
+    ]),
+    logout () {
+      this.$auth.logout({
+        redirect: 'Home',
+        makeRequest: false
+        // params: {},
+        // success: function () {},
+        // error: function () {},
+        // etc...
+      })
+    }
+  }
 }
 </script>
 
