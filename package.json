@@ -33,6 +33,7 @@
     "test": "echo lol"
   },
   "dependencies": {
+    "@websanova/vue-auth": "^2.8.2-beta",
     "animate.css": "3.5.2",
     "animejs": "^2.0.1",
     "axios": "^0.15.3",
@@ -41,6 +42,7 @@
     "mdi": "^1.8.36",
     "plotly.js": "^1.24.2",
     "vue": "^2.2.2",
+    "vue-axios": "^2.0.1",
     "vue-bulma-brace": "^0.1.0",
     "vue-bulma-breadcrumb": "^1.0.1",
     "vue-bulma-card": "^1.0.2",
