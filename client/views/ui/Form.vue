@@ -347,6 +347,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '~bulma/sass/utilities/variables';
 @import '~bulma/sass/utilities/mixins';
 
 .button {

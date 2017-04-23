@@ -53,6 +53,7 @@ export default {
 </script>
 
 <style lang="scss">
+@import "~bulma/sass/utilities/_all.sass";
 @import '~animate.css';
 .animated {
   animation-duration: .377s;
