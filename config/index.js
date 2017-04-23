@@ -25,10 +25,10 @@ module.exports = {
     assetsSubDirectory: 'assets',
     assetsPublicPath: '/',
     proxyTable: {
-        '/MODApis': {
-            target: 'http://dev.markitondemand.com',
-            changeOrigin: true
-        }
+      '/MODApis': {
+        target: 'http://dev.markitondemand.com',
+        changeOrigin: true
+      }
     },
     // CSS Sourcemaps off by default because relative paths are "buggy"
     // with this option, according to the CSS-Loader README
