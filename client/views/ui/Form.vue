@@ -202,6 +202,16 @@
               <div class="control">
                 <cleave class="input" placeholder="MM/YY" :options="{ date: true, datePattern: ['m', 'y'] }"></cleave>
               </div>
+              <div class="control">
+                <label class="label">Raw Value</label>
+                <cleave
+                   class="input"
+                   v-model="demo.value"
+                   @rawValueChanged="onRawValueChanged"
+                   placeholder="Enter phone number"
+                   :options="{ blocks: [0, 3, 3, 4], numericOnly: true, delimiters: ['(', ') ', '-'], maxLength: 14 }">
+                </cleave>
+              </div>
             </div>
             <div class="column">
               <div class="control">
@@ -342,6 +352,30 @@ import 'cleave.js/dist/addons/cleave-phone.cn'
 export default {
   components: {
     Cleave
+  },
+
+  data () {
+    return {
+      demo: {
+        value: '',
+        rawValue: ''
+      }
+    }
+  },
+
+  methods: {
+    onRawValueChanged (newVal) {
+      this.demo.rawValue = newVal
+    }
+  },
+
+  watch: {
+    'demo.value' (newVal, oldVal) {
+      console.log('value: new ->', newVal, 'old ->', oldVal)
+    },
+    'demo.rawValue' (newVal, oldVal) {
+      console.log('rawValue: new ->', newVal, 'old ->', oldVal)
+    }
   }
 }
 </script>
