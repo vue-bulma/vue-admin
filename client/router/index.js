@@ -3,6 +3,9 @@ import Router from 'vue-router'
 import menuModule from 'vuex-store/modules/menu'
 Vue.use(Router)
 
+const Home = resolve => require(['../views/Home.vue'], resolve)
+const Login = resolve => require(['../views/auth/Login.vue'], resolve)
+
 export default new Router({
   mode: 'hash', // Demo is living in GitHub.io, so required!
   linkActiveClass: 'is-active',
@@ -11,12 +14,12 @@ export default new Router({
     {
       name: 'Home',
       path: '/',
-      component: require('../views/Home')
+      component: Home
     },
     {
       name: 'Login',
       path: '/login',
-      component: require('../views/auth/Login')
+      component: Login
     },
     ...generateRoutesFromMenu(menuModule.state.items),
     {
