@@ -1,14 +1,14 @@
 {
   "name": "vue-admin",
-  "version": "0.1.12",
-  "description": "Vue Admin Panel Framework",
-  "repository": "vue-bulma/vue-admin",
-  "homepage": "https://admin.vuebulma.com",
+  "version": "0.1.1",
+  "description": "dashboard",
+  "repository": "atomm/dashboard-risc",
+  "homepage": "https://atomm.com.br",
   "license": "MIT",
   "author": {
-    "name": "Fangdun Cai",
-    "email": "cfddream@gmail.com",
-    "url": "fundon.me"
+    "name": "Alexandre Campagnaro",
+    "email": "alexandre.campagnaro@gmail.com",
+    "url": "github.com"
   },
   "keywords": [
     "admin",

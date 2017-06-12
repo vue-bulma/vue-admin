@@ -78,7 +78,7 @@ export default {
             // console.log(err.response.status)
             // console.log(err.response.data)
             // console.log(err.response.headers)
-            this.error = err.response.data
+            this.error = err.response.data.message
           } else {
             // Something happened in setting up the request that triggered an Error
             console.log('Error', err.message)
