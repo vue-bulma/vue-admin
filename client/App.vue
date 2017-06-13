@@ -57,7 +57,7 @@ export default {
 .animated {
   animation-duration: .377s;
 }
-
+@import '../scss/rtl.scss';
 @import '~bulma';
 
 @import '~wysiwyg.css/wysiwyg.sass';

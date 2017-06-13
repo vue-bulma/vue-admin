@@ -1,0 +1,71 @@
+//
+// RTL Support
+//
+
+*[dir="rtl"] {
+  $left: right;
+
+  html {
+    direction: rtl;
+  }
+
+  .app-sidebar {
+    right: 0;
+    left: auto;
+  }
+
+  .app-main, .footer {
+    margin-left: 0;
+    margin-right: 180px;
+  }
+
+  .control.has-addons .button:last-child, .control.has-addons .input:last-child, .control.has-addons .select:last-child {
+    border-radius: 3px 0 0 3px;
+  }
+
+  .notifications {
+    left: 0;
+    right: auto;
+  }
+
+  .notifications .delete {
+    left: 0.5em;
+    right: auto;
+  }
+
+  .media .media-content {
+    text-align: right;
+  }
+
+  .level-left .level-item:not(:last-child),
+  .level-right .level-item:not(:last-child) {
+    margin-left: 0.75em;
+  }
+
+  .progress-step:not(:last-child)::after {
+    left: -14px;
+    right: auto;
+  }
+
+  .progress-tracker--center .progress-step::after {
+    left: -50%;
+  }
+
+  table td, table th {
+    text-align: right;
+    vertical-align: middle;
+  }
+
+  @media screen and (max-width: 768px) {
+    .app-main {
+      margin: 3px;
+    }
+  }
+
+  @media screen and (min-width: 769px) {
+    .column.is-offset-3, .column.is-offset-3-tablet {
+      margin-right: 26%;
+    }
+  }
+
+}
