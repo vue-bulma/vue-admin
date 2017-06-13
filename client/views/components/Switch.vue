@@ -52,10 +52,10 @@
           <h1 class="title">Dynamics</h1>
           <div class="block">
             <p>
-              <vb-switch type="success" size="large" :checked="value" @change="updateValue"></vb-switch>
+              <vb-switch type="success" size="large" :checked="value" v-model="value"></vb-switch>
             </p>
             <p>
-              {{ value }}
+              {{ switchStat }}
             </p>
           </div>
         </article>
@@ -80,9 +80,9 @@ export default {
     }
   },
 
-  methods: {
-    updateValue (val) {
-      this.value = val
+  computed: {
+    switchStat () {
+      return this.value ? 'On' : 'Off'
     }
   }
 }

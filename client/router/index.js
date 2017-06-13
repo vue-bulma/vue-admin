@@ -1,12 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-
-import menu from './menu'
-
+import menuModule from 'vuex-store/modules/menu'
 Vue.use(Router)
 
 export default new Router({
-  mode: 'history',
+  mode: 'hash', // Demo is living in GitHub.io, so required!
   linkActiveClass: 'is-active',
   scrollBehavior: () => ({ y: 0 }),
   routes: [
@@ -15,7 +13,12 @@ export default new Router({
       path: '/',
       component: require('../views/Home')
     },
-    ...generateRoutesFromMenu(menu),
+    {
+      name: 'Login',
+      path: '/login',
+      component: require('../views/auth/Login')
+    },
+    ...generateRoutesFromMenu(menuModule.state.items),
     {
       path: '*',
       redirect: '/'

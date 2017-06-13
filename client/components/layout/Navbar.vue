@@ -3,31 +3,63 @@
     <div class="hero-head">
       <nav class="nav">
         <div class="nav-left">
-          <a class="nav-item is-hidden-tablet" @click="$store.dispatch('TOGGLE_SIDEBAR')">
+          <a class="nav-item is-hidden-tablet" @click="toggleSidebar(!sidebar.opened)">
             <i class="fa fa-bars" aria-hidden="true"></i>
           </a>
         </div>
         <div class="nav-center">
           <a class="nav-item hero-brand" href="/">
-            <img src="~assets/logo.svg" alt="Vue Admin Panel Framework">
-            <div class="is-hidden-mobile">
-              <span class="vue">Vue</span><strong class="admin">Admin</strong>
-            </div>
+            <img src="~assets/logo.svg" :alt="pkginfo.description">
+            <tooltip :label="'v' + pkginfo.version" placement="right" type="success" size="small" :no-animate="true" :always="true" :rounded="true">
+              <div class="is-hidden-mobile">
+                <span class="vue">Vue</span><strong class="admin">Admin</strong>
+              </div>
+            </tooltip>
           </a>
         </div>
-        <div class="nav-right is-flex"></div>
+        <div class="nav-right is-flex">
+          <router-link v-if="!$auth.check()" to="/login" class="nav-item">Login</router-link>
+          <a v-if="$auth.check()" @click="logout" class="nav-item">Logout</a>
+        </div>
       </nav>
     </div>
   </section>
 </template>
 
 <script>
+import Tooltip from 'vue-bulma-tooltip'
+import { mapGetters, mapActions } from 'vuex'
+
 export default {
+
+  components: {
+    Tooltip
+  },
 
   props: {
     show: Boolean
-  }
+  },
 
+  computed: mapGetters({
+    pkginfo: 'pkg',
+    sidebar: 'sidebar'
+  }),
+
+  methods: {
+    ...mapActions([
+      'toggleSidebar'
+    ]),
+    logout () {
+      this.$auth.logout({
+        redirect: 'Home',
+        makeRequest: false
+        // params: {},
+        // success: function () {},
+        // error: function () {},
+        // etc...
+      })
+    }
+  }
 }
 </script>
 

@@ -6,20 +6,31 @@
           <strong>{{ name }}</strong>
         </h3>
       </div>
+      <div class="level-item" v-if="!!codelink">
+        <tooltip label="View code" placement="right" size="small" :rounded="true">
+          <span class="icon">
+            <a  :href="codelink">
+              <i class="fa fa-github"></i>
+            </a>
+          </span>
+        </tooltip>
+      </div>
     </div>
 
     <div class="level-right is-hidden-mobile">
-      <breadcrumb :list="list"><breadcrumb>
+      <breadcrumb :list="list"></breadcrumb>
     </div>
   </nav>
 </template>
 
 <script>
 import Breadcrumb from 'vue-bulma-breadcrumb'
+import Tooltip from 'vue-bulma-tooltip'
 
 export default {
   components: {
-    Breadcrumb
+    Breadcrumb,
+    Tooltip
   },
 
   data () {
@@ -33,6 +44,13 @@ export default {
   },
 
   computed: {
+    codelink () {
+      if (this.$route.meta && this.$route.meta.link) {
+        return 'https://github.com/vue-bulma/vue-admin/blob/master/client/views/' + this.$route.meta.link
+      } else {
+        return null
+      }
+    },
     name () {
       return this.$route.name
     }
@@ -40,7 +58,7 @@ export default {
 
   methods: {
     getList () {
-      let matched = this.$route.matched
+      let matched = this.$route.matched.filter(item => item.name)
       let first = matched[0]
       if (first && (first.name !== 'Home' || first.path !== '')) {
         matched = [{ name: 'Home', path: '/' }].concat(matched)

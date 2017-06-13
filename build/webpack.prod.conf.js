@@ -1,3 +1,5 @@
+'use strict'
+
 const path = require('path')
 const webpack = require('webpack')
 const merge = require('webpack-merge')
@@ -9,6 +11,7 @@ const utils = require('./utils')
 const env = process.env.NODE_ENV === 'testing'
   ? require('../config/test.env')
   : config.build.env
+const isELECTRON = process.env.NODE_ELECTRON === 'true'
 
 const webpackConfig = merge(baseWebpackConfig, {
   module: {
@@ -20,6 +23,7 @@ const webpackConfig = merge(baseWebpackConfig, {
   devtool: config.build.productionSourceMap ? '#source-map' : false,
   output: {
     path: config.build.assetsRoot,
+    publicPath: isELECTRON ? path.join(__dirname, '../dist/') : config.build.assetsPublicPath,
     filename: utils.assetsPath('js/[name].[chunkhash].js'),
     chunkFilename: utils.assetsPath('js/[id].[chunkhash].js')
   },
@@ -32,6 +36,7 @@ const webpackConfig = merge(baseWebpackConfig, {
       minimize: true
     }),
     new webpack.optimize.UglifyJsPlugin({
+      'screw-ie8': true,
       sourceMap: true,
       compress: {
         warnings: false
@@ -40,7 +45,6 @@ const webpackConfig = merge(baseWebpackConfig, {
         comments: false
       }
     }),
-    new webpack.optimize.OccurrenceOrderPlugin(),
     // extract css into its own file
     new ExtractTextPlugin(utils.assetsPath('css/[name].[contenthash].css')),
     // generate dist index.html with correct asset hash for caching.
@@ -67,7 +71,7 @@ const webpackConfig = merge(baseWebpackConfig, {
     // split vendor js into its own file
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
-      minChunks: function (module, count) {
+      minChunks (module, count) {
         // any required modules inside node_modules are extracted to vendor
         return (
           module.resource &&
@@ -88,7 +92,7 @@ const webpackConfig = merge(baseWebpackConfig, {
 })
 
 if (config.build.productionGzip) {
-  var CompressionWebpackPlugin = require('compression-webpack-plugin')
+  const CompressionWebpackPlugin = require('compression-webpack-plugin')
 
   webpackConfig.plugins.push(
     new CompressionWebpackPlugin({

@@ -4,15 +4,15 @@
       General
     </p>
     <ul class="menu-list">
-      <li v-for="item in menu">
-        <router-link :to="item.path" :exact="true" :aria-expanded="isExpanded(item) ? 'true' : 'false'" v-if="item.path" @click.native="toggle(item)">
+      <li v-for="(item, index) in menu">
+        <router-link :to="item.path" :exact="true" :aria-expanded="isExpanded(item) ? 'true' : 'false'" v-if="item.path" @click.native="toggle(index, item)">
           <span class="icon is-small"><i :class="['fa', item.meta.icon]"></i></span>
           {{ item.meta.label || item.name }}
           <span class="icon is-small is-angle" v-if="item.children && item.children.length">
             <i class="fa fa-angle-down"></i>
           </span>
         </router-link>
-        <a :aria-expanded="isExpanded(item)" v-else @click="toggle(item)">
+        <a :aria-expanded="isExpanded(item)" v-else @click="toggle(index, item)">
           <span class="icon is-small"><i :class="['fa', item.meta.icon]"></i></span>
           {{ item.meta.label || item.name }}
           <span class="icon is-small is-angle" v-if="item.children && item.children.length">
@@ -36,6 +36,7 @@
 
 <script>
 import Expanding from 'vue-bulma-expanding'
+import { mapGetters, mapActions } from 'vuex'
 
 export default {
   components: {
@@ -60,35 +61,44 @@ export default {
     }
   },
 
-  computed: {
-    menu () {
-      return this.$store.state.menu
-    }
-  },
+  computed: mapGetters({
+    menu: 'menuitems'
+  }),
 
   methods: {
+    ...mapActions([
+      'expandMenu'
+    ]),
+
     isExpanded (item) {
       return item.meta.expanded
     },
 
-    toggle (item) {
-      item.meta.expanded = !item.meta.expanded
+    toggle (index, item) {
+      this.expandMenu({
+        index: index,
+        expanded: !item.meta.expanded
+      })
     },
 
     shouldExpandMatchItem (route) {
       let matched = route.matched
       let lastMatched = matched[matched.length - 1]
       let parent = lastMatched.parent || lastMatched
+      const isParent = parent === lastMatched
 
-      if (parent === lastMatched) {
+      if (isParent) {
         const p = this.findParentFromMenu(route)
         if (p) {
           parent = p
         }
       }
 
-      if ('expanded' in parent.meta && parent !== lastMatched) {
-        parent.meta.expanded = true
+      if ('expanded' in parent.meta && !isParent) {
+        this.expandMenu({
+          item: parent,
+          expanded: true
+        })
       }
     },
 

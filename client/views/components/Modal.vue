@@ -1,6 +1,5 @@
 <template>
   <div>
-    <modal></modal>
     <div class="tile is-ancestor">
       <div class="tile is-parent is-4">
         <article class="tile is-child box">
@@ -23,6 +22,7 @@
         </article>
       </div>
     </div>
+    <modal :visible="showModal" @close="closeModalBasic"></modal>
   </div>
 </template>
 
@@ -32,25 +32,21 @@ import Modal from './modals/Modal'
 import ImageModal from './modals/ImageModal'
 import CardModal from './modals/CardModal'
 
-const ModalComponent = Vue.extend(Modal)
 const ImageModalComponent = Vue.extend(ImageModal)
 const CardModalComponent = Vue.extend(CardModal)
 
-const openModal = (propsData = {}) => {
-  return new ModalComponent({
-    el: document.createElement('div'),
-    propsData
-  })
-}
-
-const openImageModal = (propsData = {}) => {
+const openImageModal = (propsData = {
+  visible: true
+}) => {
   return new ImageModalComponent({
     el: document.createElement('div'),
     propsData
   })
 }
 
-const openCardModal = (propsData = {}) => {
+const openCardModal = (propsData = {
+  visible: true
+}) => {
   return new CardModalComponent({
     el: document.createElement('div'),
     propsData
@@ -62,19 +58,34 @@ export default {
     Modal
   },
 
+  data () {
+    return {
+      showModal: true,
+      cardModal: null,
+      imageModal: null
+    }
+  },
+
   methods: {
     openModalBasic () {
-      openModal()
+      this.showModal = true
+    },
+
+    closeModalBasic () {
+      this.showModal = false
     },
 
     openModalImage () {
-      openImageModal()
+      const imageModal = this.imageModal || (this.imageModal = openImageModal())
+      imageModal.$children[0].active()
     },
 
     openModalCard () {
-      openCardModal({
-        title: 'Modal title'
-      })
+      const cardModal = this.cardModal || (this.cardModal = openCardModal({
+        title: 'Modal title',
+        url: this.$store.state.pkg.homepage
+      }))
+      cardModal.$children[0].active()
     }
   }
 }

@@ -2,7 +2,7 @@
   <div id="app">
     <nprogress-container></nprogress-container>
     <navbar :show="true"></navbar>
-    <sidebar :show="config.sidebar"></sidebar>
+    <sidebar :show="sidebar.opened && !sidebar.hidden"></sidebar>
     <app-main></app-main>
     <footer-bar></footer-bar>
   </div>
@@ -11,6 +11,7 @@
 <script>
 import NprogressContainer from 'vue-nprogress/src/NprogressContainer'
 import { Navbar, Sidebar, AppMain, FooterBar } from 'components/layout/'
+import { mapGetters, mapActions } from 'vuex'
 
 export default {
   components: {
@@ -22,7 +23,6 @@ export default {
   },
 
   beforeMount () {
-    const config = this.config
     const { body } = document
     const WIDTH = 768
     const RATIO = 3
@@ -30,8 +30,9 @@ export default {
     const handler = () => {
       if (!document.hidden) {
         let rect = body.getBoundingClientRect()
-        config.mobile = rect.width - RATIO < WIDTH
-        config.sidebar = !config.mobile
+        let isMobile = rect.width - RATIO < WIDTH
+        this.toggleDevice(isMobile ? 'mobile' : 'other')
+        this.toggleSidebar(!isMobile)
       }
     }
 
@@ -40,11 +41,14 @@ export default {
     window.addEventListener('resize', handler)
   },
 
-  computed: {
-    config () {
-      return this.$store.state.config
-    }
-  }
+  computed: mapGetters({
+    sidebar: 'sidebar'
+  }),
+
+  methods: mapActions([
+    'toggleDevice',
+    'toggleSidebar'
+  ])
 }
 </script>
 
@@ -53,13 +57,17 @@ export default {
 .animated {
   animation-duration: .377s;
 }
-
+@import '../scss/rtl.scss';
 @import '~bulma';
 
 @import '~wysiwyg.css/wysiwyg.sass';
 
 $fa-font-path: '~font-awesome/fonts/';
 @import '~font-awesome/scss/font-awesome';
+
+html {
+  background-color: whitesmoke;
+}
 
 .nprogress-container {
   position: fixed !important;

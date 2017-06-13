@@ -84,7 +84,7 @@ export default {
       ],
 
       labels_2: ['April', 'May', 'June', 'Jule', 'August', 'September', 'October', 'November', 'December'],
-      data_2: [1, 9, 3, 4, 5, 6, 7, 8, 2].map(e => Math.sin(e) * 25 + 25),
+      data_2: [1, 9, 3, 4, 5, 6, 7, 8, 2].map(e => (Math.sin(e) * 25) + 25),
 
       labels_3: ['May', 'June', 'Jule', 'August', 'September', 'October', 'November'],
       data_3: [
