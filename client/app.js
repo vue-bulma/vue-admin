@@ -9,6 +9,7 @@ import router from './router'
 import store from './store'
 import * as filters from './filters'
 import { TOGGLE_SIDEBAR } from 'vuex-store/mutation-types'
+import database from './pluguins/firebase'
 
 Vue.router = router
 Vue.use(VueAxios, axios)
@@ -27,6 +28,8 @@ Vue.use(VueAuth, {
   loginData: { url: 'http://localhost:8089/login', fetchUser: false },
   refreshData: { enabled: false }
 })
+
+Vue.use(database)
 
 Vue.use(NProgress)
 

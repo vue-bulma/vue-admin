@@ -52,11 +52,12 @@ export default {
     logout () {
       this.$auth.logout({
         redirect: 'Home',
-        makeRequest: false
-        // params: {},
-        // success: function () {},
-        // error: function () {},
-        // etc...
+        makeRequest: false,
+        params: {},
+        success: function () {
+          console.log('logout passou aqui')
+        },
+        error: function () {}
       })
     }
   }

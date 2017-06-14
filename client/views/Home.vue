@@ -27,133 +27,24 @@
       </div>
     </div>
 
-
     <div class="tile is-ancestor">
       <div class="tile is-parent">
         <article class="tile is-child box">
-          <h4 class="title">Table Responsive</h4>
+          <h4 class="title">Agenda - <datepicker v-model="value" placeholder="European Format ('d-m-Y')" :config="{ dateFormat: 'd-m-Y', static: true }"></datepicker></h4>
           <div class="table-responsive">
             <table class="table is-bordered is-striped is-narrow">
               <thead>
               <tr>
-                <th></th>
-                <th>Open source projects</th>
-                <th>Year started</th>
-                <th colspan="3">Links</th>
+                <th>Hora</th>
+                <th>Nome</th>
+                <th>Tipo</th>
               </tr>
               </thead>
-              <tfoot>
-              <tr>
-                <th></th>
-                <th>Open source projects</th>
-                <th>Year started</th>
-                <th colspan="3">Links</th>
-              </tr>
-              </tfoot>
-              <tbody>
-              <tr>
-                <td class="is-icon">
-                  <i class="fa fa-android"></i>
-                </td>
-                <td>
-                  <a href="#">Android</a>
-                </td>
-                <td>
-                  2003
-                </td>
-                <td class="is-icon">
-                  <a href="#">
-                    <i class="fa fa-github"></i>
-                  </a>
-                </td>
-                <td class="is-icon">
-                  <a href="#">
-                    <i class="fa fa-twitter"></i>
-                  </a>
-                </td>
-                <td class="is-icon">
-                  <a href="#">
-                    <i class="fa fa-globe"></i>
-                  </a>
-                </td>
-              </tr>
-              <tr>
-                <td class="is-icon">
-                  <i class="fa fa-firefox"></i>
-                </td>
-                <td>
-                  <a href="#">Firefox</a>
-                </td>
-                <td>
-                  2003
-                </td>
-                <td class="is-icon">
-                  <a href="#">
-                    <i class="fa fa-github"></i>
-                  </a>
-                </td>
-                <td class="is-icon">
-                  <a href="#">
-                    <i class="fa fa-twitter"></i>
-                  </a>
-                </td>
-                <td class="is-icon">
-                  <a href="#">
-                    <i class="fa fa-globe"></i>
-                  </a>
-                </td>
-              </tr>
-              <tr>
-                <td class="is-icon">
-                  <i class="fa fa-linux"></i>
-                </td>
-                <td>
-                  <a href="#">Linux</a>
-                </td>
-                <td>
-                  2003
-                </td>
-                <td class="is-icon">
-                  <a href="#">
-                    <i class="fa fa-github"></i>
-                  </a>
-                </td>
-                <td class="is-icon">
-                  <a href="#">
-                    <i class="fa fa-twitter"></i>
-                  </a>
-                </td>
-                <td class="is-icon">
-                  <a href="#">
-                    <i class="fa fa-globe"></i>
-                  </a>
-                </td>
-              </tr>
-              <tr>
-                <td class="is-icon">
-                  <i class="fa fa-wordpress"></i>
-                </td>
-                <td>
-                  <a href="#">WordPress</a>
-                </td>
-                <td>
-                  2003
-                </td>
-                <td class="is-icon">
-                  <a href="#">
-                    <i class="fa fa-github"></i>
-                  </a>
-                </td>
-                <td class="is-icon">
-                  <a href="#">
-                    <i class="fa fa-twitter"></i>
-                  </a>
-                </td>
-                <td class="is-icon">
-                  <a href="#">
-                    <i class="fa fa-globe"></i>
-                  </a>
-                </td>
+              <tbody v-for="list in schedule">
+              <tr v-for="result in list[503].service.schedule.professional[34183]">
+                <td>{{result.tbHora}}</td>
+                <td>{{result.tbNome}}</td>
+                <td>{{result.tbTipo}}</td>
               </tr>
               </tbody>
             </table>
@@ -181,25 +72,31 @@
       </div>
     </div>
 
-
   </div>
 </template>
 
 <script>
 import Chart from 'vue-bulma-chartjs'
+import { map } from 'lodash'
+import Datepicker from 'vue-bulma-datepicker'
 
 export default {
   components: {
-    Chart
+    Chart,
+    Datepicker
   },
 
   data () {
     return {
-      data: [300, 50, 100]
+      data: [300, 50, 100],
+      schedule: [],
+      value: ''
     }
   },
-
   computed: {
+    today () {
+      return new Date()
+    },
     chartData () {
       return {
         labels: [
@@ -218,8 +115,12 @@ export default {
       }
     }
   },
-
   mounted () {
+    this.$db.ref('server').on('value', data => {
+      const obj = data.val()
+      this.schedule = map(obj, schedule => schedule)
+    })
+    this.value = '13/06/2017'
     setInterval(() => {
       // https://github.com/vuejs/vue/issues/2873
       // Array.prototype.$set/$remove deprecated (use Vue.set or Array.prototype.splice instead)
