@@ -68,8 +68,8 @@ export default {
         redirect: {name: redirect ? redirect.from.name : 'Home'},
         success (res) {
           console.log('Auth Success')
-          // console.log('Token: ' + this.$auth.token())
-          // console.log(res)
+          console.log('Token: ' + this.$auth.token())
+          console.log(res)
         },
         error (err) {
           if (err.response) {
