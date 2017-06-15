@@ -3,26 +3,26 @@
     <div class="tile is-ancestor">
       <div class="tile is-parent">
         <article class="tile is-child box">
-          <p class="title">One</p>
-          <p class="subtitle">Subtitle</p>
+          <p class="title"><i class="fa fa-stethoscope proced"></i> Proced</p>
+          <p class="subtitle">32</p>
         </article>
       </div>
       <div class="tile is-parent">
         <article class="tile is-child box">
-          <p class="title">Two</p>
-          <p class="subtitle">Subtitle</p>
+          <p class="title"><i class="fa fa-heartbeat exame"></i> Exame</p>
+          <p class="subtitle">10</p>
         </article>
       </div>
       <div class="tile is-parent">
         <article class="tile is-child box">
-          <p class="title">Three</p>
-          <p class="subtitle">Subtitle</p>
+          <p class="title"><i class="fa fa-calendar calendar"></i> Agenda</p>
+          <p class="subtitle">15</p>
         </article>
       </div>
       <div class="tile is-parent">
         <article class="tile is-child box">
-          <p class="title"><i class="fa fa-android"></i></p>
-          <p class="subtitle">3453</p>
+          <p class="title"><i class="fa fa-money money"></i> Repasse</p>
+          <p class="subtitle">R$ 3.453,00</p>
         </article>
       </div>
     </div>
@@ -31,24 +31,27 @@
       <div class="tile is-parent">
         <article class="tile is-child box">
           <h4 class="title">Agenda - <datepicker v-model="value" placeholder="European Format ('d-m-Y')" :config="{ dateFormat: 'd-m-Y', static: true, defaultDate: today }"></datepicker></h4>
-          <div class="table-responsive">
-            <table class="table is-bordered is-striped is-narrow">
-              <thead>
-              <tr>
-                <th>Hora</th>
-                <th>Nome</th>
-                <th>Tipo</th>
-              </tr>
-              </thead>
-              <tbody v-for="list in schedule">
-              <tr v-for="result in list[503].service.schedule.professional[34183]">
-                <td>{{result.tbHora}}</td>
-                <td>{{result.tbNome}}</td>
-                <td>{{result.tbTipo}}</td>
-              </tr>
-              </tbody>
-            </table>
-          </div>
+          <table class="table">
+            <thead>
+            <tr>
+              <th>Hora</th>
+              <th>Paciente</th>
+              <th></th>
+              <th></th>
+            </tr>
+            </thead>
+            <tbody v-for="list in schedule">
+            <tr v-for="result in list[503].service.schedule.professional[34183]">
+              <td>{{result.tbHora.substring(0, 5)}}</td>
+              <td>{{result.tbNome}}</td>
+              <td class="is-icon">
+                <a href="#">
+                  <i class="fa fa-heartbeat" :class="{ type1: result.tbTipo == 1, type2: result.tbTipo == 2, type3: result.tbTipo == 3, type4: result.tbTipo == 4 }"></i>
+                </a>
+              </td>
+            </tr>
+            </tbody>
+          </table>
         </article>
       </div>
     </div>
@@ -56,7 +59,7 @@
     <div class="tile is-ancestor">
       <div class="tile is-parent is-6">
         <article class="tile is-child box">
-          <h4 class="title">Five</h4>
+          <h4 class="title">Convênios</h4>
           <div class="content">
             <chart :type="'doughnut'" :data="chartData"></chart>
           </div>
@@ -64,7 +67,7 @@
       </div>
       <div class="tile is-parent is-6">
         <article class="tile is-child box">
-          <h4 class="title">Six</h4>
+          <h4 class="title">Tipo</h4>
           <div class="content">
             <chart :type="'pie'" :data="chartData"></chart>
           </div>
@@ -119,9 +122,9 @@
       chartData () {
         return {
           labels: [
-            'Red',
-            'Blue',
-            'Yellow'
+            'Unimed',
+            'Amil',
+            'Sul America'
           ],
           datasets: [{
             data: this.data,
@@ -183,4 +186,29 @@
   .subtitle {
     text-align: right;
   }
+  .proced {
+    color: #4169E1;
+  }
+  .exame {
+    color: #CD5C5C;
+  }
+  .calendar {
+    color: #1E90FF;
+  }
+  .money{
+    color: #8FBC8F;
+  }
+  .type1 {
+    color: #4169E1;
+  }
+  .type2 {
+    color: #CD5C5C;
+  }
+  .type3 {
+    color: #1E90FF;
+  }
+  .type4{
+    color: #8FBC8F;
+  }
+
 </style>

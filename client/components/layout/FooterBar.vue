@@ -8,7 +8,7 @@
               <i class="fa fa-github"></i>
             </span>
           </a>
-          <a href="https://twitter.com/_fundon">
+          <a href="https://twitter.com/atomm">
             <span class="icon">
               <i class="fa fa-twitter"></i>
             </span>
@@ -36,11 +36,11 @@ export default {
 
 .footer {
   margin-left: 180px;
-  
+
   @include mobile() {
     margin-left: 0;
   }
-  
+
   .social a {
     border-bottom: none !important;
   }
