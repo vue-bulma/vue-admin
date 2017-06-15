@@ -65,14 +65,16 @@ export default {
         },
         data: this.data.body,
         rememberMe: this.data.rememberMe,
-        redirect: {name: redirect ? redirect.from.name : 'Home'},
+        redirect: {name: redirect ? 'Home' : 'Home'},
         success (res) {
           console.log('Auth Success')
           console.log('Token: ' + this.$auth.token())
           console.log(res)
+          this.$store.commit('SET_USER', res)
         },
         error (err) {
           if (err.response) {
+            // redirect: {name: redirect ? redirect.from.name : 'Home'},
             // The request was made, but the server responded with a status code
             // that falls out of the range of 2xx
             // console.log(err.response.status)

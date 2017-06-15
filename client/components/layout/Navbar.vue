@@ -51,7 +51,7 @@ export default {
     ]),
     logout () {
       this.$auth.logout({
-        redirect: 'Home',
+        redirect: 'Login',
         makeRequest: false,
         params: {},
         success: function () {

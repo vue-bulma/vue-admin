@@ -41,7 +41,7 @@
             </tr>
             </thead>
             <tbody v-for="list in schedule">
-            <tr v-for="result in list[503].service.schedule.professional[34183]">
+            <tr v-for="result in list[client].service.schedule.professional[crm]">
               <td>{{result.tbHora.substring(0, 5)}}</td>
               <td>{{result.tbNome}}</td>
               <td class="is-icon">
@@ -107,7 +107,9 @@
         data: [300, 50, 100],
         schedule: [],
         value: '',
-        counter: 0
+        counter: 0,
+        client: 1,
+        crm: 1
       }
     },
     methods: {
@@ -142,6 +144,8 @@
         const obj = data.val()
         this.schedule = map(obj, schedule => schedule)
       })
+      this.crm = this.$store.state.user.crm
+      this.client = this.$store.state.user.client
       this.value = nowDate
       setInterval(() => {
         // https://github.com/vuejs/vue/issues/2873
@@ -153,6 +157,7 @@
     },
     watch: {
       value (newVal, oldVal) {
+        console.log(this.$store.state.user)
         console.log(newVal, oldVal)
         this.$http({
           url: api,
@@ -161,9 +166,9 @@
           }],
           params:
           {
-            id: 1,
-            client: 503,
-            crm: 34183,
+            id: this.$store.state.user.id,
+            client: this.$store.state.client,
+            crm: this.$store.state.user.crm,
             date: this.value.substring(3, 5) + '/' + this.value.substring(0, 2) + '/' + this.value.substring(6, 10)
           }
         }).then((response) => {
