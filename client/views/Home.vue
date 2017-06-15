@@ -95,7 +95,7 @@
   }
   nowDate = dd + '/' + mm + '/' + yyyy
 
-  const api = 'http://localhost:8089/teste'
+  const api = 'http://104.131.75.202:8089/teste'
 
   export default {
     components: {

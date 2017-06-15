@@ -25,7 +25,7 @@ Vue.use(VueAuth, {
   },
   http: require('@websanova/vue-auth/drivers/http/axios.1.x.js'),
   router: require('@websanova/vue-auth/drivers/router/vue-router.2.x.js'),
-  loginData: { url: 'http://localhost:8089/login', fetchUser: false },
+  loginData: { url: 'http://104.131.75.202:8089/login', fetchUser: false },
   refreshData: { enabled: false }
 })
 
