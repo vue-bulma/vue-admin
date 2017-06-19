@@ -36,6 +36,7 @@
 </template>
 
 <script>
+import localStorage from '../../services/index'
 export default {
 
   data () {
@@ -71,7 +72,8 @@ export default {
           console.log('Token: ' + this.$auth.token())
           console.log(res)
           this.$store.commit('SET_USER', res)
-          window.localStorage.setItem('login', 'askdfnasdfkj')
+          localStorage.set('login', res)
+          // window.localStorage.setItem('login', 'askdfnasdfkj')
         },
         error (err) {
           if (err.response) {

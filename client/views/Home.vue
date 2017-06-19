@@ -3,26 +3,26 @@
     <div class="tile is-ancestor">
       <div class="tile is-parent">
         <article class="tile is-child box">
-          <p class="title"><i class="fa fa-stethoscope proced"></i> Proced</p>
-          <p class="subtitle">32</p>
+          <p class="title"><i class="fa fa-stethoscope proced"></i> Procedimentos</p>
+          <p class="subtitle">{{ procedCount }}</p>
         </article>
       </div>
       <div class="tile is-parent">
         <article class="tile is-child box">
-          <p class="title"><i class="fa fa-heartbeat exame"></i> Exame</p>
-          <p class="subtitle">10</p>
+          <p class="title"><i class="fa fa-heartbeat exame"></i> Exames</p>
+          <p class="subtitle">{{ examCount }}</p>
         </article>
       </div>
       <div class="tile is-parent">
         <article class="tile is-child box">
           <p class="title"><i class="fa fa-calendar calendar"></i> Agenda</p>
-          <p class="subtitle">15</p>
+          <p class="subtitle">{{ scheduleCount }}</p>
         </article>
       </div>
       <div class="tile is-parent">
         <article class="tile is-child box">
-          <p class="title"><i class="fa fa-money money"></i> Repasse</p>
-          <p class="subtitle">R$ 3.453,00</p>
+          <p class="title"><i class="fa fa-user-md"></i> Cirurgias</p>
+          <p class="subtitle">{{ surgeryCount }}</p>
         </article>
       </div>
     </div>
@@ -46,7 +46,9 @@
               <td>{{result.tbNome}}</td>
               <td class="is-icon">
                 <a href="#">
-                  <i class="fa fa-heartbeat" :class="{ type1: result.tbTipo == 1, type2: result.tbTipo == 2, type3: result.tbTipo == 3, type4: result.tbTipo == 4 }"></i>
+                  <div v-if="result.tbNome !== undefined">
+                    <i class="fa fa-heartbeat" :class="{ type1: result.tbTipo == 1, type2: result.tbTipo == 2, type3: result.tbTipo == 3, type4: result.tbTipo == 4 }"></i>
+                  </div>
                 </a>
               </td>
             </tr>
@@ -56,22 +58,24 @@
       </div>
     </div>
 
-    <div class="tile is-ancestor">
-      <div class="tile is-parent is-6">
-        <article class="tile is-child box">
-          <h4 class="title">Convênios</h4>
-          <div class="content">
-            <chart :type="'doughnut'" :data="chartData"></chart>
-          </div>
-        </article>
-      </div>
-      <div class="tile is-parent is-6">
-        <article class="tile is-child box">
-          <h4 class="title">Tipo</h4>
-          <div class="content">
-            <chart :type="'pie'" :data="chartData"></chart>
-          </div>
-        </article>
+    <div class="none">
+      <div class="tile is-ancestor">
+        <div class="tile is-parent is-6">
+          <article class="tile is-child box">
+            <h4 class="title">Convênios</h4>
+            <div class="content">
+              <chart :type="'doughnut'" :data="chartData"></chart>
+            </div>
+          </article>
+        </div>
+        <div class="tile is-parent is-6">
+          <article class="tile is-child box">
+            <h4 class="title">Tipo</h4>
+            <div class="content">
+              <chart :type="'pie'" :data="chartData"></chart>
+            </div>
+          </article>
+        </div>
       </div>
     </div>
 
@@ -108,8 +112,13 @@
         schedule: [],
         value: '',
         counter: 0,
-        client: 1,
-        crm: 1
+        client: 0,
+        crm: 0,
+        scheduleCount: 0,
+        examCount: 0,
+        procedCount: 0,
+        surgeryCount: 0,
+        total: 0
       }
     },
     methods: {
@@ -183,6 +192,7 @@
 </script>
 
 <style lang="scss" scoped>
+  .none { diplay: none; }
   .table-responsive {
     display: block;
     width: 100%;
