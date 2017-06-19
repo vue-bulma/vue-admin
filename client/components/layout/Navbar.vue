@@ -19,7 +19,7 @@
         </div>
         <div class="nav-right is-flex">
           <router-link v-if="!$auth.check()" to="/login" class="nav-item">Login</router-link>
-          <a v-if="$auth.check()" @click="logout" class="nav-item">Logout</a>
+          <a v-if="$auth.check()" @click="logout" class="nav-item">CRM: {{crm}} - Logout</a>
         </div>
       </nav>
     </div>
@@ -36,8 +36,19 @@ export default {
     Tooltip
   },
 
+  mounted () {
+    this.crm = this.$store.state.user.crm
+    console.log(this.$store.state.user.crm)
+  },
+
   props: {
     show: Boolean
+  },
+
+  data () {
+    return {
+      crm: ''
+    }
   },
 
   computed: mapGetters({
@@ -55,6 +66,7 @@ export default {
         makeRequest: false,
         params: {},
         success: function () {
+          window.localStorage.removeItem('login')
           console.log('logout passou aqui')
         },
         error: function () {}

@@ -144,6 +144,7 @@
         const obj = data.val()
         this.schedule = map(obj, schedule => schedule)
       })
+      console.log(window.localStorage.getItem('login'))
       this.crm = this.$store.state.user.crm
       this.client = this.$store.state.user.client
       this.value = nowDate
