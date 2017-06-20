@@ -32,7 +32,9 @@ export default {
         let rect = body.getBoundingClientRect()
         let isMobile = rect.width - RATIO < WIDTH
         this.toggleDevice(isMobile ? 'mobile' : 'other')
-        this.toggleSidebar(!isMobile)
+        this.toggleSidebar({
+          opened: !isMobile
+        })
       }
     }
 

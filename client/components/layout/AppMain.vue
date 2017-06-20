@@ -1,5 +1,5 @@
 <template>
-  <section class="app-main">
+  <section class="app-main" :style="[hiddenSidebarStyle]">
     <div class="container is-fluid is-marginless app-content">
       <levelbar></levelbar>
       <transition
@@ -15,8 +15,18 @@
 
 <script>
 import Levelbar from './Levelbar'
+import { mapGetters } from 'vuex'
 
 export default {
+  computed: {
+    ...mapGetters({
+      sidebar: 'sidebar'
+    }),
+    hiddenSidebarStyle () {
+      return this.sidebar.hidden ? { 'margin-left': 0 } : null
+    }
+  },
+
   components: {
     Levelbar
   }

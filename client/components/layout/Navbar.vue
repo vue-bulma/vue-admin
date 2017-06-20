@@ -3,8 +3,8 @@
     <div class="hero-head">
       <nav class="nav">
         <div class="nav-left">
-          <a class="nav-item is-hidden-tablet" @click="toggleSidebar(!sidebar.opened)">
-            <i class="fa fa-bars" aria-hidden="true"></i>
+          <a class="nav-item is-hidden-tablet" @click="toggleSidebar({opened: !sidebar.opened})">
+            <i class="fa fa-bars" aria-hidden="true" v-show="!sidebar.hidden"></i>
           </a>
         </div>
         <div class="nav-center">

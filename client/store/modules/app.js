@@ -20,11 +20,15 @@ const mutations = {
     state.device.isTablet = device === 'tablet'
   },
 
-  [types.TOGGLE_SIDEBAR] (state, opened) {
-    if (state.device.isMobile) {
-      state.sidebar.opened = opened
+  [types.TOGGLE_SIDEBAR] (state, config) {
+    if (state.device.isMobile && config.hasOwnProperty('opened')) {
+      state.sidebar.opened = config.opened
     } else {
       state.sidebar.opened = true
+    }
+
+    if (config.hasOwnProperty('hidden')) {
+      state.sidebar.hidden = config.hidden
     }
   },
 
