@@ -52,6 +52,9 @@ export default {
     }
   },
   mounted () {
+    if (this.$auth.check()) {
+      this.$router.push('/')
+    }
     if (this.$auth.redirect()) {
       console.log('Redirect from: ' + this.$auth.redirect().from.name)
     }
@@ -59,6 +62,7 @@ export default {
   },
   methods: {
     login () {
+      console.log(this.$auth.check())
       var redirect = this.$auth.redirect()
       this.$auth.login({
         headers: {

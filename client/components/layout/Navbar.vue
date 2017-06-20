@@ -12,7 +12,7 @@
             <img src="~assets/logo.png" :alt="pkginfo.description">
             <tooltip :label="'v' + pkginfo.version" placement="right" type="success" size="small" :no-animate="true" :always="true" :rounded="true">
               <div class="is-hidden-mobile">
-                <span class="vue">Sua Logo</span><strong class="admin"> Dashboard</strong>
+                <span class="vue">Clinic</span><strong class="admin"> Dashboard</strong>
               </div>
             </tooltip>
           </a>
