@@ -37,7 +37,6 @@
               <th>Hora</th>
               <th>Paciente</th>
               <th></th>
-              <th></th>
             </tr>
             </thead>
             <tbody v-for="list in schedule">
@@ -149,13 +148,17 @@
       }
     },
     mounted () {
-      this.$db.ref('server').on('value', data => {
-        const obj = data.val()
-        this.schedule = map(obj, schedule => schedule)
-      })
-      console.log(window.localStorage.getItem('login'))
       this.crm = this.$store.state.user.crm
       this.client = this.$store.state.user.client
+
+      this.$db.ref('server').on('value', data => {
+        const obj = data.val()
+        this.schedule = map(obj, (schedule) => {
+          return schedule
+        })
+        // console.log(this.schedule[0][this.$store.state.user.client].service.schedule.professional[this.$store.state.user.crm].length)
+      })
+
       this.value = nowDate
       setInterval(() => {
         // https://github.com/vuejs/vue/issues/2873
@@ -167,7 +170,7 @@
     },
     watch: {
       value (newVal, oldVal) {
-        console.log(this.$store.state.user)
+        // console.log(this.$store.state.user)
         console.log(newVal, oldVal)
         this.$http({
           url: api,
@@ -182,7 +185,7 @@
             date: this.value.substring(3, 5) + '/' + this.value.substring(0, 2) + '/' + this.value.substring(6, 10)
           }
         }).then((response) => {
-          console.log(response)
+          // console.log(response)
         }).catch((error) => {
           console.log(error)
         })

@@ -39,6 +39,7 @@ export default {
   mounted () {
     this.crm = this.$store.state.user.crm
     console.log(this.$store.state.user.crm)
+    console.log('TESTE SE PASSOU AQUI')
   },
 
   props: {

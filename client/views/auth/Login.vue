@@ -69,8 +69,8 @@ export default {
         redirect: {name: redirect ? 'Home' : 'Home'},
         success (res) {
           console.log('Auth Success')
-          console.log('Token: ' + this.$auth.token())
-          console.log(res)
+          // console.log('Token: ' + this.$auth.token())
+          // console.log(res)
           this.$store.commit('SET_USER', res)
           localStorage.set('login', res)
           // window.localStorage.setItem('login', 'askdfnasdfkj')
