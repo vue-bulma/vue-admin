@@ -11,6 +11,7 @@ let config = {
 
 const connection = Firebase.initializeApp(config)
 const DB = connection.database()
+const AUTH = connection.auth()
 
 export default function install (Vue) {
   Object.defineProperties(Vue.prototype, {
@@ -18,6 +19,12 @@ export default function install (Vue) {
       get () {
         return DB
       }
+    },
+    $authFB: {
+      get () {
+        return AUTH
+      }
     }
+
   })
 }

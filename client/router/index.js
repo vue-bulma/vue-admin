@@ -3,7 +3,7 @@ import Router from 'vue-router'
 import menuModule from 'vuex-store/modules/menu'
 Vue.use(Router)
 
-export default new Router({
+const router = new Router({
   mode: 'hash', // Demo is living in GitHub.io, so required!
   linkActiveClass: 'is-active',
   scrollBehavior: () => ({ y: 0 }),
@@ -25,6 +25,15 @@ export default new Router({
     }
   ]
 })
+
+// router.beforeEach((to, from, next) => {
+//   if (this.$auth.check() !== true) {
+//     return router.push('/login')
+//   }
+//   next()
+// })
+
+export default router
 
 // Menu should have 2 levels.
 function generateRoutesFromMenu (menu = [], routes = []) {

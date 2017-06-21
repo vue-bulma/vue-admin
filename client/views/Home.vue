@@ -57,7 +57,7 @@
       </div>
     </div>
 
-    <div class="none">
+    <div>
       <div class="tile is-ancestor">
         <div class="tile is-parent is-6">
           <article class="tile is-child box">
@@ -98,7 +98,8 @@
   }
   nowDate = dd + '/' + mm + '/' + yyyy
 
-  const api = 'http://104.131.75.202:8090/teste'
+  // const api = 'http://104.131.75.202:8091/teste'
+  const api = 'http://localhost:8091/teste'
 
   export default {
     components: {
@@ -159,8 +160,9 @@
         this.schedule = map(obj, (schedule) => {
           return schedule
         })
-        // console.log(this.schedule[0][this.$store.state.user.client].service.schedule.professional[this.$store.state.user.crm].length)
       })
+
+      // console.log(this.schedule[0][this.$store.state.user.client].service.schedule.professional[this.$store.state.user.crm])
 
       this.value = nowDate
       setInterval(() => {
@@ -198,7 +200,7 @@
 </script>
 
 <style lang="scss" scoped>
-  .none { diplay: none; }
+  .none { display: none; }
   .table-responsive {
     display: block;
     width: 100%;
