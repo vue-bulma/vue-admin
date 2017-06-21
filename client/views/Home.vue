@@ -148,9 +148,9 @@
       }
     },
     mounted () {
-      if (this.$store.state.user.crm === '') {
-        this.$router.push('/login')
-      }
+      // if (this.$store.state.user.crm === '') {
+      //  this.$router.push('/login')
+      // }
       this.crm = this.$store.state.user.crm
       this.client = this.$store.state.user.client
 
