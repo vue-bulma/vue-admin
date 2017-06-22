@@ -83,7 +83,7 @@
 
 <script>
   import Chart from 'vue-bulma-chartjs'
-  import { map } from 'lodash'
+  import _ from 'lodash'
   import Datepicker from 'vue-bulma-datepicker'
 
   let nowDate = new Date()
@@ -157,9 +157,13 @@
 
       this.$db.ref('server').on('value', data => {
         const obj = data.val()
-        this.schedule = map(obj, (schedule) => {
+        this.schedule = _.map(obj, (schedule) => {
           return schedule
         })
+      })
+      const dataSource = _.chain(this.schedule).map(source => source).value()
+      dataSource.forEach(function (value) {
+        console.log(value)
       })
 
       // console.log(this.schedule[0][this.$store.state.user.client].service.schedule.professional[this.$store.state.user.crm])
