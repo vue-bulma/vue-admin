@@ -46,7 +46,9 @@
               <td class="is-icon">
                 <a href="#">
                   <div v-if="result.tbNome !== undefined">
-                    <i class="fa fa-heartbeat" :class="{ type1: result.tbTipo == 1, type2: result.tbTipo == 2, type3: result.tbTipo == 3, type4: result.tbTipo == 4 }"></i>
+                    <!-- <i class="material-icons" v-html="changeIconType">{{ result.tbTipo == 0 ? 'accessibility': '0' }}</i> -->
+                    <!--  :class="{ type1: result.tbTipo == 1, type2: result.tbTipo == 2, type3: result.tbTipo == 3, type4: result.tbTipo == 4 }" -->
+                    <i v-html=changeIconType></i>
                   </div>
                 </a>
               </td>
@@ -118,7 +120,8 @@
         examCount: 0,
         procedCount: 0,
         surgeryCount: 0,
-        total: 0
+        total: 0,
+        teste: ''
       }
     },
     methods: {
@@ -129,6 +132,9 @@
     computed: {
       today () {
         return new Date()
+      },
+      changeIconType () {
+        return 'fa fa-heartbeat'
       },
       chartData () {
         return {

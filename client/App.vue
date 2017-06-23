@@ -58,6 +58,8 @@ export default {
   animation-duration: .377s;
 }
 
+// @import '~material-icons/material-icons.css';
+
 @import '~bulma';
 
 @import '~wysiwyg.css/wysiwyg.sass';

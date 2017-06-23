@@ -4,7 +4,8 @@ import menuModule from 'vuex-store/modules/menu'
 Vue.use(Router)
 
 const router = new Router({
-  mode: 'hash', // Demo is living in GitHub.io, so required!
+  mode: 'history', // Demo is living in GitHub.io, so required! hash
+  history: true,
   linkActiveClass: 'is-active',
   scrollBehavior: () => ({ y: 0 }),
   routes: [
