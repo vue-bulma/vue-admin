@@ -6,3 +6,11 @@ Vue.filter('formatDate', function (value) {
     return moment(String(value)).format('MM/DD/YYYY hh:mm')
   }
 })
+
+Vue.filter('changeIconType', function (value) {
+  console.log(value)
+  switch (value) {
+    case 0:
+      return 'fa fa-heartbeat'
+  }
+})

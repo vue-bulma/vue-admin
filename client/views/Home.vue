@@ -47,8 +47,11 @@
                 <a href="#">
                   <div v-if="result.tbNome !== undefined">
                     <!-- <i class="material-icons" v-html="changeIconType">{{ result.tbTipo == 0 ? 'accessibility': '0' }}</i> -->
-                    <!--  :class="{ type1: result.tbTipo == 1, type2: result.tbTipo == 2, type3: result.tbTipo == 3, type4: result.tbTipo == 4 }" -->
-                    <i v-html=changeIconType></i>
+                    <tooltip label="top" placement="top">
+                      <div class="has-text-centered">
+                        <i class="fa fa-heartbeat" :class="{ type1: result.tbTipo == 1, type2: result.tbTipo == 2, type3: result.tbTipo == 3, type4: result.tbTipo == 4 }"></i>
+                      </div>
+                    </tooltip>
                   </div>
                 </a>
               </td>
@@ -87,6 +90,7 @@
   import Chart from 'vue-bulma-chartjs'
   import _ from 'lodash'
   import Datepicker from 'vue-bulma-datepicker'
+  import Tooltip from 'vue-bulma-tooltip'
 
   let nowDate = new Date()
   let dd = nowDate.getDate()
@@ -106,7 +110,8 @@
   export default {
     components: {
       Chart,
-      Datepicker
+      Datepicker,
+      Tooltip
     },
     data () {
       return {
@@ -132,9 +137,6 @@
     computed: {
       today () {
         return new Date()
-      },
-      changeIconType () {
-        return 'fa fa-heartbeat'
       },
       chartData () {
         return {
@@ -211,6 +213,9 @@
 
 <style lang="scss" scoped>
   .none { display: none; }
+  .tooltip {
+    display: inherit;
+  }
   .table-responsive {
     display: block;
     width: 100%;
