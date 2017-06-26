@@ -15,14 +15,14 @@
       </div>
       <div class="tile is-parent">
         <article class="tile is-child box">
-          <p class="title"><i class="fa fa-calendar calendar"></i> Agenda</p>
-          <p class="subtitle">{{ scheduleCount }}</p>
+          <p class="title"><i class="fa fa-user-md"></i> Cirurgias</p>
+          <p class="subtitle">{{ surgeryCount }}</p>
         </article>
       </div>
       <div class="tile is-parent">
         <article class="tile is-child box">
-          <p class="title"><i class="fa fa-user-md"></i> Cirurgias</p>
-          <p class="subtitle">{{ surgeryCount }}</p>
+          <p class="title"><i class="fa fa-calendar calendar"></i> Agenda</p>
+          <p class="subtitle">{{ scheduleCount }}</p>
         </article>
       </div>
     </div>
@@ -62,7 +62,7 @@
       </div>
     </div>
 
-    <div>
+    <div class="chart">
       <div class="tile is-ancestor">
         <div class="tile is-parent is-6">
           <article class="tile is-child box">
@@ -130,7 +130,7 @@
       }
     },
     methods: {
-      greet: function (event) {
+      greet (event) {
         console.log('Hello ')
       }
     },
@@ -169,26 +169,29 @@
           return schedule
         })
       })
-      const dataSource = _.chain(this.schedule).map(source => source).value()
-      dataSource.forEach(function (value) {
-        console.log(value)
+
+      this.$db.ref('server/customer/503/service/schedule/professional/34183').on('value', data => {
+        const obj = data.val()
+        this.teste = _.map(obj, (schedule) => {
+          return schedule
+        })
+        console.log(this.teste.length)
       })
 
       // console.log(this.schedule[0][this.$store.state.user.client].service.schedule.professional[this.$store.state.user.crm])
 
       this.value = nowDate
-      setInterval(() => {
-        // https://github.com/vuejs/vue/issues/2873
-        // Array.prototype.$set/$remove deprecated (use Vue.set or Array.prototype.splice instead)
-        this.data.forEach((item, i) => {
-          this.data.splice(i, 1, Math.ceil(Math.random() * 1000))
-        })
-      }, 100000)
+      // setInterval(() => {
+      //   // https://github.com/vuejs/vue/issues/2873
+      //   // Array.prototype.$set/$remove deprecated (use Vue.set or Array.prototype.splice instead)
+      //   this.data.forEach((item, i) => {
+      //     this.data.splice(i, 1, Math.ceil(Math.random() * 1000))
+      //   })
+      // }, 100000)
     },
     watch: {
       value (newVal, oldVal) {
-        // console.log(this.$store.state.user)
-        console.log(newVal, oldVal)
+        // console.log(newVal, oldVal)
         this.$http({
           url: api,
           transformResponse: [(data) => {
@@ -212,7 +215,9 @@
 </script>
 
 <style lang="scss" scoped>
-  .none { display: none; }
+  .none {
+    display: none;
+  }
   .tooltip {
     display: inherit;
   }

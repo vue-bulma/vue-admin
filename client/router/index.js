@@ -28,9 +28,10 @@ const router = new Router({
 })
 
 // router.beforeEach((to, from, next) => {
-//   if (this.$auth.check() !== true) {
-//     return router.push('/login')
-//   }
+//   console.log(to)
+//   // if (this.$auth.check() !== true) {
+//   //   return router.push('/login')
+//   // }
 //   next()
 // })
 

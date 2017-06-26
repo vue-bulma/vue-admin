@@ -1,3 +1,5 @@
+import { isEmpty } from 'lodash'
+
 const pkg = state => state.pkg
 const app = state => state.app
 const device = state => state.app.device
@@ -8,6 +10,7 @@ const componententry = state => {
   return state.menu.items.filter(c => c.meta && c.meta.label === 'Components')[0]
 }
 const user = state => state.user
+const isLogged = (state) => !isEmpty(state.crm)
 
 export {
   pkg,
@@ -17,5 +20,6 @@ export {
   effect,
   menuitems,
   componententry,
-  user
+  user,
+  isLogged
 }

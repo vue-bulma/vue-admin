@@ -29,7 +29,7 @@
 <script>
 import Tooltip from 'vue-bulma-tooltip'
 import { mapGetters, mapActions } from 'vuex'
-
+const api = 'http://localhost:8091/logout'
 export default {
 
   components: {
@@ -70,6 +70,20 @@ export default {
         success: function () {
           window.localStorage.removeItem('login')
           console.log('logout passou aqui')
+          this.$http({
+            url: api,
+            transformResponse: [(data) => {
+              return JSON.parse(data.replace(/T00:00:00/g, ''))
+            }],
+            params:
+            {
+              id: this.$store.state.user.id
+            }
+          }).then((response) => {
+            // console.log(response)
+          }).catch((error) => {
+            console.log(error)
+          })
         },
         error: function () {}
       })
