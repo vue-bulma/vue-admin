@@ -39,14 +39,30 @@
               <th></th>
             </tr>
             </thead>
-            <tbody v-for="list in schedule">
-            <tr v-for="result in list[client].service.schedule.professional[crm]">
+            <tbody>
+              <tr v-for="list in schedule">
+
+                <td>{{list.tbHora.substring(0, 5)}}</td>
+                <td>{{list.tbNome}}</td>
+                <td class="is-icon">
+                  <a href="#">
+                    <div v-if="list.tbNome !== undefined">
+                      <tooltip label="top" placement="top">
+                        <div class="has-text-centered">
+                          <i class="fa fa-heartbeat" :class="{ type1: list.tbTipo == 1, type2: list.tbTipo == 2, type3: list.tbTipo == 3, type4: list.tbTipo == 4 }"></i>
+                        </div>
+                      </tooltip>
+                    </div>
+                  </a>
+                </td>
+              </tr>
+            <!-- <tr v-for="result in list[client].service.schedule.professional[crm]"> -->
+              <!-- <tr>
               <td>{{result.tbHora.substring(0, 5)}}</td>
               <td>{{result.tbNome}}</td>
               <td class="is-icon">
                 <a href="#">
                   <div v-if="result.tbNome !== undefined">
-                    <!-- <i class="material-icons" v-html="changeIconType">{{ result.tbTipo == 0 ? 'accessibility': '0' }}</i> -->
                     <tooltip label="top" placement="top">
                       <div class="has-text-centered">
                         <i class="fa fa-heartbeat" :class="{ type1: result.tbTipo == 1, type2: result.tbTipo == 2, type3: result.tbTipo == 3, type4: result.tbTipo == 4 }"></i>
@@ -54,7 +70,7 @@
                     </tooltip>
                   </div>
                 </a>
-              </td>
+              </td> -->
             </tr>
             </tbody>
           </table>
@@ -88,7 +104,7 @@
 
 <script>
   import Chart from 'vue-bulma-chartjs'
-  import _ from 'lodash'
+  // import _ from 'lodash'
   import Datepicker from 'vue-bulma-datepicker'
   import Tooltip from 'vue-bulma-tooltip'
 
@@ -163,19 +179,29 @@
       this.crm = this.$store.state.user.crm
       this.client = this.$store.state.user.client
 
-      this.$db.ref('server').on('value', data => {
-        const obj = data.val()
-        this.schedule = _.map(obj, (schedule) => {
-          return schedule
-        })
-      })
+      // this.$db.ref('server').on('value', data => {
+      //   const obj = data.val()
+      //   this.schedule = _.map(obj, (schedule) => {
+      //     return schedule
+      //   })
+      // })
+      console.log(nowDate)
 
-      this.$db.ref('server/customer/503/service/schedule/professional').on('value', data => {
+      const dateDb = nowDate.substring(3, 5) + '-' + nowDate.substring(0, 2) + '-' + nowDate.substring(6, 10)
+
+      this.$db.ref('server/customer/503/service/schedule/professional/34183/date/' + dateDb).on('value', data => {
         const obj = data.val()
-        this.teste = _.map(obj, (schedule) => {
-          return schedule
-        })
-        console.log(this.teste)
+        console.log('obj', obj)
+
+        this.scheduleCount = !obj.scheduleTotal ? 0 : obj.scheduleTotal
+        this.examCount = !obj.examCount ? 0 : obj.examCount
+        this.procedCount = !obj.countProced ? 0 : obj.countProced
+        this.surgeryCount = !obj.surgeryCount ? 0 : obj.surgeryCount
+        this.schedule = !obj.list ? [] : obj.list
+
+        // this.teste = _.map(obj, (schedule) => {
+        //   return schedule
+        // })
       })
 
       this.value = nowDate
@@ -189,6 +215,23 @@
     },
     watch: {
       value (newVal, oldVal) {
+        const dateDb = newVal.substring(3, 5) + '-' + newVal.substring(0, 2) + '-' + newVal.substring(6, 10)
+
+        this.$db.ref('server/customer/503/service/schedule/professional/34183/date/' + dateDb).on('value', data => {
+          const obj = data.val()
+          console.log('obj', obj)
+
+          this.scheduleCount = !obj.scheduleTotal ? 0 : obj.scheduleTotal
+          this.examCount = !obj.examCount ? 0 : obj.examCount
+          this.procedCount = !obj.countProced ? 0 : obj.countProced
+          this.surgeryCount = !obj.surgeryCount ? 0 : obj.surgeryCount
+          this.schedule = !obj.list ? [] : obj.list
+
+          // this.teste = _.map(obj, (schedule) => {
+          //   return schedule
+          // })
+        })
+
         // console.log(newVal, oldVal)
         this.$http({
           url: api,
