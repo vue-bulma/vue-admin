@@ -170,24 +170,22 @@
         })
       })
 
-      this.$db.ref('server/customer/503/service/schedule/professional/34183').on('value', data => {
+      this.$db.ref('server/customer/503/service/schedule/professional').on('value', data => {
         const obj = data.val()
         this.teste = _.map(obj, (schedule) => {
           return schedule
         })
-        console.log(this.teste.length)
+        console.log(this.teste)
       })
 
-      // console.log(this.schedule[0][this.$store.state.user.client].service.schedule.professional[this.$store.state.user.crm])
-
       this.value = nowDate
-      // setInterval(() => {
-      //   // https://github.com/vuejs/vue/issues/2873
-      //   // Array.prototype.$set/$remove deprecated (use Vue.set or Array.prototype.splice instead)
-      //   this.data.forEach((item, i) => {
-      //     this.data.splice(i, 1, Math.ceil(Math.random() * 1000))
-      //   })
-      // }, 100000)
+      setInterval(() => {
+        // https://github.com/vuejs/vue/issues/2873
+        // Array.prototype.$set/$remove deprecated (use Vue.set or Array.prototype.splice instead)
+        this.data.forEach((item, i) => {
+          this.data.splice(i, 1, Math.ceil(Math.random() * 1000))
+        })
+      }, 100000)
     },
     watch: {
       value (newVal, oldVal) {

@@ -62,7 +62,6 @@ export default {
   },
   methods: {
     login () {
-      console.log(this.$auth.check())
       var redirect = this.$auth.redirect()
       this.$auth.login({
         headers: {
@@ -72,7 +71,7 @@ export default {
         rememberMe: this.data.rememberMe,
         redirect: {name: redirect ? 'Home' : 'Home'},
         success (res) {
-          console.log('Auth Success')
+          // console.log('Auth Success')
           // console.log('Token: ' + this.$auth.token())
           // console.log(res)
           this.$store.commit('SET_USER', res)

@@ -69,7 +69,6 @@ export default {
         params: {},
         success: function () {
           window.localStorage.removeItem('login')
-          console.log('logout passou aqui')
           this.$http({
             url: api,
             transformResponse: [(data) => {
