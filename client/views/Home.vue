@@ -120,8 +120,8 @@
   }
   nowDate = dd + '/' + mm + '/' + yyyy
 
-  // const api = 'http://104.131.75.202:8091/teste'
-  const api = 'http://localhost:8091/teste'
+  const api = 'http://104.131.75.202:8091/teste'
+  // const api = 'http://localhost:8091/teste'
 
   export default {
     components: {
@@ -189,8 +189,9 @@
       const dateDb = nowDate.substring(3, 5) + '-' + nowDate.substring(0, 2) + '-' + nowDate.substring(6, 10)
 
       this.schedule = []
-      this.$db.ref('server/customer/503/service/schedule/professional/' + this.crm + '/date/' + dateDb).on('value', data => {
+      this.$db.ref('server/customer/' + this.client + '/service/schedule/professional/' + this.crm + '/date/' + dateDb).on('value', data => {
         const obj = data.val()
+        console.log(obj)
         if (obj !== null) {
           this.schedule = []
           this.scheduleCount = 0 + !obj.scheduleTotal ? 0 : obj.scheduleTotal
@@ -218,7 +219,7 @@
         const dateDb = newVal.substring(3, 5) + '-' + newVal.substring(0, 2) + '-' + newVal.substring(6, 10)
 
         this.schedule = []
-        this.$db.ref('server/customer/503/service/schedule/professional/' + this.crm + '/date/' + dateDb).on('value', data => {
+        this.$db.ref('server/customer/' + this.client + '/service/schedule/professional/' + this.crm + '/date/' + dateDb).on('value', data => {
           const obj = data.val()
           if (obj !== null) {
             this.schedule = []
