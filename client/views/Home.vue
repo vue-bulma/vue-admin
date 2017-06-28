@@ -178,6 +178,7 @@
       // }
       this.crm = this.$store.state.user.crm
       this.client = this.$store.state.user.client
+      this.$emit('crm', this.crm)
 
       // this.$db.ref('server').on('value', data => {
       //   const obj = data.val()
@@ -185,20 +186,19 @@
       //     return schedule
       //   })
       // })
-      console.log(nowDate)
-
       const dateDb = nowDate.substring(3, 5) + '-' + nowDate.substring(0, 2) + '-' + nowDate.substring(6, 10)
 
-      this.$db.ref('server/customer/503/service/schedule/professional/34183/date/' + dateDb).on('value', data => {
+      this.schedule = []
+      this.$db.ref('server/customer/503/service/schedule/professional/' + this.crm + '/date/' + dateDb).on('value', data => {
         const obj = data.val()
-        console.log('obj', obj)
-
-        this.scheduleCount = !obj.scheduleTotal ? 0 : obj.scheduleTotal
-        this.examCount = !obj.examCount ? 0 : obj.examCount
-        this.procedCount = !obj.countProced ? 0 : obj.countProced
-        this.surgeryCount = !obj.surgeryCount ? 0 : obj.surgeryCount
-        this.schedule = !obj.list ? [] : obj.list
-
+        if (obj !== null) {
+          this.schedule = []
+          this.scheduleCount = 0 + !obj.scheduleTotal ? 0 : obj.scheduleTotal
+          this.examCount = 0 + !obj.examCount ? 0 : obj.examCount
+          this.procedCount = 0 + !obj.countProced ? 0 : obj.countProced
+          this.surgeryCount = 0 + !obj.surgeryCount ? 0 : obj.surgeryCount
+          this.schedule = !obj.list ? [] : obj.list
+        }
         // this.teste = _.map(obj, (schedule) => {
         //   return schedule
         // })
@@ -217,19 +217,20 @@
       value (newVal, oldVal) {
         const dateDb = newVal.substring(3, 5) + '-' + newVal.substring(0, 2) + '-' + newVal.substring(6, 10)
 
-        this.$db.ref('server/customer/503/service/schedule/professional/34183/date/' + dateDb).on('value', data => {
+        this.schedule = []
+        this.$db.ref('server/customer/503/service/schedule/professional/' + this.crm + '/date/' + dateDb).on('value', data => {
           const obj = data.val()
-          console.log('obj', obj)
-
-          this.scheduleCount = !obj.scheduleTotal ? 0 : obj.scheduleTotal
-          this.examCount = !obj.examCount ? 0 : obj.examCount
-          this.procedCount = !obj.countProced ? 0 : obj.countProced
-          this.surgeryCount = !obj.surgeryCount ? 0 : obj.surgeryCount
-          this.schedule = !obj.list ? [] : obj.list
-
-          // this.teste = _.map(obj, (schedule) => {
-          //   return schedule
-          // })
+          if (obj !== null) {
+            this.schedule = []
+            this.scheduleCount = 0 + !obj.scheduleTotal ? 0 : obj.scheduleTotal
+            this.examCount = 0 + !obj.examCount ? 0 : obj.examCount
+            this.procedCount = 0 + !obj.countProced ? 0 : obj.countProced
+            this.surgeryCount = 0 + !obj.surgeryCount ? 0 : obj.surgeryCount
+            this.schedule = !obj.list ? [] : obj.list
+          }
+            // this.teste = _.map(obj, (schedule) => {
+            //   return schedule
+            // })
         })
 
         // console.log(newVal, oldVal)

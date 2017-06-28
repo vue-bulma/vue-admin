@@ -18,6 +18,7 @@
           </a>
         </div>
         <div class="nav-right is-flex">
+          <div v-on:crm="crm"></div>
           <router-link v-if="!$auth.check()" to="/login" class="nav-item">Login</router-link>
           <a v-if="$auth.check()" @click="logout" class="nav-item">CRM: {{crm}} - Logout</a>
         </div>
