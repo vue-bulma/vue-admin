@@ -73,9 +73,9 @@ export default {
         success (res) {
           // console.log('Auth Success')
           // console.log('Token: ' + this.$auth.token())
-          // console.log(res)
+          // console.log(res.data.parameters)
           this.$store.commit('SET_USER', res)
-          localStorage.set('login', res)
+          localStorage.set('crm', res.data.parameters.crm)
           // window.localStorage.setItem('login', 'askdfnasdfkj')
         },
         error (err) {

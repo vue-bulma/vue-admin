@@ -38,10 +38,10 @@ export default {
   },
 
   mounted () {
-    console.log(this.$store.state.user.crm)
     if (this.$store.state.user.crm !== '') {
       this.crm = this.$store.state.user.crm
     }
+    this.crm = window.localStorage.getItem('crm')
   },
 
   props: {
@@ -50,7 +50,7 @@ export default {
 
   data () {
     return {
-      crm: ''
+      crm: window.localStorage.getItem('crm')
     }
   },
 

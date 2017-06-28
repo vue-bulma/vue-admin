@@ -176,9 +176,9 @@
       // if (this.$store.state.user.crm === '') {
       //  this.$router.push('/login')
       // }
+
       this.crm = this.$store.state.user.crm
       this.client = this.$store.state.user.client
-      this.$emit('crm', this.crm)
 
       // this.$db.ref('server').on('value', data => {
       //   const obj = data.val()
@@ -191,7 +191,7 @@
       this.schedule = []
       this.$db.ref('server/customer/' + this.client + '/service/schedule/professional/' + this.crm + '/date/' + dateDb).on('value', data => {
         const obj = data.val()
-        console.log(obj)
+        // console.log(obj)
         if (obj !== null) {
           this.schedule = []
           this.scheduleCount = 0 + !obj.scheduleTotal ? 0 : obj.scheduleTotal
@@ -217,7 +217,6 @@
     watch: {
       value (newVal, oldVal) {
         const dateDb = newVal.substring(3, 5) + '-' + newVal.substring(0, 2) + '-' + newVal.substring(6, 10)
-
         this.schedule = []
         this.$db.ref('server/customer/' + this.client + '/service/schedule/professional/' + this.crm + '/date/' + dateDb).on('value', data => {
           const obj = data.val()
