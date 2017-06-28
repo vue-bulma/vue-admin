@@ -76,6 +76,7 @@ export default {
           // console.log(res.data.parameters)
           this.$store.commit('SET_USER', res)
           localStorage.set('crm', res.data.parameters.crm)
+          localStorage.set('client', res.data.parameters.client)
           // window.localStorage.setItem('login', 'askdfnasdfkj')
         },
         error (err) {

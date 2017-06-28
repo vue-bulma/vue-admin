@@ -19,6 +19,11 @@ const router = new Router({
       path: '/login',
       component: require('../views/auth/Login')
     },
+    {
+      name: '404',
+      path: '/404',
+      component: require('../views/page404')
+    },
     ...generateRoutesFromMenu(menuModule.state.items),
     {
       path: '*',

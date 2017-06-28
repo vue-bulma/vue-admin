@@ -30,7 +30,7 @@
 <script>
 import Tooltip from 'vue-bulma-tooltip'
 import { mapGetters, mapActions } from 'vuex'
-const api = 'http://localhost:8091/logout'
+const api = 'http://104.131.75.202:8091/logout'
 export default {
 
   components: {
