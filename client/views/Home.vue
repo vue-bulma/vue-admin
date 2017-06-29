@@ -107,6 +107,7 @@
   // import _ from 'lodash'
   import Datepicker from 'vue-bulma-datepicker'
   import Tooltip from 'vue-bulma-tooltip'
+  import API_URL from '../../config/dev.env'
 
   let nowDate = new Date()
   let dd = nowDate.getDate()
@@ -120,7 +121,7 @@
   }
   nowDate = dd + '/' + mm + '/' + yyyy
 
-  const api = 'http://104.131.75.202:8091/teste'
+  const api = API_URL.API_URL + ':8091/teste'
   // const api = 'http://localhost:8091/teste'
 
   export default {

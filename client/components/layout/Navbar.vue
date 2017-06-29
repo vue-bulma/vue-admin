@@ -28,9 +28,10 @@
 </template>
 
 <script>
+import API_URL from '../../../config/dev.env'
 import Tooltip from 'vue-bulma-tooltip'
 import { mapGetters, mapActions } from 'vuex'
-const api = 'http://104.131.75.202:8091/logout'
+const api = API_URL.API_URL + ':8091/logout'
 export default {
 
   components: {

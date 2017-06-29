@@ -24,6 +24,10 @@ const store = new Vuex.Store({
       client: '',
       crm: '',
       date: ''
+    },
+    auth: {
+      isLogged: false,
+      token: ''
     }
   },
   mutations: {

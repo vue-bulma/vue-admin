@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import menuModule from 'vuex-store/modules/menu'
+import store from '../store'
 Vue.use(Router)
 
 const router = new Router({
@@ -32,13 +33,13 @@ const router = new Router({
   ]
 })
 
-// router.beforeEach((to, from, next) => {
-//   console.log(to)
-//   // if (this.$auth.check() !== true) {
-//   //   return router.push('/login')
-//   // }
-//   next()
-// })
+/* Progendo rota */
+router.beforeEach((to, from, next) => {
+  if (!store.state.user.id && to.path !== '/login') {
+    return router.push('/login')
+  }
+  next()
+})
 
 export default router
 
