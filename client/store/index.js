@@ -32,8 +32,6 @@ const store = new Vuex.Store({
   },
   mutations: {
     SET_USER (store, obj) {
-      console.log(store.user)
-      console.log(obj.data.parameters)
       store.user = obj.data.parameters
     }
   }

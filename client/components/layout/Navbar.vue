@@ -9,7 +9,7 @@
         </div>
         <div class="nav-center">
           <a class="nav-item hero-brand" href="/">
-            <img src="~assets/logo.png" :alt="pkginfo.description">
+            <img src="~assets/logo_RISC.png" :alt="pkginfo.description">
             <tooltip :label="'v' + pkginfo.version" placement="right" type="success" size="small" :no-animate="true" :always="true" :rounded="true">
               <div class="is-hidden-mobile">
                 <span class="vue">Clinic</span><strong class="admin"> Dashboard</strong>

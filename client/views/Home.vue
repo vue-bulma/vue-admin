@@ -104,25 +104,15 @@
 
 <script>
   import Chart from 'vue-bulma-chartjs'
-  // import _ from 'lodash'
   import Datepicker from 'vue-bulma-datepicker'
   import Tooltip from 'vue-bulma-tooltip'
   import API_URL from '../../config/dev.env'
+  import moment from 'moment'
+  // import _ from 'lodash'
 
-  let nowDate = new Date()
-  let dd = nowDate.getDate()
-  let mm = nowDate.getMonth() + 1
-  let yyyy = nowDate.getFullYear()
-  if (dd < 10) {
-    dd = '0' + dd
-  }
-  if (mm < 10) {
-    mm = '0' + mm
-  }
-  nowDate = dd + '/' + mm + '/' + yyyy
+  moment.locale('pt-BR')
 
   const api = API_URL.API_URL + ':8091/teste'
-  // const api = 'http://localhost:8091/teste'
 
   export default {
     components: {
@@ -141,14 +131,24 @@
         scheduleCount: 0,
         examCount: 0,
         procedCount: 0,
-        surgeryCount: 0,
-        total: 0,
-        teste: ''
+        surgeryCount: 0
       }
     },
     methods: {
-      greet (event) {
-        console.log('Hello ')
+      loadData (client, crm, date) {
+        this.schedule = []
+        this.$db.ref('server/customer/' + client + '/service/schedule/professional/' + crm + '/date/' + date).on('value', data => {
+          const obj = data.val()
+          // console.log(obj)
+          if (obj !== null) {
+            this.schedule = []
+            this.scheduleCount = 0 + !obj.scheduleTotal ? 0 : obj.scheduleTotal
+            this.examCount = 0 + !obj.examCount ? 0 : obj.examCount
+            this.procedCount = 0 + !obj.countProced ? 0 : obj.countProced
+            this.surgeryCount = 0 + !obj.surgeryCount ? 0 : obj.surgeryCount
+            this.schedule = !obj.list ? [] : obj.list
+          }
+        })
       }
     },
     computed: {
@@ -174,39 +174,15 @@
       }
     },
     mounted () {
-      // if (this.$store.state.user.crm === '') {
-      //  this.$router.push('/login')
-      // }
-
       this.crm = this.$store.state.user.crm
       this.client = this.$store.state.user.client
 
-      // this.$db.ref('server').on('value', data => {
-      //   const obj = data.val()
-      //   this.schedule = _.map(obj, (schedule) => {
-      //     return schedule
-      //   })
-      // })
-      const dateDb = nowDate.substring(3, 5) + '-' + nowDate.substring(0, 2) + '-' + nowDate.substring(6, 10)
+      this.value = moment().format('L')
 
-      this.schedule = []
-      this.$db.ref('server/customer/' + this.client + '/service/schedule/professional/' + this.crm + '/date/' + dateDb).on('value', data => {
-        const obj = data.val()
-        // console.log(obj)
-        if (obj !== null) {
-          this.schedule = []
-          this.scheduleCount = 0 + !obj.scheduleTotal ? 0 : obj.scheduleTotal
-          this.examCount = 0 + !obj.examCount ? 0 : obj.examCount
-          this.procedCount = 0 + !obj.countProced ? 0 : obj.countProced
-          this.surgeryCount = 0 + !obj.surgeryCount ? 0 : obj.surgeryCount
-          this.schedule = !obj.list ? [] : obj.list
-        }
-        // this.teste = _.map(obj, (schedule) => {
-        //   return schedule
-        // })
-      })
+      const dateDb = this.value.substring(3, 5) + '-' + this.value.substring(0, 2) + '-' + this.value.substring(6, 10)
 
-      this.value = nowDate
+      this.loadData(this.client, this.crm, dateDb)
+
       setInterval(() => {
         // https://github.com/vuejs/vue/issues/2873
         // Array.prototype.$set/$remove deprecated (use Vue.set or Array.prototype.splice instead)
@@ -218,21 +194,8 @@
     watch: {
       value (newVal, oldVal) {
         const dateDb = newVal.substring(3, 5) + '-' + newVal.substring(0, 2) + '-' + newVal.substring(6, 10)
-        this.schedule = []
-        this.$db.ref('server/customer/' + this.client + '/service/schedule/professional/' + this.crm + '/date/' + dateDb).on('value', data => {
-          const obj = data.val()
-          if (obj !== null) {
-            this.schedule = []
-            this.scheduleCount = 0 + !obj.scheduleTotal ? 0 : obj.scheduleTotal
-            this.examCount = 0 + !obj.examCount ? 0 : obj.examCount
-            this.procedCount = 0 + !obj.countProced ? 0 : obj.countProced
-            this.surgeryCount = 0 + !obj.surgeryCount ? 0 : obj.surgeryCount
-            this.schedule = !obj.list ? [] : obj.list
-          }
-            // this.teste = _.map(obj, (schedule) => {
-            //   return schedule
-            // })
-        })
+
+        this.loadData(this.client, this.crm, dateDb)
 
         // console.log(newVal, oldVal)
         this.$http({
