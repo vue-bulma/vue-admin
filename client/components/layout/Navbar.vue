@@ -55,6 +55,12 @@ export default {
     }
   },
 
+  wacth () {
+    this.crm = window.localStorage.getItem('crm')
+    console.log('storage', window.localStorage.getItem('crm'))
+    console.log('store', this.$store.state.user.crm)
+  },
+
   computed: mapGetters({
     pkginfo: 'pkg',
     sidebar: 'sidebar'
@@ -70,7 +76,7 @@ export default {
         makeRequest: false,
         params: {},
         success: function () {
-          window.localStorage.removeItem('login')
+          window.localStorage.removeItem('crm')
           this.$http({
             url: api,
             transformResponse: [(data) => {

@@ -40,6 +40,7 @@
     "bulma": "^0.3.2",
     "firebase": "^4.1.2",
     "font-awesome": "4.7.0",
+    "highcharts": "^5.0.12",
     "lodash": "^4.17.4",
     "mdi": "^1.8.36",
     "moment": "^2.18.1",

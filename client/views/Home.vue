@@ -41,7 +41,6 @@
             </thead>
             <tbody>
               <tr v-for="list in schedule">
-
                 <td>{{list.tbHora.substring(0, 5)}}</td>
                 <td>{{list.tbNome}}</td>
                 <td class="is-icon">
@@ -56,22 +55,6 @@
                   </a>
                 </td>
               </tr>
-            <!-- <tr v-for="result in list[client].service.schedule.professional[crm]"> -->
-              <!-- <tr>
-              <td>{{result.tbHora.substring(0, 5)}}</td>
-              <td>{{result.tbNome}}</td>
-              <td class="is-icon">
-                <a href="#">
-                  <div v-if="result.tbNome !== undefined">
-                    <tooltip label="top" placement="top">
-                      <div class="has-text-centered">
-                        <i class="fa fa-heartbeat" :class="{ type1: result.tbTipo == 1, type2: result.tbTipo == 2, type3: result.tbTipo == 3, type4: result.tbTipo == 4 }"></i>
-                      </div>
-                    </tooltip>
-                  </div>
-                </a>
-              </td> -->
-            </tr>
             </tbody>
           </table>
         </article>
@@ -84,7 +67,9 @@
           <article class="tile is-child box">
             <h4 class="title">Convênios</h4>
             <div class="content">
-              <chart :type="'doughnut'" :data="chartData"></chart>
+              <div id="grafico">
+
+              </div>
             </div>
           </article>
         </div>
@@ -92,7 +77,7 @@
           <article class="tile is-child box">
             <h4 class="title">Tipo</h4>
             <div class="content">
-              <chart :type="'pie'" :data="chartData"></chart>
+              <!-- <chart :type="'pie'" :data="chartData"></chart> -->
             </div>
           </article>
         </div>
@@ -108,7 +93,8 @@
   import Tooltip from 'vue-bulma-tooltip'
   import API_URL from '../../config/dev.env'
   import moment from 'moment'
-  // import _ from 'lodash'
+  import _ from 'lodash'
+  import Highcharts from 'highcharts'
 
   moment.locale('pt-BR')
 
@@ -122,7 +108,6 @@
     },
     data () {
       return {
-        data: [300, 50, 100],
         schedule: [],
         value: '',
         counter: 0,
@@ -147,30 +132,51 @@
             this.procedCount = 0 + !obj.countProced ? 0 : obj.countProced
             this.surgeryCount = 0 + !obj.surgeryCount ? 0 : obj.surgeryCount
             this.schedule = !obj.list ? [] : obj.list
+            const convenios = this.schedule.map(item => item.tbConvenio)
+            const base = _(convenios)
+              .countBy()
+              .map((value, key) => ({ key, value }))
+              .orderBy(['value'], ['desc'])
+              .value()
+            const categories = base.map(item => item.key)
+            const values = base.map(item => item.value)
+            this.setup({ categories, values })
           }
+        })
+      },
+      setup (obj) {
+        const { categories, values } = obj
+        Highcharts.chart('grafico', {
+          chart: {
+            type: 'column'
+          },
+          title: {
+            text: 'Convênios'
+          },
+          subtitle: {
+            text: 'Fonte: Risc Sistemas em Saúde'
+          },
+          xAxis: {
+            categories: categories,
+            crosshair: true
+          },
+          yAxis: {
+            min: 0,
+            title: {
+              text: 'Quantidade'
+            }
+          },
+          series: [{
+            name: 'Quantidade',
+            data: values
+
+          }]
         })
       }
     },
     computed: {
       today () {
         return new Date()
-      },
-      chartData () {
-        return {
-          labels: [
-            'Unimed',
-            'Amil',
-            'Sul America'
-          ],
-          datasets: [{
-            data: this.data,
-            backgroundColor: [
-              '#FF6384',
-              '#36A2EB',
-              '#FFCE56'
-            ]
-          }]
-        }
       }
     },
     mounted () {
@@ -178,23 +184,14 @@
       this.client = this.$store.state.user.client
 
       this.value = moment().format('L')
-
-      const dateDb = this.value.substring(3, 5) + '-' + this.value.substring(0, 2) + '-' + this.value.substring(6, 10)
-
-      this.loadData(this.client, this.crm, dateDb)
-
-      setInterval(() => {
-        // https://github.com/vuejs/vue/issues/2873
-        // Array.prototype.$set/$remove deprecated (use Vue.set or Array.prototype.splice instead)
-        this.data.forEach((item, i) => {
-          this.data.splice(i, 1, Math.ceil(Math.random() * 1000))
-        })
-      }, 100000)
     },
     watch: {
       value (newVal, oldVal) {
         const dateDb = newVal.substring(3, 5) + '-' + newVal.substring(0, 2) + '-' + newVal.substring(6, 10)
 
+        /*
+        * Chama os dados para a tela do agendamento
+        */
         this.loadData(this.client, this.crm, dateDb)
 
         // console.log(newVal, oldVal)
