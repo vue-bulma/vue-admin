@@ -133,7 +133,10 @@
             this.surgeryCount = 0 + !obj.surgeryCount ? 0 : obj.surgeryCount
             this.schedule = !obj.list ? [] : obj.list
             const convenios = this.schedule.map(item => item.tbConvenio)
-            const base = _(convenios)
+            const data = convenios.filter(function (element) {
+              return element !== undefined
+            })
+            const base = _(data)
               .countBy()
               .map((value, key) => ({ key, value }))
               .orderBy(['value'], ['desc'])
