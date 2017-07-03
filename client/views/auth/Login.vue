@@ -37,7 +37,8 @@
 
 <script>
 import localStorage from '../../services/index'
-import Firebase from 'firebase'
+import { mapActions } from 'vuex'
+// import Firebase from 'firebase'
 export default {
 
   data () {
@@ -53,27 +54,31 @@ export default {
     }
   },
   mounted () {
-    if (this.$auth.check()) {
+    if ((this.$auth.check()) && (localStorage.get('crm') !== '')) {
+      const user = {
+        crm: localStorage.get('crm'),
+        client: localStorage.get('client'),
+        id: localStorage.get('id')
+      }
+      this.setUser(user)
       this.$router.push('/')
     }
+
     if (this.$auth.redirect()) {
       console.log('Redirect from: ' + this.$auth.redirect().from.name)
     }
     // Can set query parameter here for auth redirect or just do it silently in login redirect.
   },
   methods: {
+    ...mapActions(['setUser']),
     login () {
-      Firebase.auth().onAuthStateChanged((user) => {
-        if (user) {
-          console.log('User is logined')
-        } else {
-          console.log('User is not logined')
-        }
-      })
-
-      console.log('situacao do auth', this.$auth.check())
-      console.log('storage', localStorage.get('crm'))
-      console.log('vuex', this.$store.state.user.crm)
+      // Firebase.auth().onAuthStateChanged((this.data.body) => {
+      //   if (user) {
+      //     console.log('User is logined')
+      //   } else {
+      //     console.log('User is not logined')
+      //   }
+      // })
       var redirect = this.$auth.redirect()
       this.$auth.login({
         headers: {
@@ -86,10 +91,11 @@ export default {
           // console.log('Auth Success')
           // console.log('Token: ' + this.$auth.token())
           // console.log(res.data.parameters)
-          this.$store.commit('SET_USER', res)
+          // const user = this.data.body
+          this.setUser(res.data.parameters)
+          localStorage.set('id', res.data.parameters.id)
           localStorage.set('crm', res.data.parameters.crm)
           localStorage.set('client', res.data.parameters.client)
-          // window.localStorage.setItem('login', 'askdfnasdfkj')
         },
         error (err) {
           if (err.response) {

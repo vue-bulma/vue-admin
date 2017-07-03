@@ -3,6 +3,8 @@ import Vuex from 'vuex'
 import pkg from 'package'
 import * as actions from './actions'
 import * as getters from './getters'
+import * as types from './mutation-types'
+// import * as mutations from 'mutations'
 
 import app from './modules/app'
 import menu from './modules/menu'
@@ -31,8 +33,8 @@ const store = new Vuex.Store({
     }
   },
   mutations: {
-    SET_USER (store, obj) {
-      store.user = obj.data.parameters
+    [types.AUTH] (store, obj) {
+      store.user = obj
     }
   }
 })

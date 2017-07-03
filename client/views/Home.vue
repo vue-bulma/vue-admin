@@ -95,7 +95,6 @@
   import moment from 'moment'
   import _ from 'lodash'
   import Highcharts from 'highcharts'
-  import Firebase from 'firebase'
 
   moment.locale('pt-BR')
 
@@ -125,7 +124,6 @@
         this.schedule = []
         this.$db.ref('server/customer/' + client + '/service/schedule/professional/' + crm + '/date/' + date).on('value', data => {
           const obj = data.val()
-          // console.log(obj)
           if (obj !== null) {
             this.schedule = []
             this.scheduleCount = 0 + !obj.scheduleTotal ? 0 : obj.scheduleTotal
@@ -184,14 +182,6 @@
       }
     },
     mounted () {
-      Firebase.auth().onAuthStateChanged((user) => {
-        if (user) {
-          console.log('User is logined')
-        } else {
-          console.log('User is not logined')
-        }
-      })
-
       this.crm = this.$store.state.user.crm
       this.client = this.$store.state.user.client
 
@@ -200,7 +190,6 @@
     watch: {
       value (newVal, oldVal) {
         const dateDb = newVal.substring(3, 5) + '-' + newVal.substring(0, 2) + '-' + newVal.substring(6, 10)
-
         /*
         * Chama os dados para a tela do agendamento
         */

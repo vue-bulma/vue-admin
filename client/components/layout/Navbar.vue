@@ -20,7 +20,7 @@
         <div class="nav-right is-flex">
           <div v-on:crm="crm"></div>
           <router-link v-if="!$auth.check()" to="/login" class="nav-item">Login</router-link>
-          <a v-if="$auth.check()" @click="logout" class="nav-item">CRM: {{crm}} - Logout</a>
+          <a v-if="$auth.check()" @click="logout" class="nav-item">CRM: {{ user.crm }} - Logout</a>
         </div>
       </nav>
     </div>
@@ -56,12 +56,13 @@ export default {
 
   computed: mapGetters({
     pkginfo: 'pkg',
-    sidebar: 'sidebar'
+    sidebar: 'sidebar',
+    user: 'user'
   }),
 
   methods: {
     ...mapActions([
-      'toggleSidebar'
+      'toggleSidebar', 'user'
     ]),
     logout () {
       this.$auth.logout({
@@ -70,6 +71,8 @@ export default {
         params: {},
         success: function () {
           window.localStorage.removeItem('crm')
+          window.localStorage.removeItem('client')
+          window.localStorage.removeItem('id')
           this.$http({
             url: api,
             transformResponse: [(data) => {

@@ -4,6 +4,10 @@ export const toggleSidebar = ({ commit }, opened) => commit(types.TOGGLE_SIDEBAR
 
 export const toggleDevice = ({ commit }, device) => commit(types.TOGGLE_DEVICE, device)
 
+export const setUser = ({ commit }, user) => {
+  commit(types.AUTH, user)
+}
+
 export const expandMenu = ({ commit }, menuItem) => {
   if (menuItem) {
     menuItem.expanded = menuItem.expanded || false

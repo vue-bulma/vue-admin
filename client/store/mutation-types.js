@@ -6,4 +6,4 @@ export const EXPAND_MENU = 'EXPAND_MENU'
 
 export const SWITCH_EFFECT = 'SWITCH_EFFECT'
 
-export const AUTH = 'AUTH'
+export const AUTH = 'SET_USER'
