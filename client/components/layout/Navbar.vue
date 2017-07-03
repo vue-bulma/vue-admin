@@ -42,7 +42,6 @@ export default {
     if (this.$store.state.user.crm !== '') {
       this.crm = this.$store.state.user.crm
     }
-    this.crm = window.localStorage.getItem('crm')
   },
 
   props: {
@@ -51,14 +50,8 @@ export default {
 
   data () {
     return {
-      crm: window.localStorage.getItem('crm')
+      crm: ''
     }
-  },
-
-  wacth () {
-    this.crm = window.localStorage.getItem('crm')
-    console.log('storage', window.localStorage.getItem('crm'))
-    console.log('store', this.$store.state.user.crm)
   },
 
   computed: mapGetters({

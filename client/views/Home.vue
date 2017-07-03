@@ -95,6 +95,7 @@
   import moment from 'moment'
   import _ from 'lodash'
   import Highcharts from 'highcharts'
+  import Firebase from 'firebase'
 
   moment.locale('pt-BR')
 
@@ -183,6 +184,14 @@
       }
     },
     mounted () {
+      Firebase.auth().onAuthStateChanged((user) => {
+        if (user) {
+          console.log('User is logined')
+        } else {
+          console.log('User is not logined')
+        }
+      })
+
       this.crm = this.$store.state.user.crm
       this.client = this.$store.state.user.client
 

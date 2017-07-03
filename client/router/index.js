@@ -13,6 +13,7 @@ const router = new Router({
     {
       name: 'Home',
       path: '/',
+      meta: {auth: true},
       component: require('../views/Home')
     },
     {

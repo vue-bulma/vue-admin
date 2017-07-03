@@ -37,6 +37,7 @@
 
 <script>
 import localStorage from '../../services/index'
+import Firebase from 'firebase'
 export default {
 
   data () {
@@ -62,6 +63,17 @@ export default {
   },
   methods: {
     login () {
+      Firebase.auth().onAuthStateChanged((user) => {
+        if (user) {
+          console.log('User is logined')
+        } else {
+          console.log('User is not logined')
+        }
+      })
+
+      console.log('situacao do auth', this.$auth.check())
+      console.log('storage', localStorage.get('crm'))
+      console.log('vuex', this.$store.state.user.crm)
       var redirect = this.$auth.redirect()
       this.$auth.login({
         headers: {
