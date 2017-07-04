@@ -21,6 +21,7 @@ const store = new Vuex.Store({
   },
   state: {
     pkg,
+    scheduleList: [],
     user: {
       id: '',
       client: '',
@@ -35,6 +36,9 @@ const store = new Vuex.Store({
   mutations: {
     [types.AUTH] (store, obj) {
       store.user = obj
+    },
+    [types.SCHEDULE_LIST] (store, obj) {
+      store.scheduleList = obj
     }
   }
 })

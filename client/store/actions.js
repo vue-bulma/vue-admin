@@ -8,6 +8,9 @@ export const setUser = ({ commit }, user) => {
   commit(types.AUTH, user)
 }
 
+export const setScheduleList = ({ commit }, schedule) => {
+  commit(types.SCHEDULE_LIST, schedule)
+}
 export const expandMenu = ({ commit }, menuItem) => {
   if (menuItem) {
     menuItem.expanded = menuItem.expanded || false

@@ -10,6 +10,7 @@ const componententry = state => {
   return state.menu.items.filter(c => c.meta && c.meta.label === 'Components')[0]
 }
 const user = state => state.user
+const scheduleList = state => state.scheduleList
 const isLogged = (state) => !isEmpty(state.crm)
 
 export {
@@ -21,5 +22,6 @@ export {
   menuitems,
   componententry,
   user,
-  isLogged
+  isLogged,
+  scheduleList
 }

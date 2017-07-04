@@ -3,7 +3,7 @@
     <div class="tile is-ancestor">
       <div class="tile is-parent">
         <article class="tile is-child box">
-          <p class="title"><i class="fa fa-stethoscope proced"></i> Procedimentos</p>
+          <p class="title"><i class="fa fa-stethoscope proced"></i> Consultas/Retornos</p>
           <p class="subtitle">{{ procedCount }}</p>
         </article>
       </div>
@@ -85,6 +85,7 @@
         </div>
       </div>
     </div>
+    <chart-new></chart-new>
 
   </div>
 </template>
@@ -97,7 +98,8 @@
   import moment from 'moment'
   import _ from 'lodash'
   import Highcharts from 'highcharts'
-  import ChartNew from '../components/charts/Charts'
+  import ChartNew from '../components/charts/Agreement'
+  import { mapActions } from 'vuex'
 
   moment.locale('pt-BR')
 
@@ -126,6 +128,7 @@
       }
     },
     methods: {
+      ...mapActions(['setScheduleList']),
       loadData (client, crm, date) {
         this.schedule = []
         this.$db.ref('server/customer/' + client + '/service/schedule/professional/' + crm + '/date/' + date).on('value', data => {
@@ -135,8 +138,10 @@
             this.scheduleCount = 0 + !obj.scheduleTotal ? 0 : obj.scheduleTotal
             this.examCount = 0 + !obj.examCount ? 0 : obj.examCount
             this.procedCount = 0 + !obj.countProced ? 0 : obj.countProced
+            this.procedCount += 0 + !obj.returnCount ? 0 : obj.returnCount
             this.surgeryCount = 0 + !obj.surgeryCount ? 0 : obj.surgeryCount
             this.schedule = !obj.list ? [] : obj.list
+            this.setScheduleList(obj.list)
             const convenios = this.schedule.map(item => item.tbConvenio)
             const data = convenios.filter(function (element) {
               return element !== undefined
