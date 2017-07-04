@@ -1,5 +1,5 @@
 <template>
-  <div id="chartTipo">asdfadsf</div>
+  <div id="chartTipo"></div>
 </template>
 
 <script>
@@ -7,8 +7,13 @@
 
   export default {
     name: 'Chart',
+    mounted () {
+      console.log(this.categories)
+      this.setup()
+    },
+    props: ['categories', 'value'],
     methods: {
-      setup () {
+      setup (categories, value) {
         Highcharts.chart('chartTipo', {
           chart: {
             plotBackgroundColor: null,
@@ -39,7 +44,7 @@
             name: 'Brands',
             colorByPoint: true,
             data: [{
-              name: 'Microsoft Internet Explorer',
+              name: 'IE',
               y: 56.33
             }, {
               name: 'Chrome',

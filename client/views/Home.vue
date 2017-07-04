@@ -77,7 +77,7 @@
           <article class="tile is-child box">
             <h4 class="title">Tipo</h4>
             <div class="content">
-              <chart-new></chart-new>
+              <chart-new :categories="categoriesTipo"></chart-new>
             </div>
           </article>
         </div>
@@ -118,7 +118,9 @@
         scheduleCount: 0,
         examCount: 0,
         procedCount: 0,
-        surgeryCount: 0
+        surgeryCount: 0,
+        categoriesTipo: 0,
+        valuesTipo: 0
       }
     },
     methods: {
@@ -145,6 +147,19 @@
             const categories = base.map(item => item.key)
             const values = base.map(item => item.value)
             this.setup({ categories, values })
+
+            const tipos = this.schedule.map(item => item.tbTipo)
+            const dataTipos = tipos.filter(function (element) {
+              return element !== undefined
+            })
+            const baseTipos = _(dataTipos)
+              .countBy()
+              .map((value, key) => ({ key, value }))
+              .orderBy(['value'], ['desc'])
+              .value()
+            this.categoriesTipo = baseTipos.map(item => item.key)
+            this.valuesTipos = baseTipos.map(item => item.value)
+            console.log(this.categoriesTipos)
           }
         })
       },
