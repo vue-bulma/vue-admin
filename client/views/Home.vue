@@ -77,7 +77,7 @@
           <article class="tile is-child box">
             <h4 class="title">Tipo</h4>
             <div class="content">
-              <!-- <chart :type="'pie'" :data="chartData"></chart> -->
+              <chart-new></chart-new>
             </div>
           </article>
         </div>
@@ -95,6 +95,7 @@
   import moment from 'moment'
   import _ from 'lodash'
   import Highcharts from 'highcharts'
+  import ChartNew from '../components/charts/Charts'
 
   moment.locale('pt-BR')
 
@@ -104,7 +105,8 @@
     components: {
       Chart,
       Datepicker,
-      Tooltip
+      Tooltip,
+      ChartNew
     },
     data () {
       return {
