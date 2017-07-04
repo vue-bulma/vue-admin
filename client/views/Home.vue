@@ -77,7 +77,9 @@
           <article class="tile is-child box">
             <h4 class="title">Tipo</h4>
             <div class="content">
-              <chart-new :categories="categoriesTipo"></chart-new>
+              <div id="chartTipo1">
+
+              </div>
             </div>
           </article>
         </div>
@@ -157,9 +159,33 @@
               .map((value, key) => ({ key, value }))
               .orderBy(['value'], ['desc'])
               .value()
-            this.categoriesTipo = baseTipos.map(item => item.key)
-            this.valuesTipos = baseTipos.map(item => item.value)
-            console.log(this.categoriesTipos)
+
+            let teste = []
+            const categoriesTipos = baseTipos.map(item => item.key)
+            const valuesTipos = baseTipos.map(item => item.value)
+            categoriesTipos.forEach(function (value) {
+              switch (value) {
+                case '0':
+                  teste.push('Primeira consulta')
+                  break
+                case '1':
+                  teste.push('Consulta')
+                  break
+                case '2':
+                  teste.push('Exame')
+                  break
+                case '3':
+                  teste.push('Retorno')
+                  break
+                case '4':
+                  teste.push('Cirurgia')
+                  break
+                case '5':
+                  teste.push('Agendamento web')
+                  break
+              }
+            })
+            this.setup1({teste, valuesTipos})
           }
         })
       },
@@ -189,6 +215,34 @@
             name: 'Quantidade',
             data: values
 
+          }]
+        })
+      },
+      setup1 (obj) {
+        const { teste, valuesTipos } = obj
+        Highcharts.chart('chartTipo1', {
+          chart: {
+            type: 'column'
+          },
+          title: {
+            text: 'Tipos'
+          },
+          subtitle: {
+            text: 'Fonte: Risc Sistemas em Saúde'
+          },
+          xAxis: {
+            categories: teste,
+            crosshair: true
+          },
+          yAxis: {
+            min: 0,
+            title: {
+              text: 'Quantidade'
+            }
+          },
+          series: [{
+            name: 'Quantidade',
+            data: valuesTipos
           }]
         })
       }

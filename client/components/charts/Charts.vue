@@ -8,12 +8,12 @@
   export default {
     name: 'Chart',
     mounted () {
-      console.log(this.categories)
       this.setup()
     },
     props: ['categories', 'value'],
     methods: {
       setup (categories, value) {
+        console.log(this.categories)
         Highcharts.chart('chartTipo', {
           chart: {
             plotBackgroundColor: null,
