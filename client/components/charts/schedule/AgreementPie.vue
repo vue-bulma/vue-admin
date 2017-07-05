@@ -20,7 +20,9 @@
     },
     methods: {
       dataSource () {
-        console.log('passou aqui')
+        if (this.list === undefined) {
+          return
+        }
         const convenios = this.list.map(item => item.tbConvenio)
         const data = convenios.filter(function (element) {
           return element !== undefined

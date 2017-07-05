@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="tile is-ancestor">
+    <div class="tile is-ancestor" v-show="!device.isMobile">
       <div class="tile is-parent">
         <article class="tile is-child box">
           <p class="title"><i class="fa fa-stethoscope proced"></i> Cons/Retorn</p>
@@ -31,7 +31,7 @@
       <div class="tile is-parent">
         <article class="tile is-child box">
           <h4 class="title">Agenda - <datepicker v-model="value" placeholder="European Format ('d-m-Y')" :config="{ dateFormat: 'd-m-Y', static: true, defaultDate: today }"></datepicker></h4>
-          <table class="table">
+          <table class="table" v-show="scheduleEmpty">
             <thead>
             <tr>
               <th>Hora</th>
@@ -61,15 +61,21 @@
       </div>
     </div>
 
-    <div class="chart">
+    <div class="tile is-ancestor" v-show="!scheduleEmpty">
+      <div class="tile is-parent">
+        <article class="tile is-child box">
+          <h4 class="title scheduleEmpty">Não há agendamento para esta data</h4>
+        </article>
+      </div>
+    </div>
+
+    <div class="chart" v-show="scheduleEmpty">
       <div class="tile is-ancestor">
         <div class="tile is-parent is-6">
           <article class="tile is-child box">
             <h4 class="title">Convênios</h4>
             <div class="content">
-              <div id="grafico">
-
-              </div>
+              <chart-agreement></chart-agreement>
             </div>
           </article>
         </div>
@@ -77,15 +83,12 @@
           <article class="tile is-child box">
             <h4 class="title">Tipo</h4>
             <div class="content">
-              <div id="chartTipo1">
-
-              </div>
+              <chart-type></chart-type>
             </div>
           </article>
         </div>
       </div>
     </div>
-    <chart-new></chart-new>
 
   </div>
 </template>
@@ -96,10 +99,9 @@
   import Tooltip from 'vue-bulma-tooltip'
   import API_URL from '../../config/dev.env'
   import moment from 'moment'
-  import _ from 'lodash'
-  import Highcharts from 'highcharts'
-  import ChartNew from '../components/charts/Agreement'
-  import { mapActions } from 'vuex'
+  import ChartAgreement from '../components/charts/schedule/AgreementColumn'
+  import ChartType from '../components/charts/schedule/Type'
+  import { mapActions, mapGetters } from 'vuex'
 
   moment.locale('pt-BR')
 
@@ -110,7 +112,8 @@
       Chart,
       Datepicker,
       Tooltip,
-      ChartNew
+      ChartType,
+      ChartAgreement
     },
     data () {
       return {
@@ -124,13 +127,16 @@
         procedCount: 0,
         surgeryCount: 0,
         categoriesTipo: 0,
-        valuesTipo: 0
+        valuesTipo: 0,
+        scheduleEmpty: false
       }
     },
     methods: {
       ...mapActions(['setScheduleList']),
       loadData (client, crm, date) {
         this.schedule = []
+        this.scheduleEmpty = false
+
         this.$db.ref('server/customer/' + client + '/service/schedule/professional/' + crm + '/date/' + date).on('value', data => {
           const obj = data.val()
           if (obj !== null) {
@@ -141,120 +147,31 @@
             this.procedCount += 0 + !obj.returnCount ? 0 : obj.returnCount
             this.surgeryCount = 0 + !obj.surgeryCount ? 0 : obj.surgeryCount
             this.schedule = !obj.list ? [] : obj.list
+            if (obj.list !== undefined) {
+              this.scheduleEmpty = true
+            }
+
             this.setScheduleList(obj.list)
-            const convenios = this.schedule.map(item => item.tbConvenio)
-            const data = convenios.filter(function (element) {
-              return element !== undefined
-            })
-            const base = _(data)
-              .countBy()
-              .map((value, key) => ({ key, value }))
-              .orderBy(['value'], ['desc'])
-              .value()
-            const categories = base.map(item => item.key)
-            const values = base.map(item => item.value)
-            this.setup({ categories, values })
-
-            const tipos = this.schedule.map(item => item.tbTipo)
-            const dataTipos = tipos.filter(function (element) {
-              return element !== undefined
-            })
-            const baseTipos = _(dataTipos)
-              .countBy()
-              .map((value, key) => ({ key, value }))
-              .orderBy(['value'], ['desc'])
-              .value()
-
-            let teste = []
-            const categoriesTipos = baseTipos.map(item => item.key)
-            const valuesTipos = baseTipos.map(item => item.value)
-            categoriesTipos.forEach(function (value) {
-              switch (value) {
-                case '0':
-                  teste.push('Primeira consulta')
-                  break
-                case '1':
-                  teste.push('Consulta')
-                  break
-                case '2':
-                  teste.push('Exame')
-                  break
-                case '3':
-                  teste.push('Retorno')
-                  break
-                case '4':
-                  teste.push('Cirurgia')
-                  break
-                case '5':
-                  teste.push('Agendamento web')
-                  break
-              }
-            })
-            this.setup1({teste, valuesTipos})
           }
-        })
-      },
-      setup (obj) {
-        const { categories, values } = obj
-        Highcharts.chart('grafico', {
-          chart: {
-            type: 'column'
-          },
-          title: {
-            text: 'Convênios'
-          },
-          subtitle: {
-            text: 'Fonte: Risc Sistemas em Saúde'
-          },
-          xAxis: {
-            categories: categories,
-            crosshair: true
-          },
-          yAxis: {
-            min: 0,
-            title: {
-              text: 'Quantidade'
-            }
-          },
-          series: [{
-            name: 'Quantidade',
-            data: values
-
-          }]
-        })
-      },
-      setup1 (obj) {
-        const { teste, valuesTipos } = obj
-        Highcharts.chart('chartTipo1', {
-          chart: {
-            type: 'column'
-          },
-          title: {
-            text: 'Tipos'
-          },
-          subtitle: {
-            text: 'Fonte: Risc Sistemas em Saúde'
-          },
-          xAxis: {
-            categories: teste,
-            crosshair: true
-          },
-          yAxis: {
-            min: 0,
-            title: {
-              text: 'Quantidade'
-            }
-          },
-          series: [{
-            name: 'Quantidade',
-            data: valuesTipos
-          }]
         })
       }
     },
     computed: {
       today () {
         return new Date()
+      },
+      ...mapGetters({
+        device: 'device',
+        user: 'user'
+      }),
+      materialIconCode () {
+        return '&#xE85E'
+      },
+      changeIconType1 () {
+        return 'fa fa-bath'
+      },
+      changeIconType2 () {
+        return 'fa fa-envelope-open'
       }
     },
     mounted () {
@@ -301,11 +218,8 @@
   .tooltip {
     display: inherit;
   }
-  .table-responsive {
-    display: block;
-    width: 100%;
-    min-height: .01%;
-    overflow-x: auto;
+  .scheduleEmpty {
+    text-align: center;
   }
   .subtitle {
     text-align: right;
@@ -319,10 +233,8 @@
   .calendar {
     color: #1E90FF;
   }
-  .money{
-    color: #8FBC8F;
-  }
   .type1 {
+
     color: #4169E1;
   }
   .type2 {
