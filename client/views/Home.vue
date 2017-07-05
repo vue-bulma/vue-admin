@@ -3,7 +3,7 @@
     <div class="tile is-ancestor">
       <div class="tile is-parent">
         <article class="tile is-child box">
-          <p class="title"><i class="fa fa-stethoscope proced"></i> Consultas/Retornos</p>
+          <p class="title"><i class="fa fa-stethoscope proced"></i> Cons/Retorn</p>
           <p class="subtitle">{{ procedCount }}</p>
         </article>
       </div>

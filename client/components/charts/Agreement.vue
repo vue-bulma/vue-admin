@@ -5,6 +5,7 @@
 <script>
   import Highcharts from 'highcharts'
   import { mapState } from 'vuex'
+  import _ from 'lodash'
 
   export default {
     name: 'Charts-Convenios',
@@ -20,11 +21,32 @@
     methods: {
       dataSource () {
         console.log('passou aqui')
-        console.log(this.scheduleList)
-        this.setup()
+        const convenios = this.list.map(item => item.tbConvenio)
+        const data = convenios.filter(function (element) {
+          return element !== undefined
+        })
+        const base = _(data)
+          .countBy()
+          .map((y, name) => ({ y, name }))
+          .orderBy(['y'], ['desc'])
+          .value()
+
+        const subset = base.slice(0, 10)
+
+        const total = subset.reduce((acc, item) => {
+          return acc + item.y
+        }, 0)
+
+        const finalData = subset.map(item => {
+          item.y = (item.y / total) * 100
+          return item
+        })
+
+        this.setup({ finalData })
       },
-      setup (categories, value) {
-        console.log(this.categories)
+      setup (obj) {
+        const { finalData } = obj
+        console.log(finalData)
         Highcharts.chart('chartTipo', {
           chart: {
             plotBackgroundColor: null,
@@ -33,7 +55,7 @@
             type: 'pie'
           },
           title: {
-            text: 'Browser market shares January, 2015 to May, 2015'
+            text: 'Convênios'
           },
           tooltip: {
             pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
@@ -54,27 +76,7 @@
           series: [{
             name: 'Brands',
             colorByPoint: true,
-            data: [{
-              name: 'IE',
-              y: 56.33
-            }, {
-              name: 'Chrome',
-              y: 24.03,
-              sliced: true,
-              selected: true
-            }, {
-              name: 'Firefox',
-              y: 10.38
-            }, {
-              name: 'Safari',
-              y: 4.77
-            }, {
-              name: 'Opera',
-              y: 0.91
-            }, {
-              name: 'Proprietary or Undetectable',
-              y: 0.2
-            }]
+            data: finalData
           }]
         })
       }

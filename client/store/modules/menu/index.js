@@ -12,6 +12,15 @@ import lazyLoading from './lazyLoading'
 const state = {
   items: [
     {
+      name: 'Home',
+      path: '/',
+      meta: {
+        icon: 'fa-calendar',
+        link: 'Home.vue'
+      },
+      component: lazyLoading('home', true)
+    },
+    {
       name: 'Dashboard',
       path: '/dashboard',
       meta: {
