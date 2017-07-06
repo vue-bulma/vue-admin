@@ -46,7 +46,7 @@
                 <td class="is-icon">
                   <a href="#">
                     <div v-if="list.tbNome !== undefined">
-                      <tooltip label="top" placement="top">
+                      <tooltip label="Tipo" placement="top">
                         <div class="has-text-centered">
                           <i class="fa fa-heartbeat" :class="{ type1: list.tbTipo == 1, type2: list.tbTipo == 2, type3: list.tbTipo == 3, type4: list.tbTipo == 4 }"></i>
                         </div>
