@@ -34,21 +34,31 @@
           <table class="table" v-show="scheduleEmpty">
             <thead>
             <tr>
+              <th>Status</th>
               <th>Hora</th>
               <th>Paciente</th>
-              <th></th>
+              <th>Tipo</th>
             </tr>
             </thead>
             <tbody>
               <tr v-for="list in schedule">
+                <td class="is-icon">
+                  <a href="#">
+                    <div v-if="list.tbNome !== undefined">
+                      <div class="has-text-left">
+                        <i :class="{ '': list.tbStatus == 1, 'fa fa-ok': list.tbStatus == 2, 'fa fa-ok': list.tbStatus == 3, 'fa fa-check': list.tbStatus == 4 }"></i>
+                      </div>
+                    </div>
+                  </a>
+                </td>
                 <td>{{list.tbHora.substring(0, 5)}}</td>
                 <td>{{list.tbNome}}</td>
                 <td class="is-icon">
                   <a href="#">
                     <div v-if="list.tbNome !== undefined">
                       <tooltip label="Tipo" placement="top">
-                        <div class="has-text-centered">
-                          <i class="fa fa-heartbeat" :class="{ type1: list.tbTipo == 1, type2: list.tbTipo == 2, type3: list.tbTipo == 3, type4: list.tbTipo == 4 }"></i>
+                        <div class="has-text-left">
+                          <i :class="{ 'fa fa-user-md': list.tbTipo == 0, 'fa fa-stethoscope proced': list.tbTipo == 1, 'fa fa-heartbeat': list.tbTipo == 2, 'fa fa-arrow-left': list.tbTipo == 3, 'fa fa-plus-square': list.tbTipo == 4 }"></i>
                         </div>
                       </tooltip>
                     </div>
@@ -128,7 +138,8 @@
         surgeryCount: 0,
         categoriesTipo: 0,
         valuesTipo: 0,
-        scheduleEmpty: false
+        scheduleEmpty: false,
+        icone: ''
       }
     },
     methods: {
@@ -172,6 +183,25 @@
       },
       changeIconType2 () {
         return 'fa fa-envelope-open'
+      },
+      icon () {
+        let iconClass = ''
+        this.schedule.forEach((item) => {
+          if (item.tbStatus === 1) {
+            iconClass = 'fa fa-bath'
+            console.log('1', item.tbStatus)
+          } else if (item.tbStatus === 2) {
+            iconClass = 'fa fa-ok'
+            console.log('2', item.tbStatus)
+          } else if (item.tbStatus === 3) {
+            iconClass = 'fa fa-ok'
+            console.log('3', item.tbStatus)
+          } else if (item.tbStatus === 4) {
+            iconClass = 'fa fa-ok'
+            console.log('4', item.tbStatus)
+          }
+        })
+        return iconClass
       }
     },
     mounted () {
