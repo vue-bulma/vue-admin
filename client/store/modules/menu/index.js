@@ -25,7 +25,8 @@ const state = {
       path: '/dashboard',
       meta: {
         icon: 'fa-tachometer',
-        link: 'dashboard/index.vue'
+        link: 'dashboard/index.vue',
+        auth: true
       },
       component: lazyLoading('dashboard', true)
     }

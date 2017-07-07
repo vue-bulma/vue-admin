@@ -58,7 +58,7 @@
                     <div v-if="list.tbNome !== undefined">
                       <tooltip label="Tipo" placement="top">
                         <div class="has-text-left">
-                          <i :class="{ 'fa fa-user-md': list.tbTipo == 0, 'fa fa-stethoscope proced': list.tbTipo == 1, 'fa fa-heartbeat': list.tbTipo == 2, 'fa fa-arrow-left': list.tbTipo == 3, 'fa fa-plus-square': list.tbTipo == 4 }"></i>
+                          <i :class="{ 'fa fa-user-md type4': list.tbTipo == 0, 'fa fa-stethoscope proced': list.tbTipo == 1, 'fa fa-heartbeat exame': list.tbTipo == 2, 'fa fa-arrow-left type3': list.tbTipo == 3, 'fa fa-plus-square': list.tbTipo == 4 }"></i>
                         </div>
                       </tooltip>
                     </div>
@@ -264,7 +264,6 @@
     color: #1E90FF;
   }
   .type1 {
-
     color: #4169E1;
   }
   .type2 {
