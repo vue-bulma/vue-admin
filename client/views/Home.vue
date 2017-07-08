@@ -46,19 +46,25 @@
                   <a href="#">
                     <div v-if="list.tbNome !== undefined">
                       <div class="has-text-left">
-                        <i :class="{ '': list.tbStatus == 1, 'fa fa-ok': list.tbStatus == 2, 'fa fa-ok': list.tbStatus == 3, 'fa fa-check': list.tbStatus == 4 }"></i>
+                        <!-- <i :class="{ '': list.tbStatus == 1, 'fa fa-ok': list.tbStatus == 2, 'fa fa-ok': list.tbStatus == 3, 'fa fa-check': list.tbStatus == 4 }"></i> -->
+                        <i :class="iconStatus(list.tbStatus)"></i>
                       </div>
                     </div>
                   </a>
                 </td>
                 <td>{{list.tbHora.substring(0, 5)}}</td>
-                <td>{{list.tbNome}}</td>
+                <td>
+                  <div v-if="list.tbNome !== undefined">
+                    {{ list.tbNome }}
+                  </div>
+                </td>
                 <td class="is-icon">
                   <a href="#">
                     <div v-if="list.tbNome !== undefined">
                       <tooltip label="Tipo" placement="top">
                         <div class="has-text-left">
-                          <i :class="{ 'fa fa-user-md type4': list.tbTipo == 0, 'fa fa-stethoscope proced': list.tbTipo == 1, 'fa fa-heartbeat exame': list.tbTipo == 2, 'fa fa-arrow-left type3': list.tbTipo == 3, 'fa fa-plus-square': list.tbTipo == 4 }"></i>
+                          <!-- <i :class="{ 'fa fa-user-md type4': list.tbTipo == 0, 'fa fa-stethoscope proced': list.tbTipo == 1, 'fa fa-heartbeat exame': list.tbTipo == 2, 'fa fa-arrow-left type3': list.tbTipo == 3, 'fa fa-plus-square': list.tbTipo == 4 }"></i> -->
+                          <i :class="iconType(list.tbTipo)"></i>
                         </div>
                       </tooltip>
                     </div>
@@ -165,6 +171,34 @@
             this.setScheduleList(obj.list)
           }
         })
+      },
+      iconStatus (status) {
+        let iconClass = ''
+        if (status === 1) {
+          iconClass = ''
+        } else if (status === 2) {
+          iconClass = 'fa fa-window-close'
+        } else if (status === 3) {
+          iconClass = 'fa fa-bus'
+        } else if (status === 4) {
+          iconClass = 'fa fa-check'
+        }
+        return iconClass
+      },
+      iconType (type) {
+        let iconClass = ''
+        if (type === '0') {
+          iconClass = 'fa fa-user-md type4'
+        } else if (type === '1') {
+          iconClass = 'fa fa-stethoscope'
+        } else if (type === '2') {
+          iconClass = 'fa fa-heartbeat exame'
+        } else if (type === '3') {
+          iconClass = 'fa fa-arrow-left type3'
+        } else if (type === '4') {
+          iconClass = 'fa fa-plus-square'
+        }
+        return iconClass
       }
     },
     computed: {
@@ -183,25 +217,6 @@
       },
       changeIconType2 () {
         return 'fa fa-envelope-open'
-      },
-      icon () {
-        let iconClass = ''
-        this.schedule.forEach((item) => {
-          if (item.tbStatus === 1) {
-            iconClass = 'fa fa-bath'
-            console.log('1', item.tbStatus)
-          } else if (item.tbStatus === 2) {
-            iconClass = 'fa fa-ok'
-            console.log('2', item.tbStatus)
-          } else if (item.tbStatus === 3) {
-            iconClass = 'fa fa-ok'
-            console.log('3', item.tbStatus)
-          } else if (item.tbStatus === 4) {
-            iconClass = 'fa fa-ok'
-            console.log('4', item.tbStatus)
-          }
-        })
-        return iconClass
       }
     },
     mounted () {
