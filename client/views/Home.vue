@@ -34,10 +34,10 @@
           <table class="table" v-show="scheduleEmpty">
             <thead>
             <tr>
-              <th>Status</th>
+              <th align="center">Status</th>
               <th>Hora</th>
               <th>Paciente</th>
-              <th>Tipo</th>
+              <th class="has-text-centered">Tipo</th>
             </tr>
             </thead>
             <tbody>
@@ -45,10 +45,12 @@
                 <td class="is-icon">
                   <a href="#">
                     <div v-if="list.tbNome !== undefined">
-                      <div class="has-text-left">
-                        <!-- <i :class="{ '': list.tbStatus == 1, 'fa fa-ok': list.tbStatus == 2, 'fa fa-ok': list.tbStatus == 3, 'fa fa-check': list.tbStatus == 4 }"></i> -->
-                        <i :class="iconStatus(list.tbStatus)"></i>
-                      </div>
+                      <tooltip :label="nameStatus(list.tbStatus)" placement="top">
+                        <div class="has-text-centered">
+                          <!-- <i :class="{ '': list.tbStatus == 1, 'fa fa-ok': list.tbStatus == 2, 'fa fa-ok': list.tbStatus == 3, 'fa fa-check': list.tbStatus == 4 }"></i> -->
+                          <i :class="iconStatus(list.tbStatus)"></i>
+                        </div>
+                      </tooltip>
                     </div>
                   </a>
                 </td>
@@ -61,8 +63,8 @@
                 <td class="is-icon">
                   <a href="#">
                     <div v-if="list.tbNome !== undefined">
-                      <tooltip label="Tipo" placement="top">
-                        <div class="has-text-left">
+                      <tooltip :label="nameType(list.tbTipo)" placement="top">
+                        <div class="has-text-centered">
                           <!-- <i :class="{ 'fa fa-user-md type4': list.tbTipo == 0, 'fa fa-stethoscope proced': list.tbTipo == 1, 'fa fa-heartbeat exame': list.tbTipo == 2, 'fa fa-arrow-left type3': list.tbTipo == 3, 'fa fa-plus-square': list.tbTipo == 4 }"></i> -->
                           <i :class="iconType(list.tbTipo)"></i>
                         </div>
@@ -144,8 +146,7 @@
         surgeryCount: 0,
         categoriesTipo: 0,
         valuesTipo: 0,
-        scheduleEmpty: false,
-        icone: ''
+        scheduleEmpty: false
       }
     },
     methods: {
@@ -171,6 +172,36 @@
             this.setScheduleList(obj.list)
           }
         })
+      },
+      nameStatus (status) {
+        let nameStatus = ''
+        if (status === 0) {
+          nameStatus = ''
+        } else if (status === 1) {
+          nameStatus = 'Não Chegou'
+        } else if (status === 2) {
+          nameStatus = 'Exame'
+        } else if (status === 3) {
+          nameStatus = 'Retorno'
+        } else if (status === 4) {
+          nameStatus = 'Finalizado'
+        }
+        return nameStatus
+      },
+      nameType (type) {
+        let nameType = ''
+        if (type === '0') {
+          nameType = 'Primeira Consulta'
+        } else if (type === '1') {
+          nameType = 'Consulta'
+        } else if (type === '2') {
+          nameType = 'Exame'
+        } else if (type === '3') {
+          nameType = 'Retorno'
+        } else if (type === '4') {
+          nameType = 'Cirurgia'
+        }
+        return nameType
       },
       iconStatus (status) {
         let iconClass = ''
