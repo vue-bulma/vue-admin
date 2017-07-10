@@ -124,7 +124,7 @@
   const api = API_URL.API_URL + ':8091/teste'
 
   export default {
-    name: 'Home',
+    name: 'Schedule',
     components: {
       Chart,
       Datepicker,
@@ -179,11 +179,21 @@
         } else if (status === 1) {
           nameStatus = 'Não Chegou'
         } else if (status === 2) {
-          nameStatus = 'Exame'
+          nameStatus = 'Em Espera'
         } else if (status === 3) {
-          nameStatus = 'Retorno'
+          nameStatus = 'Desmarcou'
         } else if (status === 4) {
-          nameStatus = 'Finalizado'
+          nameStatus = 'Atendido'
+        } else if (status === 5) {
+          nameStatus = 'Atrasado'
+        } else if (status === 6) {
+          nameStatus = 'Esperado'
+        } else if (status === 8) {
+          nameStatus = 'Encaminhando'
+        } else if (status === 11) {
+          nameStatus = 'Faltou'
+        } else if (status === 12) {
+          nameStatus = 'Paciente confirmou SMS'
         }
         return nameStatus
       },
@@ -207,26 +217,38 @@
         if (status === 1) {
           iconClass = ''
         } else if (status === 2) {
-          iconClass = 'fa fa-window-close'
-        } else if (status === 3) {
-          iconClass = 'fa fa-bus'
-        } else if (status === 4) {
           iconClass = 'fa fa-check'
+        } else if (status === 3) {
+          iconClass = 'fa fa-circle'
+        } else if (status === 4) {
+          iconClass = 'fa fa-check-square-o'
+        } else if (status === 5) {
+          iconClass = 'fa fa-clock-o'
+        } else if (status === 6) {
+          iconClass = 'fa fa-group'
+        } else if (status === 8) {
+          iconClass = 'fa fa-child'
+        } else if (status === 9) {
+          iconClass = 'fa fa-key'
+        } else if (status === 11) {
+          iconClass = 'fa fa-window-close-o'
+        } else if (status === 12) {
+          iconClass = 'fa fa-send'
         }
         return iconClass
       },
       iconType (type) {
         let iconClass = ''
         if (type === '0') {
-          iconClass = 'fa fa-user-md type4'
+          iconClass = 'fa fa-exclamation type4'
         } else if (type === '1') {
-          iconClass = 'fa fa-stethoscope'
+          iconClass = 'fa fa-plus'
         } else if (type === '2') {
-          iconClass = 'fa fa-heartbeat exame'
+          iconClass = 'fa fa-book exame'
         } else if (type === '3') {
           iconClass = 'fa fa-arrow-left type3'
         } else if (type === '4') {
-          iconClass = 'fa fa-plus-square'
+          iconClass = 'fa fa-cloud'
         }
         return iconClass
       }
