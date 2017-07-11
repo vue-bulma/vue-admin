@@ -121,7 +121,7 @@
 
   moment.locale('pt-BR')
 
-  const api = API_URL.API_URL + ':8091/teste'
+  const api = API_URL.API_URL + ':8091/schedule'
 
   export default {
     name: 'Schedule',
