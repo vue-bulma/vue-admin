@@ -1,16 +1,20 @@
 <template>
   <div>
-    <schedule></schedule>
+    <!-- <schedule></schedule> -->
+    <exam-done></exam-done>
   </div>
 </template>
 
 <script>
 
   import Schedule from './schedule/Schedule'
+  import ExamDone from './exam/Done'
+
   export default {
     name: 'Home',
     components: {
-      Schedule
+      Schedule,
+      ExamDone
     }
   }
 </script>
