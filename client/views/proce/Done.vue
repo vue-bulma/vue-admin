@@ -1,10 +1,12 @@
 <template>
   <div class="">
-    <h4>Exame</h4>
+    <h4>Proce</h4>
     <datepicker v-model="dateStr" placeholder="European Format ('d-m-Y')" :config="{ dateFormat: 'd-m-Y', static: true, defaultDate: today }"></datepicker>
     <datepicker v-model="dateEnd" placeholder="European Format ('d-m-Y')" :config="{ dateFormat: 'd-m-Y', static: true, defaultDate: today }"></datepicker>
     <button @click="teste">Teste</button>
     <button @click="boa">Boa</button>
+    <hr />
+    <chart></chart>
   </div>
 </template>
 
@@ -12,15 +14,17 @@
   import Datepicker from 'vue-bulma-datepicker'
   import moment from 'moment'
   import API_URL from '../../../config/dev.env'
-  const api = API_URL.API_URL + ':8091/examsdone'
+  const api = API_URL.API_URL + ':8091/procedone'
+  import Chart from '../../components/charts/proce/ProcePie'
   import { mapActions } from 'vuex'
 
   moment.locale('pt-BR')
 
 export default {
-    name: 'ExameDone',
+    name: 'ProceDone',
     components: {
-      Datepicker
+      Datepicker,
+      Chart
     },
     mounted () {
       this.dateStr = moment().format('L')
@@ -38,10 +42,9 @@ export default {
       }
     },
     methods: {
-      ...mapActions(['setExamDoneList']),
+      ...mapActions(['setProceDoneList']),
       boa () {
-        this.$db.ref('server/customer/' + 503 + '/service/examDone/professional/' + 34183 + '/').on('value', data => {
-          console.log(data.val())
+        this.$db.ref('server/customer/' + 503 + '/service/proceDone/professional/' + 34183 + '/').on('value', data => {
           const obj = data.val()
           if (obj !== null) {
             this.setProceDoneList(obj)

@@ -22,6 +22,8 @@ const store = new Vuex.Store({
   state: {
     pkg,
     scheduleList: [],
+    examsDoneList: [],
+    proceDoneList: [],
     user: {
       id: '',
       client: '',
@@ -39,6 +41,12 @@ const store = new Vuex.Store({
     },
     [types.SCHEDULE_LIST] (store, obj) {
       store.scheduleList = obj
+    },
+    [types.EXAMDONE_LIST] (store, obj) {
+      store.examsDoneList = obj
+    },
+    [types.PROCEDONE_LIST] (store, obj) {
+      store.proceDoneList = obj
     }
   }
 })
