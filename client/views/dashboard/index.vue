@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="tile is-ancestor">
+    <div class="tile is-ancestor" v-show="!device.isMobile">
       <div class="tile is-parent">
         <article class="tile is-child box">
           <p class="title"><i class="fa fa-stethoscope proced"></i> Cons/Retorn</p>
@@ -110,6 +110,7 @@
 <script>
 import ExamDone from '../exam/Done'
 import ProceDone from '../proce/Done'
+import { mapGetters } from 'vuex'
 
 export default {
   components: {
@@ -124,6 +125,10 @@ export default {
   },
 
   computed: {
+    ...mapGetters({
+      device: 'device',
+      user: 'user'
+    }),
     chartData () {
       return {
         labels: [

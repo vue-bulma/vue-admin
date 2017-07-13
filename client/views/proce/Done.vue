@@ -3,7 +3,6 @@
     <h4>Proce</h4>
     <datepicker v-model="dateStr" placeholder="European Format ('d-m-Y')" :config="{ dateFormat: 'd-m-Y', static: true, defaultDate: today }"></datepicker>
     <datepicker v-model="dateEnd" placeholder="European Format ('d-m-Y')" :config="{ dateFormat: 'd-m-Y', static: true, defaultDate: today }"></datepicker>
-    <button @click="teste" class="button is-primary">Procedimento</button>
     <hr />
     <chart></chart>
   </div>
@@ -38,6 +37,14 @@ export default {
     computed: {
       today () {
         return new Date()
+      }
+    },
+    watch: {
+      dateStr (newVal, oldVal) {
+        this.teste()
+      },
+      dateEnd (newVal, oldVal) {
+        this.teste()
       }
     },
     methods: {
@@ -75,4 +82,7 @@ export default {
 </script>
 
 <style lang="scss">
+  datepicker {
+    width: 50%;
+  }
 </style>
