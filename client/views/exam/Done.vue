@@ -1,10 +1,11 @@
 <template>
   <div class="">
-    <h4>Exame</h4>
+    <h4>Exames</h4>
     <datepicker v-model="dateStr" placeholder="European Format ('d-m-Y')" :config="{ dateFormat: 'd-m-Y', static: true, defaultDate: today }"></datepicker>
     <datepicker v-model="dateEnd" placeholder="European Format ('d-m-Y')" :config="{ dateFormat: 'd-m-Y', static: true, defaultDate: today }"></datepicker>
-    <button @click="teste">Teste</button>
-    <button @click="boa">Boa</button>
+    <button @click="teste" class="button is-primary">Exames</button>
+    <hr />
+    <chart></chart>
   </div>
 </template>
 
@@ -13,14 +14,16 @@
   import moment from 'moment'
   import API_URL from '../../../config/dev.env'
   const api = API_URL.API_URL + ':8091/examsdone'
+  import Chart from '../../components/charts/exam/ExamPie'
   import { mapActions } from 'vuex'
 
   moment.locale('pt-BR')
 
 export default {
-    name: 'ExameDone',
+    name: 'ExamsDone',
     components: {
-      Datepicker
+      Datepicker,
+      Chart
     },
     mounted () {
       this.dateStr = moment().format('L')
@@ -40,11 +43,11 @@ export default {
     methods: {
       ...mapActions(['setExamDoneList']),
       boa () {
-        this.$db.ref('server/customer/' + 503 + '/service/examDone/professional/' + 34183 + '/').on('value', data => {
-          console.log(data.val())
+        this.$db.ref('server/customer/' + this.$store.state.user.client + '/service/examsDone/professional/' + this.$store.state.user.crm + '/').on('value', data => {
           const obj = data.val()
           if (obj !== null) {
-            this.setProceDoneList(obj)
+            console.log(obj)
+            this.setExamDoneList(obj)
           }
         })
       },
@@ -56,14 +59,14 @@ export default {
           }],
           params:
           {
-            id: 1,
-            client: 503,
-            crm: 34183,
+            id: this.$store.state.user.id,
+            client: this.$store.state.user.client,
+            crm: this.$store.state.user.crm,
             dateStr: this.dateStr.substring(3, 5) + '/' + this.dateStr.substring(0, 2) + '/' + this.dateStr.substring(6, 10),
             dateEnd: this.dateEnd.substring(3, 5) + '/' + this.dateEnd.substring(0, 2) + '/' + this.dateEnd.substring(6, 10)
           }
         }).then((response) => {
-
+          this.boa()
         }).catch((error) => {
           console.log(error)
         })

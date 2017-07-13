@@ -1,6 +1,6 @@
 <template>
   <div class="">
-    <div id="chartProceDone"></div>
+    <div id="chartExamesDone"></div>
   </div>
 </template>
 
@@ -10,9 +10,9 @@
   import _ from 'lodash'
 
   export default {
-    name: 'Charts-Proce',
+    name: 'Charts-Exam',
     computed: mapState({
-      list: state => state.proceDoneList
+      list: state => state.examsDoneList
     }),
     props: ['categories', 'value'],
     watch: {
@@ -50,7 +50,7 @@
       },
       setup (obj) {
         const { finalData } = obj
-        Highcharts.chart('chartProceDone', {
+        Highcharts.chart('chartExamesDone', {
           chart: {
             plotBackgroundColor: null,
             plotBorderWidth: null,

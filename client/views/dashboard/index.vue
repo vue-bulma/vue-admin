@@ -3,26 +3,26 @@
     <div class="tile is-ancestor">
       <div class="tile is-parent">
         <article class="tile is-child box">
-          <p class="title">One</p>
-          <p class="subtitle">Subtitle</p>
+          <p class="title"><i class="fa fa-stethoscope proced"></i> Cons/Retorn</p>
+          <p class="subtitle">0</p>
         </article>
       </div>
       <div class="tile is-parent">
         <article class="tile is-child box">
-          <p class="title">Two</p>
-          <p class="subtitle">Subtitle</p>
+          <p class="title"><i class="fa fa-heartbeat exame"></i> Exames</p>
+          <p class="subtitle">0</p>
         </article>
       </div>
       <div class="tile is-parent">
         <article class="tile is-child box">
-          <p class="title">Three</p>
-          <p class="subtitle">Subtitle</p>
+          <p class="title"><i class="fa fa-user-md"></i> Cirurgias</p>
+          <p class="subtitle">0</p>
         </article>
       </div>
       <div class="tile is-parent">
         <article class="tile is-child box">
-          <p class="title">Four</p>
-          <p class="subtitle">Subtitle</p>
+          <p class="title"><i class="fa fa-calendar calendar"></i> Agenda</p>
+          <p class="subtitle">0</p>
         </article>
       </div>
     </div>
@@ -30,22 +30,23 @@
     <div class="tile is-ancestor">
       <div class="tile is-parent is-6">
         <article class="tile is-child box">
-          <h4 class="title">Five</h4>
+          <h4 class="title">Exames</h4>
           <div class="content">
-            <chart :type="'doughnut'" :data="chartData"></chart>
+            <exam-done></exam-done>
           </div>
         </article>
       </div>
       <div class="tile is-parent is-6">
         <article class="tile is-child box">
-          <h4 class="title">Six</h4>
+          <h4 class="title">Procedimentos</h4>
           <div class="content">
-            <chart :type="'pie'" :data="chartData"></chart>
+            <proce-done></proce-done>
           </div>
         </article>
       </div>
     </div>
 
+    <!--
     <div class="tile is-ancestor">
       <div class="tile is-vertical is-9">
         <div class="tile">
@@ -102,15 +103,18 @@
         </article>
       </div>
     </div>
+    -->
   </div>
 </template>
 
 <script>
-import Chart from 'vue-bulma-chartjs'
+import ExamDone from '../exam/Done'
+import ProceDone from '../proce/Done'
 
 export default {
   components: {
-    Chart
+    ExamDone,
+    ProceDone
   },
 
   data () {
@@ -152,4 +156,37 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+  .none {
+    display: none;
+  }
+  .tooltip {
+    display: inherit;
+  }
+  .scheduleEmpty {
+    text-align: center;
+  }
+  .subtitle {
+    text-align: right;
+  }
+  .proced {
+    color: #4169E1;
+  }
+  .exame {
+    color: #CD5C5C;
+  }
+  .calendar {
+    color: #1E90FF;
+  }
+  .type1 {
+    color: #4169E1;
+  }
+  .type2 {
+    color: #CD5C5C;
+  }
+  .type3 {
+    color: #1E90FF;
+  }
+  .type4{
+    color: #8FBC8F;
+  }
 </style>
