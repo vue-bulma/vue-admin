@@ -35,7 +35,7 @@
           .orderBy(['y'], ['desc'])
           .value()
 
-        const subset = base.slice(0, 10)
+        const subset = base.slice(0, 5)
 
         const total = subset.reduce((acc, item) => {
           return acc + item.y
