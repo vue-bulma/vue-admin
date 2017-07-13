@@ -27,14 +27,6 @@
       </div>
     </div>
 
-    <article class="tile is-child box">
-      <h1 class="title">Date Range</h1>
-      <p class="control">
-        <datepicker v-model="datatodata" placeholder="Select a range" :config="{ mode: 'range' }"></datepicker>
-      </p>
-      <button @click="datasss" name="button">aaaaa</button>
-    </article>
-
     <div class="tile is-ancestor">
       <div class="tile is-parent">
         <article class="tile is-child box">
@@ -158,14 +150,10 @@
         surgeryCount: 0,
         categoriesTipo: 0,
         valuesTipo: 0,
-        scheduleEmpty: false,
-        datatodata: ''
+        scheduleEmpty: false
       }
     },
     methods: {
-      datasss () {
-        console.log(this.datatodata)
-      },
       ...mapActions(['setScheduleList']),
       loadData (client, crm, date) {
         this.schedule = []

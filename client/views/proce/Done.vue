@@ -1,8 +1,11 @@
 <template>
   <div class="">
     <h4>Proce</h4>
+      <datepicker v-model="dateRange" placeholder="Selecione a data inicial e final" :config="{ mode: 'range' }"></datepicker>
+    <!--
     <datepicker v-model="dateStr" placeholder="European Format ('d-m-Y')" :config="{ dateFormat: 'd-m-Y', static: true, defaultDate: today }"></datepicker>
     <datepicker v-model="dateEnd" placeholder="European Format ('d-m-Y')" :config="{ dateFormat: 'd-m-Y', static: true, defaultDate: today }"></datepicker>
+  -->
     <hr />
     <chart></chart>
   </div>
@@ -31,7 +34,8 @@ export default {
     data () {
       return {
         dateStr: '',
-        dateEnd: ''
+        dateEnd: '',
+        dateRange: ''
       }
     },
     computed: {
@@ -41,15 +45,18 @@ export default {
     },
     watch: {
       dateStr (newVal, oldVal) {
-        this.teste()
+        this.setData()
       },
       dateEnd (newVal, oldVal) {
-        this.teste()
+        this.setData()
+      },
+      dateRange (newVal, oldVal) {
+        this.setData()
       }
     },
     methods: {
       ...mapActions(['setProceDoneList']),
-      boa () {
+      getData () {
         this.$db.ref('server/customer/' + this.$store.state.user.client + '/service/proceDone/professional/' + this.$store.state.user.crm + '/').on('value', data => {
           const obj = data.val()
           if (obj !== null) {
@@ -57,7 +64,9 @@ export default {
           }
         })
       },
-      teste () {
+      setData () {
+        this.dateStr = this.dateRange.substring(0, 10)
+        this.dateEnd = this.dateRange.substring(14, 24)
         this.$http({
           url: api,
           transformResponse: [(data) => {
@@ -72,7 +81,7 @@ export default {
             dateEnd: this.dateEnd.substring(3, 5) + '/' + this.dateEnd.substring(0, 2) + '/' + this.dateEnd.substring(6, 10)
           }
         }).then((response) => {
-          this.boa()
+          this.getData()
         }).catch((error) => {
           console.log(error)
         })
