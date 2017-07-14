@@ -107,7 +107,7 @@ export default {
 @import '~bulma/sass/utilities/variables';
 
 .user-name {
-  margin-right: 50px;
+  margin-right: 25px;
 }
 
 .app-navbar {
