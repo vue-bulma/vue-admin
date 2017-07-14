@@ -23,7 +23,7 @@
           <a v-if="$auth.check()" @click="logout" class="nav-item">
 
             <tooltip label="Click sobre seu nome para logout" placement="left">
-              <p class="is-primary">Dr(a) {{user.name}}</p>
+              <p class="is-primary user-name">Dr(a) {{user.name}}</p>
             </tooltip>
           </a>
         </div>
@@ -79,6 +79,8 @@ export default {
           window.localStorage.removeItem('crm')
           window.localStorage.removeItem('client')
           window.localStorage.removeItem('id')
+          window.localStorage.removeItem('email')
+          window.localStorage.removeItem('name')
           this.$http({
             url: api,
             transformResponse: [(data) => {
@@ -89,7 +91,7 @@ export default {
               id: this.$store.state.user.id
             }
           }).then((response) => {
-            // console.log(response)
+            console.log(response)
           }).catch((error) => {
             console.log(error)
           })
@@ -103,6 +105,10 @@ export default {
 
 <style lang="scss">
 @import '~bulma/sass/utilities/variables';
+
+.user-name {
+  margin-right: 50px;
+}
 
 .app-navbar {
   position: fixed;
