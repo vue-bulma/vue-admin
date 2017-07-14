@@ -28,7 +28,9 @@ const store = new Vuex.Store({
       id: '',
       client: '',
       crm: '',
-      date: ''
+      date: '',
+      email: '',
+      name: ''
     },
     auth: {
       isLogged: false,

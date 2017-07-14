@@ -32,7 +32,7 @@ module.exports = merge(baseWebpackConfig, {
     }),
     // https://github.com/ampedandwired/html-webpack-plugin
     new HtmlWebpackPlugin({
-      title: 'RISC Dashboard',
+      title: 'Dashboard',
       filename: 'index.html',
       template: 'index.html',
       inject: true,

@@ -96,6 +96,8 @@ export default {
           localStorage.set('id', res.data.parameters.id)
           localStorage.set('crm', res.data.parameters.crm)
           localStorage.set('client', res.data.parameters.client)
+          localStorage.set('email', res.data.parameters.email)
+          localStorage.set('name', res.data.parameters.name)
         },
         error (err) {
           if (err.response) {

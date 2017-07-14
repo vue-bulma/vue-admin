@@ -20,7 +20,12 @@
         <div class="nav-right is-flex">
           <div v-on:crm="crm"></div>
           <router-link v-if="!$auth.check()" to="/login" class="nav-item">Login</router-link>
-          <a v-if="$auth.check()" @click="logout" class="nav-item">Logout</a>
+          <a v-if="$auth.check()" @click="logout" class="nav-item">
+
+            <tooltip label="Click sobre seu nome para logout" placement="left">
+              <p class="is-primary">Dr(a) {{user.name}}</p>
+            </tooltip>
+          </a>
         </div>
       </nav>
     </div>
@@ -57,7 +62,8 @@ export default {
   computed: mapGetters({
     pkginfo: 'pkg',
     sidebar: 'sidebar',
-    user: 'user'
+    user: 'user',
+    device: 'device'
   }),
 
   methods: {
