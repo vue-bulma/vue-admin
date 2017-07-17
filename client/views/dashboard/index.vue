@@ -1,28 +1,22 @@
 <template>
   <div>
-    <div class="tile is-ancestor" v-show="!device.isMobile">
-      <div class="tile is-parent">
+    <div class="tile is-ancestor">
+      <div class="tile is-parent is-4">
         <article class="tile is-child box">
           <p class="title"><i class="fa fa-stethoscope proced"></i> Cons/Retorn</p>
-          <p class="subtitle">0</p>
+          <p class="subtitle">{{proceDoneList.length}}</p>
         </article>
       </div>
-      <div class="tile is-parent">
+      <div class="tile is-parent is-4">
         <article class="tile is-child box">
           <p class="title"><i class="fa fa-heartbeat exame"></i> Exames</p>
-          <p class="subtitle">0</p>
+          <p class="subtitle">{{examsDoneList.length}}</p>
         </article>
       </div>
-      <div class="tile is-parent">
+      <div class="tile is-parent is-4">
         <article class="tile is-child box">
-          <p class="title"><i class="fa fa-user-md"></i> Cirurgias</p>
-          <p class="subtitle">0</p>
-        </article>
-      </div>
-      <div class="tile is-parent">
-        <article class="tile is-child box">
-          <p class="title"><i class="fa fa-calendar calendar"></i> Agenda</p>
-          <p class="subtitle">0</p>
+          <p class="title"><i class="fa fa-info calendar"></i> Total</p>
+          <p class="subtitle">{{proceDoneList.length + examsDoneList.length}}</p>
         </article>
       </div>
     </div>
@@ -110,12 +104,16 @@
 <script>
 import ExamDone from '../exam/Done'
 import ProceDone from '../proce/Done'
-import { mapGetters } from 'vuex'
+import { mapActions, mapGetters } from 'vuex'
 
 export default {
   components: {
     ExamDone,
     ProceDone
+  },
+
+  methods: {
+    ...mapActions(['setExamDoneList', 'setProceDoneList'])
   },
 
   data () {
@@ -127,35 +125,15 @@ export default {
   computed: {
     ...mapGetters({
       device: 'device',
-      user: 'user'
-    }),
-    chartData () {
-      return {
-        labels: [
-          'Red',
-          'Blue',
-          'Yellow'
-        ],
-        datasets: [{
-          data: this.data,
-          backgroundColor: [
-            '#FF6384',
-            '#36A2EB',
-            '#FFCE56'
-          ]
-        }]
-      }
-    }
+      user: 'user',
+      examsDoneList: 'examsDoneList',
+      proceDoneList: 'proceDoneList'
+    })
   },
 
   mounted () {
-    setInterval(() => {
-      // https://github.com/vuejs/vue/issues/2873
-      // Array.prototype.$set/$remove deprecated (use Vue.set or Array.prototype.splice instead)
-      this.data.forEach((item, i) => {
-        this.data.splice(i, 1, Math.ceil(Math.random() * 1000))
-      })
-    }, 1024)
+    this.setExamDoneList([])
+    this.setProceDoneList([])
   }
 }
 </script>

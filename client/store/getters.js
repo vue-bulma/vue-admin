@@ -11,6 +11,8 @@ const componententry = state => {
 }
 const user = state => state.user
 const scheduleList = state => state.scheduleList
+const examsDoneList = state => state.examsDoneList
+const proceDoneList = state => state.proceDoneList
 const isLogged = (state) => !isEmpty(state.crm)
 
 export {
@@ -23,5 +25,7 @@ export {
   componententry,
   user,
   isLogged,
-  scheduleList
+  scheduleList,
+  proceDoneList,
+  examsDoneList
 }
