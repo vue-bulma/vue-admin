@@ -12,6 +12,8 @@ import { TOGGLE_SIDEBAR } from 'vuex-store/mutation-types'
 import database from './pluguins/firebase'
 import API_URL from '../config/dev.env'
 
+console.log(process.env.NODE_ENV)
+
 Vue.router = router
 Vue.use(VueAxios, axios)
 Vue.use(VueAuth, {

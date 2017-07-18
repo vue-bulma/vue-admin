@@ -3,14 +3,14 @@
     <div class="tile is-ancestor">
       <div class="tile is-parent is-4">
         <article class="tile is-child box">
-          <p class="title"><i class="fa fa-stethoscope proced"></i> Cons/Retorn</p>
-          <p class="subtitle">{{proceDoneList.length}}</p>
+          <p class="title"><i class="fa fa-heartbeat exame"></i> Exames</p>
+          <p class="subtitle">{{examsDoneList.length}}</p>
         </article>
       </div>
       <div class="tile is-parent is-4">
         <article class="tile is-child box">
-          <p class="title"><i class="fa fa-heartbeat exame"></i> Exames</p>
-          <p class="subtitle">{{examsDoneList.length}}</p>
+          <p class="title"><i class="fa fa-stethoscope proced"></i> Cons/Retorn</p>
+          <p class="subtitle">{{proceDoneList.length}}</p>
         </article>
       </div>
       <div class="tile is-parent is-4">

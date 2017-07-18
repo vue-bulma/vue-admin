@@ -26,7 +26,7 @@
     "build": "cross-env NODE_ENV=production node build/build.js",
     "clean": "rm -rf dist",
     "dev": "cross-env NODE_ENV=development node build/dev-server.js",
-    "server": "cross-env NODE_ENV=production node build/dev-server.js",
+    "server": "cross-env NODE_ENV=development node build/dev-server.js",
     "electron": "cross-env NODE_ELECTRON=true npm run build && electron electronIndex.js",
     "gh": "npm run build && gh-pages -d dist",
     "lint": "eslint --ext .js .vue client/*",
