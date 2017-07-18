@@ -17,6 +17,17 @@ const router = new Router({
       component: require('../views/Home')
     },
     {
+      name: 'Schedule',
+      path: '/schedule',
+      meta: {auth: true},
+      component: require('../views/schedule/Index')
+    },
+    {
+      name: 'Termservice',
+      path: '/termservice',
+      component: require('../views/terms/Index')
+    },
+    {
       name: 'Login',
       path: '/login',
       component: require('../views/auth/Login')

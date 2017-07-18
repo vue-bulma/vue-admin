@@ -20,6 +20,15 @@ const state = {
       },
       component: lazyLoading('home', true)
     },
+    // {
+    //   name: 'Schedule',
+    //   path: '/schedule',
+    //   meta: {
+    //     icon: 'fa-calendar',
+    //     link: 'schedule/Index.vue'
+    //   },
+    //   component: lazyLoading('schedule', true)
+    // },
     {
       name: 'Dashboard',
       path: '/dashboard',
