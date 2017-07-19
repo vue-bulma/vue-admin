@@ -58,6 +58,9 @@
             case '5':
               teste.push('Agendamento web')
               break
+            case '9':
+              teste.push('**Agenda Bloqueada**')
+              break
           }
         })
         this.setup({teste, valuesTipos})

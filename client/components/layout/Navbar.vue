@@ -45,16 +45,14 @@ export default {
   },
 
   mounted () {
-    console.log(this.$store.state.user.crm)
     if ((this.$store.state.user.crm !== '') || (window.localStorage.getItem('crm'))) {
-      console.log('this.$store.state.user.crm')
       const user = {
         crm: localStorage.get('crm'),
         client: localStorage.get('client'),
-        id: localStorage.get('id')
+        id: localStorage.get('id'),
+        name: localStorage.get('name')
       }
       this.setUser(user)
-      console.log(this.user)
     }
   },
 

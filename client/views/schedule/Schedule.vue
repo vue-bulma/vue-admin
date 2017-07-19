@@ -42,6 +42,7 @@
               <th align="center">Status</th>
               <th>Hora</th>
               <th>Paciente</th>
+              <!-- <th>Bloquear</th> -->
               <th class="has-text-centered">Tipo</th>
             </tr>
             </thead>
@@ -64,6 +65,7 @@
                     {{ list.tbNome }}
                   </div>
                 </td>
+                <!-- <td><a href="#" @click.prevent="block(list)">Bloquear</a></td> -->
                 <td class="is-icon">
                   <a href="#">
                     <div v-if="list.tbNome !== undefined">
@@ -155,6 +157,9 @@
     },
     methods: {
       ...mapActions(['setScheduleList']),
+      block (list) {
+        console.log(list)
+      },
       loadData (client, crm, date) {
         this.schedule = []
         this.scheduleEmpty = false
@@ -214,6 +219,8 @@
           nameType = 'Retorno'
         } else if (type === '4') {
           nameType = 'Cirurgia'
+        } else if (type === '5') {
+          nameType = 'web'
         }
         return nameType
       },
@@ -253,6 +260,8 @@
         } else if (type === '3') {
           iconClass = 'fa fa-arrow-left type3'
         } else if (type === '4') {
+          iconClass = 'fa fa-user-md'
+        } else if (type === '5') {
           iconClass = 'fa fa-cloud'
         }
         return iconClass
