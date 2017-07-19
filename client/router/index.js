@@ -19,6 +19,7 @@ const router = new Router({
     {
       name: 'Users',
       path: '/users',
+      meta: {auth: true},
       component: require('../views/auth/Users')
     },
     {
@@ -52,8 +53,11 @@ const router = new Router({
 
 /* Progendo rota */
 router.beforeEach((to, from, next) => {
+  // if (to.path === '/termservice') {
+  //   return next()
+  // }
   if (!store.state.user.id && to.path !== '/login') {
-    // return router.push('/login')
+    return router.push('/login')
   }
   next()
 })

@@ -35,6 +35,7 @@
 <script>
 import API_URL from '../../../config/dev.env'
 import Tooltip from 'vue-bulma-tooltip'
+import localStorage from '../../services/index'
 import { mapGetters, mapActions } from 'vuex'
 const api = API_URL.API_URL + ':8091/users/logout'
 export default {
@@ -44,8 +45,16 @@ export default {
   },
 
   mounted () {
-    if (this.$store.state.user.crm !== '') {
-      this.crm = this.$store.state.user.crm
+    console.log(this.$store.state.user.crm)
+    if ((this.$store.state.user.crm !== '') || (window.localStorage.getItem('crm'))) {
+      console.log('this.$store.state.user.crm')
+      const user = {
+        crm: localStorage.get('crm'),
+        client: localStorage.get('client'),
+        id: localStorage.get('id')
+      }
+      this.setUser(user)
+      console.log(this.user)
     }
   },
 
@@ -68,7 +77,7 @@ export default {
 
   methods: {
     ...mapActions([
-      'toggleSidebar', 'user'
+      'toggleSidebar', 'user', 'setUser'
     ]),
     logout () {
       this.$auth.logout({

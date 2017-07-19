@@ -20,15 +20,15 @@ const state = {
       },
       component: lazyLoading('home', true)
     },
-    {
-      name: 'Users',
-      path: '/users',
-      meta: {
-        icon: 'fa-calendar',
-        link: 'Users'
-      },
-      component: lazyLoading('home', true)
-    },    // {
+    // {
+    //   name: 'Users',
+    //   path: '/users',
+    //   meta: {
+    //     icon: 'fa-calendar',
+    //     link: 'Users'
+    //   },
+    //   component: lazyLoading('home', true)
+    // },    // {
     //   name: 'Schedule',
     //   path: '/schedule',
     //   meta: {
