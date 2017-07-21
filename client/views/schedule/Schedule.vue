@@ -299,7 +299,7 @@
           params:
           {
             id: this.$store.state.user.id,
-            client: this.$store.state.client,
+            client: window.localStorage.getItem('client'),
             crm: this.$store.state.user.crm,
             date: this.value.substring(3, 5) + '/' + this.value.substring(0, 2) + '/' + this.value.substring(6, 10)
           }

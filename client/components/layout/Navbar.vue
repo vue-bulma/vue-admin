@@ -33,11 +33,11 @@
 </template>
 
 <script>
-import API_URL from '../../../config/dev.env'
+// import API_URL from '../../../config/dev.env'
 import Tooltip from 'vue-bulma-tooltip'
 import localStorage from '../../services/index'
 import { mapGetters, mapActions } from 'vuex'
-const api = API_URL.API_URL + ':8091/users/logout'
+// const api = API_URL.API_URL + ':8091/users/logout'
 export default {
 
   components: {
@@ -82,28 +82,29 @@ export default {
         redirect: 'Login',
         makeRequest: false,
         params: {},
-        success: function () {
+        success: function (result) {
+          console.log('entrou aqui neste logou dentro do navbar', result)
           window.localStorage.removeItem('crm')
           window.localStorage.removeItem('client')
           window.localStorage.removeItem('id')
           window.localStorage.removeItem('email')
           window.localStorage.removeItem('name')
-          this.$http({
-            url: api,
-            transformResponse: [(data) => {
-              return JSON.parse(data.replace(/T00:00:00/g, ''))
-            }],
-            params:
-            {
-              id: this.$store.state.user.id
-            }
-          }).then((response) => {
-            console.log(response)
-          }).catch((error) => {
-            console.log(error)
-          })
+          // this.$http({
+          //   url: api,
+          //   transformResponse: [(data) => {
+          //     return JSON.parse(data.replace(/T00:00:00/g, ''))
+          //   }],
+          //   params:
+          //   {
+          //     id: this.$store.state.user.id
+          //   }
+          // }).then((response) => {
+          //   console.log(response)
+          // }).catch((error) => {
+          //   console.log(error)
+          // })
         },
-        error: function () {}
+        error: function () { console.log('deeu erro no logout') }
       })
     }
   }
