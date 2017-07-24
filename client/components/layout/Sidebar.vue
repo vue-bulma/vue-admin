@@ -1,7 +1,7 @@
 <template>
   <aside class="menu app-sidebar animated" :class="{ slideInLeft: show, slideOutLeft: !show }">
     <p class="menu-label">
-      Risc Sistemas
+      {{client}}
     </p>
     <ul class="menu-list">
       <li v-for="(item, index) in menu">
@@ -49,7 +49,8 @@ export default {
 
   data () {
     return {
-      isReady: false
+      isReady: false,
+      client: ''
     }
   },
 
@@ -59,6 +60,7 @@ export default {
       this.isReady = true
       this.shouldExpandMatchItem(route)
     }
+    this.clientName()
   },
 
   computed: mapGetters({
@@ -66,6 +68,13 @@ export default {
   }),
 
   methods: {
+    clientName () {
+      if (window.localStorage.getItem('client') === '503') {
+        this.client = 'Hospital do coração'
+      } else {
+        this.client = 'Risc Sistemas'
+      }
+    },
     ...mapActions([
       'expandMenu'
     ]),
