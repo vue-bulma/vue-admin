@@ -61,6 +61,7 @@ export default {
       getData () {
         this.$db.ref('server/customer/' + this.$store.state.user.client + '/service/proceDone/professional/' + this.$store.state.user.crm + '/').on('value', data => {
           const obj = data.val()
+          // console.log(obj)
           if (obj !== null) {
             this.setProceDoneList(obj)
           }
@@ -85,6 +86,7 @@ export default {
             dateEnd: this.dateEnd
           }
         }).then((response) => {
+          console.log('response', response)
           this.getData()
         }).catch((error) => {
           console.log(error)

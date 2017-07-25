@@ -51,7 +51,7 @@ const state = {
       name: 'Manager',
       path: '/manager/schedule',
       meta: {
-        icon: 'fa-tachometer',
+        icon: 'fa-user',
         link: 'manager/Schedule.vue',
         auth: true
       },
