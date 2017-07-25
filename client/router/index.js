@@ -39,6 +39,11 @@ const router = new Router({
       component: require('../views/auth/Login')
     },
     {
+      name: 'Gerencia/Agenda',
+      path: '/manager/schedule',
+      component: require('../views/manager/Schedule')
+    },
+    {
       name: '404',
       path: '/404',
       component: require('../views/page404')
