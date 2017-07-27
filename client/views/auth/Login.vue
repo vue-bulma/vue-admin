@@ -11,7 +11,7 @@
           <p class="control">
             <input v-model="data.body.username" class="input" type="text" placeholder="email@example.org">
           </p>
-          <label class="label">Password</label>
+          <label class="label">Senha</label>
           <p class="control">
             <input v-model="data.body.password" class="input" type="password" placeholder="password">
           </p>
@@ -19,14 +19,14 @@
           <p class="control">
             <label class="checkbox">
               <input type="checkbox" v-model="data.rememberMe">
-              Remember me
+              Lembre Me
             </label>
           </p>
 
           <hr>
           <p class="control">
             <button type="submit" class="button is-primary">Login</button>
-            <button class="button is-default">Cancel</button>
+            <button class="button is-default">Cancelar</button>
           </p>
         </form>
       </div>
