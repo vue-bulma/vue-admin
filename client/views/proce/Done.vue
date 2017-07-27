@@ -7,7 +7,16 @@
     <datepicker v-model="dateEnd" placeholder="European Format ('d-m-Y')" :config="{ dateFormat: 'd-m-Y', static: true, defaultDate: today }"></datepicker>
   -->
     <hr />
-    <chart></chart>
+    <div class="" v-show="exibeChart">
+      <chart></chart>
+    </div>
+    <div class="tile is-ancestor" v-show="!exibeChart">
+      <div class="tile is-parent">
+        <article class="tile is-child box exibeChart">
+          <h4 class="title">Não existe finalizações nesta data</h4>
+        </article>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -35,7 +44,8 @@ export default {
       return {
         dateStr: '',
         dateEnd: '',
-        dateRange: ''
+        dateRange: '',
+        exibeChart: false
       }
     },
     computed: {
@@ -61,9 +71,12 @@ export default {
       getData () {
         this.$db.ref('server/customer/' + this.$store.state.user.client + '/service/proceDone/professional/' + this.$store.state.user.crm + '/').on('value', data => {
           const obj = data.val()
-          // console.log(obj)
           if (obj !== null) {
+            this.exibeChart = true
             this.setProceDoneList(obj)
+          } else {
+            this.exibeChart = false
+            this.setProceDoneList([])
           }
         })
       },
@@ -86,7 +99,7 @@ export default {
             dateEnd: this.dateEnd
           }
         }).then((response) => {
-          console.log('response', response)
+          // console.log('response', response)
           this.getData()
         }).catch((error) => {
           console.log(error)
@@ -97,6 +110,10 @@ export default {
 </script>
 
 <style lang="scss">
+  .exibeChart {
+    text-align: center;
+  }
+
   datepicker {
     width: 50%;
   }

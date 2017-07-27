@@ -7,7 +7,16 @@
     <datepicker v-model="dateEnd" placeholder="European Format ('d-m-Y')" :config="{ dateFormat: 'd-m-Y', static: true, defaultDate: today }"></datepicker>
     -->
     <hr />
-    <chart></chart>
+    <div class="" v-show="exibeChart">
+      <chart></chart>
+    </div>
+    <div class="tile is-ancestor" v-show="!exibeChart">
+      <div class="tile is-parent">
+        <article class="tile is-child box exibeChart">
+          <h4 class="title">Não existe finalizações nesta data</h4>
+        </article>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -35,7 +44,8 @@ export default {
       return {
         dateStr: '',
         dateEnd: '',
-        dateRange: ''
+        dateRange: '',
+        exibeChart: false
       }
     },
     computed: {
@@ -62,7 +72,11 @@ export default {
         this.$db.ref('server/customer/' + this.$store.state.user.client + '/service/examsDone/professional/' + this.$store.state.user.crm + '/').on('value', data => {
           const obj = data.val()
           if (obj !== null) {
+            this.exibeChart = true
             this.setExamDoneList(obj)
+          } else {
+            this.exibeChart = false
+            this.setExamDoneList([])
           }
         })
       },

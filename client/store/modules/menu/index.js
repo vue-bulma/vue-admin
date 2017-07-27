@@ -46,17 +46,17 @@ const state = {
         auth: true
       },
       component: lazyLoading('dashboard', true)
-    },
-    {
-      name: 'Manager',
-      path: '/manager/schedule',
-      meta: {
-        icon: 'fa-user',
-        link: 'manager/Schedule.vue',
-        auth: true
-      },
-      component: lazyLoading('schedule', true)
     }
+    // {
+    //   name: 'Manager',
+    //   path: '/manager/schedule',
+    //   meta: {
+    //     icon: 'fa-user',
+    //     link: 'manager/Schedule.vue',
+    //     auth: true
+    //   },
+    //   component: lazyLoading('schedule', true)
+    // }
     // {
     //   name: 'Axios',
     //   path: '/axiosDemo',

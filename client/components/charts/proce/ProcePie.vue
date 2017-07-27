@@ -22,7 +22,6 @@
     },
     methods: {
       dataSource () {
-        console.log('list', this.list)
         if (this.list === undefined) {
           // return
         }
