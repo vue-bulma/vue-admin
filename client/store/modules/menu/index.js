@@ -1,5 +1,6 @@
 import * as types from '../../mutation-types'
 import lazyLoading from './lazyLoading'
+import manager from './manager'
 // import charts from './charts'
 // import uifeatures from './uifeatures'
 // import components from './components'
@@ -20,15 +21,15 @@ const state = {
       },
       component: lazyLoading('home', true)
     },
-    // {
-    //   name: 'Users',
-    //   path: '/users',
-    //   meta: {
-    //     icon: 'fa-calendar',
-    //     link: 'Users'
-    //   },
-    //   component: lazyLoading('home', true)
-    // },    // {
+    {
+      name: 'Users',
+      path: '/users',
+      meta: {
+        icon: 'fa-group',
+        link: 'Users'
+      },
+      component: lazyLoading('home', true)
+    },    // {
     //   name: 'Schedule',
     //   path: '/schedule',
     //   meta: {
@@ -46,17 +47,8 @@ const state = {
         auth: true
       },
       component: lazyLoading('dashboard', true)
-    }
-    // {
-    //   name: 'Manager',
-    //   path: '/manager/schedule',
-    //   meta: {
-    //     icon: 'fa-user',
-    //     link: 'manager/Schedule.vue',
-    //     auth: true
-    //   },
-    //   component: lazyLoading('schedule', true)
-    // }
+    },
+    manager
     // {
     //   name: 'Axios',
     //   path: '/axiosDemo',

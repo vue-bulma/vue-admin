@@ -1,11 +1,20 @@
-<template lang="html">
-  <h1>agenda da gerencia</h1>
+<template>
+  <div>
+    <schedule></schedule>
+  </div>
 </template>
 
 <script>
-export default {
-}
+
+  import Schedule from '../schedule/Schedule'
+
+  export default {
+    name: 'ScheduleManager',
+    components: {
+      Schedule
+    }
+  }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 </style>
