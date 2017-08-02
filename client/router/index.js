@@ -29,9 +29,14 @@ const router = new Router({
       component: require('../views/schedule/Index')
     },
     {
-      name: 'Termservice',
-      path: '/termservice',
-      component: require('../views/terms/Index')
+      name: 'Terms',
+      path: '/client/register/terms',
+      component: require('../views/client/register/Terms')
+    },
+    {
+      name: 'Register',
+      path: '/client/register/register',
+      component: require('../views/client/register/Register')
     },
     {
       name: 'Login',
@@ -58,9 +63,9 @@ const router = new Router({
 
 /* Progendo rota */
 router.beforeEach((to, from, next) => {
-  // if (to.path === '/termservice') {
-  //   return next()
-  // }
+  if (to.path === '/client/register/register') {
+    return next()
+  }
   if (!store.state.user.id && to.path !== '/login') {
     return router.push('/login')
   }

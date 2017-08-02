@@ -1,7 +1,7 @@
 {
   "name": "vue-admin",
-  "version": "0.1.3",
-  "description": "meu clinic consiste em um dashboard para profissionais e para colaboradores",
+  "version": "0.1.4",
+  "description": "meu clinic consiste em um dashboard para profissionais e para colaboradores que utilizam sistema da Risc sistemas",
   "repository": "atomm/dashboard-risc",
   "homepage": "https://www.meuclinic.com.br",
   "license": "MIT",
