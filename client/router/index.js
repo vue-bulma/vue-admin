@@ -18,7 +18,7 @@ const router = new Router({
     },
     {
       name: 'Users',
-      path: '/users',
+      path: '/manager/users',
       meta: {auth: true},
       component: require('../views/auth/Users')
     },
@@ -27,6 +27,12 @@ const router = new Router({
       path: '/schedule',
       meta: {auth: true},
       component: require('../views/schedule/Index')
+    },
+    {
+      name: 'Record',
+      path: '/client/record/default',
+      meta: {auth: true},
+      component: require('../views/client/record/Default')
     },
     {
       name: 'Terms',

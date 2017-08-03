@@ -1,6 +1,6 @@
 import * as types from '../../mutation-types'
 import lazyLoading from './lazyLoading'
-import manager from './manager'
+// import manager from './manager'
 // import charts from './charts'
 // import uifeatures from './uifeatures'
 // import components from './components'
@@ -13,7 +13,7 @@ import manager from './manager'
 const state = {
   items: [
     {
-      name: 'Home',
+      name: 'Agenda',
       path: '/',
       meta: {
         icon: 'fa-calendar',
@@ -21,23 +21,6 @@ const state = {
       },
       component: lazyLoading('home', true)
     },
-    {
-      name: 'Users',
-      path: '/users',
-      meta: {
-        icon: 'fa-group',
-        link: 'Users'
-      },
-      component: lazyLoading('home', true)
-    },    // {
-    //   name: 'Schedule',
-    //   path: '/schedule',
-    //   meta: {
-    //     icon: 'fa-calendar',
-    //     link: 'schedule/Index.vue'
-    //   },
-    //   component: lazyLoading('schedule', true)
-    // },
     {
       name: 'Dashboard',
       path: '/dashboard',
@@ -47,8 +30,26 @@ const state = {
         auth: true
       },
       component: lazyLoading('dashboard', true)
-    },
-    manager
+    }
+    // {
+    //   name: 'Prontuário',
+    //   path: '/client/record/default',
+    //   meta: {
+    //     icon: 'fa-address-book-o',
+    //     link: 'client/record/Default.Vue',
+    //     auth: true
+    //   },
+    //   component: lazyLoading('record', true)
+    // },
+    // manager
+    //   name: 'Schedule',
+    //   path: '/schedule',
+    //   meta: {
+    //     icon: 'fa-calendar',
+    //     link: 'schedule/Index.vue'
+    //   },
+    //   component: lazyLoading('schedule', true)
+    // },
     // {
     //   name: 'Axios',
     //   path: '/axiosDemo',
