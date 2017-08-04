@@ -69,13 +69,14 @@ const router = new Router({
 
 /* Progendo rota */
 router.beforeEach((to, from, next) => {
-  if (to.path === '/client/register/register') {
-    return next()
-  }
-  if (!store.state.user.id && to.path !== '/login') {
-    return router.push('/login')
+  if ((to.meta.auth !== undefined) || (to.meta.auth !== true)) {
+    if (!store.state.user.id && to.path !== '/login') {
+      return router.push('/login')
+    }
+    next()
   }
   next()
+  // console.log(to.meta.auth)
 })
 
 export default router

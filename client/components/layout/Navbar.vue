@@ -23,7 +23,7 @@
           <a v-if="$auth.check()" @click="logout" class="nav-item">
 
             <tooltip label="Click sobre seu nome para logout" placement="left">
-              <p class="is-primary user-name">Dr(a) {{this.name}}</p>
+              <p class="is-primary user-name">Dr(a) {{ user.name }}</p>
             </tooltip>
           </a>
         </div>
@@ -62,8 +62,7 @@ export default {
 
   data () {
     return {
-      crm: '',
-      name: localStorage.get('name')
+      crm: ''
     }
   },
 

@@ -25,9 +25,11 @@
 
           <hr>
           <p class="control">
-            <button type="submit" class="button is-primary">Login</button>
-            <button class="button is-default">Cancelar</button>
+            <button type="submit" class="button is-primary register">Acessar sua Conta</button>
+            <hr/>
+            <router-link to="/client/register/register"><button class="button is-default register">Cadastrar</button></router-link>
           </p>
+
         </form>
       </div>
     </div>
@@ -71,6 +73,9 @@ export default {
   },
   methods: {
     ...mapActions(['setUser']),
+    register () {
+      console.log('teste')
+    },
     login () {
       // Firebase.auth().onAuthStateChanged((this.data.body) => {
       //   if (user) {
@@ -89,7 +94,7 @@ export default {
         redirect: {name: redirect ? 'Home' : 'Home'},
         success (res) {
           // console.log('Auth Success')
-          // console.log('Token: ' + this.$auth.token())
+          console.log('Token: ' + this.$auth.token())
           // console.log(res.data.parameters)
           // const user = this.data.body
           this.setUser(res.data.parameters)
@@ -131,4 +136,6 @@ export default {
 .is-title {
     text-transform: capitalize;
 }
+.register { width: 100%;}
+.test { text-align: right;}
 </style>
