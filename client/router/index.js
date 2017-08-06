@@ -37,7 +37,8 @@ const router = new Router({
     {
       name: 'Terms',
       path: '/client/register/terms',
-      component: require('../views/client/register/Terms')
+      component: require('../views/client/register/Terms'),
+      meta: false
     },
     {
       name: 'Register',
@@ -69,14 +70,16 @@ const router = new Router({
 
 /* Progendo rota */
 router.beforeEach((to, from, next) => {
-  if ((to.meta.auth !== undefined) || (to.meta.auth !== true)) {
+  if (to.meta.auth === undefined) {
+    return next()
+  }
+  if ((to.meta.auth !== undefined) || (to.meta.auth !== false) || (to.meta.auth !== undefined)) {
     if (!store.state.user.id && to.path !== '/login') {
       return router.push('/login')
     }
-    next()
+    return next()
   }
-  next()
-  // console.log(to.meta.auth)
+  return next()
 })
 
 export default router
