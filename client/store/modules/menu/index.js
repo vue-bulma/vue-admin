@@ -30,17 +30,17 @@ const state = {
         auth: true
       },
       component: lazyLoading('dashboard', true)
+    },
+    {
+      name: 'Prontuário',
+      path: '/client/record/default',
+      meta: {
+        icon: 'fa-address-book-o',
+        link: 'client/record/Default.Vue',
+        auth: true
+      },
+      component: lazyLoading('record', true)
     }
-    // {
-    //   name: 'Prontuário',
-    //   path: '/client/record/default',
-    //   meta: {
-    //     icon: 'fa-address-book-o',
-    //     link: 'client/record/Default.Vue',
-    //     auth: true
-    //   },
-    //   component: lazyLoading('record', true)
-    // },
     // manager
     //   name: 'Schedule',
     //   path: '/schedule',

@@ -8,55 +8,58 @@
 
           <label class="label">Nome</label>
           <p class="control has-icon has-icon-right">
-            <input class="input is-danger" type="text" placeholder="Nome" v-model="data.user.name">
+            <input autofocus class="input" :class="{'is-danger': !isValalidName}" type="text" placeholder="Nome" v-model="data.user.name">
             <span class="icon is-small">
-              <i class="fa fa-warning"></i>
+              <i class="fa fa-warning" v-show="!isValalidName"></i>
             </span>
-            <span class="help is-danger">Nome inválido!</span>
+            <span class="help is-danger" v-show="!isValalidName">Nome inválido!</span>
           </p>
 
           <label class="label">CRM</label>
           <p class="control has-icon has-icon-right">
-            <input class="input is-danger" type="text" placeholder="CRM" v-model="data.user.crm">
+            <input class="input" v-on:keyup="keymonitor" :class="{'is-danger': !isValalidCRM}" type="text" placeholder="CRM" v-model="data.user.crm">
             <span class="icon is-small">
-              <i class="fa fa-warning"></i>
+              <i class="fa fa-warning" v-show="!isValalidCRM"></i>
             </span>
-            <span class="help is-danger">CRM inválido!</span>
+            <span class="help is-danger" v-show="!isValalidCRM">CRM inválido!</span>
           </p>
 
           <label class="label">Email</label>
           <p class="control has-icon has-icon-right">
-            <input class="input is-danger" type="email" placeholder="Email" v-model="data.user.email">
+            <input class="input" :class="{'is-danger': !isValalidEmail}" type="email" placeholder="Email" v-model="data.user.username">
             <span class="icon is-small">
-              <i class="fa fa-warning"></i>
+              <i class="fa fa-warning" v-show="!isValalidEmail"></i>
             </span>
-            <span :class="{ hasError: 'help is-danger' }"></span>
-            {{hasError}}
+            <span class="help is-danger" v-show="!isValalidEmail">Email inválido!</span>
           </p>
 
           <label class="label">Senha</label>
           <p class="control has-icon has-icon-right">
-            <input class="input is-danger" type="password" placeholder="Senha" v-model="data.user.password">
-            <span class="help is-danger">Senha inválida!</span>
+            <input class="input" :class="{'is-danger': !isValalidPassowrd}" type="password" placeholder="Senha" v-model="data.user.password">
             <span class="icon is-small">
-              <i class="fa fa-warning"></i>
+              <i class="fa fa-warning" v-show="!isValalidPassowrd"></i>
             </span>
-            <!--
-            <input class="input is-success" type="password" placeholder="Senha" v-model="data.user.password">
-            <span class="icon is-small">
-              <i class="fa fa-check"></i>
+            <span class="help is-danger" v-show="!isValalidPassowrd">Senha inválido!</span>
+          </p>
+
+          <label class="label">Tipo</label>
+          <p class="control">
+            <span class="select">
+              <select v-model="data.user.type">
+                <option>Médico</option>
+                <option>Gerencia</option>
+              </select>
             </span>
-            <span class="help is-success">Senha inválida!</span>-->
           </p>
 
           <p class="control">
             <label class="checkbox">
-              <input type="checkbox">
+              <input type="checkbox" v-model="terms">
               Concordo com os<router-link to="/client/register/terms" class="term">termos do meuclinic</router-link>
             </label>
           </p>
           <p class="control">
-            <button class="button is-primary" @click="register()">Cadastrar</button>
+            <button class="button is-primary" :disabled="!this.terms" @click="register()">Cadastrar</button>
             <router-link to="/login">
               <button class="button is-link">Cancelar</button>
             </router-link>
@@ -72,42 +75,63 @@
 export default {
   name: 'Register',
   methods: {
+    keymonitor (event) {
+
+    },
     validate () {
-      if (this.data.user.name === undefined) {
+      if ((this.data.user.name === undefined) || (this.data.user.name === '') || (this.data.user.name === null)) {
+        console.log(this.data.user.name)
+        this.isValalidName = false
+        return false
+      }
+      if ((this.data.user.crm === undefined) || (this.data.user.crm === '') || (this.data.user.crm === null)) {
+        this.isValalidCRM = false
+        return false
+      }
+      if ((this.data.user.username === undefined) || (this.data.user.username === '') || (this.data.user.username === null)) {
+        this.isValalidEmail = false
+        return false
+      }
+      if ((this.data.user.password === undefined) || (this.data.user.password === '') || (this.data.user.password === null) || (this.data.user.password.length < 5)) {
+        this.isValalidName = false
         return false
       }
     },
     register () {
-      if (this.validate() === false) {
-        return
-      }
-      this.$http({
-        method: 'post',
-        url: 'http://localhost:8091/users/create',
-        transformResponse: [(data) => {
-          return JSON.parse(data.replace(/T00:00:00/g, ''))
-        }]
-      }).then((response) => {
-        console.log(response)
-      }).catch((error) => {
-        console.log(error)
+      this.$db.ref('server/users/').on('value', data => {
+        const obj = data.val()
+        console.log(obj)
       })
+      if (this.validate() === false) {
+        console.log('teste')
+      }
+      // this.$http({
+      //   method: 'post',
+      //   url: 'http://localhost:8091/users/create',
+      //   data: this.data.user
+      // }).then((response) => {
+      //   console.log(response)
+      // }).catch((error) => {
+      //   console.log(error)
+      // })
     }
   },
   data () {
     return {
       data: {
         user: {
-          email: null,
+          username: null,
           password: null,
           name: null,
-          crm: null
+          crm: null,
+          type: 'Médico'
         }
       },
-      isValidEmail: false,
-      error: null,
-      hasError: true,
-      isActive: true
+      terms: false,
+      isValalidName: true,
+      isValalidEmail: true,
+      isValalidCRM: true,
+      isValalidPassowrd: true
     }
   }
 }
