@@ -8,11 +8,11 @@
 
           <div class="control is-grouped">
             <p class="control is-expanded">
-              <input class="input" type="text" placeholder="Expanded and Grouped" v-model="patient">
+              <input class="input" type="text" placeholder="Prontuário - Nome - CPF - Dt Nasc." v-model="patient">
             </p>
             <p class="control">
-              <a class="button is-info" @click="find()">
-                Search
+              <a class="button is-primary" @click="find()">
+                Buscar
               </a>
             </p>
           </div>
@@ -21,14 +21,14 @@
             <thead>
             <tr>
               <th></th>
-              <th>Hora</th>
-              <th>Paciente</th>
+              <th>Ficha</th>
+              <th>Nome</th>
               <th>Dt Nasc.</th>
             </tr>
             </thead>
             <tbody>
               <tr v-for="list in patients">
-                <td><a href="#" @click="record(list)">Selecionar</a></td>
+                <td><a href="#" @click.prevent="record(list)">Selecionar</a></td>
                 <td>{{list.tbCodigo}}</td>
                 <td>{{list.tbNome}}</td>
                 <td>{{list.tbDtNasc}}</td>
@@ -36,11 +36,18 @@
             </tbody>
           </table>
 
-
-          <label class="label">Message</label>
-          <p class="control">
-            <textarea class="textarea" placeholder="Textarea"></textarea>
-          </p>
+          <table class="table">
+            <thead>
+            <tr>
+              <th>Prontuário</th>
+            </tr>
+            </thead>
+            <tbody>
+              <tr v-for="list in records">
+                <td>{{list.tbDescricao}}</td>
+              </tr>
+            </tbody>
+          </table>
 
         </div>
       </article>
@@ -64,6 +71,7 @@
     },
     methods: {
       record (record) {
+        this.patients = [record]
         this.$http({
           url: 'http://localhost:8091/records/list',
           transformResponse: [(data) => {
@@ -71,14 +79,14 @@
           }],
           params:
           {
-            patient: record
+            tbCodigo: record.tbCodigo,
+            tbNome: record.tbNome
           }
         }).then((response) => {
           this.records = []
 
           this.$db.ref('server/customer/' + 503 + '/service/records/').on('value', data => {
             const obj = data.val()
-            console.log(obj)
             if (obj !== null) {
               this.records = obj
             }

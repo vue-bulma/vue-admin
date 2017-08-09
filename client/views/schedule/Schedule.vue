@@ -42,7 +42,7 @@
               <th align="center">Status</th>
               <th>Hora</th>
               <th>Paciente</th>
-              <!-- <th>Bloquear</th> -->
+              <th>Bloquear</th>
               <th class="has-text-centered">Tipo</th>
             </tr>
             </thead>
@@ -65,7 +65,7 @@
                     {{ list.tbNome }}
                   </div>
                 </td>
-                <!-- <td><a href="#" @click.prevent="block(list)">Bloquear</a></td> -->
+                <td><a href="#" @click.prevent="block(list)">Bloquear</a></td>
                 <td class="is-icon">
                   <a href="#">
                     <div v-if="list.tbNome !== undefined">
