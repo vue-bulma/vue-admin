@@ -20,6 +20,7 @@
           <table class="table">
             <thead>
             <tr>
+              <th></th>
               <th>Hora</th>
               <th>Paciente</th>
               <th>Dt Nasc.</th>
@@ -27,6 +28,7 @@
             </thead>
             <tbody>
               <tr v-for="list in patients">
+                <td><a href="#" @click="record(list)">Selecionar</a></td>
                 <td>{{list.tbCodigo}}</td>
                 <td>{{list.tbNome}}</td>
                 <td>{{list.tbDtNasc}}</td>
@@ -56,10 +58,35 @@
     data () {
       return {
         patient: null,
-        patients: []
+        patients: [],
+        records: []
       }
     },
     methods: {
+      record (record) {
+        this.$http({
+          url: 'http://localhost:8091/records/list',
+          transformResponse: [(data) => {
+            return JSON.parse(data.replace(/T00:00:00/g, ''))
+          }],
+          params:
+          {
+            patient: record
+          }
+        }).then((response) => {
+          this.records = []
+
+          this.$db.ref('server/customer/' + 503 + '/service/records/').on('value', data => {
+            const obj = data.val()
+            console.log(obj)
+            if (obj !== null) {
+              this.records = obj
+            }
+          })
+        }).catch((error) => {
+          console.log(error)
+        })
+      },
       find () {
         this.$http({
           url: api,
