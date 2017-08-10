@@ -1,5 +1,6 @@
 <template lang="html">
   <div class="">
+    <nprogress-container></nprogress-container>
     <div class="columns is-vcentered">
       <div class="column is-6 is-offset-3">
         <article class="tile is-child box">
@@ -8,7 +9,7 @@
 
           <div class="control is-grouped">
             <p class="control is-expanded">
-              <input class="input" type="text" placeholder="Prontuário - Nome - CPF - Dt Nasc." v-model="patient">
+              <input @keyup.enter @click="find()" class="input" type="text" placeholder="Prontuário - Nome - CPF - Dt Nasc." v-model="patient">
             </p>
             <p class="control">
               <a class="button is-primary" @click="find()">
@@ -29,9 +30,9 @@
             <tbody>
               <tr v-for="list in patients">
                 <td><a href="#" @click.prevent="record(list)">Selecionar</a></td>
-                <td>{{list.tbCodigo}}</td>
-                <td>{{list.tbNome}}</td>
-                <td>{{list.tbDtNasc}}</td>
+                <td><a href="#" @click.prevent="record(list)">{{list.tbCodigo}}</a></td>
+                <td><a href="#" @click.prevent="record(list)">{{list.tbNome}}</a></td>
+                <td><a href="#" @click.prevent="record(list)">{{list.tbDtNasc}}</a></td>
               </tr>
             </tbody>
           </table>
@@ -44,7 +45,11 @@
             </thead>
             <tbody>
               <tr v-for="list in records">
-                <td>{{list.tbDescricao}}</td>
+                <td>
+                  <quill :options="{ theme: 'snow' }">
+                    {{list.tbDescricao}}
+                  </quill>  
+                </td>
               </tr>
             </tbody>
           </table>
@@ -57,11 +62,17 @@
 </template>
 
 <script>
+  import NprogressContainer from 'vue-nprogress/src/NprogressContainer'
+  import Quill from 'vue-bulma-quill'
   import API_URL from '../../../../config/dev.env'
   const api = API_URL.API_URL + ':8091/patients/find'
 
   export default {
     name: 'Record',
+    components: {
+      NprogressContainer,
+      Quill
+    },
     data () {
       return {
         patient: null,
@@ -89,7 +100,6 @@
           this.$db.ref('server/customer/' + window.localStorage.getItem('client') + '/service/records/').on('value', data => {
             const obj = data.val()
             if (obj !== null) {
-              obj.tbDescricao = convertToPlain(obj.tbDescricao)
               this.records = obj
             }
           })
@@ -123,12 +133,8 @@
     }
   }
 
-function convertToPlain (rtf) {
-    rtf = rtf.replace(/\\par[d]?/g, '')
-    return rtf.replace(/\{\*?\\[^{}]+}|[{}]|\\\n?[A-Za-z]+\n?(?:-?\d+)?[ ]?/g, '').trim()
-}
-
 </script>
 
-<style lang="scss">
+<style lang="styl">
+  @import "~quill/assets/snow"
 </style>

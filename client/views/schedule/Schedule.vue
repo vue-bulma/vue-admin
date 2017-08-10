@@ -49,7 +49,7 @@
             <tbody>
               <tr v-for="list in schedule">
                 <td class="is-icon">
-                  <a href="#">
+                  <a href="#" @click.prevent="">
                     <div v-if="list.tbNome !== undefined">
                       <tooltip :label="nameStatus(list.tbStatus)" placement="top">
                         <div class="has-text-centered">
@@ -65,9 +65,13 @@
                     {{ list.tbNome }}
                   </div>
                 </td>
-                <td><a href="#" @click.prevent="block(list)">Bloquear</a></td>
+                <td>
+                  <div v-if="list.tbNome === undefined">
+                    <a href="#" @click.prevent="block(list)">Bloquear</a>
+                  </div>
+                </td>
                 <td class="is-icon">
-                  <a href="#">
+                  <a href="#" @click.prevent="">
                     <div v-if="list.tbNome !== undefined">
                       <tooltip :label="nameType(list.tbTipo)" placement="top">
                         <div class="has-text-centered">
