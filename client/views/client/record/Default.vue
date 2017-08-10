@@ -80,14 +80,16 @@
           params:
           {
             tbCodigo: record.tbCodigo,
-            tbNome: record.tbNome
+            tbNome: record.tbNome,
+            client: window.localStorage.getItem('client'),
+            tbMedico: window.localStorage.getItem('crm')
           }
         }).then((response) => {
           this.records = []
-
-          this.$db.ref('server/customer/' + 503 + '/service/records/').on('value', data => {
+          this.$db.ref('server/customer/' + window.localStorage.getItem('client') + '/service/records/').on('value', data => {
             const obj = data.val()
             if (obj !== null) {
+              obj.tbDescricao = convertToPlain(obj.tbDescricao)
               this.records = obj
             }
           })
@@ -120,6 +122,12 @@
       }
     }
   }
+
+function convertToPlain (rtf) {
+    rtf = rtf.replace(/\\par[d]?/g, '')
+    return rtf.replace(/\{\*?\\[^{}]+}|[{}]|\\\n?[A-Za-z]+\n?(?:-?\d+)?[ ]?/g, '').trim()
+}
+
 </script>
 
 <style lang="scss">
