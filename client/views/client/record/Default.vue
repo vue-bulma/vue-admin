@@ -46,9 +46,7 @@
             <tbody>
               <tr v-for="list in records">
                 <td>
-                  <quill :options="{ theme: 'snow' }">
                     {{list.tbDescricao}}
-                  </quill>  
                 </td>
               </tr>
             </tbody>
