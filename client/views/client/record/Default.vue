@@ -1,8 +1,10 @@
 <template lang="html">
   <div class="">
     <nprogress-container></nprogress-container>
-    <div class="columns is-vcentered">
-      <div class="column is-6 is-offset-3">
+    <div class="content has-text-centered">
+
+      <div class="columns is-vcentered">
+        <div class="column">
         <article class="tile is-child box">
         <h1 class="title"></h1>
         <div class="block">
@@ -56,6 +58,7 @@
       </article>
      </div>
    </div>
+ </div>
   </div>
 </template>
 
