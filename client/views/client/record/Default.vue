@@ -48,6 +48,7 @@
             <tbody>
               <tr v-for="list in records">
                 <td>
+                    <p class="title is-5">{{list.tbData}}</p>
                     {{list.tbDescricao}}
                 </td>
               </tr>
@@ -98,7 +99,7 @@
           }
         }).then((response) => {
           this.records = []
-          this.$db.ref('server/customer/' + window.localStorage.getItem('client') + '/service/records/').on('value', data => {
+          this.$db.ref('server/customer/' + window.localStorage.getItem('client') + '/service/records/doctor/' + window.localStorage.getItem('crm') + '/').on('value', data => {
             const obj = data.val()
             if (obj !== null) {
               this.records = obj
@@ -116,12 +117,13 @@
           }],
           params:
           {
-            patient: this.patient
+            patient: this.patient,
+            doctor: window.localStorage.getItem('crm')
           }
         }).then((response) => {
           this.patients = []
 
-          this.$db.ref('server/customer/' + 503 + '/service/patient/').on('value', data => {
+          this.$db.ref('server/customer/' + window.localStorage.getItem('client') + '/service/patient/doctor/' + window.localStorage.getItem('crm') + '/').on('value', data => {
             const obj = data.val()
             if (obj !== null) {
               this.patients = obj
