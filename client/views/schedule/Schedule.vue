@@ -69,6 +69,9 @@
                   <div v-if="list.tbNome === undefined">
                     <a href="#" @click.prevent="block(list)">Bloquear</a>
                   </div>
+                  <div v-if="list.tbNome === '**HORÁRIO BLOQUEADO**'">
+                    <a href="#" @click.prevent="block(list)">Desbloquear</a>
+                  </div>
                 </td>
                 <td class="is-icon">
                   <a href="#" @click.prevent="">
@@ -163,6 +166,30 @@
       ...mapActions(['setScheduleList']),
       block (list) {
         console.log(list)
+        this.$http({
+          url: 'http://localhost:8091/schedules/block',
+          transformResponse: [(data) => {
+            return JSON.parse(data.replace(/T00:00:00/g, ''))
+          }],
+          params:
+          {
+            client: window.localStorage.getItem('client'),
+            tbMedico: window.localStorage.getItem('crm'),
+            tbData: list.tbData,
+            tbHora: list.tbHora,
+            tbTIpo: list.tbTipo
+          }
+        }).then((response) => {
+          console.log('teste')
+          // this.$db.ref('server/customer/' + window.localStorage.getItem('client') + '/service/records/doctor/' + window.localStorage.getItem('crm') + '/').on('value', data => {
+          //   const obj = data.val()
+          //   if (obj !== null) {
+          //     this.records = obj
+          //   }
+          // })
+        }).catch((error) => {
+          console.log(error)
+        })
       },
       loadData (client, crm, date) {
         this.schedule = []
