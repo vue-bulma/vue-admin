@@ -70,7 +70,7 @@
                     <a href="#" @click.prevent="block(list)">Bloquear</a>
                   </div>
                   <div v-if="list.tbNome === '**HORÁRIO BLOQUEADO**'">
-                    <a href="#" @click.prevent="block(list)">Desbloquear</a>
+                    <a href="#" @click.prevent="unBlock(list)">Desbloquear</a>
                   </div>
                 </td>
                 <td class="is-icon">
@@ -164,10 +164,9 @@
     },
     methods: {
       ...mapActions(['setScheduleList']),
-      block (list) {
-        console.log(list)
+      unBlock (list) {
         this.$http({
-          url: 'http://localhost:8091/schedules/block',
+          url: 'http://104.131.75.202:8091/schedules/unblock',
           transformResponse: [(data) => {
             return JSON.parse(data.replace(/T00:00:00/g, ''))
           }],
@@ -177,10 +176,38 @@
             tbMedico: window.localStorage.getItem('crm'),
             tbData: list.tbData,
             tbHora: list.tbHora,
-            tbTIpo: list.tbTipo
+            tbTipo: list.tbTipo,
+            tbNome: list.tbNome
           }
         }).then((response) => {
-          console.log('teste')
+          const dateDb = this.value.substring(3, 5) + '-' + this.value.substring(0, 2) + '-' + this.value.substring(6, 10)
+          this.loadData(this.client, this.crm, dateDb)
+          // this.$db.ref('server/customer/' + window.localStorage.getItem('client') + '/service/records/doctor/' + window.localStorage.getItem('crm') + '/').on('value', data => {
+          //   const obj = data.val()
+          //   if (obj !== null) {
+          //     this.records = obj
+          //   }
+          // })
+        }).catch((error) => {
+          console.log(error)
+        })
+      },
+      block (list) {
+        this.$http({
+          url: 'http://104.131.75.202:8091/schedules/block',
+          transformResponse: [(data) => {
+            return JSON.parse(data.replace(/T00:00:00/g, ''))
+          }],
+          params:
+          {
+            client: window.localStorage.getItem('client'),
+            tbMedico: window.localStorage.getItem('crm'),
+            tbData: list.tbData,
+            tbHora: list.tbHora
+          }
+        }).then((response) => {
+          const dateDb = this.value.substring(3, 5) + '-' + this.value.substring(0, 2) + '-' + this.value.substring(6, 10)
+          this.loadData(this.client, this.crm, dateDb)
           // this.$db.ref('server/customer/' + window.localStorage.getItem('client') + '/service/records/doctor/' + window.localStorage.getItem('crm') + '/').on('value', data => {
           //   const obj = data.val()
           //   if (obj !== null) {

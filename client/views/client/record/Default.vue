@@ -87,7 +87,7 @@
       record (record) {
         this.patients = [record]
         this.$http({
-          url: 'http://localhost:8091/records/list',
+          url: 'http://104.131.75.202:8091/records/list',
           transformResponse: [(data) => {
             return JSON.parse(data.replace(/T00:00:00/g, ''))
           }],
@@ -139,6 +139,6 @@
 
 </script>
 
-<style lang="styl">
-  @import "~quill/assets/snow"
+<style lang="scss">
+
 </style>
