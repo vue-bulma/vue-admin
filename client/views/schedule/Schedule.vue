@@ -36,7 +36,8 @@
               <a class="button" data-clear><i class="fa fa-close"></i></a>
             </datepicker>
           </h4>
-          <table class="table" v-show="scheduleEmpty">
+          <div class="table-responsive">            
+            <table class="table" v-show="scheduleEmpty">
             <thead>
             <tr>
               <th align="center">Status</th>
@@ -87,6 +88,8 @@
               </tr>
             </tbody>
           </table>
+          </div>
+
         </article>
       </div>
     </div>
@@ -372,6 +375,12 @@
 </script>
 
 <style lang="scss" scoped>
+  .table-responsive {
+    display: block;
+    width: 100%;
+    min-height: .01%;
+    overflow-x: auto;
+  }
   .none {
     display: none;
   }
