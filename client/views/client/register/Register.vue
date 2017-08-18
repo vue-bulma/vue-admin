@@ -105,15 +105,15 @@ export default {
       if (this.validate() === false) {
         console.log('teste')
       }
-      // this.$http({
-      //   method: 'post',
-      //   url: 'http://localhost:8091/users/create',
-      //   data: this.data.user
-      // }).then((response) => {
-      //   console.log(response)
-      // }).catch((error) => {
-      //   console.log(error)
-      // })
+      this.$http({
+        method: 'post',
+        url: 'http://localhost:8091/users/create',
+        data: this.data.user
+      }).then((response) => {
+        console.log(response)
+      }).catch((error) => {
+        console.log(error)
+      })
     }
   },
   data () {

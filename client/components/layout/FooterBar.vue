@@ -2,6 +2,20 @@
   <footer class="footer">
     <div class="container">
       <div class="content has-text-centered">
+        <p class="social">
+          <a href="https://www.atomm.io">
+            <span class="icon">
+              <i class="fa fa-cloud"></i>
+            </span>
+          </a>
+          <a href="https://twitter.com/atomm">
+            <span class="icon">
+              <i class="fa fa-twitter"></i>
+            </span>
+          </a>
+        </p>
+        <p><span class="icon"><i class="fa fa-code"></i></span> com <span class="icon"><i class="fa fa-heart"></i></span> by <a href="https://atomm.io">Atomm</a>.</p>
+        <p>Code licensed under Private.</p>
         <!--
         <p class="social">
           <a :href="'https://github.com/' + repository">
