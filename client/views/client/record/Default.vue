@@ -48,7 +48,7 @@
             <tbody>
               <tr v-for="list in records">
                 <td>
-                    <p class="title is-5">{{list.tbData}}</p>
+                    <p class="title is-5">{{list.tbData}} - {{list.tbNomeMedico}}</p>
                     <p></p>
                     {{list.tbDescricao}}
                 </td>
