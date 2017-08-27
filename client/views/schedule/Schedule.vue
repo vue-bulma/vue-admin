@@ -36,7 +36,7 @@
               <a class="button" data-clear><i class="fa fa-close"></i></a>
             </datepicker>
           </h4>
-          <div class="table-responsive">            
+          <div class="table-responsive">
             <table class="table" v-show="scheduleEmpty">
             <thead>
             <tr>
@@ -138,7 +138,7 @@
 
   moment.locale('pt-BR')
 
-  const api = API_URL.API_URL + ':8091/schedule'
+  const api = API_URL.API_URL + ':8091/schedules/schedule'
 
   export default {
     name: 'Schedule',
