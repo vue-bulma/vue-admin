@@ -238,7 +238,6 @@
             if (obj.list !== undefined) {
               this.scheduleEmpty = true
             }
-
             this.setScheduleList(obj.list)
           }
         })
