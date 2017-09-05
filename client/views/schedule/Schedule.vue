@@ -169,7 +169,7 @@
       ...mapActions(['setScheduleList']),
       unBlock (list) {
         this.$http({
-          url: 'http://localhost:8091/schedules/unblock',
+          url: 'https://104.131.75.202:8091/schedules/unblock',
           transformResponse: [(data) => {
             return JSON.parse(data.replace(/T00:00:00/g, ''))
           }],
@@ -197,7 +197,7 @@
       },
       block (list) {
         this.$http({
-          url: 'http://localhost:8091/schedules/block',
+          url: 'https://104.131.75.202:8091/schedules/block',
           transformResponse: [(data) => {
             return JSON.parse(data.replace(/T00:00:00/g, ''))
           }],
