@@ -138,7 +138,7 @@
 
   moment.locale('pt-BR')
 
-  const api = API_URL.API_URL + ':8091/schedules/schedule'
+  const api = API_URL.API_URL
 
   export default {
     name: 'Schedule',
@@ -169,7 +169,7 @@
       ...mapActions(['setScheduleList']),
       unBlock (list) {
         this.$http({
-          url: 'https://104.131.75.202:8091/schedules/unblock',
+          url: api + ':8091/schedules/unblock',
           transformResponse: [(data) => {
             return JSON.parse(data.replace(/T00:00:00/g, ''))
           }],
@@ -197,7 +197,7 @@
       },
       block (list) {
         this.$http({
-          url: 'https://104.131.75.202:8091/schedules/block',
+          url: api + ':8091/schedules/block',
           transformResponse: [(data) => {
             return JSON.parse(data.replace(/T00:00:00/g, ''))
           }],
@@ -352,7 +352,7 @@
 
         // console.log(newVal, oldVal)
         this.$http({
-          url: api,
+          url: api + ':8091/schedules/schedule',
           transformResponse: [(data) => {
             return JSON.parse(data.replace(/T00:00:00/g, ''))
           }],
