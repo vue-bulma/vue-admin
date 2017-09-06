@@ -351,8 +351,9 @@
         this.loadData(this.client, this.crm, dateDb)
 
         // console.log(newVal, oldVal)
+        // url: api + ':8091/schedules/schedule', agora é a forma correta
         this.$http({
-          url: api + ':8091/schedules/schedule',
+          url: api + ':8091/schedule',
           transformResponse: [(data) => {
             return JSON.parse(data.replace(/T00:00:00/g, ''))
           }],
