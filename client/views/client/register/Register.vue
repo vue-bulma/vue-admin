@@ -6,6 +6,23 @@
         <h1 class="title"></h1>
         <div class="block">
 
+
+          <label class="label">Email</label>
+          <div class="control is-grouped">
+            <p class="control is-expanded">
+              <input class="input" :class="{'is-danger': !isValalidEmail}" type="email" placeholder="Email" v-model="data.user.username">
+              <span class="icon is-small">
+                <i class="fa fa-warning" v-show="!isValalidEmail"></i>
+              </span>
+              <span class="help is-danger" v-show="!isValalidEmail">Email inválido!</span>
+            </p>
+            <p class="control">
+              <a class="button is-info" @click="searchEmail()">
+                Buscar E-Mail
+              </a>
+            </p>
+          </div>
+
           <label class="label">Nome</label>
           <p class="control has-icon has-icon-right">
             <input autofocus class="input" :class="{'is-danger': !isValalidName}" type="text" placeholder="Nome" v-model="data.user.name">
@@ -22,15 +39,6 @@
               <i class="fa fa-warning" v-show="!isValalidCRM"></i>
             </span>
             <span class="help is-danger" v-show="!isValalidCRM">CRM inválido!</span>
-          </p>
-
-          <label class="label">Email</label>
-          <p class="control has-icon has-icon-right">
-            <input class="input" :class="{'is-danger': !isValalidEmail}" type="email" placeholder="Email" v-model="data.user.username">
-            <span class="icon is-small">
-              <i class="fa fa-warning" v-show="!isValalidEmail"></i>
-            </span>
-            <span class="help is-danger" v-show="!isValalidEmail">Email inválido!</span>
           </p>
 
           <label class="label">Senha</label>
@@ -96,6 +104,17 @@ export default {
         this.isValalidName = false
         return false
       }
+    },
+    searchEmail () {
+      this.$http({
+        method: 'post',
+        url: 'http://localhost:8091/users/search-email-doctor',
+        data: this.data.user
+      }).then((response) => {
+        console.log(response)
+      }).catch((error) => {
+        console.log(error)
+      })
     },
     register () {
       this.$db.ref('server/users/').on('value', data => {

@@ -26,8 +26,8 @@
           <hr>
           <p class="control">
             <button type="submit" class="button is-primary register">Acessar sua Conta</button>
-            <!--<hr/>
-            <router-link to="/client/register/register"><button class="button is-default register">Cadastrar</button></router-link>-->
+            <hr/>
+            <router-link to="/client/register/register"><button class="button is-default register">Cadastrar</button></router-link>
           </p>
 
         </form>
