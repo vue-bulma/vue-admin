@@ -9,7 +9,7 @@
           <label class="label">Email</label>
           <div class="control is-grouped">
             <p class="control is-expanded">
-              <input class="input" :class="{'is-danger': !isValalidEmail}" type="email" placeholder="Email" v-model="data.user.username">
+              <input class="input" :class="{'is-danger': !isValalidEmail}" type="email" placeholder="Email" v-model="data.user.username" focus>
               <span class="icon is-small">
                 <i class="fa fa-warning" v-show="!isValalidEmail"></i>
               </span>
@@ -21,6 +21,15 @@
               </a>
             </p>
           </div>
+
+          <label class="label">Cliente</label>
+          <p class="control has-icon has-icon-right">
+            <input autofocus class="input" :class="{'is-danger': !isValalidName}" type="text" placeholder="Nome" v-model="data.user.client">
+            <span class="icon is-small">
+              <i class="fa fa-warning" v-show="!isValalidName"></i>
+            </span>
+            <span class="help is-danger" v-show="!isValalidName">Nome inválido!</span>
+          </p>
 
           <label class="label">Nome</label>
           <p class="control has-icon has-icon-right">
@@ -110,7 +119,8 @@ export default {
         url: 'http://localhost:8091/users/search-email-doctor',
         data: this.data.user
       }).then((response) => {
-        console.log(response)
+        this.data.user.client = response.data.client
+        console.log(response.data)
       }).catch((error) => {
         console.log(error)
       })
@@ -142,7 +152,8 @@ export default {
           password: null,
           name: null,
           crm: null,
-          type: 'Médico'
+          type: 'Médico',
+          client: ''
         }
       },
       terms: false,
