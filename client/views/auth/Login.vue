@@ -77,13 +77,6 @@ export default {
       console.log('teste')
     },
     login () {
-      // Firebase.auth().onAuthStateChanged((this.data.body) => {
-      //   if (user) {
-      //     console.log('User is logined')
-      //   } else {
-      //     console.log('User is not logined')
-      //   }
-      // })
       var redirect = this.$auth.redirect()
       this.$auth.login({
         headers: {
