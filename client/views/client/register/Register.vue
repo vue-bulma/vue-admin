@@ -6,7 +6,6 @@
         <h1 class="title"></h1>
         <div class="block">
 
-
           <label class="label">Email</label>
           <div class="control is-grouped">
             <p class="control is-expanded">
