@@ -24,7 +24,7 @@
   import Datepicker from 'vue-bulma-datepicker'
   import moment from 'moment'
   import API_URL from '../../../config/dev.env'
-  const api = API_URL.API_URL + ':8091/procedone'
+  const api = API_URL.API_URL + '/procedone'
   import Chart from '../../components/charts/proce/ProcePie'
   import { mapActions } from 'vuex'
 

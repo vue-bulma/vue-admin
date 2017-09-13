@@ -197,7 +197,7 @@
       },
       block (list) {
         this.$http({
-          url: api + ':8091/schedules/block',
+          url: api + '/schedules/block',
           transformResponse: [(data) => {
             return JSON.parse(data.replace(/T00:00:00/g, ''))
           }],
@@ -352,7 +352,7 @@
 
         // console.log(newVal, oldVal)
         this.$http({
-          url: api + ':8091/schedules/schedule',
+          url: api + '/schedules/schedule',
           transformResponse: [(data) => {
             return JSON.parse(data.replace(/T00:00:00/g, ''))
           }],

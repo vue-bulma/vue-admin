@@ -6,10 +6,10 @@
         <h1 class="title"></h1>
         <div class="block">
 
-          <label class="label">Email</label>
+          <label class="label">Digite seu e-mail cadastrado no cadstros de médicos do sistema</label>
           <div class="control is-grouped">
             <p class="control is-expanded">
-              <input class="input" :class="{'is-danger': !isValalidEmail}" type="email" placeholder="Email" v-model="data.user.username" focus>
+              <input class="input" :class="{'is-danger': !isValalidEmail}" type="email" placeholder="email@email.com" v-model="data.user.username" autofocus>
               <span class="icon is-small">
                 <i class="fa fa-warning" v-show="!isValalidEmail"></i>
               </span>
@@ -22,64 +22,70 @@
             </p>
           </div>
 
-          <label class="label">Cliente</label>
-          <p class="control has-icon has-icon-right">
-            <input autofocus class="input" :class="{'is-danger': !isValalidName}" type="text" placeholder="Nome" v-model="data.user.client">
-            <span class="icon is-small">
-              <i class="fa fa-warning" v-show="!isValalidName"></i>
-            </span>
-            <span class="help is-danger" v-show="!isValalidName">Nome inválido!</span>
-          </p>
 
-          <label class="label">Nome</label>
-          <p class="control has-icon has-icon-right">
-            <input autofocus class="input" :class="{'is-danger': !isValalidName}" type="text" placeholder="Nome" v-model="data.user.name">
-            <span class="icon is-small">
-              <i class="fa fa-warning" v-show="!isValalidName"></i>
-            </span>
-            <span class="help is-danger" v-show="!isValalidName">Nome inválido!</span>
-          </p>
+          <div class="" v-show="!client.isClient">
+            <p>{{client.message}}</p>
+          </div>
+          <div class="" v-show="client.isClient">
+            <label class="label">Cliente</label>
+            <p class="control has-icon has-icon-right">
+              <input class="input" :class="{'is-danger': !isValalidName}" type="text" placeholder="" v-model="data.user.client" disabled>
+              <span class="icon is-small">
+                <i class="fa fa-warning" v-show="!isValalidName"></i>
+              </span>
+              <span class="help is-danger" v-show="!isValalidName">Cliente inválido!</span>
+            </p>
 
-          <label class="label">CRM</label>
-          <p class="control has-icon has-icon-right">
-            <input class="input" v-on:keyup="keymonitor" :class="{'is-danger': !isValalidCRM}" type="text" placeholder="CRM" v-model="data.user.crm">
-            <span class="icon is-small">
-              <i class="fa fa-warning" v-show="!isValalidCRM"></i>
-            </span>
-            <span class="help is-danger" v-show="!isValalidCRM">CRM inválido!</span>
-          </p>
+            <label class="label">Nome</label>
+            <p class="control has-icon has-icon-right">
+              <input autofocus class="input" :class="{'is-danger': !isValalidName}" type="text" placeholder="Nome" v-model="data.user.name">
+              <span class="icon is-small">
+                <i class="fa fa-warning" v-show="!isValalidName"></i>
+              </span>
+              <span class="help is-danger" v-show="!isValalidName">Nome inválido!</span>
+            </p>
 
-          <label class="label">Senha</label>
-          <p class="control has-icon has-icon-right">
-            <input class="input" :class="{'is-danger': !isValalidPassowrd}" type="password" placeholder="Senha" v-model="data.user.password">
-            <span class="icon is-small">
-              <i class="fa fa-warning" v-show="!isValalidPassowrd"></i>
-            </span>
-            <span class="help is-danger" v-show="!isValalidPassowrd">Senha inválido!</span>
-          </p>
+            <label class="label">CRM</label>
+            <p class="control has-icon has-icon-right">
+              <input class="input" v-on:keyup="keymonitor" :class="{'is-danger': !isValalidCRM}" type="text" placeholder="CRM" v-model="data.user.crm">
+              <span class="icon is-small">
+                <i class="fa fa-warning" v-show="!isValalidCRM"></i>
+              </span>
+              <span class="help is-danger" v-show="!isValalidCRM">CRM inválido!</span>
+            </p>
 
-          <label class="label">Tipo</label>
-          <p class="control">
-            <span class="select">
-              <select v-model="data.user.type">
-                <option>Médico</option>
-                <option>Gerencia</option>
-              </select>
-            </span>
-          </p>
+            <label class="label">Senha</label>
+            <p class="control has-icon has-icon-right">
+              <input class="input" :class="{'is-danger': !isValalidPassowrd}" type="password" placeholder="Senha" v-model="data.user.password">
+              <span class="icon is-small">
+                <i class="fa fa-warning" v-show="!isValalidPassowrd"></i>
+              </span>
+              <span class="help is-danger" v-show="!isValalidPassowrd">Senha inválido!</span>
+            </p>
 
-          <p class="control">
-            <label class="checkbox">
-              <input type="checkbox" v-model="terms">
-              Concordo com os<router-link to="/client/register/terms" class="term">termos do meuclinic</router-link>
-            </label>
-          </p>
-          <p class="control">
-            <button class="button is-primary" :disabled="!this.terms" @click="register()">Cadastrar</button>
-            <router-link to="/login">
-              <button class="button is-link">Cancelar</button>
-            </router-link>
-          </p>
+            <label class="label">Tipo</label>
+            <p class="control">
+              <span class="select">
+                <select v-model="data.user.type">
+                  <option>Médico</option>
+                  <option>Gerencia</option>
+                </select>
+              </span>
+            </p>
+
+            <p class="control">
+              <label class="checkbox">
+                <input type="checkbox" v-model="terms">
+                Concordo com os<router-link to="/client/register/terms" class="term">termos do meuclinic</router-link>
+              </label>
+            </p>
+            <p class="control">
+              <button class="button is-primary" :disabled="!this.terms" @click="register()">Cadastrar</button>
+              <router-link to="/login">
+                <button class="button is-link">Cancelar</button>
+              </router-link>
+            </p>
+          </div>
         </div>
       </article>
      </div>
@@ -88,6 +94,9 @@
 </template>
 
 <script>
+import API_URL from '../../../../config/dev.env'
+const api = API_URL.API_URL
+
 export default {
   name: 'Register',
   methods: {
@@ -116,13 +125,26 @@ export default {
     searchEmail () {
       this.$http({
         method: 'post',
-        url: 'http://localhost:8091/users/search-email-doctor',
+        url: api + '/users/search-email-doctor',
         data: this.data.user
       }).then((response) => {
         console.log(response)
-        this.data.user.client = response.data.client.name
+        if ((response.data.client === undefined) || (response.data.client === null) || (response.data.client === '')) {
+          this.client.isClient = false
+          this.client.message = 'E-mail não encontrado!'
+        } else {
+          this.client.isClient = true
+          this.data.user.client = response.data.client.name
+        }
       }).catch((error) => {
-        console.log(error)
+        console.log(error.response.data.message)
+        if (error.response) {
+          this.client.message = error.response.data.message
+          console.log(error.response.data.description)
+          console.log(error.response.data)
+          console.log(error.response.status)
+          console.log(error.response.headers)
+        }
       })
     },
     register () {
@@ -135,7 +157,7 @@ export default {
       }
       this.$http({
         method: 'post',
-        url: 'http://localhost:8091/users/create',
+        url: 'http://localhost/users/create',
         data: this.data.user
       }).then((response) => {
         console.log(response)
@@ -158,6 +180,10 @@ export default {
         erro: {
           username: null
         }
+      },
+      client: {
+        isClient: false,
+        message: ''
       },
       terms: false,
       isValalidName: true,
