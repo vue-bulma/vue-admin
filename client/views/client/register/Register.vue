@@ -7,7 +7,6 @@
         <div class="block">
 
           <label class="label">Email</label>
-          {{this.data.erro.username}}
           <div class="control is-grouped">
             <p class="control is-expanded">
               <input class="input" :class="{'is-danger': !isValalidEmail}" type="email" placeholder="Email" v-model="data.user.username" focus>
@@ -121,7 +120,7 @@ export default {
         data: this.data.user
       }).then((response) => {
         console.log(response)
-        this.data.user.client = response.data.client
+        this.data.user.client = response.data.client.name
       }).catch((error) => {
         console.log(error)
       })
