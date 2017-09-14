@@ -30,6 +30,16 @@
               <span class="help is-danger" v-show="!isValalidName">Cliente inválido!</span>
             </p>
 
+
+            <label class="label">Cliente</label>
+            <p class="control has-icon has-icon-right">
+              <input class="input" :class="{'is-danger': !isValalidName}" type="text" placeholder="" v-model="data.user.clientName" disabled>
+              <span class="icon is-small">
+                <i class="fa fa-warning" v-show="!isValalidName"></i>
+              </span>
+              <span class="help is-danger" v-show="!isValalidName">Cliente inválido!</span>
+            </p>
+
             <label class="label">Nome</label>
             <p class="control has-icon has-icon-right">
               <input autofocus class="input" :class="{'is-danger': !isValalidName}" type="text" placeholder="Nome" v-model="data.user.name">
@@ -122,19 +132,18 @@ export default {
         url: api + '/users/search-email-doctor',
         data: this.data.user
       }).then((response) => {
-        console.log(response)
         if ((response.data.client === undefined) || (response.data.client === null) || (response.data.client === '')) {
           this.client.isClient = false
           this.isValalidEmail = false
-          this.client.message = 'E-mail não encontrado!'
+          this.client.message = response.data.message
         } else {
           this.isValalidEmail = true
           this.client.isClient = true
-          this.data.user.client = response.data.client.name
+          this.data.user.client = response.data.client.client
+          this.data.user.clientName = response.data.client.name
           this.data.labelUsername = 'Este será seu usuário de acesso'
         }
       }).catch((error) => {
-        console.log(error.response.data.message)
         if (error.response) {
           this.client.message = error.response.data.message
           this.isValalidEmail = false
@@ -158,7 +167,7 @@ export default {
         url: api + '/users/create',
         data: this.data.user
       }).then((response) => {
-        console.log(response)
+        this.$router.push('/')
       }).catch((error) => {
         console.log(error)
       })
@@ -173,7 +182,8 @@ export default {
           name: null,
           crm: null,
           type: 'Médico',
-          client: ''
+          client: '',
+          clientName: ''
         },
         erro: {
           username: null

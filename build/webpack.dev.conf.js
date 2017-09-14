@@ -32,7 +32,7 @@ module.exports = merge(baseWebpackConfig, {
     }),
     // https://github.com/ampedandwired/html-webpack-plugin
     new HtmlWebpackPlugin({
-      title: 'Dashboard',
+      title: 'Dashboard - Beta',
       filename: 'index.html',
       template: 'index.html',
       inject: true,
