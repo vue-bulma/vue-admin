@@ -6,26 +6,20 @@
         <h1 class="title"></h1>
         <div class="block">
 
-          <label class="label">Digite seu e-mail cadastrado no cadstros de médicos do sistema</label>
+          <label class="label">{{data.labelUsername}}</label>
           <div class="control is-grouped">
             <p class="control is-expanded">
-              <input class="input" :class="{'is-danger': !isValalidEmail}" type="email" placeholder="email@email.com" v-model="data.user.username" autofocus>
-              <span class="icon is-small">
-                <i class="fa fa-warning" v-show="!isValalidEmail"></i>
-              </span>
-              <span class="help is-danger" v-show="!isValalidEmail">Email inválido!</span>
+              <input class="input" :class="{'is-danger': !isValalidEmail}" type="email" placeholder="email@email.com" v-model="data.user.username" autofocus :disabled="client.isClient === true">
+
+              <span class="help is-danger" v-show="!isValalidEmail">{{client.message}}</span>
             </p>
             <p class="control">
-              <a class="button is-info" @click="searchEmail()">
+              <a class="button is-info" @click="searchEmail()" :disabled="client.isClient === true">
                 Buscar E-Mail
               </a>
             </p>
           </div>
 
-
-          <div class="" v-show="!client.isClient">
-            <p>{{client.message}}</p>
-          </div>
           <div class="" v-show="client.isClient">
             <label class="label">Cliente</label>
             <p class="control has-icon has-icon-right">
@@ -131,15 +125,19 @@ export default {
         console.log(response)
         if ((response.data.client === undefined) || (response.data.client === null) || (response.data.client === '')) {
           this.client.isClient = false
+          this.isValalidEmail = false
           this.client.message = 'E-mail não encontrado!'
         } else {
+          this.isValalidEmail = true
           this.client.isClient = true
           this.data.user.client = response.data.client.name
+          this.data.labelUsername = 'Este será seu usuário de acesso'
         }
       }).catch((error) => {
         console.log(error.response.data.message)
         if (error.response) {
           this.client.message = error.response.data.message
+          this.isValalidEmail = false
           console.log(error.response.data.description)
           console.log(error.response.data)
           console.log(error.response.status)
@@ -157,7 +155,7 @@ export default {
       }
       this.$http({
         method: 'post',
-        url: 'http://localhost/users/create',
+        url: api + '/users/create',
         data: this.data.user
       }).then((response) => {
         console.log(response)
@@ -179,7 +177,8 @@ export default {
         },
         erro: {
           username: null
-        }
+        },
+        labelUsername: 'Digite seu e-mail cadastrado no cadastros de médicos do sistema'
       },
       client: {
         isClient: false,
