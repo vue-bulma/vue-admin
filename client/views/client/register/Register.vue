@@ -21,9 +21,8 @@
           </div>
 
           <div class="" v-show="client.isClient">
-            <label class="label">Cliente</label>
             <p class="control has-icon has-icon-right">
-              <input class="input" :class="{'is-danger': !isValalidName}" type="text" placeholder="" v-model="data.user.client" disabled>
+              <input class="input" :class="{'is-danger': !isValalidName}" type="hidden" placeholder="" v-model="data.user.client" disabled>
               <span class="icon is-small">
                 <i class="fa fa-warning" v-show="!isValalidName"></i>
               </span>
@@ -67,7 +66,7 @@
               <span class="help is-danger" v-show="!isValalidPassowrd">Senha inválido!</span>
             </p>
 
-            <label class="label">Tipo</label>
+            <!-- <label class="label">Tipo</label>
             <p class="control">
               <span class="select">
                 <select v-model="data.user.type">
@@ -75,7 +74,7 @@
                   <option>Gerencia</option>
                 </select>
               </span>
-            </p>
+            </p> -->
 
             <p class="control">
               <label class="checkbox">
@@ -155,10 +154,6 @@ export default {
       })
     },
     register () {
-      this.$db.ref('server/users/').on('value', data => {
-        const obj = data.val()
-        console.log(obj)
-      })
       if (this.validate() === false) {
         console.log('teste')
       }

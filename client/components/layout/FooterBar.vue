@@ -2,7 +2,7 @@
   <footer class="footer">
     <div class="container">
       <div class="content has-text-centered">
-        <p class="social">
+        <!-- <p class="social">
           <a href="https://www.atomm.io">
             <span class="icon">
               <i class="fa fa-cloud"></i>
@@ -13,8 +13,8 @@
               <i class="fa fa-twitter"></i>
             </span>
           </a>
-        </p>
-        <p><span class="icon"><i class="fa fa-code"></i></span> com <span class="icon"><i class="fa fa-heart"></i></span> by <a href="https://atomm.io">Atomm</a>.</p>
+        </p> -->
+        <p><span class="icon"><i class="fa fa-code"></i></span></span> by <a href="https://www.acampagnaro.com.br">ACampagnaro cia</a>.</p>
         <p>Code licensed under Private.</p>
         <!--
         <p class="social">

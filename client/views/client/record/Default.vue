@@ -69,7 +69,7 @@
   import NprogressContainer from 'vue-nprogress/src/NprogressContainer'
   import Quill from 'vue-bulma-quill'
   import API_URL from '../../../../config/dev.env'
-  const api = API_URL.API_URL + ':8091/patients/find'
+  const api = API_URL.API_URL
 
   export default {
     name: 'Record',
@@ -88,7 +88,7 @@
       record (record) {
         this.patients = [record]
         this.$http({
-          url: 'http://104.131.75.202:8091/records/list',
+          url: api + '/records/list',
           transformResponse: [(data) => {
             return JSON.parse(data.replace(/T00:00:00/g, ''))
           }],
@@ -113,7 +113,7 @@
       },
       find () {
         this.$http({
-          url: api,
+          url: api + '/patients/find',
           transformResponse: [(data) => {
             return JSON.parse(data.replace(/T00:00:00/g, ''))
           }],
