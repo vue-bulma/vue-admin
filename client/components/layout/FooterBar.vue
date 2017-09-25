@@ -32,7 +32,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import '~bulma/sass/utilities/mixins';
+@import '~bulma/sass/utilities/_all';
 
 .footer {
   margin-left: 180px;
