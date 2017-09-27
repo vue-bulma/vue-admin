@@ -140,13 +140,8 @@ export default {
           this.client.isClient = true
           this.data.user.client = response.data.client.client
           this.data.user.clientName = response.data.client.clientName
-<<<<<<< HEAD
-          this.data.user.name = response.data.client.name
-          this.data.user.crm = response.data.client.crm
-=======
           this.data.user.crm = response.data.client.crm
           this.data.user.name = response.data.client.name
->>>>>>> 450153e04ea9e1f102df6a948a774ac0b4d6224b
           this.data.labelUsername = 'Este será seu usuário de acesso'
         }
       }).catch((error) => {
