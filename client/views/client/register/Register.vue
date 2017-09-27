@@ -139,7 +139,9 @@ export default {
           this.isValalidEmail = true
           this.client.isClient = true
           this.data.user.client = response.data.client.client
-          this.data.user.clientName = response.data.client.name
+          this.data.user.clientName = response.data.client.clientName
+          this.data.user.name = response.data.client.name
+          this.data.user.crm = response.data.client.crm
           this.data.labelUsername = 'Este será seu usuário de acesso'
         }
       }).catch((error) => {
