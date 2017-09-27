@@ -59,7 +59,7 @@
 
             <label class="label">Senha</label>
             <p class="control has-icon has-icon-right">
-              <input class="input" :class="{'is-danger': !isValalidPassowrd}" type="password" placeholder="Senha" v-model="data.user.password">
+              <input class="input" :class="{'is-danger': !isValalidPassowrd}" type="password" placeholder="Senha" v-model="data.user.password" autofocus>
               <span class="icon is-small">
                 <i class="fa fa-warning" v-show="!isValalidPassowrd"></i>
               </span>
@@ -139,7 +139,9 @@ export default {
           this.isValalidEmail = true
           this.client.isClient = true
           this.data.user.client = response.data.client.client
-          this.data.user.clientName = response.data.client.name
+          this.data.user.clientName = response.data.client.clientName
+          this.data.user.crm = response.data.client.crm
+          this.data.user.name = response.data.client.name
           this.data.labelUsername = 'Este será seu usuário de acesso'
         }
       }).catch((error) => {
