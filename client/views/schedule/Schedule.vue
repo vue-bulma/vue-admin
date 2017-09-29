@@ -43,7 +43,7 @@
               <th align="center">Status</th>
               <th>Hora</th>
               <th>Paciente</th>
-              <th>Bloquear</th>
+              <!-- <th>Bloquear</th> -->
               <th class="has-text-centered">Tipo</th>
             </tr>
             </thead>
@@ -63,17 +63,17 @@
                 <td>{{list.tbHora.substring(0, 5)}}</td>
                 <td>
                   <div v-if="list.tbNome !== undefined">
-                    {{ list.tbNome }}
+                    <p class="title is-6"> <a href="#" @click="recordModal(list)">{{ list.tbNome }}</a></p>
                   </div>
                 </td>
-                <td>
+                <!-- <td>
                   <div v-if="list.tbNome === undefined">
                     <a href="#" @click.prevent="block(list)">Bloquear</a>
                   </div>
                   <div v-if="list.tbNome === '**HORÁRIO BLOQUEADO**'">
                     <a href="#" @click.prevent="unBlock(list)">Desbloquear</a>
                   </div>
-                </td>
+                </td> -->
                 <td class="is-icon">
                   <a href="#" @click.prevent="">
                     <div v-if="list.tbNome !== undefined">
@@ -123,6 +123,8 @@
       </div>
     </div>
 
+    <modal :visible="showModal" @close="closeModalBasic" :desc="contentModal" :name="nameModal"></modal>
+
   </div>
 </template>
 
@@ -135,8 +137,10 @@
   import ChartAgreement from '../../components/charts/schedule/AgreementColumn'
   import ChartType from '../../components/charts/schedule/Type'
   import { mapActions, mapGetters } from 'vuex'
+  import Modal from '../client/record/modals/Modal'
 
   moment.locale('pt-BR')
+  console.log(moment().format('DD/MM/YYYY'))
 
   const api = API_URL.API_URL
 
@@ -147,7 +151,8 @@
       Datepicker,
       Tooltip,
       ChartType,
-      ChartAgreement
+      ChartAgreement,
+      Modal
     },
     data () {
       return {
@@ -162,11 +167,52 @@
         surgeryCount: 0,
         categoriesTipo: 0,
         valuesTipo: 0,
-        scheduleEmpty: false
+        scheduleEmpty: false,
+        showModal: false,
+        contentModal: '',
+        nameModal: '',
+        records: ''
       }
     },
     methods: {
       ...mapActions(['setScheduleList']),
+      record (record) {
+        this.$http({
+          url: api + '/records/list',
+          transformResponse: [(data) => {
+            return JSON.parse(data.replace(/T00:00:00/g, ''))
+          }],
+          params:
+          {
+            tbCodigo: record.tbFicha,
+            tbNome: '',
+            client: window.localStorage.getItem('client'),
+            tbMedico: window.localStorage.getItem('crm')
+          }
+        }).then((response) => {
+          this.records = []
+          this.$db.ref('server/customer/' + window.localStorage.getItem('client') + '/service/records/doctor/' + window.localStorage.getItem('crm') + '/').on('value', data => {
+            const obj = data.val()
+            if (obj !== null) {
+              this.records = obj
+            }
+          })
+        }).catch((error) => {
+          console.log(error)
+        })
+      },
+      recordModal (list) {
+        if (list.tbFicha === undefined) {
+          return false
+        }
+        this.record(list)
+        this.showModal = true
+        this.contentModal = this.records
+        this.nameModal = list.tbNome
+      },
+      closeModalBasic () {
+        this.showModal = false
+      },
       unBlock (list) {
         this.$http({
           url: api + ':8091/schedules/unblock',
@@ -289,11 +335,11 @@
         if (status === 1) {
           iconClass = ''
         } else if (status === 2) {
-          iconClass = 'fa fa-check'
+          iconClass = 'fa fa-user-circle'
         } else if (status === 3) {
-          iconClass = 'fa fa-circle'
+          iconClass = 'fa fa-window-close vermelho'
         } else if (status === 4) {
-          iconClass = 'fa fa-check-square-o'
+          iconClass = 'fa fa-check-square preto'
         } else if (status === 5) {
           iconClass = 'fa fa-clock-o'
         } else if (status === 6) {
@@ -303,7 +349,7 @@
         } else if (status === 9) {
           iconClass = 'fa fa-key'
         } else if (status === 11) {
-          iconClass = 'fa fa-window-close-o'
+          iconClass = 'fa fa-window-close vermelho'
         } else if (status === 12) {
           iconClass = 'fa fa-send'
         }
@@ -329,6 +375,7 @@
     },
     computed: {
       today () {
+        // moment().format('DD/MM/YYYY')
         return new Date()
       },
       ...mapGetters({
@@ -375,10 +422,10 @@
 
 <style lang="scss" scoped>
   .table-responsive {
-    display: block;
-    width: 100%;
-    min-height: .01%;
-    overflow-x: auto;
+    // display: block;
+    // width: 100%;
+    // min-height: .01%;
+    // overflow-x: auto;
   }
   .none {
     display: none;
@@ -412,6 +459,12 @@
   }
   .type4{
     color: #8FBC8F;
+  }
+  .vermelho {
+    color: #FF0000
+  }
+  .preto {
+    color: #000000
   }
 
 </style>

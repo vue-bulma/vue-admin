@@ -11,25 +11,25 @@ const router = new Router({
   scrollBehavior: () => ({ y: 0 }),
   routes: [
     {
-      name: 'Home',
+      name: '',
       path: '/',
       meta: {auth: true},
       component: require('../views/Home')
     },
     {
-      name: 'Users',
+      name: 'Usuarios',
       path: '/manager/users',
       meta: {auth: true},
       component: require('../views/auth/Users')
     },
     {
-      name: 'Schedule',
+      name: 'Agenda1',
       path: '/schedule',
       meta: {auth: true},
       component: require('../views/schedule/Index')
     },
     {
-      name: 'Record',
+      name: 'Prontuario',
       path: '/client/record/default',
       meta: {auth: true},
       component: require('../views/client/record/Default')
@@ -41,7 +41,7 @@ const router = new Router({
       meta: false
     },
     {
-      name: 'Register',
+      name: 'Cadastro',
       path: '/client/register/register',
       component: require('../views/client/register/Register')
     },

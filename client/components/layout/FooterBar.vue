@@ -14,8 +14,7 @@
             </span>
           </a>
         </p> -->
-        <p><span class="icon"><i class="fa fa-code"></i></span></span> by <a href="https://www.acampagnaro.com.br">ACampagnaro cia</a>.</p>
-        <p>Code licensed under Private.</p>
+        <p><span class="icon"><i class="fa fa-code"></i></span></span> by <a href="https://www.atomm.io">Atomm</a>.</p>
         <!--
         <p class="social">
           <a :href="'https://github.com/' + repository">

@@ -84,7 +84,7 @@
           yAxis: {
             min: 0,
             title: {
-              text: 'Quantidade'
+              text: ''
             }
           },
           series: [{
