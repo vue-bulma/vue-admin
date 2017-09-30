@@ -335,11 +335,11 @@
         if (status === 1) {
           iconClass = ''
         } else if (status === 2) {
-          iconClass = 'fa fa-user-circle'
+          iconClass = 'fa fa-check'
         } else if (status === 3) {
-          iconClass = 'fa fa-window-close vermelho'
+          iconClass = 'fa fa-close vermelho'
         } else if (status === 4) {
-          iconClass = 'fa fa-check-square preto'
+          iconClass = 'fa fa-user-circle preto'
         } else if (status === 5) {
           iconClass = 'fa fa-clock-o'
         } else if (status === 6) {
@@ -349,7 +349,7 @@
         } else if (status === 9) {
           iconClass = 'fa fa-key'
         } else if (status === 11) {
-          iconClass = 'fa fa-window-close vermelho'
+          iconClass = 'fa fa-close vermelho'
         } else if (status === 12) {
           iconClass = 'fa fa-send'
         }
