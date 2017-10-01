@@ -79,6 +79,7 @@ export default {
     },
     login () {
       var redirect = this.$auth.redirect()
+      this.error = ''
       this.$auth.login({
         headers: {
           'Content-Type': 'application/json'

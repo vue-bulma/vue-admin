@@ -126,6 +126,8 @@ export default {
       }
     },
     searchEmail () {
+      this.client.message = ''
+      this.isValalidEmail = true
       this.$http({
         method: 'post',
         url: api + '/users/search-email-doctor',
