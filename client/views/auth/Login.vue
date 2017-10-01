@@ -60,7 +60,8 @@ export default {
       const user = {
         crm: localStorage.get('crm'),
         client: localStorage.get('client'),
-        id: localStorage.get('id')
+        id: localStorage.get('id'),
+        name: localStorage.get('name')
       }
       this.setUser(user)
       this.$router.push('/')
@@ -90,6 +91,7 @@ export default {
           console.log('Token: ' + this.$auth.token())
           // console.log(res.data.parameters)
           // const user = this.data.body
+          console.log(res.data.parameters)
           this.setUser(res.data.parameters)
           localStorage.set('id', res.data.parameters.id)
           localStorage.set('crm', res.data.parameters.crm)
