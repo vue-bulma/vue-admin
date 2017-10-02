@@ -23,6 +23,11 @@
             </label>
           </p>
 
+          <p class="control">
+            Esqueceu sua senha?
+            Não se preocupe, <router-link to="/client/forgetpass">click aqui</router-link> para resetar sua senha
+          </p>
+
           <hr>
           <p class="control">
             <button type="submit" class="button is-primary register">Acessar sua Conta</button>

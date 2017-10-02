@@ -46,6 +46,11 @@ const router = new Router({
       component: require('../views/client/register/Register')
     },
     {
+      name: 'Senha',
+      path: '/client/forgetpass',
+      component: require('../views/auth/ForgetPassword')
+    },
+    {
       name: 'Login',
       path: '/login',
       component: require('../views/auth/Login')

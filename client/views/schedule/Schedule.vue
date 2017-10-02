@@ -61,7 +61,20 @@
                   </a>
                 </td>
                 <td>
-                  {{list.tbHora.substring(0, 5)}}
+                  <div v-if="list.tbNome === undefined">
+                    <tooltip label="Bloquear" placement="top">
+                      <div class="has-text-centered">
+                        <a href="#" @click.prevent="block(list)">{{list.tbHora.substring(0, 5)}}</a>
+                      </div>
+                    </tooltip>
+                  </div>
+                  <p v-else>
+                    <tooltip label="Desbloquear" placement="top">
+                      <div class="has-text-centered">
+                        <a href="#" @click.prevent="block(list)">{{list.tbHora.substring(0, 5)}}</a>
+                      </div>
+                    </tooltip>
+                  </p>
                 </td>
                 <td>
                   <div v-if="list.tbNome !== undefined">
