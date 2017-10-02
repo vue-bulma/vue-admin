@@ -60,7 +60,9 @@
                     </div>
                   </a>
                 </td>
-                <td>{{list.tbHora.substring(0, 5)}}</td>
+                <td>
+                  {{list.tbHora.substring(0, 5)}}
+                </td>
                 <td>
                   <div v-if="list.tbNome !== undefined">
                     <p class="title is-6"> <a href="#" @click="recordModal(list)">{{ list.tbNome }}</a></p>
