@@ -86,7 +86,7 @@ export default {
         },
         data: this.data.body,
         rememberMe: this.data.rememberMe,
-        redirect: {name: redirect ? 'Home' : 'Home'},
+        redirect: {name: redirect ? 'Agenda' : 'Agenda'},
         success (res) {
           // console.log('Auth Success')
           console.log('Token: ' + this.$auth.token())

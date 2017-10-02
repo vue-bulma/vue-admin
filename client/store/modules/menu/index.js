@@ -13,7 +13,7 @@ import lazyLoading from './lazyLoading'
 const state = {
   items: [
     {
-      name: 'Agenda',
+      name: 'Horarios',
       path: '/',
       meta: {
         icon: 'fa-calendar',

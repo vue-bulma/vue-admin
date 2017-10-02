@@ -11,7 +11,7 @@ const router = new Router({
   scrollBehavior: () => ({ y: 0 }),
   routes: [
     {
-      name: 'Home',
+      name: 'Agenda',
       path: '/',
       meta: {auth: true},
       component: require('../views/Home')
