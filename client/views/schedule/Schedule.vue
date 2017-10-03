@@ -61,19 +61,24 @@
                   </a>
                 </td>
                 <td>
-                  <div v-if="list.tbNome === undefined">
-                    <tooltip label="Bloquear" placement="top">
-                      <div class="has-text-centered">
+                  <div v-if="list.tbStatus !== '9'">
+                    <div v-if="list.tbNome === undefined">
+                      <tooltip label="Bloquear" placement="top">
+                        <div class="has-text-centered">
+                          <a href="#" @click.prevent="block(list)">{{list.tbHora.substring(0, 5)}}</a>
+                        </div>
+                      </tooltip>
+                    </div>
+                  </div>
+                  <div v-if="list.tbStatus === '9'">
+                    <tooltip label="Desbloquear" placement="top">
+                      <div class="has-text-left">
                         <a href="#" @click.prevent="block(list)">{{list.tbHora.substring(0, 5)}}</a>
                       </div>
                     </tooltip>
                   </div>
-                  <p v-else>
-                    <tooltip label="Desbloquear" placement="top">
-                      <div class="has-text-centered">
-                        <a href="#" @click.prevent="block(list)">{{list.tbHora.substring(0, 5)}}</a>
-                      </div>
-                    </tooltip>
+                  <p  v-if="list.tbStatus !== '9'">
+                    <p>{{list.tbHora.substring(0, 5)}}</p>
                   </p>
                 </td>
                 <td>
