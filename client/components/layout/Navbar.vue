@@ -64,7 +64,7 @@ export default {
     return {
       crm: '',
       users: {
-        name: localStorage.get('name')
+        name: localStorage.get('name') // .split(' ').slice(0).join(' ').toUpperCase()
       }
     }
   },

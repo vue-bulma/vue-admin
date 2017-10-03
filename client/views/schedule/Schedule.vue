@@ -36,6 +36,9 @@
               <a class="button" data-clear><i class="fa fa-close"></i></a>
             </datepicker>
           </h4>
+
+          <notification :title="'Bloqueio de horários'" :type="'primary'" :direction="'Right'" :message="'Para bloquear ou desbloquear a agenda click sobre o hora'" :duration="4000"></notification>
+
           <div class="table-responsive">
             <table class="table" v-show="scheduleEmpty">
             <thead>
@@ -60,30 +63,34 @@
                     </div>
                   </a>
                 </td>
+
                 <td>
-                  <div v-if="list.tbStatus !== '9'">
+                  <div v-if="list.tbTipo !== '9'">
                     <div v-if="list.tbNome === undefined">
-                      <tooltip label="Bloquear" placement="top">
-                        <div class="has-text-centered">
-                          <a href="#" @click.prevent="block(list)">{{list.tbHora.substring(0, 5)}}</a>
-                        </div>
+                      <tooltip label="Bloquear" placement="rigth">
+                        <!-- <div class="has-text-centered"> -->
+                        <a href="#" @click.prevent="block(list)">{{list.tbHora.substring(0, 5)}}</a>
+                        <!-- </div> -->
                       </tooltip>
                     </div>
                   </div>
-                  <div v-if="list.tbStatus === '9'">
-                    <tooltip label="Desbloquear" placement="top">
-                      <div class="has-text-left">
-                        <a href="#" @click.prevent="block(list)">{{list.tbHora.substring(0, 5)}}</a>
-                      </div>
-                    </tooltip>
-                  </div>
-                  <p  v-if="list.tbStatus !== '9'">
-                    <p>{{list.tbHora.substring(0, 5)}}</p>
+                  <!-- <div v-if="list.tbNome === '**HORÁRIO BLOQUEADO**'"> -->
+                    <!-- <tooltip label="Desbloquear" placement="rigth"> -->
+                      <!-- <div class="has-text-left"> -->
+                        <!-- <a href="#" @click.prevent="unBlock(list)" class="unlock">{{list.tbHora.substring(0, 5)}}</a> -->
+                      <!-- </div> -->
+                    <!-- </tooltip> -->
+                  <!-- </div> -->
+                  <p v-if="list.tbNome !== '**HORÁRIO BLOQUEADO**'">
+                    <div v-if="list.tbNome !== undefined">
+                      <p>{{list.tbHora.substring(0, 5)}}</p>
+                    </div>
                   </p>
                 </td>
+
                 <td>
                   <div v-if="list.tbNome !== undefined">
-                    <p class="title is-6"> <a href="#" @click="recordModal(list)">{{ list.tbNome }}</a></p>
+                    <p class="title is-6"> <a href="#" @click.prevent="recordModal(list)">{{ list.tbNome }}</a></p>
                   </div>
                 </td>
                 <!-- <td>
@@ -159,8 +166,27 @@
   import { mapActions, mapGetters } from 'vuex'
   import Modal from '../client/record/modals/Modal'
 
+  import Vue from 'vue'
+  import Notification from 'vue-bulma-notification'
+
+  const NotificationComponent = Vue.extend(Notification)
+
+  const openNotification = (propsData = {
+    title: '',
+    message: '',
+    type: '',
+    direction: '',
+    duration: 4500,
+    container: '.notifications'
+  }) => {
+    return new NotificationComponent({
+      el: document.createElement('div'),
+      propsData
+    })
+  }
+
   moment.locale('pt-BR')
-  console.log(moment().format('DD/MM/YYYY'))
+  // console.log(moment().format('DD/MM/YYYY'))
 
   const api = API_URL.API_URL
 
@@ -172,7 +198,8 @@
       Tooltip,
       ChartType,
       ChartAgreement,
-      Modal
+      Modal,
+      Notification
     },
     data () {
       return {
@@ -196,6 +223,13 @@
     },
     methods: {
       ...mapActions(['setScheduleList']),
+      openNotificationWithType (type) {
+        openNotification({
+          title: 'This is a title',
+          message: 'This is the message.',
+          type: type
+        })
+      },
       record (record) {
         this.$http({
           url: api + '/records/list',
@@ -227,7 +261,7 @@
         }
         this.record(list)
         this.showModal = true
-        this.contentModal = this.records
+        this.contentModal = '' // this.records
         this.nameModal = list.tbNome
       },
       closeModalBasic () {
@@ -235,7 +269,7 @@
       },
       unBlock (list) {
         this.$http({
-          url: api + ':8091/schedules/unblock',
+          url: api + '/schedules/unblock',
           transformResponse: [(data) => {
             return JSON.parse(data.replace(/T00:00:00/g, ''))
           }],
@@ -276,7 +310,9 @@
           }
         }).then((response) => {
           const dateDb = this.value.substring(3, 5) + '-' + this.value.substring(0, 2) + '-' + this.value.substring(6, 10)
-          this.loadData(this.client, this.crm, dateDb)
+          setTimeout(() => {
+            this.loadData(this.client, this.crm, dateDb)
+          }, 3000)
           // this.$db.ref('server/customer/' + window.localStorage.getItem('client') + '/service/records/doctor/' + window.localStorage.getItem('crm') + '/').on('value', data => {
           //   const obj = data.val()
           //   if (obj !== null) {
@@ -485,6 +521,9 @@
   }
   .preto {
     color: #000000
+  }
+  .lock {
+    margin-left: -89px;
   }
 
 </style>

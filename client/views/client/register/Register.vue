@@ -46,7 +46,7 @@
 
             <label class="label">Nome</label>
             <p class="control has-icon has-icon-right">
-              <input autofocus class="input" :class="{'is-danger': !isValalidName}" type="text" placeholder="Nome" v-model="data.user.name">
+              <input autofocus class="input" :class="{'is-danger': !isValalidName}" type="text" placeholder="Nome" v-model="data.user.name" disabled>
               <span class="icon is-small">
                 <i class="fa fa-warning" v-show="!isValalidName"></i>
               </span>
@@ -55,7 +55,7 @@
 
             <label class="label">CRM</label>
             <p class="control has-icon has-icon-right">
-              <input class="input" v-on:keyup="keymonitor" :class="{'is-danger': !isValalidCRM}" type="text" placeholder="CRM" v-model="data.user.crm">
+              <input class="input" v-on:keyup="keymonitor" :class="{'is-danger': !isValalidCRM}" type="text" placeholder="CRM" v-model="data.user.crm" disabled>
               <span class="icon is-small">
                 <i class="fa fa-warning" v-show="!isValalidCRM"></i>
               </span>
@@ -64,7 +64,7 @@
 
             <label class="label">Senha</label>
             <p class="control has-icon has-icon-right">
-              <input class="input" :class="{'is-danger': !isValalidPassowrd}" type="password" placeholder="Senha" v-model="data.user.password" autofocus>
+              <input ref="password" class="input" :class="{'is-danger': !isValalidPassowrd}" type="password" placeholder="Senha" v-model="data.user.password" autofocus>
               <span class="icon is-small">
                 <i class="fa fa-warning" v-show="!isValalidPassowrd"></i>
               </span>
@@ -150,6 +150,7 @@ export default {
           this.data.user.crm = response.data.client.crm
           this.data.user.name = response.data.client.name
           this.data.labelUsername = 'Este será seu usuário de acesso'
+          this.$refs.password.$el.focus()
         }
       }).catch((error) => {
         if (error.response) {
@@ -192,7 +193,7 @@ export default {
         erro: {
           username: null
         },
-        labelUsername: 'Digite seu e-mail cadastrado no cadastros de médicos do sistema'
+        labelUsername: 'Digite seu e-mail cadastrado no Sistema Clinic'
       },
       client: {
         isClient: false,

@@ -19,7 +19,7 @@
           <p class="control">
             <label class="checkbox">
               <input type="checkbox" v-model="data.rememberMe">
-              Lembre Me
+              Lembre-me
             </label>
           </p>
 
@@ -94,10 +94,10 @@ export default {
         redirect: {name: redirect ? 'Agenda' : 'Agenda'},
         success (res) {
           // console.log('Auth Success')
-          console.log('Token: ' + this.$auth.token())
+          // console.log('Token: ' + this.$auth.token())
           // console.log(res.data.parameters)
           // const user = this.data.body
-          console.log(res.data.parameters)
+          // console.log(res.data.parameters)
           this.setUser(res.data.parameters)
           localStorage.set('id', res.data.parameters.id)
           localStorage.set('crm', res.data.parameters.crm)
