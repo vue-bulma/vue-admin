@@ -18,11 +18,11 @@
                 Buscar E-Mail
               </a>
             </p>
-            <p class="control">
+            <!-- <p class="control">
               <router-link to="/login">
                 <button class="button is-link">Cancelar</button>
               </router-link>
-            </p>
+            </p> -->
           </div>
 
           <div class="" v-show="client.isClient">
