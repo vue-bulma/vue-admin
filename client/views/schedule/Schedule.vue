@@ -74,18 +74,18 @@
                       </tooltip>
                     </div>
                   </div>
-                  <!-- <div v-if="list.tbNome === '**HORÁRIO BLOQUEADO**'"> -->
-                    <!-- <tooltip label="Desbloquear" placement="rigth"> -->
+                  <div v-if="list.tbNome === '**HORÁRIO BLOQUEADO**'">
+                    <tooltip label="Desbloquear" placement="rigth">
                       <!-- <div class="has-text-left"> -->
-                        <!-- <a href="#" @click.prevent="unBlock(list)" class="unlock">{{list.tbHora.substring(0, 5)}}</a> -->
+                        <a href="#" @click.prevent="unBlock(list)" class="unlock">{{list.tbHora.substring(0, 5)}}</a>
                       <!-- </div> -->
-                    <!-- </tooltip> -->
-                  <!-- </div> -->
-                  <p v-if="list.tbNome !== '**HORÁRIO BLOQUEADO**'">
-                    <div v-if="list.tbNome !== undefined">
-                      <p>{{list.tbHora.substring(0, 5)}}</p>
+                    </tooltip>
+                  </div>
+                  <!-- <p v-if="list.tbNome !== '**HORÁRIO BLOQUEADO**'"> -->
+                    <div v-if="list.tbNome !== undefined" >
+                      <!-- <p>{{list.tbHora.substring(0, 5)}}</p> -->
                     </div>
-                  </p>
+                  <!-- </p> -->
                 </td>
 
                 <td>
@@ -150,7 +150,11 @@
       </div>
     </div>
 
-    <modal :visible="showModal" @close="closeModalBasic" :desc="contentModal" :name="nameModal"></modal>
+    <modal name="hello-world">
+      {{recordList}}
+    </modal>
+
+    <!-- <modal :visible="showModal" @close="closeModalBasic" :desc="contentModal" :name="nameModal"></modal> -->
 
   </div>
 </template>
@@ -164,7 +168,7 @@
   import ChartAgreement from '../../components/charts/schedule/AgreementColumn'
   import ChartType from '../../components/charts/schedule/Type'
   import { mapActions, mapGetters } from 'vuex'
-  import Modal from '../client/record/modals/Modal'
+  // import Modal from '../client/record/modals/Modal'
 
   import Vue from 'vue'
   import Notification from 'vue-bulma-notification'
@@ -198,7 +202,7 @@
       Tooltip,
       ChartType,
       ChartAgreement,
-      Modal,
+      // Modal,
       Notification
     },
     data () {
@@ -222,7 +226,7 @@
       }
     },
     methods: {
-      ...mapActions(['setScheduleList']),
+      ...mapActions(['setScheduleList', 'setRecord']),
       openNotificationWithType (type) {
         openNotification({
           title: 'This is a title',
@@ -248,7 +252,9 @@
           this.$db.ref('server/customer/' + window.localStorage.getItem('client') + '/service/records/doctor/' + window.localStorage.getItem('crm') + '/').on('value', data => {
             const obj = data.val()
             if (obj !== null) {
-              this.records = obj
+              this.setRecord(obj)
+              console.log(obj)
+              this.records = ['bunda', 'do', 'ale']
             }
           })
         }).catch((error) => {
@@ -296,6 +302,7 @@
         })
       },
       block (list) {
+        this.$modal.show('hello-world')
         this.$http({
           url: api + '/schedules/block',
           transformResponse: [(data) => {
@@ -436,7 +443,8 @@
       },
       ...mapGetters({
         device: 'device',
-        user: 'user'
+        user: 'user',
+        recordList: 'recordList'
       })
     },
     mounted () {

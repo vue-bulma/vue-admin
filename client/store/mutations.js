@@ -4,6 +4,9 @@ export const mutations = {
   [types.AUTH] (state, user) {
     state.user = user
   },
+  [types.RECORD] (state, record) {
+    state.recordList = record
+  },
   [types.SCHEDULE_LIST] (store, obj) {
     store.scheduleList = obj
   },

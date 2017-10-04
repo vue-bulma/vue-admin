@@ -11,11 +11,13 @@ import * as filters from './filters'
 import { TOGGLE_SIDEBAR } from 'vuex-store/mutation-types'
 import database from './pluguins/firebase'
 import API_URL from '../config/dev.env'
+import VModal from 'vue-js-modal'
 
 console.log(process.env.NODE_ENV)
 
 Vue.router = router
-Vue.use(VueAxios, axios)
+Vue.use(VModal, { dialog: true })
+Vue.use(VueAxios, axios, VModal)
 Vue.use(VueAuth, {
   auth: {
     request: function (req, token) {

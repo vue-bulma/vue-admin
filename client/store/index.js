@@ -24,6 +24,7 @@ const store = new Vuex.Store({
     scheduleList: [],
     examsDoneList: [],
     proceDoneList: [],
+    recordList: [],
     user: {
       id: '',
       client: '',
@@ -38,6 +39,9 @@ const store = new Vuex.Store({
     }
   },
   mutations: {
+    [types.RECORD] (store, obj) {
+      store.recordList = obj
+    },
     [types.AUTH] (store, obj) {
       store.user = obj
     },

@@ -8,6 +8,8 @@ export const SWITCH_EFFECT = 'SWITCH_EFFECT'
 
 export const AUTH = 'SET_USER'
 
+export const RECORD = 'RECORD'
+
 export const SCHEDULE_LIST = 'SCHEDULE_LIST'
 
 export const EXAMDONE_LIST = 'EXAMDONE_LIST'
