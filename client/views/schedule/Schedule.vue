@@ -254,7 +254,7 @@
             if (obj !== null) {
               this.setRecord(obj)
               console.log(obj)
-              this.records = ['bunda', 'do', 'ale']
+              this.records = obj
             }
           })
         }).catch((error) => {
