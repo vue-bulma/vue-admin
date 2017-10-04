@@ -67,25 +67,25 @@
                 <td>
                   <div v-if="list.tbTipo !== '9'">
                     <div v-if="list.tbNome === undefined">
-                      <tooltip label="Bloquear" placement="rigth">
+                      <!-- <tooltip label="Bloquear" placement="rigth"> -->
                         <!-- <div class="has-text-centered"> -->
                         <a href="#" @click.prevent="block(list)">{{list.tbHora.substring(0, 5)}}</a>
                         <!-- </div> -->
-                      </tooltip>
+                      <!-- </tooltip> -->
                     </div>
                   </div>
                   <div v-if="list.tbNome === '**HORÁRIO BLOQUEADO**'">
-                    <tooltip label="Desbloquear" placement="rigth">
+                    <!-- <tooltip label="Desbloquear" placement="rigth"> -->
                       <!-- <div class="has-text-left"> -->
                         <a href="#" @click.prevent="unBlock(list)" class="unlock">{{list.tbHora.substring(0, 5)}}</a>
                       <!-- </div> -->
-                    </tooltip>
+                    <!-- </tooltip> -->
                   </div>
-                  <!-- <p v-if="list.tbNome !== '**HORÁRIO BLOQUEADO**'"> -->
+                  <div v-if="list.tbNome !== '**HORÁRIO BLOQUEADO**'">
                     <div v-if="list.tbNome !== undefined" >
-                      <!-- <p>{{list.tbHora.substring(0, 5)}}</p> -->
+                      <p>{{list.tbHora.substring(0, 5)}}</p>
                     </div>
-                  <!-- </p> -->
+                  </div>
                 </td>
 
                 <td>
@@ -150,20 +150,20 @@
       </div>
     </div>
 
-    <modal name="hello-world" height="auto" :scrollable="true">
+    <modal name="hello-world" height="auto" :scrollable="true" :width="300" >
       <table class="table">
         <thead>
         <tr>
-          <th></th>
-          <th>Ficha</th>
           <th>Nome</th>
         </tr>
         </thead>
         <tbody>
           <tr v-for="list in recordList">
-            <td><a href="#" @click.prevent="record(list)">Selecionar</a></td>
-            <td><a href="#" @click.prevent="record(list)">{{list.tbData}}</a></td>
-            <td><a href="#" @click.prevent="record(list)">{{list.tbDescricao}}</a></td>
+            <td>
+              <p class="title is-6">{{list.tbData}} - {{list.tbNomeMedico}}</p>
+              <br />
+              <p class="title is-6">{{list.tbDescricao}}</p>
+            </td>
           </tr>
         </tbody>
       </table>
@@ -269,8 +269,6 @@
             const obj = data.val()
             if (obj !== null) {
               this.setRecord(obj)
-              console.log(obj)
-              this.records = obj
             }
           })
         }).catch((error) => {
@@ -281,6 +279,7 @@
         if (list.tbFicha === undefined) {
           return false
         }
+        this.record(list)
         this.$modal.show('hello-world')
         // this.record(list)
         // this.showModal = true
