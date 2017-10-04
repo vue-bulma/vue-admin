@@ -150,8 +150,24 @@
       </div>
     </div>
 
-    <modal name="hello-world">
-      {{recordList}}
+    <modal name="hello-world" height="auto" :scrollable="true">
+      <table class="table">
+        <thead>
+        <tr>
+          <th></th>
+          <th>Ficha</th>
+          <th>Nome</th>
+        </tr>
+        </thead>
+        <tbody>
+          <tr v-for="list in recordList">
+            <td><a href="#" @click.prevent="record(list)">Selecionar</a></td>
+            <td><a href="#" @click.prevent="record(list)">{{list.tbData}}</a></td>
+            <td><a href="#" @click.prevent="record(list)">{{list.tbDescricao}}</a></td>
+          </tr>
+        </tbody>
+      </table>
+      <!-- {{recordList}} -->
     </modal>
 
     <!-- <modal :visible="showModal" @close="closeModalBasic" :desc="contentModal" :name="nameModal"></modal> -->
@@ -265,10 +281,11 @@
         if (list.tbFicha === undefined) {
           return false
         }
-        this.record(list)
-        this.showModal = true
-        this.contentModal = '' // this.records
-        this.nameModal = list.tbNome
+        this.$modal.show('hello-world')
+        // this.record(list)
+        // this.showModal = true
+        // this.contentModal = '' // this.records
+        // this.nameModal = list.tbNome
       },
       closeModalBasic () {
         this.showModal = false
@@ -302,7 +319,6 @@
         })
       },
       block (list) {
-        this.$modal.show('hello-world')
         this.$http({
           url: api + '/schedules/block',
           transformResponse: [(data) => {
