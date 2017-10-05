@@ -69,6 +69,7 @@
                 <i class="fa fa-warning" v-show="!isValalidPassowrd"></i>
               </span>
               <span class="help is-danger" v-show="!isValalidPassowrd">Senha inválido!</span>
+              <span class="help is-danger" v-show="!isValalidPassowrdLong">A senha deve conter entre 6 a 20 caracteres</span>
             </p>
 
             <!-- <label class="label">Tipo</label>
@@ -112,21 +113,12 @@ export default {
 
     },
     validate () {
-      if ((this.data.user.name === undefined) || (this.data.user.name === '') || (this.data.user.name === null)) {
-        console.log(this.data.user.name)
-        this.isValalidName = false
+      if ((this.data.user.password === undefined) || (this.data.user.password === '') || (this.data.user.password === null)) {
+        this.isValalidPassowrd = false
         return false
       }
-      if ((this.data.user.crm === undefined) || (this.data.user.crm === '') || (this.data.user.crm === null)) {
-        this.isValalidCRM = false
-        return false
-      }
-      if ((this.data.user.username === undefined) || (this.data.user.username === '') || (this.data.user.username === null)) {
-        this.isValalidEmail = false
-        return false
-      }
-      if ((this.data.user.password === undefined) || (this.data.user.password === '') || (this.data.user.password === null) || (this.data.user.password.length < 5)) {
-        this.isValalidName = false
+      if ((this.data.user.password.length < 5) || (this.data.user.password.length > 20)) {
+        this.isValalidPassowrdLong = false
         return false
       }
     },
@@ -165,7 +157,7 @@ export default {
     },
     register () {
       if (this.validate() === false) {
-        console.log('teste')
+        return false
       }
       this.$http({
         method: 'post',
@@ -203,7 +195,8 @@ export default {
       isValalidName: true,
       isValalidEmail: true,
       isValalidCRM: true,
-      isValalidPassowrd: true
+      isValalidPassowrd: true,
+      isValalidPassowrdLong: true
     }
   }
 }

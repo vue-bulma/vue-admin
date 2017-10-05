@@ -1,6 +1,5 @@
 <template lang="html">
   <div class="content has-text-centered">
-
     <div class="columns is-vcentered">
       <div class="column is-6 is-offset-3">
           <article class="tile is-child box">
@@ -13,6 +12,7 @@
                   <i class="fa fa-envelope"></i>
                 </span>
               </p>
+              <div v-show="error" style="color:red; word-wrap:break-word;">{{ error }}</div>
               <!-- <p class="control has-icon">
                 <input class="input" type="password" placeholder="Password">
                 <span class="icon is-small">
@@ -42,6 +42,10 @@ export default {
   name: 'ForgetPassword',
   methods: {
     send () {
+      if ((this.data.user === undefined) || (this.data.user === null) || (this.data.user === '')) {
+        this.error = 'E-mail inválido!'
+        return false
+      }
       this.$http({
         method: 'post',
         url: api + '/users/reset-password',
@@ -50,6 +54,7 @@ export default {
         console.log(response)
       }).catch((error) => {
         if (error.response) {
+          this.error = error.response.data.message
           console.log(error.response.data.description)
           console.log(error.response.data)
           console.log(error.response.status)
@@ -64,7 +69,8 @@ export default {
         user: {
           username: null
         }
-      }
+      },
+      error: null
     }
   }
 }
