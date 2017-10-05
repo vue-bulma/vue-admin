@@ -142,3 +142,5 @@ Become a sponsor and get your logo on our README on Github with a link to your s
 [Bulma]: http://bulma.io
 [Vue-bulma]: https://github.com/vue-bulma
 
+ip do servidor online do http: 104.131.75.202
+ip do servidor api: 45.32.167.85
