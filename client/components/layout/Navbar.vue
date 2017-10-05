@@ -23,7 +23,7 @@
           <a v-if="$auth.check()" @click="logout" class="nav-item">
 
             <tooltip label="Click sobre seu nome para logout" placement="left">
-              <p class="is-primary user-name">Dr(a) {{ users.name }}</p>
+              <p class="is-primary user-name">Dr(a) {{now}}</p>
             </tooltip>
           </a>
         </div>
@@ -77,12 +77,20 @@ export default {
     }
   },
 
-  computed: mapGetters({
-    pkginfo: 'pkg',
-    sidebar: 'sidebar',
-    user: 'user',
-    device: 'device'
-  }),
+  computed: {
+    ...mapGetters({
+      pkginfo: 'pkg',
+      sidebar: 'sidebar',
+      user: 'user',
+      device: 'device'
+    }),
+    now: function () {
+      if (localStorage.get('name') !== undefined) {
+        const name = localStorage.get('name').split(' ').slice(0)
+        return name[0] // localStorage.get('name').split(' ').slice(0).join(' ').toUpperCase()
+      }
+    }
+  },
 
   methods: {
     ...mapActions([

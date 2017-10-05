@@ -1,14 +1,14 @@
 {
-  "name": "vue-admin",
-  "version": "0.1.8",
-  "description": "meu clinic consiste em um dashboard para profissionais e para colaboradores que utilizam sistema da Risc sistemas",
-  "repository": "atomm/dashboard-risc",
+  "name": "meuclinic",
+  "version": "0.1.9",
+  "description": "MeuClinic consiste em um dashboard para profissionais e para colaboradores que utilizam sistema da Risc sistemas",
+  "repository": "spitzer/dashboard-risc",
   "homepage": "https://www.meuclinic.com.br",
-  "license": "MIT",
+  "license": "PRIVATE",
   "author": {
     "name": "Alexandre Campagnaro",
     "email": "alexandre.campagnaro@gmail.com",
-    "url": "github.com"
+    "url": "spitzer.io"
   },
   "keywords": [
     "admin",
