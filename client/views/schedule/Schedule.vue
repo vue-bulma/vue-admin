@@ -150,7 +150,7 @@
       </div>
     </div>
 
-    <modal name="hello-world" height="auto" :scrollable="true" :width="300" >
+    <modal name="hello-world" height="auto" :scrollable="true" :width="300" @before-close="beforeClose">
       <table class="table">
         <thead>
         <tr>
@@ -249,6 +249,10 @@
           message: 'This is the message.',
           type: type
         })
+      },
+      beforeClose (event) {
+        console.log(event)
+        this.setRecord([])
       },
       record (record) {
         this.$http({

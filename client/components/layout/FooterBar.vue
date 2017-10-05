@@ -14,7 +14,7 @@
             </span>
           </a>
         </p> -->
-        <p><span class="icon"><i class="fa fa-code"></i></span></span> by <a href="https://www.atomm.io">Atomm</a>.</p>
+        <p><span class="icon"><i class="fa fa-code"></i></span></span> by <a href="https://www.spitzer.io">Spitzer.io</a>.</p>
         <!--
         <p class="social">
           <a :href="'https://github.com/' + repository">
@@ -22,7 +22,7 @@
               <i class="fa fa-github"></i>
             </span>
           </a>
-          <a href="https://twitter.com/atomm">
+          <a href="https://twitter.com/spitzer">
             <span class="icon">
               <i class="fa fa-twitter"></i>
             </span>
