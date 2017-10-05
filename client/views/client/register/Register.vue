@@ -1,5 +1,26 @@
 <template lang="html">
   <div class="">
+
+    <modal name="hello-world" height="auto" :scrollable="true" :width="300" @before-close="beforeClose">
+      <table class="table">
+        <thead>
+        <tr>
+          <th>Nome</th>
+        </tr>
+        </thead>
+        <tbody>
+          <tr v-for="list in recordList">
+            <td>
+              <p class="title is-6">{{list.tbData}} - {{list.tbNomeMedico}}</p>
+              <br />
+              <p class="title is-6">{{list.tbDescricao}}</p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <!-- {{recordList}} -->
+    </modal>
+
     <div class="columns is-vcentered">
       <div class="column is-6 is-offset-3">
         <article class="tile is-child box">
@@ -100,6 +121,7 @@
      </div>
    </div>
   </div>
+
 </template>
 
 <script>
