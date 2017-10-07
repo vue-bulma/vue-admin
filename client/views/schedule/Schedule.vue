@@ -151,7 +151,7 @@
     </div>
 
     <modal name="hello-world" height="auto" :scrollable="true" :width="300" @before-close="beforeClose">
-      <div class="tile is-parent is-4">
+      <!-- <div class="tile is-parent is-4">
         <article class="tile is-child box">
           <div class="block is-flex">
             <collapse>
@@ -163,8 +163,8 @@
             </collapse>
           </div>
         </article>
-      </div>
-      <!-- <table class="table">
+      </div> -->
+      <table class="table">
         <thead>
         <tr>
           <th>Nome</th>
@@ -179,7 +179,7 @@
             </td>
           </tr>
         </tbody>
-      </table> -->
+      </table>
       <!-- {{recordList}} -->
     </modal>
 
