@@ -93,7 +93,7 @@
               <span class="help is-danger" v-show="!isValalidPassowrdLong">A senha deve conter entre 6 a 20 caracteres</span>
             </p>
 
-            <!-- <label class="label">Tipo</label>
+            <label class="label">Tipo</label>
             <p class="control">
               <span class="select">
                 <select v-model="data.user.type">
@@ -101,7 +101,7 @@
                   <option>Gerencia</option>
                 </select>
               </span>
-            </p> -->
+            </p>
 
             <p class="control">
               <label class="checkbox">

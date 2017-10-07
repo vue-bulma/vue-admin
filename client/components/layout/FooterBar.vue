@@ -14,7 +14,7 @@
             </span>
           </a>
         </p> -->
-        <p><span class="icon"><i class="fa fa-code"></i></span></span> by <a href="https://www.spitzer.io">Spitzer.io</a></p>
+        <p><span class="icon"><i class="fa fa-code"></i></span></span> by <a href="http://www.spitzer.io">Spitzer.io</a></p>
         <!--
         <p class="social">
           <a :href="'https://github.com/' + repository">
