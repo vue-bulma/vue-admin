@@ -37,8 +37,13 @@
      </div>
 
      <div class="buttons">
-       <button class="button is-primary">Aceitar</button>
-       <button class="button is-info">Cancelar</button>
+       <router-link to="/client/register/register">
+         <button class="button is-primary">Concordo</button>
+       </router-link>
+
+       <router-link to="/login">
+         <button class="button is-link">Cancelar</button>
+       </router-link>
      </div>
 
   </div>
