@@ -67,19 +67,19 @@
                 <td>
                   <div v-if="list.tbTipo !== '9'">
                     <div v-if="list.tbNome === undefined">
-                      <!-- <tooltip label="Bloquear" placement="rigth"> -->
+                      <tooltip label="Bloquear" placement="rigth">
                         <!-- <div class="has-text-centered"> -->
                         <a href="#" @click.prevent="block(list)">{{list.tbHora.substring(0, 5)}}</a>
                         <!-- </div> -->
-                      <!-- </tooltip> -->
+                      </tooltip>
                     </div>
                   </div>
                   <div v-if="list.tbNome === '**HORÁRIO BLOQUEADO**'">
-                    <!-- <tooltip label="Desbloquear" placement="rigth"> -->
+                    <tooltip label="Desbloquear" placement="rigth">
                       <!-- <div class="has-text-left"> -->
                         <a href="#" @click.prevent="unBlock(list)" class="unlock">{{list.tbHora.substring(0, 5)}}</a>
                       <!-- </div> -->
-                    <!-- </tooltip> -->
+                    </tooltip>
                   </div>
                   <div v-if="list.tbNome !== '**HORÁRIO BLOQUEADO**'">
                     <div v-if="list.tbNome !== undefined" >
@@ -151,20 +151,20 @@
     </div>
 
     <modal name="hello-world" height="auto" :scrollable="true" :width="300" @before-close="beforeClose">
-      <!-- <div class="tile is-parent is-4">
+      <div class="tile is-parent is-12">
         <article class="tile is-child box">
           <div class="block is-flex">
             <collapse>
               <div class="" v-for="list in recordList">
-                <collapse-item :title="list.tbNomeMedico" >
+                <collapse-item :title="list.tbData"  >
                   <p class="title is-6">{{list.tbDescricao}}</p>
                 </collapse-item>
               </div>
             </collapse>
           </div>
         </article>
-      </div> -->
-      <table class="table">
+      </div>
+      <!-- <table class="table">
         <thead>
         <tr>
           <th>Nome</th>
@@ -179,7 +179,7 @@
             </td>
           </tr>
         </tbody>
-      </table>
+      </table> -->
       <!-- {{recordList}} -->
     </modal>
 
@@ -199,6 +199,7 @@
   import { mapActions, mapGetters } from 'vuex'
   // import Modal from '../client/record/modals/Modal'
   import { Collapse, Item as CollapseItem } from 'vue-bulma-collapse'
+  // import _ from 'lodash'
 
   import Vue from 'vue'
   import Notification from 'vue-bulma-notification'
@@ -472,6 +473,9 @@
       }
     },
     computed: {
+      prontuario: function () {
+        return console.log('caralho')
+      },
       today () {
         // moment().format('DD/MM/YYYY')
         return new Date()

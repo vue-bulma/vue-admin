@@ -1,6 +1,6 @@
 <template>
 <div class="content has-text-centered">
-  <h1 class="is-title is-bold">Login</h1>
+  <h1 class="is-title is-bold"></h1> <!-- Login -->
 
   <div class="columns is-vcentered">
     <div class="column is-6 is-offset-3">
