@@ -102,7 +102,6 @@ export default {
         makeRequest: false,
         params: {},
         success: function (result) {
-          console.log('entrou aqui neste logou dentro do navbar', result)
           window.localStorage.removeItem('crm')
           window.localStorage.removeItem('client')
           window.localStorage.removeItem('id')
