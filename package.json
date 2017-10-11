@@ -54,7 +54,7 @@
     "vue-bulma-expanding": "^0.0.1",
     "vue-bulma-jump": "^0.0.2",
     "vue-bulma-message": "^1.1.1",
-    "vue-bulma-modal": "1.0.1",
+    "vue-bulma-modal": "github:imoontech/modal",
     "vue-bulma-notification": "^1.1.1",
     "vue-bulma-progress-bar": "^1.0.2",
     "vue-bulma-progress-tracker": "0.0.4",
