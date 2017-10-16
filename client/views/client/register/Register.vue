@@ -35,15 +35,14 @@
               <span class="help is-danger" v-show="!isValalidName">Cliente inválido!</span>
             </p>
 
-
-            <label class="label">Cliente</label>
+            <!-- <label class="label">Cliente</label>
             <p class="control has-icon has-icon-right">
               <input class="input" :class="{'is-danger': !isValalidName}" type="text" placeholder="" v-model="data.user.clientName" disabled>
               <span class="icon is-small">
                 <i class="fa fa-warning" v-show="!isValalidName"></i>
               </span>
               <span class="help is-danger" v-show="!isValalidName">Cliente inválido!</span>
-            </p>
+            </p> -->
 
             <label class="label">Nome</label>
             <p class="control has-icon has-icon-right">
@@ -72,6 +71,23 @@
               <span class="help is-danger" v-show="!isValalidPassowrd">Senha inválido!</span>
               <span class="help is-danger" v-show="!isValalidPassowrdLong">A senha deve conter entre 6 a 20 caracteres</span>
             </p>
+
+            <!-- <table class="table">
+              <thead>
+              <tr>
+                <th>Hosp./Clima</th>
+                <th>CRM</th>
+                <th>Dt Nasc.</th>
+              </tr>
+              </thead>
+              <tbody>
+                <tr v-for="list in data.clients">
+                  <td><a href="#" @click.prevent="record(list)">{{list.clientName}}</a></td>
+                  <td><a href="#" @click.prevent="record(list)">{{list.crm}}</a></td>
+                  <td><a href="#" @click.prevent="record(list)">{{list.name}}</a></td>
+                </tr>
+              </tbody>
+            </table> -->
 
             <!-- <label class="label">Tipo</label>
             <p class="control">
@@ -183,19 +199,27 @@ export default {
         url: api + '/users/search-email-doctor',
         data: this.data.user
       }).then((response) => {
+        response.data.client.forEach((item) => {
+          this.data.clients.push(item.client)
+        })
+        response.data.client.forEach((item) => {
+          this.data.clientsName.push(item.clientName)
+        })
         if ((response.data.client === undefined) || (response.data.client === null) || (response.data.client === '')) {
+          console.log('nao pode entrar aqui', this.data.user)
           this.client.isClient = false
           this.isValalidEmail = false
           this.client.message = response.data.message
         } else {
           this.isValalidEmail = true
           this.client.isClient = true
-          this.data.user.client = response.data.client.client
-          this.data.user.clientName = response.data.client.clientName
-          this.data.user.crm = response.data.client.crm
-          this.data.user.name = response.data.client.name
+          this.data.user.client = [this.data.clients]
+          this.data.user.clientName = [this.data.clientsName]
+          this.data.user.crm = response.data.client[0].crm
+          this.data.user.name = response.data.client[0].name
           this.data.labelUsername = 'Este será seu usuário de acesso'
           this.$refs.password.$el.focus()
+          console.log(this.data.user)
         }
       }).catch((error) => {
         if (error.response) {
@@ -226,14 +250,16 @@ export default {
   data () {
     return {
       data: {
+        clients: [],
+        clientsName: [],
         user: {
           username: null,
           password: null,
           name: null,
           crm: null,
           type: 'Médico',
-          client: '',
-          clientName: ''
+          client: [],
+          clientName: []
         },
         erro: {
           username: null

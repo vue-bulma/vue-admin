@@ -94,10 +94,12 @@ export default {
         redirect: {name: redirect ? 'Agenda' : 'Agenda'},
         success (res) {
           // console.log('Auth Success')
-          // console.log('Token: ' + this.$auth.token())
+          console.log('Token: ' + this.$auth.token())
           // console.log(res.data.parameters)
           // const user = this.data.body
-          // console.log(res.data.parameters)
+          res.data.parameters.client.forEach((item) => {
+            console.log(item)
+          })
           this.setUser(res.data.parameters)
           localStorage.set('id', res.data.parameters.id)
           localStorage.set('crm', res.data.parameters.crm)
