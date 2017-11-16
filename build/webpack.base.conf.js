@@ -62,7 +62,7 @@ module.exports = {
         loader: 'babel-loader',
         include: projectRoot,
         // /node_modules\/(?!vue-bulma-.*)/
-        exclude: [new RegExp(`node_modules\\${path.sep}(?!vue-bulma-.*)`)]
+        exclude: [new RegExp(`node_modules\\${path.sep}(?!_vue-bulma-.*)`)]
       },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
