@@ -25,7 +25,6 @@
           <hr>
           <p class="control">
             <button type="submit" class="button is-primary">登录</button>
-            <button class="button is-default">取消</button>
           </p>
         </form>
         <div v-show="error" style="color:red; word-wrap:break-word;">{{ error }}</div>
