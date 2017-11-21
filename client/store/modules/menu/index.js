@@ -12,28 +12,38 @@ import tables from './tables'
 const state = {
   items: [
     {
-      name: 'Dashboard',
-      path: '/dashboard',
+      name: '示例',
       meta: {
-        icon: 'fa-tachometer',
-        link: 'dashboard/index.vue'
+        label: '示例',
+        icon: 'fa-laptop',
+        expanded: false
       },
-      component: lazyLoading('dashboard', true)
-    },
-    {
-      name: 'Axios',
-      path: '/axiosDemo',
-      meta: {
-        auth: true,
-        icon: 'fa-rocket',
-        link: 'axios/index.vue'
-      },
-      component: lazyLoading('axios', true)
-    },
-    charts,
-    uifeatures,
-    components,
-    tables
+      children: [
+        {
+          name: 'Dashboard',
+          path: '/dashboard',
+          meta: {
+            icon: 'fa-tachometer',
+            link: 'dashboard/index.vue'
+          },
+          component: lazyLoading('dashboard', true)
+        },
+        {
+          name: 'Axios',
+          path: '/axiosDemo',
+          meta: {
+            auth: true,
+            icon: 'fa-rocket',
+            link: 'axios/index.vue'
+          },
+          component: lazyLoading('axios', true)
+        },
+        charts,
+        uifeatures,
+        components,
+        tables
+      ]
+    }
   ]
 }
 
@@ -42,6 +52,15 @@ const mutations = {
     if (menuItem.index > -1) {
       if (state.items[menuItem.index] && state.items[menuItem.index].meta) {
         state.items[menuItem.index].meta.expanded = menuItem.expanded
+      }
+    } else if (menuItem.item && 'expanded' in menuItem.item.meta) {
+      menuItem.item.meta.expanded = menuItem.expanded
+    }
+  },
+  [types.EXPAND_MENU2] (state, menuItem) {
+    if (menuItem.index > -1) {
+      if (state.items[0].children[menuItem.index] && state.items[0].children[menuItem.index].meta) {
+        state.items[0].children[menuItem.index].meta.expanded = menuItem.expanded
       }
     } else if (menuItem.item && 'expanded' in menuItem.item.meta) {
       menuItem.item.meta.expanded = menuItem.expanded

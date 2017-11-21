@@ -22,10 +22,33 @@
 
         <expanding v-if="item.children && item.children.length">
           <ul v-show="isExpanded(item)">
-            <li v-for="subItem in item.children" v-if="subItem.path">
-              <router-link :to="generatePath(item, subItem)">
+            <li v-for="(subItem, index) in item.children">
+              <router-link :to="generatePath(item, subItem)" v-if="!subItem.children">
+                <span class="icon is-small"><i :class="['fa', subItem.meta.icon]"></i></span>
                 {{ subItem.meta && subItem.meta.label || subItem.name }}
+                <span class="icon is-small is-angle" v-if="subItem.children && subItem.children.length">
+                  <i class="fa fa-angle-down"></i>
+                </span>
               </router-link>
+
+              <a :aria-expanded="isExpanded(subItem)" v-else @click="toggle2(index, subItem)">
+                <span class="icon is-small"><i :class="['fa', subItem.meta.icon]"></i></span>
+                {{ subItem.meta.label || subItem.name }}
+                <span class="icon is-small is-angle" v-if="subItem.children && subItem.children.length">
+                  <i class="fa fa-angle-down"></i>
+                </span>
+              </a>
+
+              <expanding v-if="subItem.children && subItem.children.length">
+                <ul v-show="isExpanded(subItem)">
+                  <li v-for="sub in subItem.children">
+                    <router-link :to="generatePath(subItem, sub)" v-if="sub.path">
+                      {{ sub.meta && sub.meta.label || sub.name }}
+                    </router-link>
+                  </li>
+                </ul>
+              </expanding>
+
             </li>
           </ul>
         </expanding>
@@ -67,7 +90,8 @@ export default {
 
   methods: {
     ...mapActions([
-      'expandMenu'
+      'expandMenu',
+      'expandMenu2'
     ]),
 
     isExpanded (item) {
@@ -76,6 +100,12 @@ export default {
 
     toggle (index, item) {
       this.expandMenu({
+        index: index,
+        expanded: !item.meta.expanded
+      })
+    },
+    toggle2 (index, item) {
+      this.expandMenu2({
         index: index,
         expanded: !item.meta.expanded
       })

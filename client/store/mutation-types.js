@@ -4,4 +4,6 @@ export const TOGGLE_SIDEBAR = 'TOGGLE_SIDEBAR'
 
 export const EXPAND_MENU = 'EXPAND_MENU'
 
+export const EXPAND_MENU2 = 'EXPAND_MENU2'
+
 export const SWITCH_EFFECT = 'SWITCH_EFFECT'

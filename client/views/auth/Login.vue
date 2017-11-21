@@ -1,34 +1,34 @@
 <template>
 <div class="content has-text-centered">
-  <h1 class="is-title is-bold">Login</h1>
+  <h1 class="is-title is-bold">CMS管理系统</h1>
 
   <div class="columns is-vcentered">
     <div class="column is-6 is-offset-3">
       <div class="box">
-        <div v-show="error" style="color:red; word-wrap:break-word;">{{ error }}</div>
         <form v-on:submit.prevent="login">
-          <label class="label">Email</label>
+          <label class="label">账号</label>
           <p class="control">
-            <input v-model="data.body.username" class="input" type="text" placeholder="email@example.org">
+            <input v-model="data.body.username" class="input" type="text" placeholder="账号">
           </p>
-          <label class="label">Password</label>
+          <label class="label">密码</label>
           <p class="control">
-            <input v-model="data.body.password" class="input" type="password" placeholder="password">
+            <input v-model="data.body.password" class="input" type="password" placeholder="密码">
           </p>
 
           <p class="control">
             <label class="checkbox">
               <input type="checkbox" v-model="data.rememberMe">
-              Remember me
+              记住密码
             </label>
           </p>
 
           <hr>
           <p class="control">
-            <button type="submit" class="button is-primary">Login</button>
-            <button class="button is-default">Cancel</button>
+            <button type="submit" class="button is-primary">登录</button>
+            <button class="button is-default">取消</button>
           </p>
         </form>
+        <div v-show="error" style="color:red; word-wrap:break-word;">{{ error }}</div>
       </div>
     </div>
   </div>
@@ -67,17 +67,21 @@ export default {
         rememberMe: this.data.rememberMe,
         redirect: {name: redirect ? redirect.from.name : 'Home'},
         success (res) {
-          console.log('Auth Success')
-          // console.log('Token: ' + this.$auth.token())
-          // console.log(res)
+          console.log(res)
+          if (Object.is(res.data.code, 0)) {
+            window.localStorage.setItem('default-auth-token', res.data.result.token)
+          } else {
+            window.localStorage.setItem('default-auth-token', '')
+            this.$auth.logout({
+              redirect: {name: 'Login'}
+            })
+            this.error = res.data.msg
+          }
         },
         error (err) {
           if (err.response) {
             // The request was made, but the server responded with a status code
             // that falls out of the range of 2xx
-            // console.log(err.response.status)
-            // console.log(err.response.data)
-            // console.log(err.response.headers)
             this.error = err.response.data
           } else {
             // Something happened in setting up the request that triggered an Error
