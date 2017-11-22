@@ -22,6 +22,12 @@ export const expandMenu2 = ({ commit }, menuItem) => {
   }
 }
 
+export const appendMenu = ({ commit }, menuItem) => {
+  if (menuItem) {
+    commit(types.APPEND_MENU, menuItem)
+  }
+}
+
 export const switchEffect = ({ commit }, effectItem) => {
   if (effectItem) {
     commit(types.SWITCH_EFFECT, effectItem)

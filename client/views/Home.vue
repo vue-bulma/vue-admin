@@ -46,7 +46,6 @@
     computed: mapGetters({
       sidebar: 'sidebar'
     }),
-
     methods: mapActions([
       'toggleDevice',
       'toggleSidebar'

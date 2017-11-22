@@ -6,4 +6,6 @@ export const EXPAND_MENU = 'EXPAND_MENU'
 
 export const EXPAND_MENU2 = 'EXPAND_MENU2'
 
+export const APPEND_MENU = 'APPEND_MENU'
+
 export const SWITCH_EFFECT = 'SWITCH_EFFECT'

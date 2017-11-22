@@ -8,7 +8,7 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import * as filters from './filters'
-import { TOGGLE_SIDEBAR } from 'vuex-store/mutation-types'
+import { TOGGLE_SIDEBAR, APPEND_MENU } from 'vuex-store/mutation-types'
 
 Vue.router = router
 Vue.use(VueAxios, service)
@@ -39,6 +39,11 @@ sync(store, router)
 
 const { state } = store
 
+const menu = window.sessionStorage.getItem('menu')
+// app刷新的时候从本地缓存加载动态菜单
+if (window.localStorage.getItem('default-auth-token') && menu) {
+  store.commit(APPEND_MENU, JSON.parse(menu))
+}
 router.beforeEach((route, redirect, next) => {
   if (state.app.device.isMobile && state.app.sidebar.opened) {
     store.commit(TOGGLE_SIDEBAR, false)

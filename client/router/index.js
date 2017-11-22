@@ -11,6 +11,7 @@ export default new Router({
     {
       name: 'Home',
       path: '/home',
+      auth: true,
       component: require('../views/Home'),
       children: [
         ...generateRoutesFromMenu(menuModule.state.items)
@@ -19,6 +20,7 @@ export default new Router({
     {
       name: 'Login',
       path: '/',
+      auth: false,
       component: require('../views/auth/Login')
     },
     {
