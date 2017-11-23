@@ -8,8 +8,8 @@
   <a href="https://admin.vuebulma.com">Live Demo</a>
 </p>
 
-<p>
- ## 重点改造
+<p align="left">
+ <h2> 重点改造 </h2>
   
   1、将菜单拓展为三级，原菜单封装在“示例”菜单下。
   
