@@ -22,6 +22,8 @@
   5、增加简洁的404页面路由
 </p>
 
+<p><img width="500" src="https://github.com/m3shine/vue-admin/blob/master/client/assets/0.png"></p>
+<p><img width="500" src="https://github.com/m3shine/vue-admin/blob/master/client/assets/1.png"></p>
 
 ## Features
 
