@@ -32,7 +32,10 @@ exports.cssLoaders = options => {
     if (options.extract) {
       return ExtractTextPlugin.extract({
         use: sourceLoader,
-        fallback: 'vue-style-loader'
+        fallback: 'vue-style-loader',
+        // Fixed the problem that the URLs of fonts and images in the css files are incorrect
+        // when assetsPublicPath set to './' in production environment
+        publicPath: '../../'
       })
     } else {
       return ['vue-style-loader', sourceLoader].join('!')
