@@ -10,18 +10,22 @@ export default new Router({
   routes: [
     {
       name: 'Home',
-      path: '/',
-      component: require('../views/Home')
+      path: '/home',
+      auth: true,
+      component: require('../views/Home'),
+      children: [
+        ...generateRoutesFromMenu(menuModule.state.items)
+      ]
     },
     {
       name: 'Login',
-      path: '/login',
+      path: '/',
+      auth: false,
       component: require('../views/auth/Login')
     },
-    ...generateRoutesFromMenu(menuModule.state.items),
     {
       path: '*',
-      redirect: '/'
+      component: require('../views/404')
     }
   ]
 })
@@ -34,6 +38,7 @@ function generateRoutesFromMenu (menu = [], routes = []) {
       routes.push(item)
     }
     if (!item.component) {
+      // item.component = resolve => require([`views/${item.component}.vue`], resolve)
       generateRoutesFromMenu(item.children, routes)
     }
   }
