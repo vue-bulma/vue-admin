@@ -1,5 +1,5 @@
 <template>
-  <modal :visible="visible" @close="close">
+  <modal class="modal" :visible="visible" @close="close">
     <div class="box">
       <article class="media">
         <div class="media-left">
@@ -53,3 +53,9 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.modal {
+  z-index: 1024;
+}
+</style>

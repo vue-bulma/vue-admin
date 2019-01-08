@@ -1,5 +1,5 @@
 <template>
-  <card-modal :visible="visible" @close="close" :title="title" transition="zoom">
+  <card-modal class="modal" :visible="visible" @close="close" :title="title" transition="zoom">
     <div class="content has-text-centered"><img :src="src" height="120" alt="Vue Admin"></div>
     <a @click="open(url)">Vue Admin on GitHub</a>
   </card-modal>
@@ -36,3 +36,9 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.modal {
+  z-index: 1024;
+}
+</style>
