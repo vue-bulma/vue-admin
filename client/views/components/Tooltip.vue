@@ -122,14 +122,14 @@
           <h1 class="title">Sizes</h1>
           <div class="columns is-multiline is-mobile">
             <div class="column">
-              <tooltip label="small" type="small" placement="bottom-right">
+              <tooltip label="small" size="small" placement="bottom-right">
                 <button class="button has-text-centered">
                   <span>small</span>
                 </button>
               </tooltip>
             </div>
             <div class="column">
-              <tooltip label="medium" type="medium">
+              <tooltip label="medium" size="medium">
                 <button class="button has-text-centered">
                   <span>medium</span>
                 </button>
