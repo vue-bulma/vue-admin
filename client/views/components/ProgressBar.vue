@@ -33,14 +33,14 @@
           <div class="block">
             <progress-bar :type="'success'" :size="'large'" :value="dynamicValue" :max="100" :show-label="true"></progress-bar>
             <p class="control has-addons">
-              <a class="button" @click="plus">
-                <span class="icon is-small">
-                  <i class="fa fa-plus"></i>
-                </span>
-              </a>
               <a class="button" @click="minus">
                 <span class="icon is-small">
                   <i class="fa fa-minus"></i>
+                </span>
+              </a>
+              <a class="button" @click="plus">
+                <span class="icon is-small">
+                  <i class="fa fa-plus"></i>
                 </span>
               </a>
             </p>
